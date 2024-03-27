@@ -1,8 +1,17 @@
 import Image from 'next/image';
+import { getAllPosts } from '@/lib/api';
+import { draftMode } from 'next/headers';
 
-export default function Home() {
+export default async function Home() {
+  const { isEnabled } = draftMode();
+  const posts = await getAllPosts(isEnabled);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      {posts.map((post) => (
+        <div key={post.slug}>{post.title}</div>
+      ))}
+
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
