@@ -1,17 +1,20 @@
 import Image from 'next/image';
-import { getAllPosts } from '@/lib/api';
+import { getAllPosts, getAmeXioPage } from '@/lib/api';
 import { draftMode } from 'next/headers';
 
 export default async function Home() {
   const { isEnabled } = draftMode();
   const posts = await getAllPosts(isEnabled);
+  const amexioPage = await getAmeXioPage(isEnabled);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {posts.map((post) => (
-        <div key={post.slug}>{post.title}</div>
-      ))}
-
+      <div className="p-16">
+        {posts.map((post) => (
+          <div key={post.slug}>{post.title}</div>
+        ))}
+      </div>
+      <i>PageName: {amexioPage.pageName}</i>
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
@@ -69,7 +72,6 @@ export default async function Home() {
           </div>
         </nav>
       </header>
-
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -122,7 +124,6 @@ export default async function Home() {
           ></div>
         </div>
       </div>
-
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
