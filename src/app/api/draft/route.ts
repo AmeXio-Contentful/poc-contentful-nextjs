@@ -10,5 +10,6 @@ export async function GET(request: Request) {
   }
 
   draftMode().enable();
-  return new Response('Draft mode is enabled');
+  // return new Response('Draft mode is enabled');
+  redirect(`/`);
 }
