@@ -75,7 +75,6 @@ export default async function CtfPage() {
       </head>
       <body>
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-          <div>Page container</div>
           {topSection &&
             topSection.map((entry) => (
               <div key={entry!.sys.id}>
