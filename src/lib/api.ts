@@ -1,3 +1,5 @@
+import { Page } from '@/lib/types';
+
 async function fetchGraphQL(
   tags: string[] | undefined,
   query: string,
@@ -21,13 +23,13 @@ async function fetchGraphQL(
   ).then((response) => response.json());
 }
 
-function extractPage(fetchResponse: any): any {
+function extractPage(fetchResponse: any): Page {
   return fetchResponse?.data?.pageCollection?.items?.[0];
 }
 
 export async function getAmeXioPage(
   isDraftMode: boolean = false,
-): Promise<any> {
+): Promise<Page> {
   const entries = await fetchGraphQL(
     ['pages'],
     `query {

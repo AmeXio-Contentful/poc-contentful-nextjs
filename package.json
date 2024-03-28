@@ -8,18 +8,24 @@
     "lint": "next lint",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
-    "start": "next start"
+    "start": "next start",
+    "graphql-schema": "export $(cat .env.local | awk '!/^\\s*#/' | awk '!/^\\s*$/'); rover graph introspect https://graphql.contentful.com/content/v1/spaces/2p89d5j9ulp9/environments/master --header=\"Authorization: Bearer $CONTENTFUL_ACCESS_TOKEN\" --output src/lib/__generated/schema.graphql",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@graphql-codegen/typescript": "^4.0.6",
     "@vercel/speed-insights": "^1.0.10",
+    "graphql": "^16.8.1",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@apollo/rover": "^0.23.0",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.73",
+    "@types/react-dom": "^18.2.22",
     "@vercel/style-guide": "^6.0.0",
     "autoprefixer": "^10.0.1",
     "eslint": "^8.57.0",
@@ -30,6 +36,6 @@
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "0.5.4",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.4.3"
   }
 }

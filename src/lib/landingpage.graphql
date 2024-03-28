@@ -22,9 +22,9 @@ fragment CtfPageFields on Page {
   seo {
     title
     description
-    image {
-      ...AssetFields
-    }
+#    image {
+#      ...AssetFields
+#    }
     noIndex
     noFollow
   }
