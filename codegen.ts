@@ -20,9 +20,19 @@ const fetchConfig = {
 
 const config: CodegenConfig = {
   overwrite: true,
-  schema: 'src/lib/__generated/schema.graphql',
+  schema: [
+    {
+      [fetchConfig.endpoint]: fetchConfig.params,
+    },
+  ],
   generates: {
     'src/lib/types.ts': { plugins: ['typescript'] },
+    'src/lib/__generated/graphql.schema.json': {
+      plugins: ['introspection'],
+    },
+    'src/lib/__generated/graphql.schema.graphql': {
+      plugins: ['schema-ast'],
+    },
   },
 };
 
