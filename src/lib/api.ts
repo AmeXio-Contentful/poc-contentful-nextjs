@@ -1,33 +1,3 @@
-const POST_GRAPHQL_FIELDS = `
-  slug
-  title
-  coverImage {
-    url
-  }
-  date
-  author {
-    name
-    picture {
-      url
-    }
-  }
-  excerpt
-  content {
-    json
-    links {
-      assets {
-        block {
-          sys {
-            id
-          }
-          url
-          description
-        }
-      }
-    }
-  }
-`;
-
 async function fetchGraphQL(
   tags: string[] | undefined,
   query: string,
@@ -51,35 +21,8 @@ async function fetchGraphQL(
   ).then((response) => response.json());
 }
 
-function extractPost(fetchResponse: any): any {
-  return fetchResponse?.data?.postCollection?.items?.[0];
-}
-
-function extractPostEntries(fetchResponse: any): any[] {
-  return fetchResponse?.data?.postCollection?.items;
-}
-
 function extractPage(fetchResponse: any): any {
   return fetchResponse?.data?.pageCollection?.items?.[0];
-}
-
-export async function getAllPosts(
-  isDraftMode: boolean = false,
-): Promise<any[]> {
-  const entries = await fetchGraphQL(
-    ['posts'],
-    `query {
-      postCollection(where: { slug_exists: true }, order: date_DESC, preview: ${
-        isDraftMode ? 'true' : 'false'
-      }) {
-        items {
-          ${POST_GRAPHQL_FIELDS}
-        }
-      }
-    }`,
-    isDraftMode,
-  );
-  return extractPostEntries(entries);
 }
 
 export async function getAmeXioPage(

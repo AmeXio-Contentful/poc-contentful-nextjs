@@ -1,20 +1,14 @@
 import Image from 'next/image';
-import { getAllPosts, getAmeXioPage } from '@/lib/api';
+import { getAmeXioPage } from '@/lib/api';
 import { draftMode } from 'next/headers';
 
 export default async function Home() {
   const { isEnabled } = draftMode();
-  const posts = await getAllPosts(isEnabled);
   const amexioPage = await getAmeXioPage(isEnabled);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="p-16">
-        {posts.map((post) => (
-          <div key={post.slug}>{post.title}</div>
-        ))}
-      </div>
-      <i>PageName: {amexioPage.pageName}</i>
+      <i className="p-16">PageName: {amexioPage.pageName}</i>
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
