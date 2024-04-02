@@ -4,6 +4,7 @@ import { draftMode } from 'next/headers';
 import React from 'react';
 import contentfulConfig from 'contentful.config';
 import i18nConfig from 'next-i18next.config.js';
+import Head from 'next/head';
 const { i18n } = i18nConfig;
 
 export default async function CtfPage() {
@@ -33,7 +34,7 @@ export default async function CtfPage() {
 
   return (
     <>
-      <head>
+        <Head>
         {metaTags.title && (
           <>
             <title key="title">{metaTags.title}</title>
@@ -72,8 +73,7 @@ export default async function CtfPage() {
           />
         )}
         <meta key="og:locale" property="og:locale" content={locale} />
-      </head>
-      <body>
+        </Head>
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
           {topSection &&
             topSection.map((entry) => (
@@ -84,7 +84,6 @@ export default async function CtfPage() {
               </div>
             ))}
         </main>
-      </body>
     </>
   );
 }
