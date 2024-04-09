@@ -6,8 +6,8 @@ import contentfulConfig from 'contentful.config';
 import i18nConfig from 'next-i18next.config.js';
 import Head from 'next/head';
 import QueryClientContextProvider from "@/components/utils/query-client-provider";
-import { useContentfulContext, ContentfulContentProvider } from '@/contentful-context';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ContentfulContentProvider } from "@/contentful-context";
 
 const { i18n } = i18nConfig;
 

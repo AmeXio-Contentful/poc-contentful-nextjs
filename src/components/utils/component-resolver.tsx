@@ -21,12 +21,18 @@ interface Props {
     inline?: boolean;
 }
 
+
+interface index {
+    [key: string]: any
+}
+
 export const ComponentResolver = (props: Props) => {
     const { componentProps, inline = false } = props;
     const { previewActive } = useContentfulContext();
 
     const { locale } = useContentfulContext();
 
+    // @ts-ignore
     const ComponentGql = componentGqlMap[componentProps.__typename];
 
     const shouldForceGql = useMemo(() => {
@@ -53,6 +59,7 @@ export const ComponentResolver = (props: Props) => {
         return true;
     }, [ComponentGql, componentProps, props.forceGql]);
 
+    // @ts-ignore
     const Component = !shouldForceGql && componentMap[componentProps.__typename];
 
     const previousComponentProp = previousComponent;
@@ -65,8 +72,6 @@ export const ComponentResolver = (props: Props) => {
 
     return (
         <div
-                    position="relative"
-                    component={inline ? 'span' : 'div'}
                     className={componentProps.__typename}
                 >
                     {Component ? (

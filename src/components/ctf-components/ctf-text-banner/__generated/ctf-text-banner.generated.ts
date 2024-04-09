@@ -5,9 +5,9 @@ import { customFetcher } from '@/lib/fetchConfig';
 export type TextBannerFieldsFragment = { __typename: 'TextBanner', title?: string | null, description?: string | null, sys: { __typename?: 'Sys', id: string } };
 
 export type CtfTextBannerQueryVariables = Types.Exact<{
-  id: Types.Scalars['String']['input'];
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  preview?: Types.InputMaybe<Types.Scalars['Boolean']['input']>;
+  id: Types.Scalars['String'];
+  locale?: Types.InputMaybe<Types.Scalars['String']>;
+  preview?: Types.InputMaybe<Types.Scalars['Boolean']>;
 }>;
 
 
@@ -15,7 +15,6 @@ export type CtfTextBannerQuery = { __typename?: 'Query', textBanner?: (
     { __typename?: 'TextBanner' }
     & TextBannerFieldsFragment
   ) | null };
-
 
 export const TextBannerFieldsFragmentDoc = `
     fragment TextBannerFields on TextBanner {
@@ -34,24 +33,19 @@ export const CtfTextBannerDocument = `
   }
 }
     ${TextBannerFieldsFragmentDoc}`;
-
 export const useCtfTextBannerQuery = <
       TData = CtfTextBannerQuery,
       TError = unknown
     >(
       variables: CtfTextBannerQueryVariables,
-      options?: Omit<UseQueryOptions<CtfTextBannerQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<CtfTextBannerQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useQuery<CtfTextBannerQuery, TError, TData>(
-      {
-    queryKey: ['CtfTextBanner', variables],
-    queryFn: customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables),
-    ...options
-  }
-    )};
+      options?: UseQueryOptions<CtfTextBannerQuery, TError, TData>
+    ) =>
+    useQuery<CtfTextBannerQuery, TError, TData>(
+      ['CtfTextBanner', variables],
+      customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables),
+      options
+    );
 
 useCtfTextBannerQuery.getKey = (variables: CtfTextBannerQueryVariables) => ['CtfTextBanner', variables];
-
 
 useCtfTextBannerQuery.fetcher = (variables: CtfTextBannerQueryVariables, options?: RequestInit['headers']) => customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables, options);

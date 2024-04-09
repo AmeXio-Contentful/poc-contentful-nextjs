@@ -42,12 +42,7 @@ export const config: CodegenConfig = {
         dedupeFragments: true,
         preResolveTypes: true,
         withHooks: true,
-        fetcher: '@/lib/fetchConfig#customFetcher',
-        reactQueryVersion: 5,
-        debug: true,
-        verbose: true,
-        legacyMode: false,
-        isReactHook: true
+        fetcher: '@/lib/fetchConfig#customFetcher'
       },
     },
   },

@@ -1,6 +1,6 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next/types';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import './globals.css';
+import '@/app/globals.css';
 
 export const metadata: Metadata = {
   title: 'AmeXio',

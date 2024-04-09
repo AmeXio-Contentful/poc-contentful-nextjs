@@ -1,6 +1,4 @@
-import { TextBannerFieldsFragment } from './__generated/ctf-text-banner.generated'
-
-export const TextBanner = (props: TextBannerFieldsFragment) => {
+export const TextBanner = (props: any) => {
     const { title, description } = props;
 
     console.log("props should be ready", props);

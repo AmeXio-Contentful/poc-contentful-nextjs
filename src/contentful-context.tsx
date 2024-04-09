@@ -1,11 +1,11 @@
 'use client';
 
-import { useContext, createContext } from 'react';
+import { useContext, createContext, ReactNode } from 'react';
 
-import { useSearchParams } from 'next/navigation';
 import contentfulConfig from 'contentful.config';
 import i18nConfig from 'next-i18next.config.js';
 const { i18n } = i18nConfig;
+
 
 export interface ContentfulContextInterface {
     locale: string;
@@ -27,9 +27,9 @@ export const ContentfulContext = createContext<ContentfulContextInterface>(conte
 
 export const useContentfulContext = () => useContext(ContentfulContext);
 
-const ContentfulContentProvider = ({ children }) => {
-    const params = useSearchParams();
-    const previewActive = params.get('preview') != null ? true : false;
+export const ContentfulContentProvider = ({ children }: any) => {
+    // const params = useSearchParams();
+    const previewActive = false; // TODO get previewActive from the URL param
 
     return (
         <ContentfulContext.Provider
@@ -46,4 +46,3 @@ const ContentfulContentProvider = ({ children }) => {
     );
 };
 
-export { ContentfulContentProvider };
