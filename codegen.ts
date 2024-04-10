@@ -34,18 +34,8 @@ export const config: CodegenConfig = {
       ],
       config: {
         exposeFetcher: true,
-        rawRequest: false,
-        inlineFragmentTypes: 'combine',
-        skipTypename: false,
-        exportFragmentSpreadSubTypes: true,
-        dedupeFragments: true,
-        preResolveTypes: true,
-        withHooks: true,
-        fetcher: '@/lib/fetchConfig#customFetcher',
-        debug: true,
-        verbose: true,
-        legacyMode: false,
-        isReactHook: false
+        fetcher: '@/lib/fetchConfig#customFetcher'
+
       },
     },
   },

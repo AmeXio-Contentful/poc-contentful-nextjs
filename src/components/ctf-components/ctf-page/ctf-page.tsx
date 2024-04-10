@@ -32,7 +32,7 @@ export default async function CtfPage() {
     metaTags.no_follow === true ? 'nofollow' : undefined,
   ].filter((x): x is string => x !== undefined);
 
-  const testVar = {
+  const contentfulData = {
      sys: { id: 'VL0GACJpBfmSRvACLvMdP'},
      __typename: "textBanner"
   }
@@ -87,16 +87,9 @@ export default async function CtfPage() {
               <ContentfulContentProvider>
                   <QueryClientContextProvider>
                       <ReactQueryDevtools initialIsOpen={false} />
-                          <ComponentResolver componentProps={testVar}/>
+                          <ComponentResolver componentProps={contentfulData} />
                   </QueryClientContextProvider>
               </ContentfulContentProvider>
-              {/*{topSection &&*/}
-              {/*    topSection.map((entry) => (*/}
-              {/*        <div key={entry!.sys.id}>*/}
-              {/*            {entry?.__typename}*/}
-              {/*            /!*<ComponentResolver componentProps={entry}/>*!/*/}
-              {/*        </div>*/}
-              {/*    ))}*/}
           </main>
       </>
   );

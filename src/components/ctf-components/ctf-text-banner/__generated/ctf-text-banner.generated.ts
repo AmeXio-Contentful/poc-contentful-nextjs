@@ -11,10 +11,7 @@ export type CtfTextBannerQueryVariables = Types.Exact<{
 }>;
 
 
-export type CtfTextBannerQuery = { __typename?: 'Query', textBanner?: (
-    { __typename?: 'TextBanner' }
-    & TextBannerFieldsFragment
-  ) | null };
+export type CtfTextBannerQuery = { __typename?: 'Query', textBanner?: { __typename: 'TextBanner', title?: string | null, description?: string | null, sys: { __typename?: 'Sys', id: string } } | null };
 
 export const TextBannerFieldsFragmentDoc = `
     fragment TextBannerFields on TextBanner {
@@ -33,7 +30,6 @@ export const CtfTextBannerDocument = `
   }
 }
     ${TextBannerFieldsFragmentDoc}`;
-
 export const useCtfTextBannerQuery = <
       TData = CtfTextBannerQuery,
       TError = unknown
@@ -43,7 +39,7 @@ export const useCtfTextBannerQuery = <
     ) =>
     useQuery<CtfTextBannerQuery, TError, TData>(
       ['CtfTextBanner', variables],
-        customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables, options),
+        customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables) as any,
       options
     );
 useCtfTextBannerQuery.fetcher = (variables: CtfTextBannerQueryVariables, options?: RequestInit['headers']) => customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables, options);

@@ -1,6 +1,3 @@
-import { QueryFunction, QueryKey } from "@tanstack/query-core";
-import { CtfTextBannerQuery } from "@/components/ctf-components/ctf-text-banner/__generated/ctf-text-banner.generated";
-
 require('dotenv').config()
 
 export const fetchConfig = {
@@ -20,16 +17,16 @@ export const fetchConfig = {
     },
 };
 
-export async function customFetcher<TData, TVariables extends { preview?: boolean | null }>(
+export async function customFetcher<TData, TVariables extends { preview?: boolean | null | any }>(
     query: string,
     variables?: TVariables,
     options?: RequestInit['headers'],
 ) {
-    return await fetch(fetchConfig.endpoint as string, {
-        method: 'POST',
-        ...options,
-        ...(variables?.preview ? fetchConfig.previewParams : fetchConfig.params),
-        body: JSON.stringify({query, variables}),
-    });
+        return await fetch(fetchConfig.endpoint as string, {
+            method: 'POST',
+            ...options,
+            ...(variables?.preview ? fetchConfig.previewParams : fetchConfig.params),
+            body: JSON.stringify({ query, variables }),
+        });
 }
 

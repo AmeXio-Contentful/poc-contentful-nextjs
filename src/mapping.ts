@@ -8,6 +8,6 @@ export const componentMap = {
 
 export const componentGqlMap = {
     textBanner: dynamic(() =>
-        import('@/components/ctf-components/ctf-text-banner/ctf-text-banner-ggl').then(module => module.CtfTextBannerGql),
+        import('@/components/ctf-components/ctf-text-banner/ctf-text-banner-ggl').then(module => module.CtfTextBannerGql) as any,
     )
 };

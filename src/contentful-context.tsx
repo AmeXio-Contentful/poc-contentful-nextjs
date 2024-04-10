@@ -28,11 +28,11 @@ export const ContentfulContext = createContext<ContentfulContextInterface>(conte
 export const useContentfulContext = () => useContext(ContentfulContext);
 
 export const ContentfulContentProvider = ({ children }: any) => {
-    const previewActive = false; // TODO get previewActive from the URL param
+    const previewActive = false; // not yet configured, so not available
     return (
         <ContentfulContext.Provider
             value={{
-                locale: process.env.DEFAULT_LOCALE as string, // TODO get locale from router
+                locale: process.env.DEFAULT_LOCALE as string,
                 spaceIds: {
                     main: process.env.CONTENTFUL_SPACE_ID as string,
                 },
