@@ -1,3 +1,6 @@
+import { QueryFunction, QueryKey } from "@tanstack/query-core";
+import { CtfTextBannerQuery } from "@/components/ctf-components/ctf-text-banner/__generated/ctf-text-banner.generated";
+
 require('dotenv').config()
 
 export const fetchConfig = {
@@ -21,22 +24,12 @@ export async function customFetcher<TData, TVariables extends { preview?: boolea
     query: string,
     variables?: TVariables,
     options?: RequestInit['headers'],
-): Promise<any> {
-
-    const res = await fetch(fetchConfig.endpoint as string, {
+) {
+    return await fetch(fetchConfig.endpoint as string, {
         method: 'POST',
         ...options,
         ...(variables?.preview ? fetchConfig.previewParams : fetchConfig.params),
-        body: JSON.stringify({ query, variables }),
+        body: JSON.stringify({query, variables}),
     });
-
-    const json = await res.json();
-
-    if (json.errors) {
-        const { message } = json.errors[0];
-        throw new Error(message);
-    }
-
-    console.log("json", json.data);
-    return json.data;
 }
+

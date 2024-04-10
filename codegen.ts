@@ -33,7 +33,6 @@ export const config: CodegenConfig = {
         'typescript-react-query'
       ],
       config: {
-        exposeQueryKeys: true,
         exposeFetcher: true,
         rawRequest: false,
         inlineFragmentTypes: 'combine',
@@ -42,7 +41,11 @@ export const config: CodegenConfig = {
         dedupeFragments: true,
         preResolveTypes: true,
         withHooks: true,
-        fetcher: '@/lib/fetchConfig#customFetcher'
+        fetcher: '@/lib/fetchConfig#customFetcher',
+        debug: true,
+        verbose: true,
+        legacyMode: false,
+        isReactHook: false
       },
     },
   },

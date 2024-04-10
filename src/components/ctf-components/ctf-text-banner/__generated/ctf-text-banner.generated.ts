@@ -33,6 +33,7 @@ export const CtfTextBannerDocument = `
   }
 }
     ${TextBannerFieldsFragmentDoc}`;
+
 export const useCtfTextBannerQuery = <
       TData = CtfTextBannerQuery,
       TError = unknown
@@ -42,10 +43,7 @@ export const useCtfTextBannerQuery = <
     ) =>
     useQuery<CtfTextBannerQuery, TError, TData>(
       ['CtfTextBanner', variables],
-      customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables),
+        customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables, options),
       options
     );
-
-useCtfTextBannerQuery.getKey = (variables: CtfTextBannerQueryVariables) => ['CtfTextBanner', variables];
-
 useCtfTextBannerQuery.fetcher = (variables: CtfTextBannerQueryVariables, options?: RequestInit['headers']) => customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables, options);
