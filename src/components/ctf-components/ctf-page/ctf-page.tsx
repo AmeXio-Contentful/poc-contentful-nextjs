@@ -20,7 +20,7 @@ export default async function CtfPage() {
   const { seo } = page || {};
 
   const metaTags = {
-    title: seo?.title ?? page.pageName,
+    title: seo?.title ?? page?.pageName,
     description: seo?.description,
     image: seo?.image,
     no_index: seo?.noIndex,
@@ -38,8 +38,8 @@ export default async function CtfPage() {
   }
 
   const topSection =
-    page.topSectionCollection &&
-    page.topSectionCollection.items.filter((it) => !!it);
+    page?.topSectionCollection &&
+    page?.topSectionCollection.items.filter((it) => !!it);
 
   return (
       <>
@@ -74,11 +74,11 @@ export default async function CtfPage() {
                       content={`${metaTags.image.url}?w=1200&h=630&f=faces&fit=fill`}
                   />
               )}
-              {page.slug && (
+              {page?.slug && (
                   <meta
                       key="og:url"
                       property="og:url"
-                      content={`${contentfulConfig.meta.url}/${page.slug === 'home' ? '' : `/${page.slug}`}`}
+                      content={`${contentfulConfig.meta.url}/${page?.slug === 'home' ? '' : `/${page?.slug}`}`}
                   />
               )}
               <meta key="og:locale" property="og:locale" content={locale} />
@@ -94,4 +94,3 @@ export default async function CtfPage() {
       </>
   );
 }
-
