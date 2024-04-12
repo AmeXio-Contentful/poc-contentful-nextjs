@@ -1,5 +1,5 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
-import {fetchConfig} from "./src/lib/fetchConfig";
+import { fetchConfig} from "./src/lib/fetchConfig";
 
 export const config: CodegenConfig = {
   overwrite: true,
@@ -10,12 +10,6 @@ export const config: CodegenConfig = {
     },
   ],
   generates: {
-    './src/lib/__generated/graphql.schema.json': {
-      plugins: ['introspection'],
-    },
-    './src/lib/__generated/graphql.schema.graphql': {
-      plugins: ['schema-ast'],
-    },
     './src/lib/__generated/graphql.types.ts': {
       plugins: ['typescript', 'typescript-operations'],
       documents: ['./src/**/*.graphql'],
@@ -33,9 +27,16 @@ export const config: CodegenConfig = {
         'typescript-react-query'
       ],
       config: {
+        addExplicitOverride: true,
         exposeFetcher: true,
-        fetcher: '@/lib/fetchConfig#customFetcher'
-
+        exposeQueryKeys: true,
+        exposeSuspendQuery: true,
+        reactQueryVersion: 5,
+        legacyMode: false,
+        fetcher: {
+          func: '@/lib/fetchConfig#customFetcher',
+          isReactHook: false,
+        }
       },
     },
   },

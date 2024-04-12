@@ -11,10 +11,7 @@ interface CtfTextBannerGqlPropsInterface {
 }
 
 export async function CtfTextBannerGql({ id, locale, preview }: CtfTextBannerGqlPropsInterface) {
-    const res = await useCtfTextBannerQuery.fetcher({ id, locale, preview })
-
-    const data = await res.json();
-    const componentTextBanner =  data.data?.textBanner;
-    return <TextBanner {...componentTextBanner} />;
+    const data = await useCtfTextBannerQuery.fetcher({id: id, locale: locale, preview: preview})
+    return <TextBanner {...data.data?.textBanner} />;
 }
 

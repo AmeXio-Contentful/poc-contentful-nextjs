@@ -21,12 +21,17 @@ export async function customFetcher<TData, TVariables extends { preview?: boolea
     query: string,
     variables?: TVariables,
     options?: RequestInit['headers'],
-) {
-        return await fetch(fetchConfig.endpoint as string, {
+): Promise<any>  {
+         const res = await fetch(fetchConfig.endpoint as string, {
             method: 'POST',
             ...options,
             ...(variables?.preview ? fetchConfig.previewParams : fetchConfig.params),
             body: JSON.stringify({ query, variables }),
         });
+
+         return await res.json();
 }
+
+
+
 
