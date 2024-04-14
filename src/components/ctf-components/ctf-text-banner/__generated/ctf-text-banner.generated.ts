@@ -40,11 +40,12 @@ export const useCtfTextBannerQuery = <
       options?: Omit<UseQueryOptions<CtfTextBannerQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<CtfTextBannerQuery, TError, TData>['queryKey'] }
     ) => {
     
-    return useQuery<CtfTextBannerQuery, TError, TData>({
-            queryKey: ['CtfTextBanner', variables],
-            queryFn: customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables) as any,
-            ...options
-        }
+    return useQuery<CtfTextBannerQuery, TError, TData>(
+      {
+    queryKey: ['CtfTextBanner', variables],
+    queryFn: customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(CtfTextBannerDocument, variables) as any,
+    ...options
+  }
     )};
 
 useCtfTextBannerQuery.getKey = (variables: CtfTextBannerQueryVariables) => ['CtfTextBanner', variables];
