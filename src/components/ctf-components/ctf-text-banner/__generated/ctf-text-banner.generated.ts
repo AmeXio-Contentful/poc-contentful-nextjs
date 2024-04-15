@@ -1,4 +1,4 @@
-import * as Types from '@/lib/__generated/graphql.types';
+import * as Types from '../../../../lib/__generated/graphql.types';
 
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import { customFetcher } from '@/lib/fetchConfig';
@@ -60,7 +60,7 @@ export const useCtfTextBannerQuery = <
     queryFn: customFetcher<CtfTextBannerQuery, CtfTextBannerQueryVariables>(
       CtfTextBannerDocument,
       variables,
-    ) as any,
+    ),
     ...options,
   });
 };

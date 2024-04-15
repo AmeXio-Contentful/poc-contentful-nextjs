@@ -374,6 +374,7 @@ export type AuthorFilter = {
 export type AuthorLinkingCollections = {
   __typename?: 'AuthorLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
+  heroBannerCollection?: Maybe<HeroBannerCollection>;
 };
 
 export type AuthorLinkingCollectionsEntryCollectionArgs = {
@@ -382,6 +383,37 @@ export type AuthorLinkingCollectionsEntryCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
 };
+
+export type AuthorLinkingCollectionsHeroBannerCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<
+    Array<InputMaybe<AuthorLinkingCollectionsHeroBannerCollectionOrder>>
+  >;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum AuthorLinkingCollectionsHeroBannerCollectionOrder {
+  ButtonLinkAsc = 'buttonLink_ASC',
+  ButtonLinkDesc = 'buttonLink_DESC',
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  FullWidthAsc = 'fullWidth_ASC',
+  FullWidthDesc = 'fullWidth_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TestAsc = 'test_ASC',
+  TestDesc = 'test_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+}
 
 export enum AuthorOrder {
   NameAsc = 'name_ASC',
@@ -3344,6 +3376,8 @@ export type HeroBanner = Entry & {
   linkedFrom?: Maybe<HeroBannerLinkingCollections>;
   subtitle?: Maybe<Scalars['String']['output']>;
   sys: Sys;
+  test?: Maybe<Scalars['Int']['output']>;
+  testmeer?: Maybe<Author>;
   title?: Maybe<Scalars['String']['output']>;
 };
 
@@ -3376,6 +3410,18 @@ export type HeroBannerLinkedFromArgs = {
 /** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
 export type HeroBannerSubtitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+export type HeroBannerTestArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+export type HeroBannerTestmeerArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<AuthorFilter>;
 };
 
 /** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
@@ -3421,6 +3467,17 @@ export type HeroBannerFilter = {
   subtitle_not_contains?: InputMaybe<Scalars['String']['input']>;
   subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
+  test?: InputMaybe<Scalars['Int']['input']>;
+  test_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  test_gt?: InputMaybe<Scalars['Int']['input']>;
+  test_gte?: InputMaybe<Scalars['Int']['input']>;
+  test_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  test_lt?: InputMaybe<Scalars['Int']['input']>;
+  test_lte?: InputMaybe<Scalars['Int']['input']>;
+  test_not?: InputMaybe<Scalars['Int']['input']>;
+  test_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  testmeer?: InputMaybe<CfAuthorNestedFilter>;
+  testmeer_exists?: InputMaybe<Scalars['Boolean']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   title_contains?: InputMaybe<Scalars['String']['input']>;
   title_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -3487,6 +3544,8 @@ export enum HeroBannerOrder {
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TestAsc = 'test_ASC',
+  TestDesc = 'test_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC',
 }
@@ -5990,6 +6049,21 @@ export enum TopicProductOrder {
 
 export type _Node = {
   _id: Scalars['ID']['output'];
+};
+
+export type CfAuthorNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfAuthorNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfAuthorNestedFilter>>>;
+  avatar_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
 };
 
 export type CfMenuGroupNestedFilter = {
