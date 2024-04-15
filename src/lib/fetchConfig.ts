@@ -16,20 +16,26 @@ export const fetchConfig = {
   },
 };
 
-export async function customFetcher<
+export function customFetcher<
   TData,
-  TVariables extends { preview?: boolean | null | any },
->(
-  query: string,
-  variables?: TVariables,
-  options?: RequestInit['headers'],
-): Promise<any> {
-  const res = await fetch(fetchConfig.endpoint as string, {
-    method: 'POST',
-    ...options,
-    ...(variables?.preview ? fetchConfig.previewParams : fetchConfig.params),
-    body: JSON.stringify({ query, variables }),
-  });
+  TVariables extends { preview?: boolean | null },
+>(query: string, variables?: TVariables, options?: RequestInit['headers']) {
+  return async (): Promise<TData> => {
+    const res = await fetch(fetchConfig.endpoint as string, {
+      method: 'POST',
+      ...options,
+      ...(variables?.preview ? fetchConfig.previewParams : fetchConfig.params),
+      body: JSON.stringify({ query, variables }),
+    });
 
-  return await res.json();
+    const json = await res.json();
+
+    if (json.errors) {
+      const { message } = json.errors[0];
+
+      throw new Error(message);
+    }
+
+    return json.data;
+  };
 }

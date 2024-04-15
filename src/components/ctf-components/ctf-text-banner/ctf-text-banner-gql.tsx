@@ -19,6 +19,6 @@ export async function CtfTextBannerGql({
     id: id,
     locale: locale,
     preview: preview,
-  });
-  return <TextBanner {...data.data?.textBanner} />;
+  })();
+  return <TextBanner {...data?.textBanner} />;
 }

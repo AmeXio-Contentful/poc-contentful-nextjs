@@ -3,10 +3,10 @@ import * as Types from '../../../../lib/__generated/graphql.types';
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import { customFetcher } from '@/lib/fetchConfig';
 export type TextBannerFieldsFragment = {
-  __typename: 'TextBanner';
+  __typename?: 'TextBanner';
   title?: string | null;
   description?: string | null;
-  sys: { __typename?: 'Sys'; id: string };
+  sys?: { __typename?: 'Sys'; id: string };
 };
 
 export type CtfTextBannerQueryVariables = Types.Exact<{
