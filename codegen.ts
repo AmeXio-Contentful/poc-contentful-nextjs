@@ -25,6 +25,7 @@ export const config: CodegenConfig = {
       plugins: ['typescript-operations', 'typescript-react-query'],
       config: {
         addExplicitOverride: true,
+        avoidOptionals: true,
         exposeFetcher: true,
         exposeQueryKeys: true,
         exposeSuspendQuery: true,

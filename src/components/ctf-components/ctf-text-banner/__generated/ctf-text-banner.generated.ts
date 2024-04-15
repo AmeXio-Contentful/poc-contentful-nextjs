@@ -3,24 +3,24 @@ import * as Types from '../../../../lib/__generated/graphql.types';
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import { customFetcher } from '@/lib/fetchConfig';
 export type TextBannerFieldsFragment = {
-  __typename?: 'TextBanner';
-  title?: string | null;
-  description?: string | null;
-  sys?: { __typename?: 'Sys'; id: string };
+  __typename: 'TextBanner';
+  title: string | null;
+  description: string | null;
+  sys: { __typename?: 'Sys'; id: string };
 };
 
 export type CtfTextBannerQueryVariables = Types.Exact<{
   id: Types.Scalars['String']['input'];
-  locale?: Types.InputMaybe<Types.Scalars['String']['input']>;
-  preview?: Types.InputMaybe<Types.Scalars['Boolean']['input']>;
+  locale: Types.InputMaybe<Types.Scalars['String']['input']>;
+  preview: Types.InputMaybe<Types.Scalars['Boolean']['input']>;
 }>;
 
 export type CtfTextBannerQuery = {
   __typename?: 'Query';
-  textBanner?: {
+  textBanner: {
     __typename: 'TextBanner';
-    title?: string | null;
-    description?: string | null;
+    title: string | null;
+    description: string | null;
     sys: { __typename?: 'Sys'; id: string };
   } | null;
 };
