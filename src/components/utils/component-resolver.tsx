@@ -2,7 +2,7 @@
 
 import React, { useMemo } from 'react';
 import { useContentfulContext } from '@/contentful-context';
-import { componentGqlMap, componentMap } from '@/mapping';
+import { componentMap } from '@/mapping';
 
 let previousComponent: string | null = null;
 interface Props {
@@ -28,7 +28,7 @@ export const ComponentResolver = (props: Props) => {
     const { locale } = useContentfulContext();
 
     const componentMapTransformed = componentMap as any;
-    const ComponentGql = [componentProps.__typename] as any;
+    const ComponentGql = componentMapTransformed[componentProps.__typename];
 
     const shouldForceGql = useMemo(() => {
         if (props.forceGql === true) {
@@ -76,7 +76,8 @@ export const ComponentResolver = (props: Props) => {
                             className={props.className}
                             previousComponent={previousComponentProp}
                         />
-                    ) : (
+                    )
+                        : (
                         <ComponentGql
                             id={componentProps.sys.id}
                             __typename={componentProps.__typename}
