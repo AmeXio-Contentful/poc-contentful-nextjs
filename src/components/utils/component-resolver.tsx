@@ -21,19 +21,14 @@ interface Props {
     inline?: boolean;
 }
 
-
-interface index {
-    [key: string]: any
-}
-
 export const ComponentResolver = (props: Props) => {
     const { componentProps, inline = false } = props;
     const { previewActive } = useContentfulContext();
 
     const { locale } = useContentfulContext();
 
-    // @ts-ignore
-    const ComponentGql = componentGqlMap[componentProps.__typename];
+    const componentMapTransformed = componentMap as any;
+    const ComponentGql = [componentProps.__typename] as any;
 
     const shouldForceGql = useMemo(() => {
         if (props.forceGql === true) {
@@ -59,8 +54,8 @@ export const ComponentResolver = (props: Props) => {
         return true;
     }, [ComponentGql, componentProps, props.forceGql]);
 
-    // @ts-ignore
-    const Component = !shouldForceGql && componentMap[componentProps.__typename];
+
+    const Component = !shouldForceGql && componentMapTransformed[componentProps.__typename];
 
     const previousComponentProp = previousComponent;
 
@@ -92,6 +87,5 @@ export const ComponentResolver = (props: Props) => {
                         />
                     )}
                 </div>
-        // <CtfTextBannerGql id={componentProps.sys.id} locale={locale} preview={previewActive}></CtfTextBannerGql>
     );
 };
