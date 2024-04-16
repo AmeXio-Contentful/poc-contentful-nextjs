@@ -1,5 +1,5 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
-import { fetchConfig } from '@/lib/fetchConfig';
+import { fetchConfig } from './src/lib/fetchConfig';
 
 export const config: CodegenConfig = {
   overwrite: true,

@@ -1,12 +1,12 @@
 'use client';
 
-import { useContentfulContext } from '@/contentful-context';
-import { componentMap } from '@/mapping';
 import React, { useMemo } from 'react';
+import { useContentfulContext } from '@/contentful-context';
+import { componentMap, componentGqlMap } from '@/mapping';
 
 let previousComponent: string | null = null;
 
-interface Props {
+export interface Props {
   componentProps: {
     sys: { id: string };
     __typename: string;
@@ -23,13 +23,15 @@ interface Props {
 }
 
 export const ComponentResolver = (props: Props) => {
+
   const { componentProps, inline = false } = props;
   const { previewActive } = useContentfulContext();
 
   const { locale } = useContentfulContext();
 
   const componentMapTransformed = componentMap as any;
-  const ComponentGql = componentMapTransformed[componentProps.__typename];
+  const componentGqlMapTransformed = componentGqlMap as any;
+  const ComponentGql = componentGqlMapTransformed[componentProps.__typename];
 
   const shouldForceGql = useMemo(() => {
     if (props.forceGql === true) {
@@ -58,8 +60,7 @@ export const ComponentResolver = (props: Props) => {
     return true;
   }, [ComponentGql, componentProps, props.forceGql]);
 
-  const Component =
-    !shouldForceGql && componentMapTransformed[componentProps.__typename];
+  const Component = !shouldForceGql && componentMapTransformed[componentProps.__typename];
 
   const previousComponentProp = previousComponent;
 

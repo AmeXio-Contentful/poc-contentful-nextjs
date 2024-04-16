@@ -64,6 +64,19 @@ export async function getAmeXioPage(
           }
         }
       }
+      pageContentCollection(limit: 20) {
+        items {
+          ... on Entry {
+            __typename
+            sys {
+              id
+            }
+          }
+          ... {
+            __typename
+          }
+        }
+      }
       extraSectionCollection(limit: 20) {
         items {
           ... on Entry {
