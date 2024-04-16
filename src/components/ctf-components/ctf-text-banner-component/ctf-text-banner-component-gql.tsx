@@ -1,10 +1,6 @@
 'use client';
 
 import React from 'react';
-import { CtfDuplexComponent } from '@/components/ctf-components/ctf-duplex-component/ctf-duplex-component';
-import {
-  useCtfComponentDuplexQuery
-} from "@/components/ctf-components/ctf-duplex-component/__generated/ctf-duplex-component.generated";
 import {
   CtfTextBannerQueryVariables,
   useCtfTextBannerQuery
