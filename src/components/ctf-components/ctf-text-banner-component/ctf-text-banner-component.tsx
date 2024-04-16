@@ -6,8 +6,9 @@ export const CtfTextBannerComponent = (
   const { title } = props;
   return (
     <div>
-      <p>
-        resource type {props.__typename} with internal name: {title}
+      <p className={'text-pink-700'}>
+        CtfTextBannerComponent
+        <span className={'block italic'}>with title: &quot;{title}&quot;</span>
       </p>
     </div>
   );

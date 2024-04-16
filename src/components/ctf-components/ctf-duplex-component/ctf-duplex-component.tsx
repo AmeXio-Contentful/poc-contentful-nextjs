@@ -4,8 +4,9 @@ export const CtfDuplexComponent = (props: ComponentDuplexFieldsFragment) => {
   const { internalName } = props;
   return (
     <div>
-      <p>
-        resource type {props.__typename} with internal name: {internalName}
+      <p className={'text-blue-700'}>
+        CtfDuplexComponent
+        <span className={'block italic'}>{internalName}</span>
       </p>
     </div>
   );

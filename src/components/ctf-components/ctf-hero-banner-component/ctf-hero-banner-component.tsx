@@ -6,8 +6,9 @@ export const CtfHeroBannerComponent = (
   const { internalName } = props;
   return (
     <div>
-      <p>
-        resource type {props.__typename} with internal name: {internalName}
+      <p className={'text-green-700'}>
+        This is the CtfHeroBannerComponent
+        <span className={'block italic'}>{internalName}</span>
       </p>
     </div>
   );
