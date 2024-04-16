@@ -25,6 +25,7 @@ export async function customFetcher<
   options?: RequestInit['headers'],
 ): Promise<any> {
   const res = await fetch(fetchConfig.endpoint as string, {
+    cache: "default",
     method: 'POST',
     ...options,
     ...(variables?.preview ? fetchConfig.previewParams : fetchConfig.params),
