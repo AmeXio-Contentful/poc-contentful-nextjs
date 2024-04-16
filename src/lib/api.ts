@@ -5,7 +5,7 @@ async function fetchGraphQL(
   query: string,
   preview = false,
 ): Promise<any> {
-  return fetch(
+    return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
       method: 'POST',
