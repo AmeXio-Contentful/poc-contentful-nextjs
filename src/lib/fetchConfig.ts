@@ -23,7 +23,7 @@ export async function customFetcher<
   query: string,
   variables?: TVariables,
   options?: RequestInit['headers'],
-): Promise<TData> {
+): Promise<any> {
   const res = await fetch(fetchConfig.endpoint as string, {
     method: 'POST',
     ...options,
