@@ -1,4 +1,5 @@
 import { Page } from '@/lib/types';
+import * as process from 'node:process';
 
 async function fetchGraphQL(
   tags: string[] | undefined,
@@ -64,14 +65,18 @@ export async function getAmeXioPage(
           }
         }
       }
-      pageContent {
-        ... on Entry {
-          __typename
-          sys {
-            id
+      pageContentCollection(limit: 20) {
+        items {
+          ... on Entry {
+            __typename
+            sys {
+              id
+            }
+          }
+          ... {
+            __typename
           }
         }
-        ...{__typename}
       }
       extraSectionCollection(limit: 20) {
         items {

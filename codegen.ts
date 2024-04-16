@@ -1,37 +1,41 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
+import { fetchConfig } from './src/lib/fetchConfig';
 
-const fetchConfig = {
-  endpoint: `https://graphql.contentful.com/content/v1/spaces/${String(
-    process.env.CONTENTFUL_SPACE_ID,
-  )}`,
-  params: {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-    },
-  },
-  previewParams: {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN}`,
-    },
-  },
-};
-
-const config: CodegenConfig = {
+export const config: CodegenConfig = {
   overwrite: true,
+  ignoreNoDocuments: true,
   schema: [
     {
       [fetchConfig.endpoint]: fetchConfig.params,
     },
   ],
   generates: {
-    'src/lib/types.ts': { plugins: ['typescript'] },
-    'src/lib/__generated/graphql.schema.json': {
-      plugins: ['introspection'],
+    './src/lib/__generated/graphql.types.ts': {
+      plugins: ['typescript', 'typescript-operations'],
+      documents: ['./src/**/*.graphql'],
     },
-    'src/lib/__generated/graphql.schema.graphql': {
-      plugins: ['schema-ast'],
+    './src/': {
+      documents: ['./src/**/*.graphql'],
+      preset: 'near-operation-file',
+      presetConfig: {
+        extension: '.generated.ts',
+        baseTypesPath: 'lib/__generated/graphql.types.ts',
+        folder: '__generated',
+      },
+      plugins: ['typescript-operations', 'typescript-react-query'],
+      config: {
+        addExplicitOverride: true,
+        avoidOptionals: true,
+        exposeFetcher: true,
+        exposeQueryKeys: true,
+        exposeSuspendQuery: true,
+        reactQueryVersion: 5,
+        legacyMode: false,
+        fetcher: {
+          func: '@/lib/fetchConfig#customFetcher',
+          isReactHook: false,
+        },
+      },
     },
   },
 };

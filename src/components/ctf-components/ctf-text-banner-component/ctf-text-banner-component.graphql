@@ -1,0 +1,13 @@
+fragment ComponentTextBannerFields on TextBanner {
+  __typename
+  sys {
+    id
+  }
+  title
+}
+
+query CtfTextBanner($id: String!, $locale: String, $preview: Boolean) {
+  textBanner(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentTextBannerFields
+  }
+}
