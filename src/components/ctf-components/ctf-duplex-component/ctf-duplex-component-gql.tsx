@@ -2,9 +2,7 @@
 
 import React from 'react';
 import { CtfDuplexComponent } from '@/components/ctf-components/ctf-duplex-component/ctf-duplex-component';
-import {
-  useCtfComponentDuplexQuery
-} from "@/components/ctf-components/ctf-duplex-component/__generated/ctf-duplex-component.generated";
+import { useCtfComponentDuplexQuery } from '@/components/ctf-components/ctf-duplex-component/__generated/ctf-duplex-component.generated';
 
 interface CtfDuplexComponentGqlPropsInterface {
   id: any;
@@ -17,11 +15,11 @@ export async function CtfDuplexComponentGql({
   locale,
   preview,
 }: CtfDuplexComponentGqlPropsInterface) {
-  const data = await useCtfComponentDuplexQuery.fetcher({
+  const data = (await useCtfComponentDuplexQuery.fetcher({
     id: id,
     locale: locale,
     preview: preview,
-  }) as any;
+  })) as any;
 
   return <CtfDuplexComponent {...data.data?.componentDuplex} />;
 }

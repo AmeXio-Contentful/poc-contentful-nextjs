@@ -23,7 +23,6 @@ export interface Props {
 }
 
 export const ComponentResolver = (props: Props) => {
-
   const { componentProps, inline = false } = props;
   const { previewActive } = useContentfulContext();
 
@@ -60,7 +59,8 @@ export const ComponentResolver = (props: Props) => {
     return true;
   }, [ComponentGql, componentProps, props.forceGql]);
 
-  const Component = !shouldForceGql && componentMapTransformed[componentProps.__typename];
+  const Component =
+    !shouldForceGql && componentMapTransformed[componentProps.__typename];
 
   const previousComponentProp = previousComponent;
 

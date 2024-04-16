@@ -1,12 +1,12 @@
 import { Page } from '@/lib/types';
-import * as process from "node:process";
+import * as process from 'node:process';
 
 async function fetchGraphQL(
   tags: string[] | undefined,
   query: string,
   preview = false,
 ): Promise<any> {
-    return fetch(
+  return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
     {
       method: 'POST',
