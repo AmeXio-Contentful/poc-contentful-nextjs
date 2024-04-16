@@ -1,13 +1,15 @@
 'use client';
 
 import React from 'react';
-import {
-  CtfTextBannerQueryVariables,
-  useCtfTextBannerQuery
-} from "@/components/ctf-components/ctf-text-banner-component/__generated/ctf-text-banner-component.generated";
+
 import {
   CtfTextBannerComponent
 } from "@/components/ctf-components/ctf-text-banner-component/ctf-text-banner-component";
+import {
+  useCtfTextBannerQuery
+} from "@/components/ctf-components/ctf-text-banner-component/__generated/ctf-text-banner-component.generated";
+
+
 
 interface CtfDuplexComponentGqlPropsInterface {
   id: any;
@@ -19,7 +21,7 @@ export async function CtfTextBannerComponentGql({
   id,
   locale,
   preview,
-}: CtfTextBannerQueryVariables) {
+}: CtfDuplexComponentGqlPropsInterface) {
   const data = await useCtfTextBannerQuery.fetcher({
     id: id,
     locale: locale,

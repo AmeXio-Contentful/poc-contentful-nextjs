@@ -1,14 +1,19 @@
 'use client';
 
 import React from 'react';
-import { useCtfTextBannerQuery } from './__generated/ctf-text-banner.generated';
-import { TextBanner } from '@/components/ctf-components/ctf-text-banner/ctf-text-banner';
+import {
+  useCtfTextBannerQuery
+} from "@/components/ctf-components/ctf-text-banner-component/__generated/ctf-text-banner-component.generated";
+import {
+  CtfTextBannerComponent
+} from "@/components/ctf-components/ctf-text-banner-component/ctf-text-banner-component";
 
 interface CtfTextBannerGqlPropsInterface {
   id: any;
   locale: any;
   preview: any;
 }
+
 
 export async function CtfTextBannerGql({
   id,
@@ -20,5 +25,5 @@ export async function CtfTextBannerGql({
     locale: locale,
     preview: preview,
   });
-  return <TextBanner {...data.data?.textBanner} />;
+  return <CtfTextBannerComponent {...data.data?.textBanner} />;
 }
