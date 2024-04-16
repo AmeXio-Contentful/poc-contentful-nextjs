@@ -1,4 +1,5 @@
 import { Page } from '@/lib/types';
+import * as process from "node:process";
 
 async function fetchGraphQL(
   tags: string[] | undefined,

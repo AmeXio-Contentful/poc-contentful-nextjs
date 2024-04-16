@@ -89,30 +89,32 @@ export default async function CtfPage() {
                 )}
                 <meta key="og:locale" property="og:locale" content={locale}/>
             </Head>
-            <main className="flex min-h-screen flex-col items-center justify-between p-24">
-                <ContentfulContentProvider>
-                    <QueryClientContextProvider>
-                        <ReactQueryDevtools initialIsOpen={false}/>
-                        {topSection?.map(entry => (
-                            <div key={entry.sys.id}>
-                                <ComponentResolver componentProps={entry!}/>
-                            </div>
-                        ))}
+            <body>
+                <main className="flex min-h-screen flex-col items-center justify-between p-24">
+                    <ContentfulContentProvider>
+                        <QueryClientContextProvider>
+                            <ReactQueryDevtools initialIsOpen={false}/>
+                            {topSection?.map(entry => (
+                                <div key={entry.sys.id}>
+                                    <ComponentResolver componentProps={entry!}/>
+                                </div>
+                            ))}
 
-                        {pageSection?.map(entry => (
-                            <div key={entry.sys.id}>
-                                <ComponentResolver componentProps={entry!} />
-                            </div>
-                        ))}
+                            {pageSection?.map(entry => (
+                                <div key={entry.sys.id}>
+                                    <ComponentResolver componentProps={entry!}/>
+                                </div>
+                            ))}
 
-                        {extraSection?.map(entry => (
-                            <div key={entry.sys.id}>
-                                <ComponentResolver componentProps={entry!} />
-                            </div>
-                        ))}
-                    </QueryClientContextProvider>
-                </ContentfulContentProvider>
-            </main>
+                            {extraSection?.map(entry => (
+                                <div key={entry.sys.id}>
+                                    <ComponentResolver componentProps={entry!}/>
+                                </div>
+                            ))}
+                        </QueryClientContextProvider>
+                    </ContentfulContentProvider>
+                </main>
+            </body>
         </>
     );
 }
