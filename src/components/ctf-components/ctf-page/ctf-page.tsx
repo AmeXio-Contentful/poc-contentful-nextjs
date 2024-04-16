@@ -1,4 +1,4 @@
-import { ComponentResolver, Props } from '@/components/utils/component-resolver';
+import { ComponentResolver } from '@/components/utils/component-resolver';
 import { getAmeXioPage } from '@/lib/api';
 import { Page } from '@/lib/types';
 import { draftMode } from 'next/headers';
