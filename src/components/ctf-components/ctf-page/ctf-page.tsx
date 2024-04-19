@@ -9,6 +9,7 @@ import Head from 'next/head';
 import QueryClientContextProvider from '@/components/utils/query-client-provider';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ContentfulContentProvider } from '@/contentful-context';
+import CtfFormComponent from "@/components/ctf-components/ctf-form-component/ctf-form-component";
 
 const { i18n } = i18nConfig;
 
@@ -47,6 +48,7 @@ export default async function CtfPage() {
   const pageSection = page?.pageContentCollection?.items as ComponentProps[];
   const extraSection = page?.extraSectionCollection?.items as ComponentProps[];
 
+  console.log("pageSection", pageSection);
   return (
     <>
       <Head>
@@ -101,7 +103,7 @@ export default async function CtfPage() {
               ))}
 
               {pageSection?.map((entry) => (
-                <div key={entry.sys.id}>
+                <div className="w-full" key={entry.sys.id}>
                   <ComponentResolver componentProps={entry!} />
                 </div>
               ))}
@@ -111,6 +113,8 @@ export default async function CtfPage() {
                   <ComponentResolver componentProps={entry!} />
                 </div>
               ))}
+
+              <CtfFormComponent></CtfFormComponent>
             </QueryClientContextProvider>
           </ContentfulContentProvider>
         </main>

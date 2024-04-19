@@ -94,5 +94,6 @@ export async function getAmeXioPage(
     }`,
     isDraftMode,
   );
+  console.log("entries", entries);
   return extractPage(entries);
 }

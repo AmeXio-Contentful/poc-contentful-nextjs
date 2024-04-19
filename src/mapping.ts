@@ -1,47 +1,77 @@
 import dynamic from 'next/dynamic';
 
 export const componentMap = {
-  ComponentDuplex: dynamic(() =>
+  HeroBanner: dynamic(() =>
     import(
-      '@/components/ctf-components/ctf-duplex-component/ctf-duplex-component'
-    ).then((module) => module.CtfDuplexComponent),
+      '@/components/ctf-components/ctf-cta-banner-component/ctf-cta-banner-component'
+    ).then((module) => module.CtfCtaBannerComponent),
   ),
-  ComponentHeroBanner: dynamic(() =>
+  Title: dynamic(() =>
     import(
-      '@/components/ctf-components/ctf-hero-banner-component/ctf-hero-banner-component'
-    ).then((module) => module.CtfHeroBannerComponent),
+      '@/components/ctf-components/ctf-title-component/ctf-title-component'
+    ).then((module) => module.CtfTitleComponent),
   ),
-  TextBanner: dynamic(() =>
+  ContentBlock: dynamic(() =>
     import(
-      '@/components/ctf-components/ctf-text-banner-component/ctf-text-banner-component'
-    ).then((module) => module.CtfTextBannerComponent),
+      '@/components/ctf-components/ctf-content-block-component/ctf-content-block-component'
+    ).then((module) => module.CtfContentBlockComponent),
   ),
-  ComponentQuote: dynamic(() =>
+  ContentCarousel: dynamic(() =>
     import(
-      '@/components/ctf-components/ctf-quote-component/ctf-quote-component'
-    ).then((module) => module.CtfQuoteComponent),
+      '@/components/ctf-components/ctf-content-carousel-component/ctf-content-carousel-component'
+    ).then((module) => module.CtfContentCarouselComponent),
+  ),
+  ContentBlok: dynamic(() =>
+    import(
+      '@/components/ctf-components/ctf-content-block-join-us/ctf-content-block-join-us'
+    ).then((module) => module.CtfContentBlockJoinUs),
+  ),
+  ImageCarousel: dynamic(() =>
+    import(
+      '@/components/ctf-components/ctf-infinite-carousel-component/ctf-infinite-carousel-component'
+    ).then((module) => module.CtfInfiniteCarouselComponent),
+  ),
+  ContentBlokSplit: dynamic(() =>
+      import(
+          '@/components/ctf-components/ctf-content-block-split/ctf-content-block-split'
+          ).then((module) => module.CtfContentBlockSplit),
   ),
 };
 
 export const componentGqlMap = {
-  ComponentDuplex: dynamic(() =>
+  HeroBanner: dynamic(() =>
     import(
-      '@/components/ctf-components/ctf-duplex-component/ctf-duplex-component-gql'
-    ).then((module) => module.CtfDuplexComponentGql),
+      '@/components/ctf-components/ctf-cta-banner-component/ctf-cta-banner-component-gql'
+    ).then((module) => module.CtfCtaBannerComponentGql),
   ),
-  ComponentHeroBanner: dynamic(() =>
+  Title: dynamic(() =>
     import(
-      '@/components/ctf-components/ctf-hero-banner-component/ctf-hero-banner-component-gql'
-    ).then((module) => module.CtfHeroBannerComponentGql),
+      '@/components/ctf-components/ctf-title-component/ctf-title-component-gql'
+    ).then((module) => module.CtfTitleComponentGql),
   ),
-  TextBanner: dynamic(() =>
+  ContentBlock: dynamic(() =>
     import(
-      '@/components/ctf-components/ctf-text-banner-component/ctf-text-banner-component-gql'
-    ).then((module) => module.CtfTextBannerComponentGql),
+      '@/components/ctf-components/ctf-content-block-component/ctf-content-block-component-gql'
+    ).then((module) => module.CtfContentBlockComponentGql),
   ),
-  ComponentQuote: dynamic(() =>
+  ContentCarousel: dynamic(() =>
     import(
-      '@/components/ctf-components/ctf-quote-component/ctf-quote-component-gql'
-    ).then((module) => module.CtfQuoteComponentGql),
+      '@/components/ctf-components/ctf-content-carousel-component/ctf-content-carousel-component-gql'
+    ).then((module) => module.CtfContentCarouselComponentGql),
+  ),
+  ContentBlok: dynamic(() =>
+    import(
+      '@/components/ctf-components/ctf-content-block-join-us/ctf-content-block-join-us-gql'
+    ).then((module) => module.CtfContentBlockJoinUsGql),
+  ),
+  ImageCarousel: dynamic(() =>
+    import(
+      '@/components/ctf-components/ctf-infinite-carousel-component/ctf-infinite-carousel-component-gql'
+    ).then((module) => module.CtfInfiniteCarouselComponentGql),
+  ),
+  ContentBlokSplit: dynamic(() =>
+      import(
+          '@/components/ctf-components/ctf-content-block-split/ctf-content-block-split-gql'
+          ).then((module) => module.CtfContentBlockSplitGql),
   ),
 };

@@ -1,0 +1,27 @@
+fragment ComponentHeroBannerFields on HeroBanner {
+  __typename
+  sys {
+    id
+  }
+  title
+  subtitle
+  fullWidth
+  buttonText
+  buttonLink
+  internalName
+  backgroundImage {
+    title
+    description
+    contentType
+    fileName
+    url
+    width
+    height
+  }
+}
+
+query CtfComponentCtaBanner($id: String!, $locale: String, $preview: Boolean) {
+  heroBanner(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentHeroBannerFields
+  }
+}

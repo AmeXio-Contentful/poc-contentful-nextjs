@@ -72,23 +72,25 @@ export const ComponentResolver = (props: Props) => {
 
   return (
     <div className={componentProps.__typename}>
-      {Component ? (
-        <Component
-          {...componentProps}
-          locale={locale}
-          className={props.className}
-          previousComponent={previousComponentProp}
-        />
-      ) : (
-        <ComponentGql
-          id={componentProps.sys.id}
-          __typename={componentProps.__typename}
-          className={props.className}
-          preview={previewActive}
-          locale={locale}
-          previousComponent={previousComponentProp}
-        />
-      )}
+      <article>
+        {Component ? (
+          <Component
+            {...componentProps}
+            locale={locale}
+            className={props.className}
+            previousComponent={previousComponentProp}
+          />
+        ) : (
+          <ComponentGql
+            id={componentProps.sys.id}
+            __typename={componentProps.__typename}
+            className={props.className}
+            preview={previewActive}
+            locale={locale}
+            previousComponent={previousComponentProp}
+          />
+        )}
+      </article>
     </div>
   );
 };
