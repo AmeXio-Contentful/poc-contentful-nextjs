@@ -2,7 +2,7 @@ import { ComponentResolver } from '@/components/utils/component-resolver';
 import { getAmeXioPage } from '@/lib/api';
 import { Page } from '@/lib/types';
 import { draftMode } from 'next/headers';
-import React from 'react';
+import React, {Fragment} from 'react';
 import contentfulConfig from 'contentful.config';
 import i18nConfig from 'next-i18next.config.js';
 import Head from 'next/head';
@@ -10,7 +10,6 @@ import QueryClientContextProvider from '@/components/utils/query-client-provider
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ContentfulContentProvider } from '@/contentful-context';
 import CtfFormComponent from "@/components/ctf-components/ctf-form-component/ctf-form-component";
-
 const { i18n } = i18nConfig;
 
 interface ComponentProps {
@@ -92,7 +91,7 @@ export default async function CtfPage() {
         <meta key="og:locale" property="og:locale" content={locale} />
       </Head>
       <body>
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <main>
           <ContentfulContentProvider>
             <QueryClientContextProvider>
               <ReactQueryDevtools initialIsOpen={false} />
@@ -103,9 +102,9 @@ export default async function CtfPage() {
               ))}
 
               {pageSection?.map((entry) => (
-                <div className="w-full" key={entry.sys.id}>
+                <Fragment key={entry.sys.id}>
                   <ComponentResolver componentProps={entry!} />
-                </div>
+                </Fragment>
               ))}
 
               {extraSection?.map((entry) => (

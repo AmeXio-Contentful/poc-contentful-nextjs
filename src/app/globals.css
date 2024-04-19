@@ -22,3 +22,13 @@ article:nth-of-type(odd) {
 article:nth-of-type(even) {
   background: white;
 }
+
+
+main > article {
+  &:nth-of-type(odd){
+    background: rgb(217, 232, 245) !important;
+  }
+  &:nth-of-type(even){
+    background: white !important;
+  }
+}

@@ -71,8 +71,7 @@ export const ComponentResolver = (props: Props) => {
   }
 
   return (
-    <div className={componentProps.__typename}>
-      <article>
+    <article className={componentProps.__typename+' w-full'}>
         {Component ? (
           <Component
             {...componentProps}
@@ -90,7 +89,6 @@ export const ComponentResolver = (props: Props) => {
             previousComponent={previousComponentProp}
           />
         )}
-      </article>
-    </div>
+    </article>
   );
 };
