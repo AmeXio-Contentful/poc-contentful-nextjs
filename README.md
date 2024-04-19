@@ -36,3 +36,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Environments
+The following keys should be added in the .env
+- Space ID, Preview access token and access token can al be found in app.contentful.com -> Settings -> API Keys
+- Next Public Base URL is most likely the base of the url where you're application will be deployed, the environment is used to expose environment variables to the frontend
+- Contentful Revalidate Secret 
