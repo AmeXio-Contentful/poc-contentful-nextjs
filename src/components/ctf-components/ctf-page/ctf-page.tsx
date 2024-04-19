@@ -10,7 +10,6 @@ import QueryClientContextProvider from '@/components/utils/query-client-provider
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ContentfulContentProvider } from '@/contentful-context';
 import CtfFormComponent from "@/components/ctf-components/ctf-form-component/ctf-form-component";
-
 const { i18n } = i18nConfig;
 
 interface ComponentProps {
@@ -92,7 +91,7 @@ export default async function CtfPage() {
         <meta key="og:locale" property="og:locale" content={locale} />
       </Head>
       <body>
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <main>
           <ContentfulContentProvider>
             <QueryClientContextProvider>
               <ReactQueryDevtools initialIsOpen={false} />
