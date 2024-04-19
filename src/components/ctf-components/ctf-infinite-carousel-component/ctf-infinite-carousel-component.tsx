@@ -15,7 +15,7 @@ export const CtfInfiniteCarouselComponent = (
       }}
       slidesPerView={5}
       slidesPerGroup={5}
-      className="!mx-5 !my-12 !h-auto w-auto lg:!mx-[180px]"
+      className="!mx-5 !h-auto w-auto lg:!mx-[180px]"
       breakpoints={{
         0: {
           slidesPerGroup: 3,
