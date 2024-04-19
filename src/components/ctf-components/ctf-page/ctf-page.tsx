@@ -2,7 +2,7 @@ import { ComponentResolver } from '@/components/utils/component-resolver';
 import { getAmeXioPage } from '@/lib/api';
 import { Page } from '@/lib/types';
 import { draftMode } from 'next/headers';
-import React from 'react';
+import React, {Fragment} from 'react';
 import contentfulConfig from 'contentful.config';
 import i18nConfig from 'next-i18next.config.js';
 import Head from 'next/head';
@@ -102,9 +102,9 @@ export default async function CtfPage() {
               ))}
 
               {pageSection?.map((entry) => (
-                <div className="w-full" key={entry.sys.id}>
+                <Fragment key={entry.sys.id}>
                   <ComponentResolver componentProps={entry!} />
-                </div>
+                </Fragment>
               ))}
 
               {extraSection?.map((entry) => (
