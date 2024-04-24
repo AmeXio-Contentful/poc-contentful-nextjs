@@ -15,6 +15,16 @@ import { queryConfig } from '@src/lib/gql-client';
 import colorfulTheme from '@src/theme';
 import contentfulConfig from 'contentful.config';
 import nextI18nConfig from 'next-i18next.config';
+import '@src/styles/global.css';
+
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css/navigation';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css/pagination';
+// eslint-disable-next-line import/no-unresolved
+import 'swiper/css/scrollbar';
 
 const LivePreviewProvider = ({ children }) => {
   const { previewActive, locale } = useContentfulContext();

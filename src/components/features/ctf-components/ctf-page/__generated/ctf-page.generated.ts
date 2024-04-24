@@ -1,7 +1,5 @@
 import * as Types from '../../../../../lib/__generated/graphql.types';
 
-import { AssetFieldsFragment } from '../../ctf-asset/__generated/ctf-asset.generated';
-import { AssetFieldsFragmentDoc } from '../../ctf-asset/__generated/ctf-asset.generated';
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import { customFetcher } from '@src/lib/fetchConfig';
 export type PageTopSectionFields_ComponentCta_Fragment = { __typename: 'ComponentCta' };
@@ -14,17 +12,29 @@ export type PageTopSectionFields_ComponentInfoBlock_Fragment = { __typename: 'Co
 
 export type PageTopSectionFields_ComponentQuote_Fragment = { __typename: 'ComponentQuote' };
 
-export type PageTopSectionFields_ComponentTextBlock_Fragment = { __typename: 'ComponentTextBlock' };
+export type PageTopSectionFields_HeroBanner_Fragment = { __typename: 'HeroBanner' };
 
-export type PageTopSectionFieldsFragment = PageTopSectionFields_ComponentCta_Fragment | PageTopSectionFields_ComponentDuplex_Fragment | PageTopSectionFields_ComponentHeroBanner_Fragment | PageTopSectionFields_ComponentInfoBlock_Fragment | PageTopSectionFields_ComponentQuote_Fragment | PageTopSectionFields_ComponentTextBlock_Fragment;
+export type PageTopSectionFieldsFragment = PageTopSectionFields_ComponentCta_Fragment | PageTopSectionFields_ComponentDuplex_Fragment | PageTopSectionFields_ComponentHeroBanner_Fragment | PageTopSectionFields_ComponentInfoBlock_Fragment | PageTopSectionFields_ComponentQuote_Fragment | PageTopSectionFields_HeroBanner_Fragment;
 
-export type PageContentFields_ComponentProductTable_Fragment = { __typename: 'ComponentProductTable' };
+export type PageContentFields_ContentBlock_Fragment = { __typename: 'ContentBlock' };
 
-export type PageContentFields_TopicBusinessInfo_Fragment = { __typename: 'TopicBusinessInfo' };
+export type PageContentFields_ContentBlok_Fragment = { __typename: 'ContentBlok' };
 
-export type PageContentFields_TopicProduct_Fragment = { __typename: 'TopicProduct' };
+export type PageContentFields_ContentBlokMetCta_Fragment = { __typename: 'ContentBlokMetCta' };
 
-export type PageContentFieldsFragment = PageContentFields_ComponentProductTable_Fragment | PageContentFields_TopicBusinessInfo_Fragment | PageContentFields_TopicProduct_Fragment;
+export type PageContentFields_ContentBlokSplit_Fragment = { __typename: 'ContentBlokSplit' };
+
+export type PageContentFields_ContentCarousel_Fragment = { __typename: 'ContentCarousel' };
+
+export type PageContentFields_HeroBanner_Fragment = { __typename: 'HeroBanner' };
+
+export type PageContentFields_ImageCarousel_Fragment = { __typename: 'ImageCarousel' };
+
+export type PageContentFields_TextBanner_Fragment = { __typename: 'TextBanner' };
+
+export type PageContentFields_Title_Fragment = { __typename: 'Title' };
+
+export type PageContentFieldsFragment = PageContentFields_ContentBlock_Fragment | PageContentFields_ContentBlok_Fragment | PageContentFields_ContentBlokMetCta_Fragment | PageContentFields_ContentBlokSplit_Fragment | PageContentFields_ContentCarousel_Fragment | PageContentFields_HeroBanner_Fragment | PageContentFields_ImageCarousel_Fragment | PageContentFields_TextBanner_Fragment | PageContentFields_Title_Fragment;
 
 export type PageExtraSectionItemFields_ComponentCta_Fragment = { __typename: 'ComponentCta' };
 
@@ -36,14 +46,9 @@ export type PageExtraSectionItemFields_ComponentInfoBlock_Fragment = { __typenam
 
 export type PageExtraSectionItemFields_ComponentQuote_Fragment = { __typename: 'ComponentQuote' };
 
-export type PageExtraSectionItemFields_ComponentTextBlock_Fragment = { __typename: 'ComponentTextBlock' };
+export type PageExtraSectionItemFieldsFragment = PageExtraSectionItemFields_ComponentCta_Fragment | PageExtraSectionItemFields_ComponentDuplex_Fragment | PageExtraSectionItemFields_ComponentHeroBanner_Fragment | PageExtraSectionItemFields_ComponentInfoBlock_Fragment | PageExtraSectionItemFields_ComponentQuote_Fragment;
 
-export type PageExtraSectionItemFieldsFragment = PageExtraSectionItemFields_ComponentCta_Fragment | PageExtraSectionItemFields_ComponentDuplex_Fragment | PageExtraSectionItemFields_ComponentHeroBanner_Fragment | PageExtraSectionItemFields_ComponentInfoBlock_Fragment | PageExtraSectionItemFields_ComponentQuote_Fragment | PageExtraSectionItemFields_ComponentTextBlock_Fragment;
-
-export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null, image?: (
-      { __typename?: 'Asset' }
-      & AssetFieldsFragment
-    ) | null } | null, topSectionCollection?: { __typename?: 'PageTopSectionCollection', items: Array<(
+export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, topSectionCollection?: { __typename?: 'PageTopSectionCollection', items: Array<(
       { __typename: 'ComponentCta', sys: { __typename?: 'Sys', id: string } }
       & PageTopSectionFields_ComponentCta_Fragment
     ) | (
@@ -59,18 +64,9 @@ export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | nu
       { __typename: 'ComponentQuote', sys: { __typename?: 'Sys', id: string } }
       & PageTopSectionFields_ComponentQuote_Fragment
     ) | (
-      { __typename: 'ComponentTextBlock', sys: { __typename?: 'Sys', id: string } }
-      & PageTopSectionFields_ComponentTextBlock_Fragment
-    ) | null> } | null, pageContent?: (
-    { __typename: 'ComponentProductTable', sys: { __typename?: 'Sys', id: string } }
-    & PageContentFields_ComponentProductTable_Fragment
-  ) | (
-    { __typename: 'TopicBusinessInfo', sys: { __typename?: 'Sys', id: string } }
-    & PageContentFields_TopicBusinessInfo_Fragment
-  ) | (
-    { __typename: 'TopicProduct', sys: { __typename?: 'Sys', id: string } }
-    & PageContentFields_TopicProduct_Fragment
-  ) | null, extraSectionCollection?: { __typename?: 'PageExtraSectionCollection', items: Array<(
+      { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } }
+      & PageTopSectionFields_HeroBanner_Fragment
+    ) | null> } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null, extraSectionCollection?: { __typename?: 'PageExtraSectionCollection', items: Array<(
       { __typename: 'ComponentCta', sys: { __typename?: 'Sys', id: string } }
       & PageExtraSectionItemFields_ComponentCta_Fragment
     ) | (
@@ -85,9 +81,6 @@ export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | nu
     ) | (
       { __typename: 'ComponentQuote', sys: { __typename?: 'Sys', id: string } }
       & PageExtraSectionItemFields_ComponentQuote_Fragment
-    ) | (
-      { __typename: 'ComponentTextBlock', sys: { __typename?: 'Sys', id: string } }
-      & PageExtraSectionItemFields_ComponentTextBlock_Fragment
     ) | null> } | null };
 
 export type CtfPageQueryVariables = Types.Exact<{
@@ -102,13 +95,13 @@ export type CtfPageQuery = { __typename?: 'Query', pageCollection?: { __typename
       & CtfPageFieldsFragment
     ) | null> } | null };
 
-export const PageTopSectionFieldsFragmentDoc = `
-    fragment PageTopSectionFields on PageTopSectionItem {
+export const PageContentFieldsFragmentDoc = `
+    fragment PageContentFields on PagePageContentItem {
   __typename
 }
     `;
-export const PageContentFieldsFragmentDoc = `
-    fragment PageContentFields on PagePageContent {
+export const PageTopSectionFieldsFragmentDoc = `
+    fragment PageTopSectionFields on PageTopSectionItem {
   __typename
 }
     `;
@@ -129,9 +122,6 @@ export const CtfPageFieldsFragmentDoc = `
   seo {
     title
     description
-    image {
-      ...AssetFields
-    }
     noIndex
     noFollow
   }
@@ -146,14 +136,18 @@ export const CtfPageFieldsFragmentDoc = `
       ...PageTopSectionFields
     }
   }
-  pageContent {
-    ... on Entry {
-      __typename
-      sys {
-        id
+  pageContentCollection {
+    items {
+      ... on Entry {
+        __typename
+        sys {
+          id
+        }
+      }
+      ... {
+        __typename
       }
     }
-    ...PageContentFields
   }
   extraSectionCollection(limit: 20) {
     items {
@@ -182,9 +176,7 @@ export const CtfPageDocument = `
   }
 }
     ${CtfPageFieldsFragmentDoc}
-${AssetFieldsFragmentDoc}
 ${PageTopSectionFieldsFragmentDoc}
-${PageContentFieldsFragmentDoc}
 ${PageExtraSectionItemFieldsFragmentDoc}`;
 export const useCtfPageQuery = <
       TData = CtfPageQuery,
