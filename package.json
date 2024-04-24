@@ -12,7 +12,6 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export",
-    "prepare": "husky install",
     "type-check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate:init": "ctf-migrate init",
