@@ -7,7 +7,6 @@ import CtfFeaturedArticle from '@src/components/features/ctf-components/ctf-feat
 
 export const CtfContentBlockSplit = (props: ComponentContentBlokSplitFieldsFragment) => {
   const { title, subtitle, buttonText, buttonLink, fullWidth,  title2, backgroundColor, button1, backgroundImage, image} = props;
-  console.log("props", props.buttonText);
   return (
     <div className="grid grid-cols-2 divide-x">
       <div className="md:px-48z h-auto px-6 pb-9 pt-9 text-center">

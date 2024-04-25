@@ -1,21 +1,5 @@
 import dynamic from 'next/dynamic';
 
-// const pageTopicMap = {
-//   TopicProduct: dynamic(() =>
-//     import('@src/components/features/ctf-components/ctf-product/ctf-product-gql').then(module => module.CtfProductGql),
-//   ),
-//   TopicBusinessInfo: dynamic(() =>
-//     import('@src/components/features/ctf-components/ctf-business-info/ctf-business-info-gql').then(
-//       module => module.CtfBusinessInfoGql,
-//     ),
-//   ),
-//   ComponentProductTable: dynamic(() =>
-//     import('@src/components/features/ctf-components/ctf-product-table/ctf-product-table-gql').then(
-//       module => module.CtfProductTableGql,
-//     ),
-//   ),
-// };
-
 export const componentMap = {
   HeroBanner: dynamic(() =>
     import(
