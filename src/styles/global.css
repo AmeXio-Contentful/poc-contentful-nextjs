@@ -19,10 +19,10 @@
 .MuiBox-root:nth-of-type(odd) {
   background: #D9E8F5;
 }
+
 .MuiBox-root:nth-of-type(even) {
   background: white;
 }
-
 
 main > article {
   &:nth-of-type(odd){

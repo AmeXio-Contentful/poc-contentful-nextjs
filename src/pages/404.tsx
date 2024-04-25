@@ -3,6 +3,9 @@ import { GetStaticProps } from 'next';
 
 import { PageError } from '@src/components/features/errors/page-error';
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
+import {
+  useCtfNavigationQuery
+} from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
 
 const ErrorPage404 = () => {
   return <PageError error={{ code: 404 }} />;
@@ -10,6 +13,11 @@ const ErrorPage404 = () => {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery(
+    useCtfNavigationQuery.getKey({ locale, preview: false }),
+    useCtfNavigationQuery.fetcher({ locale, preview: false }),
+  );
 
   return {
     props: {

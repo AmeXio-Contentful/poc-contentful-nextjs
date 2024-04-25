@@ -102,6 +102,7 @@ type AssetLinkingCollections {
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   heroBannerCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): HeroBannerCollection
   imageCarouselCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): ImageCarouselCollection
+  languageMetadataCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): LanguageMetadataCollection
   seoCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): SeoCollection
   topicPersonCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): TopicPersonCollection
   topicProductCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): TopicProductCollection
@@ -359,54 +360,6 @@ type ComponentCtaSublineResourcesInline implements ResourceLink {
 }
 
 union ComponentCtaTargetPage = Page
-
-"""
-[See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/componentDemo)
-"""
-type ComponentDemo implements Entry {
-  contentfulMetadata: ContentfulMetadata!
-  linkedFrom(allowedLocales: [String]): ComponentDemoLinkingCollections
-  sys: Sys!
-  title(locale: String): String
-}
-
-type ComponentDemoCollection {
-  items: [ComponentDemo]!
-  limit: Int!
-  skip: Int!
-  total: Int!
-}
-
-input ComponentDemoFilter {
-  AND: [ComponentDemoFilter]
-  OR: [ComponentDemoFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-}
-
-type ComponentDemoLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-}
-
-enum ComponentDemoOrder {
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
-  title_ASC
-  title_DESC
-}
 
 """
 Full-width container for displaying side-by-side image and copy, includes multiple layout options [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/componentDuplex)
@@ -2165,6 +2118,7 @@ type FooterMenu implements Entry {
   menuItemsCollection(limit: Int = 100, locale: String, order: [FooterMenuMenuItemsCollectionOrder], preview: Boolean, skip: Int = 0, where: MenuGroupFilter): FooterMenuMenuItemsCollection
   sys: Sys!
   twitterLink(locale: String): String
+  youtube(locale: String): String
 }
 
 type FooterMenuCollection {
@@ -2218,6 +2172,13 @@ input FooterMenuFilter {
   twitterLink_not: String
   twitterLink_not_contains: String
   twitterLink_not_in: [String]
+  youtube: String
+  youtube_contains: String
+  youtube_exists: Boolean
+  youtube_in: [String]
+  youtube_not: String
+  youtube_not_contains: String
+  youtube_not_in: [String]
 }
 
 type FooterMenuLinkingCollections {
@@ -2265,6 +2226,8 @@ enum FooterMenuOrder {
   sys_publishedVersion_DESC
   twitterLink_ASC
   twitterLink_DESC
+  youtube_ASC
+  youtube_DESC
 }
 
 """
@@ -2635,12 +2598,86 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 scalar JSON
 
 """
+[See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/languageMetadata)
+"""
+type LanguageMetadata implements Entry {
+  contentfulMetadata: ContentfulMetadata!
+  linkedFrom(allowedLocales: [String]): LanguageMetadataLinkingCollections
+  locale(locale: String): String
+  localeImage(locale: String, preview: Boolean): Asset
+  localeUrl(locale: String): String
+  sys: Sys!
+}
+
+type LanguageMetadataCollection {
+  items: [LanguageMetadata]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input LanguageMetadataFilter {
+  AND: [LanguageMetadataFilter]
+  OR: [LanguageMetadataFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  locale: String
+  localeImage_exists: Boolean
+  localeUrl: String
+  localeUrl_contains: String
+  localeUrl_exists: Boolean
+  localeUrl_in: [String]
+  localeUrl_not: String
+  localeUrl_not_contains: String
+  localeUrl_not_in: [String]
+  locale_contains: String
+  locale_exists: Boolean
+  locale_in: [String]
+  locale_not: String
+  locale_not_contains: String
+  locale_not_in: [String]
+  sys: SysFilter
+}
+
+type LanguageMetadataLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  navigationMenuCollection(limit: Int = 100, locale: String, order: [LanguageMetadataLinkingCollectionsNavigationMenuCollectionOrder], preview: Boolean, skip: Int = 0): NavigationMenuCollection
+}
+
+enum LanguageMetadataLinkingCollectionsNavigationMenuCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+enum LanguageMetadataOrder {
+  localeUrl_ASC
+  localeUrl_DESC
+  locale_ASC
+  locale_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+"""
 A group of items making up a section in the navigation menu [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/menuGroup)
 """
 type MenuGroup implements Entry {
   contentfulMetadata: ContentfulMetadata!
-  featuredPagesCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0, where: MenuGroupFeaturedPagesFilter): MenuGroupFeaturedPagesCollection
-  groupLink(locale: String, preview: Boolean, where: MenuGroupGroupLinkFilter): MenuGroupGroupLink
+  featuredPagesCollection(limit: Int = 100, locale: String, order: [MenuGroupFeaturedPagesCollectionOrder], preview: Boolean, skip: Int = 0, where: PageFilter): MenuGroupFeaturedPagesCollection
+  groupLink(locale: String, preview: Boolean, where: PageFilter): Page
   groupName(locale: String): String
   internalTitle(locale: String): String
   linkedFrom(allowedLocales: [String]): MenuGroupLinkingCollections
@@ -2655,63 +2692,38 @@ type MenuGroupCollection {
 }
 
 type MenuGroupFeaturedPagesCollection {
-  items: [MenuGroupFeaturedPagesItem]!
+  items: [Page]!
   limit: Int!
   skip: Int!
   total: Int!
 }
 
-input MenuGroupFeaturedPagesFilter {
-  AND: [MenuGroupFeaturedPagesFilter]
-  OR: [MenuGroupFeaturedPagesFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  extraSection: cfextraSectionMultiTypeNestedFilter
-  extraSectionCollection_exists: Boolean
-  internalName: String
-  internalName_contains: String
-  internalName_exists: Boolean
-  internalName_in: [String]
-  internalName_not: String
-  internalName_not_contains: String
-  internalName_not_in: [String]
-  pageContent: cfpageContentMultiTypeNestedFilter
-  pageContentCollection_exists: Boolean
-  pageName: String
-  pageName_contains: String
-  pageName_exists: Boolean
-  pageName_in: [String]
-  pageName_not: String
-  pageName_not_contains: String
-  pageName_not_in: [String]
-  seo_exists: Boolean
-  slug: String
-  slug_contains: String
-  slug_exists: Boolean
-  slug_in: [String]
-  slug_not: String
-  slug_not_contains: String
-  slug_not_in: [String]
-  sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-  topSection: cftopSectionMultiTypeNestedFilter
-  topSectionCollection_exists: Boolean
+enum MenuGroupFeaturedPagesCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  pageName_ASC
+  pageName_DESC
+  slug_ASC
+  slug_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
 }
-
-union MenuGroupFeaturedPagesItem = Page
 
 input MenuGroupFilter {
   AND: [MenuGroupFilter]
   OR: [MenuGroupFilter]
   contentfulMetadata: ContentfulMetadataFilter
-  featuredPages: cffeaturedPagesMultiTypeNestedFilter
+  featuredPages: cfPageNestedFilter
   featuredPagesCollection_exists: Boolean
-  groupLink: cfgroupLinkMultiTypeNestedFilter
+  groupLink: cfPageNestedFilter
   groupLink_exists: Boolean
   groupName: String
   groupName_contains: String
@@ -2728,50 +2740,6 @@ input MenuGroupFilter {
   internalTitle_not_contains: String
   internalTitle_not_in: [String]
   sys: SysFilter
-}
-
-union MenuGroupGroupLink = Page
-
-input MenuGroupGroupLinkFilter {
-  AND: [MenuGroupGroupLinkFilter]
-  OR: [MenuGroupGroupLinkFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  extraSection: cfextraSectionMultiTypeNestedFilter
-  extraSectionCollection_exists: Boolean
-  internalName: String
-  internalName_contains: String
-  internalName_exists: Boolean
-  internalName_in: [String]
-  internalName_not: String
-  internalName_not_contains: String
-  internalName_not_in: [String]
-  pageContent: cfpageContentMultiTypeNestedFilter
-  pageContentCollection_exists: Boolean
-  pageName: String
-  pageName_contains: String
-  pageName_exists: Boolean
-  pageName_in: [String]
-  pageName_not: String
-  pageName_not_contains: String
-  pageName_not_in: [String]
-  seo_exists: Boolean
-  slug: String
-  slug_contains: String
-  slug_exists: Boolean
-  slug_in: [String]
-  slug_not: String
-  slug_not_contains: String
-  slug_not_in: [String]
-  sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-  topSection: cftopSectionMultiTypeNestedFilter
-  topSectionCollection_exists: Boolean
 }
 
 type MenuGroupLinkingCollections {
@@ -2799,6 +2767,8 @@ enum MenuGroupLinkingCollectionsFooterMenuCollectionOrder {
   sys_publishedVersion_DESC
   twitterLink_ASC
   twitterLink_DESC
+  youtube_ASC
+  youtube_DESC
 }
 
 enum MenuGroupLinkingCollectionsNavigationMenuCollectionOrder {
@@ -2836,7 +2806,7 @@ type NavigationMenu implements Entry {
   contentfulMetadata: ContentfulMetadata!
   internalName(locale: String): String
   linkedFrom(allowedLocales: [String]): NavigationMenuLinkingCollections
-  menuItemsCollection(limit: Int = 100, locale: String, order: [NavigationMenuMenuItemsCollectionOrder], preview: Boolean, skip: Int = 0, where: MenuGroupFilter): NavigationMenuMenuItemsCollection
+  menuItemsCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0, where: NavigationMenuMenuItemsFilter): NavigationMenuMenuItemsCollection
   sys: Sys!
 }
 
@@ -2858,7 +2828,7 @@ input NavigationMenuFilter {
   internalName_not: String
   internalName_not_contains: String
   internalName_not_in: [String]
-  menuItems: cfMenuGroupNestedFilter
+  menuItems: cfmenuItemsMultiTypeNestedFilter
   menuItemsCollection_exists: Boolean
   sys: SysFilter
 }
@@ -2868,26 +2838,20 @@ type NavigationMenuLinkingCollections {
 }
 
 type NavigationMenuMenuItemsCollection {
-  items: [MenuGroup]!
+  items: [NavigationMenuMenuItemsItem]!
   limit: Int!
   skip: Int!
   total: Int!
 }
 
-enum NavigationMenuMenuItemsCollectionOrder {
-  groupName_ASC
-  groupName_DESC
-  internalTitle_ASC
-  internalTitle_DESC
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
+input NavigationMenuMenuItemsFilter {
+  AND: [NavigationMenuMenuItemsFilter]
+  OR: [NavigationMenuMenuItemsFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  sys: SysFilter
 }
+
+union NavigationMenuMenuItemsItem = LanguageMetadata | MenuGroup
 
 enum NavigationMenuOrder {
   internalName_ASC
@@ -3160,8 +3124,6 @@ type Query {
   authorCollection(limit: Int = 100, locale: String, order: [AuthorOrder], preview: Boolean, skip: Int = 0, where: AuthorFilter): AuthorCollection
   componentCta(id: String!, locale: String, preview: Boolean): ComponentCta
   componentCtaCollection(limit: Int = 100, locale: String, order: [ComponentCtaOrder], preview: Boolean, skip: Int = 0, where: ComponentCtaFilter): ComponentCtaCollection
-  componentDemo(id: String!, locale: String, preview: Boolean): ComponentDemo
-  componentDemoCollection(limit: Int = 100, locale: String, order: [ComponentDemoOrder], preview: Boolean, skip: Int = 0, where: ComponentDemoFilter): ComponentDemoCollection
   componentDuplex(id: String!, locale: String, preview: Boolean): ComponentDuplex
   componentDuplexCollection(limit: Int = 100, locale: String, order: [ComponentDuplexOrder], preview: Boolean, skip: Int = 0, where: ComponentDuplexFilter): ComponentDuplexCollection
   componentHeroBanner(id: String!, locale: String, preview: Boolean): ComponentHeroBanner
@@ -3189,6 +3151,8 @@ type Query {
   heroBannerCollection(limit: Int = 100, locale: String, order: [HeroBannerOrder], preview: Boolean, skip: Int = 0, where: HeroBannerFilter): HeroBannerCollection
   imageCarousel(id: String!, locale: String, preview: Boolean): ImageCarousel
   imageCarouselCollection(limit: Int = 100, locale: String, order: [ImageCarouselOrder], preview: Boolean, skip: Int = 0, where: ImageCarouselFilter): ImageCarouselCollection
+  languageMetadata(id: String!, locale: String, preview: Boolean): LanguageMetadata
+  languageMetadataCollection(limit: Int = 100, locale: String, order: [LanguageMetadataOrder], preview: Boolean, skip: Int = 0, where: LanguageMetadataFilter): LanguageMetadataCollection
   menuGroup(id: String!, locale: String, preview: Boolean): MenuGroup
   menuGroupCollection(limit: Int = 100, locale: String, order: [MenuGroupOrder], preview: Boolean, skip: Int = 0, where: MenuGroupFilter): MenuGroupCollection
   navigationMenu(id: String!, locale: String, preview: Boolean): NavigationMenu
@@ -4015,6 +3979,45 @@ input cfMenuGroupNestedFilter {
   sys: SysFilter
 }
 
+input cfPageNestedFilter {
+  AND: [cfPageNestedFilter]
+  OR: [cfPageNestedFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  extraSectionCollection_exists: Boolean
+  internalName: String
+  internalName_contains: String
+  internalName_exists: Boolean
+  internalName_in: [String]
+  internalName_not: String
+  internalName_not_contains: String
+  internalName_not_in: [String]
+  pageContentCollection_exists: Boolean
+  pageName: String
+  pageName_contains: String
+  pageName_exists: Boolean
+  pageName_in: [String]
+  pageName_not: String
+  pageName_not_contains: String
+  pageName_not_in: [String]
+  seo_exists: Boolean
+  slug: String
+  slug_contains: String
+  slug_exists: Boolean
+  slug_in: [String]
+  slug_not: String
+  slug_not_contains: String
+  slug_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+  topSectionCollection_exists: Boolean
+}
+
 input cfSeoNestedFilter {
   AND: [cfSeoNestedFilter]
   OR: [cfSeoNestedFilter]
@@ -4133,82 +4136,11 @@ input cfextraSectionMultiTypeNestedFilter {
   sys: SysFilter
 }
 
-input cffeaturedPagesMultiTypeNestedFilter {
-  AND: [cffeaturedPagesMultiTypeNestedFilter]
-  OR: [cffeaturedPagesMultiTypeNestedFilter]
+input cfmenuItemsMultiTypeNestedFilter {
+  AND: [cfmenuItemsMultiTypeNestedFilter]
+  OR: [cfmenuItemsMultiTypeNestedFilter]
   contentfulMetadata: ContentfulMetadataFilter
-  extraSectionCollection_exists: Boolean
-  internalName: String
-  internalName_contains: String
-  internalName_exists: Boolean
-  internalName_in: [String]
-  internalName_not: String
-  internalName_not_contains: String
-  internalName_not_in: [String]
-  pageContentCollection_exists: Boolean
-  pageName: String
-  pageName_contains: String
-  pageName_exists: Boolean
-  pageName_in: [String]
-  pageName_not: String
-  pageName_not_contains: String
-  pageName_not_in: [String]
-  seo_exists: Boolean
-  slug: String
-  slug_contains: String
-  slug_exists: Boolean
-  slug_in: [String]
-  slug_not: String
-  slug_not_contains: String
-  slug_not_in: [String]
   sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-  topSectionCollection_exists: Boolean
-}
-
-input cfgroupLinkMultiTypeNestedFilter {
-  AND: [cfgroupLinkMultiTypeNestedFilter]
-  OR: [cfgroupLinkMultiTypeNestedFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  extraSectionCollection_exists: Boolean
-  internalName: String
-  internalName_contains: String
-  internalName_exists: Boolean
-  internalName_in: [String]
-  internalName_not: String
-  internalName_not_contains: String
-  internalName_not_in: [String]
-  pageContentCollection_exists: Boolean
-  pageName: String
-  pageName_contains: String
-  pageName_exists: Boolean
-  pageName_in: [String]
-  pageName_not: String
-  pageName_not_contains: String
-  pageName_not_in: [String]
-  seo_exists: Boolean
-  slug: String
-  slug_contains: String
-  slug_exists: Boolean
-  slug_in: [String]
-  slug_not: String
-  slug_not_contains: String
-  slug_not_in: [String]
-  sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-  topSectionCollection_exists: Boolean
 }
 
 input cfpageContentMultiTypeNestedFilter {

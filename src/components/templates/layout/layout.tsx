@@ -2,6 +2,7 @@ import { CssBaseline, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
 import React, { useState, useEffect, ReactElement } from 'react';
+import { Header } from '../header';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -43,7 +44,8 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
   return (
     <>
       <CssBaseline />
-      {/* header */}
+
+      <Header isMenuOpen={isMenuOpen} onMenuClick={() => setMenuOpen(true)} />
 
       {/* content */}
       <div className={classes.content}>{children}</div>
