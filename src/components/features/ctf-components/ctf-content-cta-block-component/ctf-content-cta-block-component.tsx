@@ -18,7 +18,7 @@ interface ContentCtaBlock {
 export default function CtfContentCtaBlockComponent(props: ContentCtaBlock) {
   const { buttonText, buttonLink, blockImage, blockBody, blockTitle } = props;
   return (
-    <div className="flex w-full max-w-[455px] flex-row gap-x-[75px]">
+    <div className="flex w-full max-w-[455px] flex-row gap-x-[75px] mt-4 mb-40">
       <img
         width="75px"
         className="place-self-start"
@@ -26,12 +26,12 @@ export default function CtfContentCtaBlockComponent(props: ContentCtaBlock) {
         src={blockImage?.url}
       />
       <div>
-        <h3 className="text-2xl text-blue-900">{blockTitle}</h3>
+        <h3 className="primary-color font-semibold">{blockTitle}</h3>
         <div className="my-3 h-auto">
           {documentToReactComponents(blockBody.json)}
         </div>
-        <button className="mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white">
-          {buttonText}
+        <button className="mt-8 bg-orange-500 text-2xl font-semibold text-white p-5 px-8">
+          <a href={buttonLink as string}> {buttonText} </a>
         </button>
       </div>
     </div>

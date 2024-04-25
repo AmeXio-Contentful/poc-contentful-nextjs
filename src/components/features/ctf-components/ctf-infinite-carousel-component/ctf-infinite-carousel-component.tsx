@@ -14,35 +14,37 @@ export const CtfInfiniteCarouselComponent = (
 ) => {
   const { autoplay, imageCollection } = props;
   return (
-    <Swiper
-      loop={autoplay as boolean}
-      modules={[Autoplay]}
-      autoplay={{
-        delay: 5000,
-      }}
-      slidesPerView={5}
-      slidesPerGroup={5}
-      className="!mx-5 !h-auto w-auto lg:!mx-[180px]"
-      breakpoints={{
-        0: {
-          slidesPerGroup: 3,
-          slidesPerView: 3,
-        },
-        768: {
-          slidesPerGroup: 4,
-          slidesPerView: 4,
-        },
-        1024: {
-          slidesPerGroup: 5,
-          slidesPerView: 5,
-        },
-      }}
-    >
-      {imageCollection?.items.map((entry: any) => (
-        <SwiperSlide key={entry?.sys.id}>
-          <img className="max-h-[68px]" src={entry.url} alt="alt"/>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+   <div className="w-4/5 m-auto mt-24 mb-24">
+     <Swiper
+       loop={autoplay as boolean}
+       modules={[Autoplay]}
+       autoplay={{
+         delay: 5000,
+       }}
+       slidesPerView={5}
+       slidesPerGroup={5}
+       className="!mx-5 !h-auto w-auto lg:!mx-[180px]"
+       breakpoints={{
+         0: {
+           slidesPerGroup: 3,
+           slidesPerView: 3,
+         },
+         768: {
+           slidesPerGroup: 4,
+           slidesPerView: 4,
+         },
+         1024: {
+           slidesPerGroup: 5,
+           slidesPerView: 5,
+         },
+       }}
+     >
+       {imageCollection?.items.map((entry: any) => (
+         <SwiperSlide key={entry?.sys.id}>
+           <img className="max-h-[68px]" src={entry.url} alt="alt"/>
+         </SwiperSlide>
+       ))}
+     </Swiper>
+   </div>
   );
 };

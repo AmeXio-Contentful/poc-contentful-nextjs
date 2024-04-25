@@ -43,7 +43,7 @@ export const CtfContentCarouselComponent = (
     },
   ];
   return (
-    <>
+    <div className="p-14">
       <CtfTextBanner
         title={title as string}
         description={subtitle as string}
@@ -59,12 +59,12 @@ export const CtfContentCarouselComponent = (
               <img
                 className="mx-auto pb-6 md:mx-0 md:pb-0"
                 src={entry.image?.url}
-                width="250px"
-                height="250px"
+                width="200px"
+                height="200px"
                 alt="alt"
               />
               <div className="my-auto flex w-[545px] flex-col gap-4 px-14 md:px-0 ">
-                <h4 className="text-lg font-semibold text-blue-900">
+                <h4 className="font-semibold primary-color">
                   Guillaume Tran Thahn
                 </h4>
                 <p className="font-semibold">
@@ -78,6 +78,6 @@ export const CtfContentCarouselComponent = (
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 };
