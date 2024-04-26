@@ -228,7 +228,7 @@ colorfulTheme.typography.body2 = {
 
 colorfulTheme.typography.h1 = {
   ...colorfulTheme.typography.h1,
-  fontSize: '3.8rem',
+  fontSize: '4rem',
   lineHeight: 1.089,
   fontWeight: 600,
 };
