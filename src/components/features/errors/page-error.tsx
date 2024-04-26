@@ -2,6 +2,7 @@ import { Theme, Container, Grid, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
+
 import { PageContainer } from '@src/components/templates/page-container';
 
 interface PropsInterface {

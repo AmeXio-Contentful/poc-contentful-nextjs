@@ -25,14 +25,14 @@ function CtfForm() {
     });
   }, []);
 
-  return <div id="hubspotForm" className="hubspotForm"></div>;
+  return <div id="hubspotForm" className="hubspotForm" />;
 }
 
 export default function CtfFormComponent(){
 
   return (
       <div className='grid grid-cols-1 lg:grid-cols-2 p-4 lg:px-40'>
-        <CtfForm></CtfForm>
+        <CtfForm />
         <img src='https://www.amexio.fr/wp-content/uploads/2023/09/hands.png' alt="alt"/>
       </div>
   )

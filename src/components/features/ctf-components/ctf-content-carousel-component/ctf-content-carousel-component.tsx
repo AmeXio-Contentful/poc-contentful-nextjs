@@ -1,16 +1,20 @@
 'use client';
 
-
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+// eslint-disable-next-line import/no-unresolved
+import { Pagination } from 'swiper/modules';
+// eslint-disable-next-line import/no-unresolved
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import {
   ComponentContentCarouselFieldsFragment
 } from '@src/components/features/ctf-components/ctf-content-carousel-component/__generated/ctf-content-carousel-component.generated';
 import CtfTextBanner
   from '@src/components/features/ctf-components/ctf-content-text-banner-component/ctf-content-text-banner-component';
+
+
 // eslint-disable-next-line import/no-unresolved
-import { Swiper, SwiperSlide } from 'swiper/react';
 // eslint-disable-next-line import/no-unresolved
-import { Pagination } from 'swiper/modules';
 
 export const CtfContentCarouselComponent = (
   props: ComponentContentCarouselFieldsFragment,
@@ -47,7 +51,7 @@ export const CtfContentCarouselComponent = (
       <CtfTextBanner
         title={title as string}
         description={subtitle as string}
-      ></CtfTextBanner>
+       />
       <Swiper
         pagination={true}
         modules={[Pagination]}

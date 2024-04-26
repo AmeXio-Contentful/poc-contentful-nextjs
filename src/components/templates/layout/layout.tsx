@@ -1,7 +1,7 @@
 import { CssBaseline, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
-import React, { useState, useEffect, ReactElement } from 'react';
+import React, { useEffect, ReactElement } from 'react';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -20,14 +20,10 @@ interface LayoutPropsInterface {
 }
 
 export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const classes = useStyles();
   const router = useRouter();
 
   useEffect(() => {
-    router.events.on('routeChangeStart', () => {
-      setMenuOpen(false);
-    });
 
     router.events.on('routeChangeComplete', () => {
       if (document.activeElement === null) {

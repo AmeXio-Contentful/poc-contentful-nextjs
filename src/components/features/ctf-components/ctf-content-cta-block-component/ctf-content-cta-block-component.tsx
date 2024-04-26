@@ -25,6 +25,7 @@ export default function CtfContentCtaBlockComponent(props: ContentCtaBlock) {
         alt="icon"
         src={blockImage?.url}
       />
+
       <div>
         <h3 className="primary-color font-semibold">{blockTitle}</h3>
         <div className="my-3 h-auto">

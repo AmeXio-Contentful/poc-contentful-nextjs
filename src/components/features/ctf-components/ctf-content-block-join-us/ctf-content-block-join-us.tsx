@@ -1,9 +1,9 @@
 import {
   ComponentContentBlokFieldsFragment
 } from '@src/components/features/ctf-components/ctf-content-block-join-us/__generated/ctf-content-block-join-us.generated';
-import { CtfTeaserComponent } from '@src/components/features/ctf-components/ctf-teaser-component/ctf-teaser-component';
 import CtfTextBanner
   from '@src/components/features/ctf-components/ctf-content-text-banner-component/ctf-content-text-banner-component';
+import { CtfTeaserComponent } from '@src/components/features/ctf-components/ctf-teaser-component/ctf-teaser-component';
 
 
 export const CtfContentBlockJoinUs = (
@@ -43,7 +43,7 @@ export const CtfContentBlockJoinUs = (
       <CtfTextBanner
         title={title as string}
         description={subtitle as string}
-      ></CtfTextBanner>
+       />
       {/*<h2 className="m-0 mb-4 p-0 text-center align-baseline font-medium normal-case primary-color pt-24">*/}
       {/*  {title}*/}
       {/*</h2>*/}
@@ -54,7 +54,7 @@ export const CtfContentBlockJoinUs = (
             <CtfTeaserComponent
               body={entry.body}
               image={entry.image}
-            ></CtfTeaserComponent>
+             />
           </div>
         ))}
       </div>

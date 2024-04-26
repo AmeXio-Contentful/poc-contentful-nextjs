@@ -1,6 +1,3 @@
-import CtfTextBanner
-  from '@src/components/features/ctf-components/ctf-content-text-banner-component/ctf-content-text-banner-component';
-
 interface FeaturedProps {
   subtitle: string;
   description: string;

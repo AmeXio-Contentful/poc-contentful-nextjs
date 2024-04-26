@@ -15,7 +15,7 @@ export const CtfContentBlockComponent = (props: any) => {
             buttonText={entry.buttonText}
             blockImage={entry.blockImage}
             blockTitle={entry.blockTitle}
-          ></CtfContentCtaBlockComponent>
+           />
         </div>
       ))}
     </div>
