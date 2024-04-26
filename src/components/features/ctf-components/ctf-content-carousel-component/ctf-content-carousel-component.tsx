@@ -64,13 +64,13 @@ export const CtfContentCarouselComponent = (
                 alt="alt"
               />
               <div className="my-auto flex w-[545px] flex-col gap-4 px-14 md:px-0 ">
-                <h4 className="text-lg font-semibold text-blue-900">
+                <h4 className="text-2xl font-semibold text-blue-900">
                   Guillaume Tran Thahn
                 </h4>
-                <p className="font-semibold">
+                <p className="font-semibold text-base">
                   Head of Software Development – Dassault Aviation
                 </p>
-                <div className="text-s">
+                <div className="text-base">
                   {documentToReactComponents(entry.body?.json)}
                 </div>
               </div>
