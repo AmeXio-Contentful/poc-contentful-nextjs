@@ -13,22 +13,22 @@
   font-style: normal;
   font-weight: 100 900;
   font-display: optional;
-  src: url(/fonts/Lexend.ttf) format('woff2');
+  src: url(../../public/fonts/Lexend.ttf) format('ttf');
 }
 
 .MuiBox-root:nth-of-type(odd) {
-  background: #D9E8F5;
+  background: #d9e8f5;
 }
 .MuiBox-root:nth-of-type(even) {
-  background: white;
+  background: #fff;
 }
 
 
 main > article {
   &:nth-of-type(odd){
-    background: #D9E8F5;
+    background: #d9e8f5;
   }
   &:nth-of-type(even){
-    background: white;
+    background: #fff;
   }
 }
