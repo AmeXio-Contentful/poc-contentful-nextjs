@@ -6,6 +6,12 @@ fragment ComponentContentCarouselFields on ContentCarousel {
   title
   subtitle
   autoplay
+  blockJobTitle
+  block2JobTitle
+  block3JobTitle
+  blockName
+  block2Name
+  block3Name
   blockImage {
     url
     title

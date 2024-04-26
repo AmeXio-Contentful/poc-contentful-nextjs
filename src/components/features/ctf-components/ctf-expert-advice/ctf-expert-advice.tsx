@@ -3,10 +3,10 @@ interface ExpertProps {
   subtitle: string;
   buttonText1: string;
   buttonText2: string;
-
+  buttonLink: string;
 }
 
-export default function CtfExpertAdvice({title, subtitle, buttonText1, buttonText2}: ExpertProps) {
+export default function CtfExpertAdvice({title, subtitle, buttonText1, buttonText2, buttonLink}: ExpertProps) {
     return (
         <div
             className='relative bg-no-repeat bg-cover bg-center py-14 pr-9 pl-9 md:pl-[100px] flex flex-col gap-y-6 items-start'
@@ -53,7 +53,7 @@ export default function CtfExpertAdvice({title, subtitle, buttonText1, buttonTex
 
 
             <button className="mb-16 mt-9 bg-orange-500 text-2xl font-semibold text-white p-5 px-8">
-              <a href="#">More expert advice</a>
+              <a href={buttonLink}>More expert advice</a>
             </button>
           </div>
         </div>

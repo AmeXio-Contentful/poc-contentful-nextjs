@@ -1815,10 +1815,16 @@ type ContentCarousel implements Entry {
   backgroundColor(locale: String): String
   block2Body(locale: String): ContentCarouselBlock2Body
   block2Image(locale: String, preview: Boolean): Asset
+  block2JobTitle(locale: String): String
+  block2Name(locale: String): String
   block3Body(locale: String): ContentCarouselBlock3Body
   block3Image(locale: String, preview: Boolean): Asset
+  block3JobTitle(locale: String): String
+  block3Name(locale: String): String
   blockBody(locale: String): ContentCarouselBlockBody
   blockImage(locale: String, preview: Boolean): Asset
+  blockJobTitle(locale: String): String
+  blockName(locale: String): String
   contentfulMetadata: ContentfulMetadata!
   linkedFrom(allowedLocales: [String]): ContentCarouselLinkingCollections
   subtitle(locale: String): String
@@ -1970,14 +1976,56 @@ input ContentCarouselFilter {
   block2Body_exists: Boolean
   block2Body_not_contains: String
   block2Image_exists: Boolean
+  block2JobTitle: String
+  block2JobTitle_contains: String
+  block2JobTitle_exists: Boolean
+  block2JobTitle_in: [String]
+  block2JobTitle_not: String
+  block2JobTitle_not_contains: String
+  block2JobTitle_not_in: [String]
+  block2Name: String
+  block2Name_contains: String
+  block2Name_exists: Boolean
+  block2Name_in: [String]
+  block2Name_not: String
+  block2Name_not_contains: String
+  block2Name_not_in: [String]
   block3Body_contains: String
   block3Body_exists: Boolean
   block3Body_not_contains: String
   block3Image_exists: Boolean
+  block3JobTitle: String
+  block3JobTitle_contains: String
+  block3JobTitle_exists: Boolean
+  block3JobTitle_in: [String]
+  block3JobTitle_not: String
+  block3JobTitle_not_contains: String
+  block3JobTitle_not_in: [String]
+  block3Name: String
+  block3Name_contains: String
+  block3Name_exists: Boolean
+  block3Name_in: [String]
+  block3Name_not: String
+  block3Name_not_contains: String
+  block3Name_not_in: [String]
   blockBody_contains: String
   blockBody_exists: Boolean
   blockBody_not_contains: String
   blockImage_exists: Boolean
+  blockJobTitle: String
+  blockJobTitle_contains: String
+  blockJobTitle_exists: Boolean
+  blockJobTitle_in: [String]
+  blockJobTitle_not: String
+  blockJobTitle_not_contains: String
+  blockJobTitle_not_in: [String]
+  blockName: String
+  blockName_contains: String
+  blockName_exists: Boolean
+  blockName_in: [String]
+  blockName_not: String
+  blockName_not_contains: String
+  blockName_not_in: [String]
   contentfulMetadata: ContentfulMetadataFilter
   subtitle: String
   subtitle_contains: String
@@ -2025,6 +2073,18 @@ enum ContentCarouselOrder {
   autoplay_DESC
   backgroundColor_ASC
   backgroundColor_DESC
+  block2JobTitle_ASC
+  block2JobTitle_DESC
+  block2Name_ASC
+  block2Name_DESC
+  block3JobTitle_ASC
+  block3JobTitle_DESC
+  block3Name_ASC
+  block3Name_DESC
+  blockJobTitle_ASC
+  blockJobTitle_DESC
+  blockName_ASC
+  blockName_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -3422,6 +3482,7 @@ How we help businesses with their digital growth [See type definition](https://a
 type Title implements Entry {
   alignment(locale: String): String
   contentfulMetadata: ContentfulMetadata!
+  fontSize(locale: String): String
   linkedFrom(allowedLocales: [String]): TitleLinkingCollections
   sys: Sys!
   title(locale: String): String
@@ -3445,6 +3506,13 @@ input TitleFilter {
   alignment_not_contains: String
   alignment_not_in: [String]
   contentfulMetadata: ContentfulMetadataFilter
+  fontSize: String
+  fontSize_contains: String
+  fontSize_exists: Boolean
+  fontSize_in: [String]
+  fontSize_not: String
+  fontSize_not_contains: String
+  fontSize_not_in: [String]
   sys: SysFilter
   title: String
   title_contains: String
@@ -3482,6 +3550,8 @@ enum TitleLinkingCollectionsPageCollectionOrder {
 enum TitleOrder {
   alignment_ASC
   alignment_DESC
+  fontSize_ASC
+  fontSize_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC

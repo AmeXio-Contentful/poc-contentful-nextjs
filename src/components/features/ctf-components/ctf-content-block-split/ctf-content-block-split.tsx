@@ -11,7 +11,7 @@ export const CtfContentBlockSplit = (props: ComponentContentBlokSplitFieldsFragm
     <div className="grid grid-cols-2 divide-x">
       <div className="h-auto text-center">
         <CtfExpertAdvice title={title as string} subtitle={subtitle as string} buttonText1={buttonText as string}
-                         buttonText2={buttonText as string} />
+                         buttonText2={buttonText as string} buttonLink={buttonLink as string}/>
       </div>
       <div className="h-auto text-center secondary-color">
         <CtfFeaturedArticle description={subtitle as string} subtitle={title2 as string}/>
