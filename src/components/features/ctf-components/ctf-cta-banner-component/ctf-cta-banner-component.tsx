@@ -18,9 +18,9 @@ export const CtfCtaBannerComponent = (
       mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h1 className="font-semibold text-white">{title}</h1>
         <p className="mt-5 text-xl text-white">{documentToReactComponents(subtitle?.json)}</p>
-        <button className="mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white">
+        <a href="" className="mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white">
           {buttonText}
-        </button>
+        </a>
       </div>
     </div>
   );
