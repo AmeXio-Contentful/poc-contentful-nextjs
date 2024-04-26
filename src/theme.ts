@@ -70,7 +70,7 @@ const colorfulTheme = createTheme({
   spacing: SPACER,
   typography: {
     fontFamily: `'Lexend', sans-serif;`,
-    htmlFontSize: 10,
+    htmlFontSize: 16,
     caption: {
       fontSize: '1.5rem',
       opacity: 0.6,
@@ -197,7 +197,7 @@ const colorfulTheme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         html: {
-          fontSize: '10px',
+          fontSize: '16px',
           minHeight: '100%',
         },
         body: {
