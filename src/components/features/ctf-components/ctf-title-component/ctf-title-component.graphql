@@ -4,6 +4,7 @@ fragment ComponentTitleFields on Title {
     id
   }
   title
+  alignment
 }
 
 query CtfComponentTitle($id: String!, $locale: String, $preview: Boolean) {
