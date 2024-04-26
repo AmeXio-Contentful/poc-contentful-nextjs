@@ -28,22 +28,34 @@ export const CtfContentCarouselComponent = (
     blockImage,
     block2Image,
     block3Image,
+    blockJobTitle,
+    block2JobTitle,
+    block3JobTitle,
+    blockName,
+    block2Name,
+    block3Name
   } = props;
   const combinedData = [
     {
       image: blockImage,
       body: blockBody,
       id: 'my-id',
+      jobTitle: blockJobTitle,
+      name: blockName
     },
     {
       image: block2Image,
       body: block2Body,
       id: 'another-id',
+      jobTitle: block2JobTitle,
+      name: block2Name
     },
     {
       image: block3Image,
       body: block3Body,
       id: 'last one',
+      jobTitle: block3JobTitle,
+      name: block3Name
     },
   ];
   return (
@@ -53,7 +65,7 @@ export const CtfContentCarouselComponent = (
         description={subtitle as string}
        />
       <Swiper
-        pagination={true}
+        pagination={{ clickable: true }}
         modules={[Pagination]}
         className="mt-6 h-auto w-full"
       >
@@ -69,10 +81,10 @@ export const CtfContentCarouselComponent = (
               />
               <div className="my-auto flex w-[545px] flex-col gap-4 px-14 md:px-0 ">
                 <h4 className="font-semibold primary-color">
-                  Guillaume Tran Thahn
+                  {entry.name}
                 </h4>
                 <p className="font-semibold">
-                  Head of Software Development – Dassault Aviation
+                  {entry.jobTitle}
                 </p>
                 <div className="text-s">
                   {documentToReactComponents(entry.body?.json)}
