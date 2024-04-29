@@ -2,10 +2,8 @@ import { Theme, Container, Grid, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useTranslation } from 'next-i18next';
 import React from 'react';
-import { File } from 'react-kawaii';
 
 import { PageContainer } from '@src/components/templates/page-container';
-import colorfulTheme from '@src/theme';
 
 interface PropsInterface {
   error?: {
@@ -57,12 +55,6 @@ export const PageError = (props: PropsInterface) => {
           <Grid container spacing={4} justifyContent="center">
             <Grid item xs={12} sm={8}>
               <div className={classes.headlineWrap}>
-                <File
-                  size={100}
-                  mood="ko"
-                  color={colorfulTheme.palette.primary.main}
-                  className={classes.icon}
-                />
                 <Typography variant="h1" gutterBottom>
                   {t('error.code', { code: error.code })}
                 </Typography>

@@ -15,7 +15,7 @@ interface Props {
 }
 
 const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
-  const slug = !slugFromProps || slugFromProps === '/' ? 'home' : slugFromProps;
+  const slug = !slugFromProps || slugFromProps === '/' ? 'amexio-poc-home' : slugFromProps;
 
   const { previewActive, locale } = useContentfulContext();
 
@@ -42,7 +42,6 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
   const metaTags = {
     title: seo?.title ?? page.pageName,
     description: seo?.description,
-    image: seo?.image,
     no_index: seo?.noIndex,
     no_follow: seo?.noFollow,
   };
@@ -68,13 +67,6 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
           </>
         )}
         {robots.length > 0 && <meta key="robots" name="robots" content={robots.join(', ')} />}
-        {metaTags.image && (
-          <meta
-            key="og:image"
-            property="og:image"
-            content={`${metaTags.image.url}?w=1200&h=630&f=faces&fit=fill`}
-          />
-        )}
         {page.slug && (
           <meta
             key="og:url"

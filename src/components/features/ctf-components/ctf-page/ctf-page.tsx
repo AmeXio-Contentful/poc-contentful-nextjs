@@ -1,14 +1,17 @@
+import { Box } from '@mui/material';
 import React from 'react';
 
+import CtfFormComponent from '@src/components/features/ctf-components/ctf-form-component/ctf-form-component';
 import { CtfPageFieldsFragment } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
 import { ComponentResolver } from '@src/components/shared/component-resolver';
 import { PageContainer } from '@src/components/templates/page-container';
 import LayoutContext, { defaultLayout } from '@src/layout-context';
 
+
 const CtfPage = (props: CtfPageFieldsFragment) => {
   const topSection =
     props.topSectionCollection && props.topSectionCollection.items.filter(it => !!it);
-  const content = props.pageContent;
+  const content = props.pageContentCollection;
   const extraSection =
     props.extraSectionCollection && props.extraSectionCollection.items.filter(it => !!it);
 
@@ -26,11 +29,11 @@ const CtfPage = (props: CtfPageFieldsFragment) => {
           </LayoutContext.Provider>
         ))}
 
-      {content && (
-        <LayoutContext.Provider value={defaultLayout} key={content.sys.id}>
-          <ComponentResolver componentProps={content} />
+      {content && content.items.map(entry => (
+        <LayoutContext.Provider value={defaultLayout} key={entry!.sys.id}>
+          <ComponentResolver componentProps={entry!} />
         </LayoutContext.Provider>
-      )}
+      ))}
 
       {extraSection &&
         extraSection.map(entry => (
@@ -38,6 +41,12 @@ const CtfPage = (props: CtfPageFieldsFragment) => {
             <ComponentResolver componentProps={entry!} />
           </LayoutContext.Provider>
         ))}
+      <Box
+        position="relative"
+        className="form-component"
+      >
+        <CtfFormComponent />
+      </Box>
     </PageContainer>
   );
 };

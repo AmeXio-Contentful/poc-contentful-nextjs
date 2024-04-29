@@ -1,0 +1,15 @@
+fragment ComponentTitleFields on Title {
+  __typename
+  sys {
+    id
+  }
+  title
+  alignment
+  fontSize
+}
+
+query CtfComponentTitle($id: String!, $locale: String, $preview: Boolean) {
+  title(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentTitleFields
+  }
+}

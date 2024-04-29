@@ -1,12 +1,8 @@
 import { CssBaseline, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
-import React, { useState, useEffect, ReactElement } from 'react';
+import React, { useEffect, ReactElement } from 'react';
 
-import { Header } from '../header';
-
-import { CtfFooterGql } from '@src/components/features/ctf-components/ctf-footer/ctf-footer-gql';
-import { CtfMobileMenuGql } from '@src/components/features/ctf-components/ctf-mobile-menu/ctf-mobile-menu-gql';
 
 const useStyles = makeStyles((theme: Theme) => ({
   content: {
@@ -24,14 +20,10 @@ interface LayoutPropsInterface {
 }
 
 export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const classes = useStyles();
   const router = useRouter();
 
   useEffect(() => {
-    router.events.on('routeChangeStart', () => {
-      setMenuOpen(false);
-    });
 
     router.events.on('routeChangeComplete', () => {
       if (document.activeElement === null) {
@@ -48,21 +40,10 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
     <>
       <CssBaseline />
       {/* header */}
-      <Header isMenuOpen={isMenuOpen} onMenuClick={() => setMenuOpen(true)} />
 
       {/* content */}
       <div className={classes.content}>{children}</div>
 
-      {/* footer */}
-      <CtfFooterGql />
-
-      {/* mobile menu */}
-      <CtfMobileMenuGql
-        isOpen={isMenuOpen}
-        onOpenChange={(newOpen: boolean) => {
-          setMenuOpen(newOpen);
-        }}
-      />
     </>
   );
 };

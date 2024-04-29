@@ -2,7 +2,7 @@ fragment PageTopSectionFields on PageTopSectionItem {
   __typename
 }
 
-fragment PageContentFields on PagePageContent {
+fragment PageContentFields on PagePageContentItem {
   __typename
 }
 
@@ -22,9 +22,6 @@ fragment CtfPageFields on Page {
   seo {
     title
     description
-    image {
-      ...AssetFields
-    }
     noIndex
     noFollow
   }
@@ -39,15 +36,19 @@ fragment CtfPageFields on Page {
       ...PageTopSectionFields
     }
   }
-  pageContent {
-    ... on Entry {
-      __typename
-      sys {
-        id
+  pageContentCollection {
+    items {
+        ... on Entry {
+          __typename
+          sys {
+            id
+          }
+        }
+        ... {
+          __typename
+        }
       }
-    }
-    ...PageContentFields
-  }
+   }
   extraSectionCollection(limit: 20) {
     items {
       ... on Entry {

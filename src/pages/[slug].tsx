@@ -2,13 +2,11 @@ import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
 import { useRouter } from 'next/router';
 
-import { useCtfFooterQuery } from '@src/components/features/ctf-components/ctf-footer/__generated/ctf-footer.generated';
-import { useCtfNavigationQuery } from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
 import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
 import CtfPageGgl from '@src/components/features/ctf-components/ctf-page/ctf-page-gql';
 import { ComponentReferenceFieldsFragment } from '@src/lib/__generated/graphql.types';
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
-import { prefetchMap, PrefetchMappingTypeFetcher } from '@src/lib/prefetch-mappings';
+import { prefetchMap } from '@src/lib/prefetch-mappings';
 import { prefetchPromiseArr } from '@src/lib/prefetch-promise-array';
 
 const SlugPage: NextPage = () => {
@@ -37,14 +35,6 @@ export const getServerSideProps = async ({ locale, params, query }: CustomNextPa
       useCtfPageQuery.getKey({ slug, locale, preview }),
       useCtfPageQuery.fetcher({ slug, locale, preview }),
     );
-    await queryClient.prefetchQuery(
-      useCtfNavigationQuery.getKey({ locale, preview }),
-      useCtfNavigationQuery.fetcher({ locale, preview }),
-    );
-    await queryClient.prefetchQuery(
-      useCtfFooterQuery.getKey({ locale, preview }),
-      useCtfFooterQuery.fetcher({ locale, preview }),
-    );
 
     // Dynamic queries
     const pageData = await useCtfPageQuery.fetcher({ slug, locale, preview })();
@@ -52,7 +42,7 @@ export const getServerSideProps = async ({ locale, params, query }: CustomNextPa
 
     const topSection = page?.topSectionCollection?.items;
     const extraSection = page?.extraSectionCollection?.items;
-    const content: ComponentReferenceFieldsFragment | undefined | null = page?.pageContent;
+    const content: ComponentReferenceFieldsFragment | undefined | null = page?.pageContentCollection?.items as any;
 
     await Promise.all([
       ...prefetchPromiseArr({ inputArr: topSection, locale, queryClient }),
@@ -75,7 +65,7 @@ export const getServerSideProps = async ({ locale, params, query }: CustomNextPa
           notFound: true,
         };
 
-      const data: PrefetchMappingTypeFetcher = await query.fetcher({
+      const data: any = await query.fetcher({
         id: sys.id,
         locale,
         preview,

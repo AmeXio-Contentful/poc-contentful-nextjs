@@ -1,0 +1,41 @@
+fragment ComponentContentBlocksFields on ContentBlock {
+  __typename
+  sys {
+    id
+  }
+  contentBlockCtaCollection {
+    total
+    items {
+      sys {
+        id
+      }
+      ... on ContentBlokMetCta {
+        blockTitle
+        buttonText
+        buttonLink
+        blockImage {
+          title
+          description
+          contentType
+          fileName
+          url
+          width
+          height
+        }
+        blockBody {
+          json
+        }
+      }
+    }
+  }
+}
+
+query CtfComponentContentBlock(
+  $id: String!
+  $locale: String
+  $preview: Boolean
+) {
+  contentBlock(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentContentBlocksFields
+  }
+}

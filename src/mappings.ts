@@ -1,75 +1,77 @@
 import dynamic from 'next/dynamic';
 
-const pageTopicMap = {
-  TopicProduct: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-product/ctf-product-gql').then(module => module.CtfProductGql),
-  ),
-  TopicBusinessInfo: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-business-info/ctf-business-info-gql').then(
-      module => module.CtfBusinessInfoGql,
-    ),
-  ),
-  ComponentProductTable: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-product-table/ctf-product-table-gql').then(
-      module => module.CtfProductTableGql,
-    ),
-  ),
-};
-
 export const componentMap = {
-  ComponentCta: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-cta/ctf-cta').then(module => module.CtfCta),
+  HeroBanner: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-cta-banner-component/ctf-cta-banner-component'
+      ).then((module) => module.CtfCtaBannerComponent),
   ),
-  ComponentDuplex: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-duplex/ctf-duplex').then(module => module.CtfDuplex),
+  Title: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-title-component/ctf-title-component'
+      ).then((module) => module.CtfTitleComponent),
   ),
-  ComponentHeroBanner: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-hero-banner/ctf-hero-banner').then(module => module.CtfHeroBanner),
+  ContentBlock: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-content-block-component/ctf-content-block-component'
+      ).then((module) => module.CtfContentBlockComponent),
   ),
-  ComponentInfoBlock: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-info-block/ctf-info-block').then(module => module.CtfInfoBlock),
+  ContentCarousel: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-content-carousel-component/ctf-content-carousel-component'
+      ).then((module) => module.CtfContentCarouselComponent),
   ),
-  ComponentQuote: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-quote/ctf-quote').then(module => module.CtfQuote),
+  ContentBlok: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-content-block-join-us/ctf-content-block-join-us'
+      ).then((module) => module.CtfContentBlockJoinUs),
   ),
-  ComponentTextBlock: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-text-block/ctf-text-block').then(module => module.CtfTextBlock),
+  ImageCarousel: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-infinite-carousel-component/ctf-infinite-carousel-component'
+      ).then((module) => module.CtfInfiniteCarouselComponent),
   ),
-  TopicPerson: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-person/ctf-person').then(module => module.CtfPerson),
+  ContentBlokSplit: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-content-block-split/ctf-content-block-split'
+      ).then((module) => module.CtfContentBlockSplit),
   ),
 };
 
 export const componentGqlMap = {
-  ...pageTopicMap,
-  ComponentCta: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-cta/ctf-cta-gql').then(module => module.CtfCtaGql),
+  HeroBanner: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-cta-banner-component/ctf-cta-banner-component-gql'
+      ).then((module) => module.CtfCtaBannerComponentGql),
   ),
-  ComponentDuplex: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-duplex/ctf-duplex-gql').then(module => module.CtfDuplexGql),
+  Title: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-title-component/ctf-title-component-gql'
+      ).then((module) => module.CtfTitleComponentGql),
   ),
-  ComponentHeroBanner: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-hero-banner/ctf-hero-banner-gql').then(
-      module => module.CtfHeroGql,
-    ),
+  ContentBlock: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-content-block-component/ctf-content-block-component-gql'
+      ).then((module) => module.CtfContentBlockComponentGql),
   ),
-  ComponentInfoBlock: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-info-block/ctf-info-block-gql').then(
-      module => module.CtfInfoBlockGql,
-    ),
+  ContentCarousel: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-content-carousel-component/ctf-content-carousel-component-gql'
+      ).then((module) => module.CtfContentCarouselComponentGql),
   ),
-  ComponentQuote: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-quote/ctf-quote-gql').then(module => module.CtfQuoteGql),
+  ContentBlok: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-content-block-join-us/ctf-content-block-join-us-gql'
+      ).then((module) => module.CtfContentBlockJoinUsGql),
   ),
-  ComponentTextBlock: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-text-block/ctf-text-block-gql').then(
-      module => module.CtfTextBlockGql,
-    ),
+  ImageCarousel: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-infinite-carousel-component/ctf-infinite-carousel-component-gql'
+      ).then((module) => module.CtfInfiniteCarouselComponentGql),
   ),
-  TopicPerson: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-person/ctf-person-gql').then(module => module.CtfPersonGql),
-  ),
-  ComponentFooter: dynamic(() =>
-    import('@src/components/features/ctf-components/ctf-footer/ctf-footer-gql').then(module => module.CtfFooterGql),
+  ContentBlokSplit: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-content-block-split/ctf-content-block-split-gql'
+      ).then((module) => module.CtfContentBlockSplitGql),
   ),
 };
