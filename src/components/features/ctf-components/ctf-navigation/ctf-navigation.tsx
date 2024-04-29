@@ -9,6 +9,9 @@ import { Link } from '@src/components/shared/link';
 import { forEach } from 'lodash';
 
 const useStyles = makeStyles((theme: Theme) => ({
+  languageIcon: {
+    color: '#ff6900',
+  },
   menu: {
     alignItems: 'center',
     display: 'flex',
@@ -17,10 +20,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: 0,
   },
   menuItem: {
+    color: '#084772',
+    paddingTop: '24px',
     alignItems: 'center',
     cursor: 'default',
     display: 'inline-flex',
-    fontSize: '1.7rem',
+    fontSize: '1.4rem',
     fontWeight: 400,
     height: '8rem',
     lineHeight: 1.9,
@@ -28,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: 'relative',
 
     [theme.breakpoints.up('lg')]: {
-      marginRight: theme.spacing(10),
+      marginRight: theme.spacing(9),
     },
 
     '& a': {
@@ -39,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 
     '&:hover, &:focus, &:focus-within': {
       '& > a': {
-        transform: 'translateY(-4px)',
+        transform: 'translateY(-4px)'
       },
       '& $submenu': {
         opacity: 1,
@@ -112,7 +117,6 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
       }
   });
 
-  console.log("languagItems", languageItems);
   return (
     <>
       {navigationContent?.menuItemsCollection?.items.length && (
@@ -149,7 +153,7 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
                     entryId: languageItem.sys.id,
                     fieldId: 'groupName',
                   })}>
-                  <img src={languageItem.localeImage.url} alt={languageItem.locale} width="25" height="20" />
+                  <img src={languageItem.localeImage.url} alt={languageItem.locale} width="16" height="11"/>
                 </li>
             )}
           </ul>

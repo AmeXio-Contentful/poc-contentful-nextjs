@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexDirection: 'row',
     height: '100%',
     justifyContent: 'space-between',
+    width: '70%',
+    margin: 'auto',
   },
   logo: {
     display: 'block',
@@ -63,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   corporateLogo: {
     display: 'block',
     height: 'auto',
-    width: '113px',
+    width: '200px',
   },
 }));
 
