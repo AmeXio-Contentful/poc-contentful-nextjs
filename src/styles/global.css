@@ -16,19 +16,30 @@
   src: url(/fonts/Lexend.ttf) format('woff2');
 }
 
-.MuiBox-root:nth-of-type(odd) {
-  background: #D9E8F5;
+/*.MuiBox-root:nth-of-type(odd) {*/
+/*  background: #D9E8F5;*/
+/*}*/
+
+h2 {
+  font-size: 1.5em;
 }
 
-.MuiBox-root:nth-of-type(even) {
-  background: white;
+h3 {
+ font-size: 1.17em;
 }
 
-main > article {
-  &:nth-of-type(odd){
-    background: #D9E8F5;
-  }
-  &:nth-of-type(even){
-    background: white;
-  }
+h4 {
+  font-size: 1em;
+}
+
+.primary-color {
+  color: #084772;
+}
+
+.ContentCarousel {
+  background-color: #D9E8F5;
+}
+
+.secondary-color {
+  background-color: #D9E8F5;
 }

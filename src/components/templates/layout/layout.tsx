@@ -21,14 +21,10 @@ interface LayoutPropsInterface {
 }
 
 export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const classes = useStyles();
   const router = useRouter();
 
   useEffect(() => {
-    router.events.on('routeChangeStart', () => {
-      setMenuOpen(false);
-    });
 
     router.events.on('routeChangeComplete', () => {
       if (document.activeElement === null) {

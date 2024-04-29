@@ -2854,10 +2854,16 @@ export type ContentCarousel = Entry & {
   backgroundColor?: Maybe<Scalars['String']>;
   block2Body?: Maybe<ContentCarouselBlock2Body>;
   block2Image?: Maybe<Asset>;
+  block2JobTitle?: Maybe<Scalars['String']>;
+  block2Name?: Maybe<Scalars['String']>;
   block3Body?: Maybe<ContentCarouselBlock3Body>;
   block3Image?: Maybe<Asset>;
+  block3JobTitle?: Maybe<Scalars['String']>;
+  block3Name?: Maybe<Scalars['String']>;
   blockBody?: Maybe<ContentCarouselBlockBody>;
   blockImage?: Maybe<Asset>;
+  blockJobTitle?: Maybe<Scalars['String']>;
+  blockName?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
   linkedFrom?: Maybe<ContentCarouselLinkingCollections>;
   subtitle?: Maybe<Scalars['String']>;
@@ -2892,6 +2898,18 @@ export type ContentCarouselBlock2ImageArgs = {
 
 
 /** Why AmeXio [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentCarousel) */
+export type ContentCarouselBlock2JobTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** Why AmeXio [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentCarousel) */
+export type ContentCarouselBlock2NameArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** Why AmeXio [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentCarousel) */
 export type ContentCarouselBlock3BodyArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
@@ -2905,6 +2923,18 @@ export type ContentCarouselBlock3ImageArgs = {
 
 
 /** Why AmeXio [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentCarousel) */
+export type ContentCarouselBlock3JobTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** Why AmeXio [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentCarousel) */
+export type ContentCarouselBlock3NameArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** Why AmeXio [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentCarousel) */
 export type ContentCarouselBlockBodyArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
@@ -2914,6 +2944,18 @@ export type ContentCarouselBlockBodyArgs = {
 export type ContentCarouselBlockImageArgs = {
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+/** Why AmeXio [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentCarousel) */
+export type ContentCarouselBlockJobTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** Why AmeXio [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentCarousel) */
+export type ContentCarouselBlockNameArgs = {
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -3103,14 +3145,56 @@ export type ContentCarouselFilter = {
   block2Body_exists?: InputMaybe<Scalars['Boolean']>;
   block2Body_not_contains?: InputMaybe<Scalars['String']>;
   block2Image_exists?: InputMaybe<Scalars['Boolean']>;
+  block2JobTitle?: InputMaybe<Scalars['String']>;
+  block2JobTitle_contains?: InputMaybe<Scalars['String']>;
+  block2JobTitle_exists?: InputMaybe<Scalars['Boolean']>;
+  block2JobTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  block2JobTitle_not?: InputMaybe<Scalars['String']>;
+  block2JobTitle_not_contains?: InputMaybe<Scalars['String']>;
+  block2JobTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  block2Name?: InputMaybe<Scalars['String']>;
+  block2Name_contains?: InputMaybe<Scalars['String']>;
+  block2Name_exists?: InputMaybe<Scalars['Boolean']>;
+  block2Name_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  block2Name_not?: InputMaybe<Scalars['String']>;
+  block2Name_not_contains?: InputMaybe<Scalars['String']>;
+  block2Name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   block3Body_contains?: InputMaybe<Scalars['String']>;
   block3Body_exists?: InputMaybe<Scalars['Boolean']>;
   block3Body_not_contains?: InputMaybe<Scalars['String']>;
   block3Image_exists?: InputMaybe<Scalars['Boolean']>;
+  block3JobTitle?: InputMaybe<Scalars['String']>;
+  block3JobTitle_contains?: InputMaybe<Scalars['String']>;
+  block3JobTitle_exists?: InputMaybe<Scalars['Boolean']>;
+  block3JobTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  block3JobTitle_not?: InputMaybe<Scalars['String']>;
+  block3JobTitle_not_contains?: InputMaybe<Scalars['String']>;
+  block3JobTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  block3Name?: InputMaybe<Scalars['String']>;
+  block3Name_contains?: InputMaybe<Scalars['String']>;
+  block3Name_exists?: InputMaybe<Scalars['Boolean']>;
+  block3Name_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  block3Name_not?: InputMaybe<Scalars['String']>;
+  block3Name_not_contains?: InputMaybe<Scalars['String']>;
+  block3Name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   blockBody_contains?: InputMaybe<Scalars['String']>;
   blockBody_exists?: InputMaybe<Scalars['Boolean']>;
   blockBody_not_contains?: InputMaybe<Scalars['String']>;
   blockImage_exists?: InputMaybe<Scalars['Boolean']>;
+  blockJobTitle?: InputMaybe<Scalars['String']>;
+  blockJobTitle_contains?: InputMaybe<Scalars['String']>;
+  blockJobTitle_exists?: InputMaybe<Scalars['Boolean']>;
+  blockJobTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  blockJobTitle_not?: InputMaybe<Scalars['String']>;
+  blockJobTitle_not_contains?: InputMaybe<Scalars['String']>;
+  blockJobTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  blockName?: InputMaybe<Scalars['String']>;
+  blockName_contains?: InputMaybe<Scalars['String']>;
+  blockName_exists?: InputMaybe<Scalars['Boolean']>;
+  blockName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  blockName_not?: InputMaybe<Scalars['String']>;
+  blockName_not_contains?: InputMaybe<Scalars['String']>;
+  blockName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   subtitle?: InputMaybe<Scalars['String']>;
   subtitle_contains?: InputMaybe<Scalars['String']>;
@@ -3176,6 +3260,18 @@ export enum ContentCarouselOrder {
   AutoplayDesc = 'autoplay_DESC',
   BackgroundColorAsc = 'backgroundColor_ASC',
   BackgroundColorDesc = 'backgroundColor_DESC',
+  Block2JobTitleAsc = 'block2JobTitle_ASC',
+  Block2JobTitleDesc = 'block2JobTitle_DESC',
+  Block2NameAsc = 'block2Name_ASC',
+  Block2NameDesc = 'block2Name_DESC',
+  Block3JobTitleAsc = 'block3JobTitle_ASC',
+  Block3JobTitleDesc = 'block3JobTitle_DESC',
+  Block3NameAsc = 'block3Name_ASC',
+  Block3NameDesc = 'block3Name_DESC',
+  BlockJobTitleAsc = 'blockJobTitle_ASC',
+  BlockJobTitleDesc = 'blockJobTitle_DESC',
+  BlockNameAsc = 'blockName_ASC',
+  BlockNameDesc = 'blockName_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -5534,10 +5630,24 @@ export enum TextBannerOrder {
 /** How we help businesses with their digital growth [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/title) */
 export type Title = Entry & {
   __typename?: 'Title';
+  alignment?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
+  fontSize?: Maybe<Scalars['String']>;
   linkedFrom?: Maybe<TitleLinkingCollections>;
   sys: Sys;
   title?: Maybe<Scalars['String']>;
+};
+
+
+/** How we help businesses with their digital growth [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/title) */
+export type TitleAlignmentArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** How we help businesses with their digital growth [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/title) */
+export type TitleFontSizeArgs = {
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -5563,7 +5673,21 @@ export type TitleCollection = {
 export type TitleFilter = {
   AND?: InputMaybe<Array<InputMaybe<TitleFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<TitleFilter>>>;
+  alignment?: InputMaybe<Scalars['String']>;
+  alignment_contains?: InputMaybe<Scalars['String']>;
+  alignment_exists?: InputMaybe<Scalars['Boolean']>;
+  alignment_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  alignment_not?: InputMaybe<Scalars['String']>;
+  alignment_not_contains?: InputMaybe<Scalars['String']>;
+  alignment_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  fontSize?: InputMaybe<Scalars['String']>;
+  fontSize_contains?: InputMaybe<Scalars['String']>;
+  fontSize_exists?: InputMaybe<Scalars['Boolean']>;
+  fontSize_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  fontSize_not?: InputMaybe<Scalars['String']>;
+  fontSize_not_contains?: InputMaybe<Scalars['String']>;
+  fontSize_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars['String']>;
   title_contains?: InputMaybe<Scalars['String']>;
@@ -5617,6 +5741,10 @@ export enum TitleLinkingCollectionsPageCollectionOrder {
 }
 
 export enum TitleOrder {
+  AlignmentAsc = 'alignment_ASC',
+  AlignmentDesc = 'alignment_DESC',
+  FontSizeAsc = 'fontSize_ASC',
+  FontSizeDesc = 'fontSize_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -6547,7 +6675,7 @@ export type CtfComponentSplitBlockQueryVariables = Exact<{
 
 export type CtfComponentSplitBlockQuery = { __typename?: 'Query', contentBlokSplit?: { __typename: 'ContentBlokSplit', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonLink?: string | null, fullWidth?: boolean | null, title2?: string | null, backgroundColor?: string | null, sys: { __typename?: 'Sys', id: string }, button1?: { __typename?: 'ContentBlokSplitButton1', json: any } | null, backgroundImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, url?: string | null, contentType?: string | null } | null, image?: { __typename?: 'Asset', title?: string | null, description?: string | null, url?: string | null, contentType?: string | null } | null } | null };
 
-export type ComponentContentCarouselFieldsFragment = { __typename: 'ContentCarousel', title?: string | null, subtitle?: string | null, autoplay?: boolean | null, sys: { __typename?: 'Sys', id: string }, blockImage?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, blockBody?: { __typename?: 'ContentCarouselBlockBody', json: any } | null, block2Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block2Body?: { __typename?: 'ContentCarouselBlock2Body', json: any } | null, block3Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block3Body?: { __typename?: 'ContentCarouselBlock3Body', json: any } | null };
+export type ComponentContentCarouselFieldsFragment = { __typename: 'ContentCarousel', title?: string | null, subtitle?: string | null, autoplay?: boolean | null, blockJobTitle?: string | null, block2JobTitle?: string | null, block3JobTitle?: string | null, blockName?: string | null, block2Name?: string | null, block3Name?: string | null, sys: { __typename?: 'Sys', id: string }, blockImage?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, blockBody?: { __typename?: 'ContentCarouselBlockBody', json: any } | null, block2Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block2Body?: { __typename?: 'ContentCarouselBlock2Body', json: any } | null, block3Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block3Body?: { __typename?: 'ContentCarouselBlock3Body', json: any } | null };
 
 export type CtfComponentContentCarouselQueryVariables = Exact<{
   id: Scalars['String'];
@@ -6556,7 +6684,7 @@ export type CtfComponentContentCarouselQueryVariables = Exact<{
 }>;
 
 
-export type CtfComponentContentCarouselQuery = { __typename?: 'Query', contentCarousel?: { __typename: 'ContentCarousel', title?: string | null, subtitle?: string | null, autoplay?: boolean | null, sys: { __typename?: 'Sys', id: string }, blockImage?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, blockBody?: { __typename?: 'ContentCarouselBlockBody', json: any } | null, block2Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block2Body?: { __typename?: 'ContentCarouselBlock2Body', json: any } | null, block3Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block3Body?: { __typename?: 'ContentCarouselBlock3Body', json: any } | null } | null };
+export type CtfComponentContentCarouselQuery = { __typename?: 'Query', contentCarousel?: { __typename: 'ContentCarousel', title?: string | null, subtitle?: string | null, autoplay?: boolean | null, blockJobTitle?: string | null, block2JobTitle?: string | null, block3JobTitle?: string | null, blockName?: string | null, block2Name?: string | null, block3Name?: string | null, sys: { __typename?: 'Sys', id: string }, blockImage?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, blockBody?: { __typename?: 'ContentCarouselBlockBody', json: any } | null, block2Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block2Body?: { __typename?: 'ContentCarouselBlock2Body', json: any } | null, block3Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block3Body?: { __typename?: 'ContentCarouselBlock3Body', json: any } | null } | null };
 
 export type ComponentHeroBannerFieldsFragment = { __typename: 'HeroBanner', title?: string | null, fullWidth?: boolean | null, buttonText?: string | null, buttonLink?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, subtitle?: { __typename?: 'HeroBannerSubtitle', json: any } | null, backgroundImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, contentType?: string | null, fileName?: string | null, url?: string | null, width?: number | null, height?: number | null } | null };
 
@@ -6579,16 +6707,6 @@ export type CtfComponentInfiniteCarouselQueryVariables = Exact<{
 
 
 export type CtfComponentInfiniteCarouselQuery = { __typename?: 'Query', imageCarousel?: { __typename: 'ImageCarousel', autoplay?: boolean | null, sys: { __typename?: 'Sys', id: string }, imageCollection?: { __typename?: 'AssetCollection', total: number, items: Array<{ __typename?: 'Asset', title?: string | null, description?: string | null, url?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null } | null };
-
-export type NavigationFieldsFragment = { __typename?: 'NavigationMenuCollection', items: Array<{ __typename?: 'NavigationMenu', menuItemsCollection?: { __typename?: 'NavigationMenuMenuItemsCollection', items: Array<{ __typename?: 'LanguageMetadata', locale?: string | null, localeUrl?: string | null, sys: { __typename?: 'Sys', id: string }, localeImage?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | { __typename: 'MenuGroup', groupName?: string | null, sys: { __typename?: 'Sys', id: string }, link?: { __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null, children?: { __typename?: 'MenuGroupFeaturedPagesCollection', items: Array<{ __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null } | null> } | null } | null> };
-
-export type CtfNavigationQueryVariables = Exact<{
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-}>;
-
-
-export type CtfNavigationQuery = { __typename?: 'Query', navigationMenuCollection?: { __typename?: 'NavigationMenuCollection', items: Array<{ __typename?: 'NavigationMenu', menuItemsCollection?: { __typename?: 'NavigationMenuMenuItemsCollection', items: Array<{ __typename?: 'LanguageMetadata', locale?: string | null, localeUrl?: string | null, sys: { __typename?: 'Sys', id: string }, localeImage?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | { __typename: 'MenuGroup', groupName?: string | null, sys: { __typename?: 'Sys', id: string }, link?: { __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null, children?: { __typename?: 'MenuGroupFeaturedPagesCollection', items: Array<{ __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null } | null> } | null } | null> } | null };
 
 type PageTopSectionFields_ComponentCta_Fragment = { __typename: 'ComponentCta' };
 
@@ -6647,7 +6765,7 @@ export type CtfPageQueryVariables = Exact<{
 
 export type CtfPageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, topSectionCollection?: { __typename?: 'PageTopSectionCollection', items: Array<{ __typename: 'ComponentCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentDuplex', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentHeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentInfoBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentQuote', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | null> } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null, extraSectionCollection?: { __typename?: 'PageExtraSectionCollection', items: Array<{ __typename: 'ComponentCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentDuplex', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentHeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentInfoBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentQuote', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null };
 
-export type ComponentTitleFieldsFragment = { __typename: 'Title', title?: string | null, sys: { __typename?: 'Sys', id: string } };
+export type ComponentTitleFieldsFragment = { __typename: 'Title', title?: string | null, alignment?: string | null, fontSize?: string | null, sys: { __typename?: 'Sys', id: string } };
 
 export type CtfComponentTitleQueryVariables = Exact<{
   id: Scalars['String'];
@@ -6656,9 +6774,7 @@ export type CtfComponentTitleQueryVariables = Exact<{
 }>;
 
 
-export type CtfComponentTitleQuery = { __typename?: 'Query', title?: { __typename: 'Title', title?: string | null, sys: { __typename?: 'Sys', id: string } } | null };
-
-export type PageLinkFieldsFragment = { __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null };
+export type CtfComponentTitleQuery = { __typename?: 'Query', title?: { __typename: 'Title', title?: string | null, alignment?: string | null, fontSize?: string | null, sys: { __typename?: 'Sys', id: string } } | null };
 
 type ComponentReferenceFields_Author_Fragment = { __typename: 'Author', sys: { __typename?: 'Sys', id: string } };
 
@@ -6711,5 +6827,3 @@ type ComponentReferenceFields_TopicProduct_Fragment = { __typename: 'TopicProduc
 type ComponentReferenceFields_TopicProductFeature_Fragment = { __typename: 'TopicProductFeature', sys: { __typename?: 'Sys', id: string } };
 
 export type ComponentReferenceFieldsFragment = ComponentReferenceFields_Author_Fragment | ComponentReferenceFields_ComponentCta_Fragment | ComponentReferenceFields_ComponentDuplex_Fragment | ComponentReferenceFields_ComponentHeroBanner_Fragment | ComponentReferenceFields_ComponentInfoBlock_Fragment | ComponentReferenceFields_ComponentProductTable_Fragment | ComponentReferenceFields_ComponentQuote_Fragment | ComponentReferenceFields_ContentBlock_Fragment | ComponentReferenceFields_ContentBlok_Fragment | ComponentReferenceFields_ContentBlokMetCta_Fragment | ComponentReferenceFields_ContentBlokSplit_Fragment | ComponentReferenceFields_ContentCarousel_Fragment | ComponentReferenceFields_FooterMenu_Fragment | ComponentReferenceFields_HeroBanner_Fragment | ComponentReferenceFields_ImageCarousel_Fragment | ComponentReferenceFields_LanguageMetadata_Fragment | ComponentReferenceFields_MenuGroup_Fragment | ComponentReferenceFields_NavigationMenu_Fragment | ComponentReferenceFields_Page_Fragment | ComponentReferenceFields_Seo_Fragment | ComponentReferenceFields_TextBanner_Fragment | ComponentReferenceFields_Title_Fragment | ComponentReferenceFields_TopicPerson_Fragment | ComponentReferenceFields_TopicProduct_Fragment | ComponentReferenceFields_TopicProductFeature_Fragment;
-
-export type MenuGroupFieldsFragment = { __typename?: 'MenuGroupFeaturedPagesCollection', items: Array<{ __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> };
