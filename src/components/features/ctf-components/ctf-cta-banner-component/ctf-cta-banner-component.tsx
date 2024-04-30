@@ -8,7 +8,7 @@ import {
 export const CtfCtaBannerComponent = (
   props: ComponentHeroBannerFieldsFragment,
 ) => {
-  const { title, subtitle, buttonText, backgroundImage } = props;
+  const { title, subtitle, buttonText, backgroundImage , buttonLink} = props;
 
   return (
     <div
@@ -17,7 +17,7 @@ export const CtfCtaBannerComponent = (
       <div className="w-full mx-auto max-w-6xl px-4 md:px-20">
         <h1 className="font-semibold text-white text-4xl max-w-xl">{title}</h1>
         <p className="mt-6 mb-5 text-xl text-white max-w-xl">{documentToReactComponents(subtitle?.json)}</p>
-        <a href="" className="mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white">
+        <a href="{buttonLink as string}" className="mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white">
           {buttonText}
         </a>
       </div>

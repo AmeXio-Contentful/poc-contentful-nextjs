@@ -33,7 +33,7 @@ export default function CtfContentCtaBlockComponent(props: ContentCtaBlock) {
           </div>
         </div>
         <button className="mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white">
-          {buttonText}
+          <a href={buttonLink as string}> {buttonText} </a>
         </button>
       </div>
     </div>

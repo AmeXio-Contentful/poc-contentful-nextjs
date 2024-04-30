@@ -1,6 +1,8 @@
 import {
   ComponentContentBlokFieldsFragment
 } from '@src/components/features/ctf-components/ctf-content-block-join-us/__generated/ctf-content-block-join-us.generated';
+import CtfTextBanner
+  from '@src/components/features/ctf-components/ctf-content-text-banner-component/ctf-content-text-banner-component';
 import { CtfTeaserComponent } from '@src/components/features/ctf-components/ctf-teaser-component/ctf-teaser-component';
 
 
@@ -16,6 +18,8 @@ export const CtfContentBlockJoinUs = (
     block1Image,
     block2Image,
     block3Image,
+    buttonLink,
+    buttonText
   } = props;
   const combinedData = [
     {
@@ -35,21 +39,28 @@ export const CtfContentBlockJoinUs = (
     },
   ];
   return (
-    <div className="mx-auto max-w-[800px] pt-16">
-      <h2 className="m-0 mb-4 p-0 text-center align-baseline text-4xl font-medium normal-case text-blue-900">
-        {title}
-      </h2>
-      <p className="text-center text-base font-normal text-black">{subtitle}</p>
-      <div className="grid grid-cols-3 gap-x-3">
+    <div className="mx-auto max-w-[800px] pt-16 text-center">
+      <CtfTextBanner
+        title={title as string}
+        description={subtitle as string}
+       />
+      {/*<h2 className="m-0 mb-4 p-0 text-center align-baseline font-medium normal-case primary-color pt-24">*/}
+      {/*  {title}*/}
+      {/*</h2>*/}
+      {/*<p className="text-center text-base font-normal text-black">{subtitle}</p>*/}
+      <div className="grid grid-cols-3 gap-x-3 mt-9">
         {combinedData?.map((entry: any) => (
           <div key={entry.id}>
             <CtfTeaserComponent
               body={entry.body}
               image={entry.image}
-            ></CtfTeaserComponent>
+             />
           </div>
         ))}
       </div>
+      <button className="mb-16 mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white">
+        <a href={buttonLink as string}> {buttonText} </a>
+      </button>
     </div>
   );
 };

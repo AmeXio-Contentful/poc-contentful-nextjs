@@ -25,10 +25,20 @@
 
 
 main > article {
-  &:nth-of-type(odd){
+  &:nth-of-type(odd) {
     background: #d9e8f5;
   }
-  &:nth-of-type(even){
+
+  &:nth-of-type(even) {
     background: #fff;
   }
+}
+
+.primary-color {
+  color: #084772;
+}
+
+.ContentCarousel,
+.secondary-color {
+  background-color: #d9e8f5;
 }
