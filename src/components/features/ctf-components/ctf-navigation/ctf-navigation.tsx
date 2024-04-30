@@ -1,91 +1,17 @@
 import { useContentfulInspectorMode } from '@contentful/live-preview/react';
-import { Theme } from '@mui/material';
-import { makeStyles } from '@mui/styles';
 
 import { NavigationFieldsFragment } from './__generated/ctf-navigation.generated';
 import { getLinkDisplayText, getLinkHrefPrefix } from './utils';
 
 import { Link } from '@src/components/shared/link';
-import { forEach } from 'lodash';
 
-const useStyles = makeStyles((theme: Theme) => ({
-  languageIcon: {
-    color: '#ff6900',
-  },
-  menu: {
-    alignItems: 'center',
-    display: 'flex',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0,
-  },
-  menuItem: {
-    color: '#084772',
-    paddingTop: '24px',
-    alignItems: 'center',
-    cursor: 'default',
-    display: 'inline-flex',
-    fontSize: '1.4rem',
-    fontWeight: 400,
-    height: '8rem',
-    lineHeight: 1.9,
-    marginRight: theme.spacing(8),
-    position: 'relative',
-
-    [theme.breakpoints.up('lg')]: {
-      marginRight: theme.spacing(9),
-    },
-
-    '& a': {
-      cursor: 'pointer',
-      display: 'inline-block',
-      transition: 'transform 0.2s ease-in-out',
-    },
-
-    '&:hover, &:focus, &:focus-within': {
-      '& > a': {
-        transform: 'translateY(-4px)'
-      },
-      '& $submenu': {
-        opacity: 1,
-        pointerEvents: 'all',
-        transform: 'translateY(0)',
-      },
-    },
-    '& img:hover': {
-      cursor: 'pointer'
-    }
-  },
-  submenu: {
-    backgroundColor: '#fff',
-    boxShadow: '0 3px 6px #00000029',
-    borderRadius: '14px',
-    left: theme.spacing(10 * -1),
-    listStyle: 'none',
-    opacity: 0,
-    padding: theme.spacing(4, 10),
-    pointerEvents: 'none',
-    position: 'absolute',
-    top: 'calc(100% - 2rem)',
-    transform: 'translateY(20%)',
-    transition: 'all 0.3s ease-in-out',
-  },
-  submenuItem: {
-    '&:hover, &:focus, &:focus-within': {
-      '& > a': {
-        transform: 'translateY(-4px)',
-      },
-    },
-  },
-}));
 
 export const CtfNavigation = (props: NavigationFieldsFragment) => {
-  const classes = useStyles();
   const inspectorMode = useContentfulInspectorMode();
 
   const navigationContent = props.items[0] as any;
 
-  const renderNavigationLinks = (menuGroup, listClassName) => {
+  const renderNavigationLinks = (menuGroup) => {
     return menuGroup?.items?.map(menuItem => {
       const href = getLinkHrefPrefix(menuItem);
       const linkText = getLinkDisplayText(menuItem);
@@ -93,13 +19,13 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
       return (
         <li
           key={menuItem.sys.id}
-          className={listClassName}
+          className='flex flex-row items-center last:mb-0 mb-8'
           {...inspectorMode({
             entryId: menuItem.sys.id,
             fieldId: 'pageName',
           })}
         >
-          <Link href={href}>{linkText}</Link>
+          <Link className="before:text-center before:mr-3 before:content-center transition-all duration-150 hover:text-primary text-secondary before:content-['|'] before:text-primary" href={href}>{linkText}</Link>
         </li>
       );
     });
@@ -108,8 +34,8 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
   const navigationItems: any[] = [];
   const languageItems: any[] = [];
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  navigationContent?.menuItemsCollection?.items.forEach((item) => {
+
+  navigationContent?.menuItemsCollection?.items.forEach((item:any) => {
       if (item.groupName && (item.children || item.link)) {
         navigationItems.push(item);
       } else {
@@ -121,34 +47,36 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
     <>
       {navigationContent?.menuItemsCollection?.items.length && (
         <nav role="navigation">
-          <ul className={classes.menu}>
+          <ul className='flex flex-row items-center list-none capitalize m-0 p-0 '>
             {navigationItems.map (
               menuItem =>
                   <li
                     key={menuItem.sys.id}
-                    className={classes.menuItem}
+                    className="group text-[0.8em] text-secondary"
                     {...inspectorMode({
                       entryId: menuItem.sys.id,
                       fieldId: 'groupName',
                     })}
+
                   >
                     {!menuItem.link ? (
-                      menuItem.groupName
+                      <p className='hover:bg-primary hover:text-white transition-all duration-150 px-5 py-3'>{menuItem.groupName}</p>
                     ) : (
-                      <Link href={`/${menuItem.link.slug}`}>{menuItem.groupName}</Link>
+                      <Link className='transition-all duration-150 text-secondary hover:bg-primary hover:text-white px-5 py-3' href={`/${menuItem.link.slug}`}>{menuItem.groupName}</Link>
                     )}
-                    {!menuItem.link && menuItem.children && (
-                      <ul className={classes.submenu}>
-                        {renderNavigationLinks(menuItem.children, classes.submenuItem)}
+                    {menuItem.children && menuItem.children.items.length > 0 && (
+                      <ul className="group-hover:opacity-100 opacity-0 absolute bg-white border-[1.5px] text-[0.8em] px-4 py-4 list-none w-[370px] top-[80%] transition-all duration-100 ease-in-out">
+                        {renderNavigationLinks(menuItem.children)}
                       </ul>
                     )}
                   </li>
             )}
+
             {languageItems.map(
               languageItem =>
                 <li
                   key={languageItem.sys.id}
-                  className={classes.menuItem}
+                  className='capitalize inline-flex h-[8rem] relative items-center pt-[24px]'
                   {...inspectorMode({
                     entryId: languageItem.sys.id,
                     fieldId: 'groupName',
