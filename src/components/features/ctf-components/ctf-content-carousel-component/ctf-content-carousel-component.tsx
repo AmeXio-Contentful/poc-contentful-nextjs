@@ -80,13 +80,13 @@ export const CtfContentCarouselComponent = (
                 alt="alt"
               />
               <div className="my-auto flex w-[545px] flex-col gap-4 px-14 md:px-0 ">
-                <h4 className="font-semibold primary-color">
+                <h4 className="text-2xl font-semibold text-blue-900 primary-color">
                   {entry.name}
                 </h4>
-                <p className="font-semibold">
+                <p className="font-semibold text-base">
                   {entry.jobTitle}
                 </p>
-                <div className="text-s">
+                <div className="text-base">
                   {documentToReactComponents(entry.body?.json)}
                 </div>
               </div>

@@ -19,7 +19,7 @@ export default function CtfFeaturedArticle({subtitle, description}: FeaturedProp
             <h2 className='font-bold underline'>
               { subtitle }
             </h2>
-            <p className='text-black text-2xl font-semibold'>
+            <p className='text-black text-base font-semibold'>
               { description }
             </p>
         </div>

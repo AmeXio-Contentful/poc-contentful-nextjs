@@ -15,7 +15,7 @@ export const CtfContentBlockSplit = (props: ComponentContentBlokSplitFieldsFragm
       </div>
       <div className="h-auto text-center secondary-color">
         <CtfFeaturedArticle description={subtitle as string} subtitle={title2 as string}/>
-      </div>;
+      </div>
     </div>
 );
 };

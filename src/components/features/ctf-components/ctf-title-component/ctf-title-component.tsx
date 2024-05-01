@@ -15,8 +15,8 @@ export const CtfTitleComponent = (props: ComponentTitleFieldsFragment) => {
     title,
   );
   return (
-    <div className={'md:px-48z h-auto px-6 pb-9 pt-9 mt-64'}>
-      {element}
+    <div className="md:px-48z h-auto w-full px-6 pb-9 pt-9 text-center">
+      <h2 className="text-4xl">{element}</h2>
     </div>
   );
 };

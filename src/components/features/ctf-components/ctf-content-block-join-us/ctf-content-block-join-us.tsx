@@ -58,7 +58,7 @@ export const CtfContentBlockJoinUs = (
           </div>
         ))}
       </div>
-      <button className="mb-16 bg-orange-500 text-2xl font-semibold text-white p-5 px-8">
+      <button className="mb-16 mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white">
         <a href={buttonLink as string}> {buttonText} </a>
       </button>
     </div>

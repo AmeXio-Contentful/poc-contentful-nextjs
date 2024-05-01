@@ -12,14 +12,14 @@ export const CtfCtaBannerComponent = (
 
   return (
     <div
-      className="md:px-48z w-full px-6 pb-14 pt-9 bg-no-repeat bg-cover bg-center max-h-[465px] min-h-[465px] flex"
+      className="md:px-48z h-auto w-full pb-24 pt-14 bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage?.url})` }}>
-      <div className="lg:w-1/2 flex-col m-auto h-full">
-        <h1 className="font-bold text-white lg:w-1/2">{title}</h1>
-        <p className="mt-5 text-3xl text-white font-semibold lg:w-1/2 leading-relaxed">{documentToReactComponents(subtitle?.json)}</p>
-        <button className="mt-8 bg-orange-500 text-2xl font-semibold text-white p-5 px-8">
-          <a href={buttonLink as string}> {buttonText} </a>
-        </button>
+      <div className="w-full mx-auto max-w-6xl px-4 md:px-20">
+        <h1 className="font-semibold text-white text-4xl max-w-xl">{title}</h1>
+        <p className="mt-6 mb-5 text-xl text-white max-w-xl">{documentToReactComponents(subtitle?.json)}</p>
+        <a href="{buttonLink as string}" className="mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white">
+          {buttonText}
+        </a>
       </div>
     </div>
   );

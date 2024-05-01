@@ -14,10 +14,10 @@ export default function CtfExpertAdvice({title, subtitle, buttonText1, buttonTex
         >
           <div className="w-4/5 ml-auto text-left">
             <h2 className='text-white font-bold pt-4 pb-4'>{title}</h2>
-            <p className='text-white pb-4 text-3xl'>{subtitle}</p>
+            <p className='text-white pb-4 text-base'>{subtitle}</p>
             <div className='flex self-stretch flex-col gap-y-12 mt-4 mb-8'>
               <button
-                className="py-3.5 pl-5 pr-12 bg-white text-gray-600 text-2xl text-start flex flex-row justify-between">
+                className="py-3.5 pl-5 pr-12 bg-white text-gray-600 text-base text-start flex flex-row justify-between">
                 {buttonText1}
                 <div className="h-full flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
@@ -28,7 +28,7 @@ export default function CtfExpertAdvice({title, subtitle, buttonText1, buttonTex
                 </div>
               </button>
               <button
-                className="py-3.5 pl-5 pr-12 bg-white text-gray-600 text-2xl text-start flex flex-row justify-between">
+                className="py-3.5 pl-5 pr-12 bg-white text-gray-600 text-base text-start flex flex-row justify-between">
                 {buttonText2}
                 <div className="h-full flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
@@ -39,7 +39,7 @@ export default function CtfExpertAdvice({title, subtitle, buttonText1, buttonTex
                 </div>
               </button>
               <button
-                className="py-3.5 pl-5 pr-12 bg-white text-gray-600 text-2xl text-start flex flex-row justify-between">
+                className="py-3.5 pl-5 pr-12 bg-white text-gray-600 text-base text-start flex flex-row justify-between">
                 The content is at the heart of the UX, but watch out for silos!
                 <div className="h-full flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
@@ -52,7 +52,7 @@ export default function CtfExpertAdvice({title, subtitle, buttonText1, buttonTex
             </div>
 
 
-            <button className="mb-16 mt-9 bg-orange-500 text-2xl font-semibold text-white p-5 px-8">
+            <button className="mb-16 mt-9 bg-orange-500 px-5 py-3.5 text-sm text-white">
               <a href={buttonLink}>More expert advice</a>
             </button>
           </div>
