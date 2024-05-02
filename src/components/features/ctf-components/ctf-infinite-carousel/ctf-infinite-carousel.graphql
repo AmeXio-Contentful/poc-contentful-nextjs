@@ -12,7 +12,6 @@ fragment ComponentImageCarouselFields on ImageCarousel {
       }
       ... on Asset {
         title
-        description
         url
         sys {
           id

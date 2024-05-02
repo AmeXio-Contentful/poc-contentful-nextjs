@@ -11,7 +11,7 @@ export const CtfTitleComponent = (props: ComponentTitleFieldsFragment) => {
 
   const element = React.createElement(
     newFontSize,
-    { className: 'primary-color lg:w-1/4 font-semibold ' + alignmentDecorator },
+    { className: 'primary-color font-semibold ' + alignmentDecorator },
     title,
   );
   return (

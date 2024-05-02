@@ -8,7 +8,7 @@ import {
 } from '@src/components/features/ctf-components/ctf-content-block-split/ctf-content-block-split';
 import {
   DefaultQueryParameters
-} from '@src/components/features/ctf-components/ctf-cta-banner-component/ctf-cta-banner-component-gql';
+} from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
 
 
 export function CtfContentBlockSplitGql({

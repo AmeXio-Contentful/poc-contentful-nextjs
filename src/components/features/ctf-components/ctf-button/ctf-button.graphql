@@ -1,0 +1,14 @@
+fragment ComponentButtonFields on Button {
+  __typename
+  sys {
+    id
+  }
+	url
+  buttonText
+}
+
+query CtfComponentButton($id: String!, $locale: String, $preview: Boolean) {
+  button(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentButtonFields
+  }
+}

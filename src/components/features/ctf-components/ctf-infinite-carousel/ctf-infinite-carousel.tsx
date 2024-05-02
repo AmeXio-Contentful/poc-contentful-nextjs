@@ -5,13 +5,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {
   ComponentImageCarouselFieldsFragment
-} from '@src/components/features/ctf-components/ctf-infinite-carousel-component/__generated/ctf-infinite-carousel-component.generated';
+} from '@src/components/features/ctf-components/ctf-infinite-carousel/__generated/ctf-infinite-carousel-component.generated';
 
 
-// eslint-disable-next-line import/no-unresolved
-
-
-export const CtfInfiniteCarouselComponent = (
+export const CtfInfiniteCarousel = (
   props: ComponentImageCarouselFieldsFragment,
 ) => {
   const { autoplay, imageCollection } = props;
@@ -43,7 +40,7 @@ export const CtfInfiniteCarouselComponent = (
      >
        {imageCollection?.items.map((entry: any) => (
          <SwiperSlide key={entry?.sys.id}>
-           <img className="max-h-[68px]" src={entry.url} alt="alt" />
+           <img className="max-h-[68px]" src={entry.url} alt={entry.title} />
          </SwiperSlide>
        ))}
      </Swiper>

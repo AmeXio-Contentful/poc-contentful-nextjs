@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   DefaultQueryParameters
-} from '@src/components/features/ctf-components/ctf-cta-banner-component/ctf-cta-banner-component-gql';
+} from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
 import {
   useCtfComponentTitleQuery
 } from '@src/components/features/ctf-components/ctf-title-component/__generated/ctf-title-component.generated';

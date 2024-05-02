@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 
 import {
@@ -8,7 +10,7 @@ import {
 } from '@src/components/features/ctf-components/ctf-content-carousel-component/ctf-content-carousel-component';
 import {
   DefaultQueryParameters
-} from '@src/components/features/ctf-components/ctf-cta-banner-component/ctf-cta-banner-component-gql';
+} from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
 
 
 export function CtfContentCarouselComponentGql({
