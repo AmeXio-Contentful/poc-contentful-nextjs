@@ -40,32 +40,7 @@ export const componentMap = {
     import(
       '@src/components/features/ctf-components/ctf-two-grid/ctf-two-grid'
       ).then((module) => module.CtfTwoGrid),
-  ),
-  // ContentBlock: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-content-block-component/ctf-content-block-component'
-  //     ).then((module) => module.CtfContentBlockComponent),
-  // ),
-  // ContentCarousel: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-content-carousel-component/ctf-content-carousel-component'
-  //     ).then((module) => module.CtfContentCarouselComponent),
-  // ),
-  // ContentBlok: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-content-block-join-us/ctf-content-block-join-us'
-  //     ).then((module) => module.CtfContentBlockJoinUs),
-  // ),
-  // ImageCarousel: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-infinite-carousel-component/ctf-infinite-carousel-component'
-  //     ).then((module) => module.CtfInfiniteCarousel),
-  // ),
-  // ContentBlokSplit: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-content-block-split/ctf-content-block-split'
-  //     ).then((module) => module.CtfContentBlockSplit),
-  // ),
+  )
 };
 
 export const componentGqlMap = {
@@ -108,30 +83,5 @@ export const componentGqlMap = {
     import(
       '@src/components/features/ctf-components/ctf-two-grid/ctf-two-grid-gql'
       ).then((module) => module.CtfTwoGridGql),
-  ),
-  // ContentBlock: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-content-block-component/ctf-content-block-component-gql'
-  //     ).then((module) => module.CtfContentBlockComponentGql),
-  // ),
-  // ContentCarousel: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-content-carousel-component/ctf-content-carousel-component-gql'
-  //     ).then((module) => module.CtfContentCarouselComponentGql),
-  // ),
-  // ContentBlok: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-content-block-join-us/ctf-content-block-join-us-gql'
-  //     ).then((module) => module.CtfContentBlockJoinUsGql),
-  // ),
-  // ImageCarousel: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-infinite-carousel-component/ctf-infinite-carousel-component-gql'
-  //     ).then((module) => module.CtfInfiniteCarouselGql),
-  // ),
-  // ContentBlokSplit: dynamic(() =>
-  //   import(
-  //     '@src/components/features/ctf-components/ctf-content-block-split/ctf-content-block-split-gql'
-  //     ).then((module) => module.CtfContentBlockSplitGql),
-  // ),
+  )
 };
