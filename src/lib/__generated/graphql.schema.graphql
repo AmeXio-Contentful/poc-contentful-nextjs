@@ -168,10 +168,24 @@ input ButtonFilter {
 }
 
 type ButtonLinkingCollections {
+  componentWrapperCollection(limit: Int = 100, locale: String, order: [ButtonLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   pageCollection(limit: Int = 100, locale: String, order: [ButtonLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [ButtonLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [ButtonLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum ButtonLinkingCollectionsComponentWrapperCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 enum ButtonLinkingCollectionsPageCollectionOrder {
@@ -236,6 +250,91 @@ enum ButtonOrder {
   sys_publishedVersion_DESC
   url_ASC
   url_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/componentWrapper)
+"""
+type ComponentWrapper implements Entry {
+  componentsCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0, where: ComponentWrapperComponentsFilter): ComponentWrapperComponentsCollection
+  contentfulMetadata: ContentfulMetadata!
+  internalName(locale: String): String
+  linkedFrom(allowedLocales: [String]): ComponentWrapperLinkingCollections
+  sys: Sys!
+}
+
+type ComponentWrapperCollection {
+  items: [ComponentWrapper]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+type ComponentWrapperComponentsCollection {
+  items: [ComponentWrapperComponentsItem]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input ComponentWrapperComponentsFilter {
+  AND: [ComponentWrapperComponentsFilter]
+  OR: [ComponentWrapperComponentsFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  sys: SysFilter
+}
+
+union ComponentWrapperComponentsItem = Button | Description | Image | ImageCarousel | Teaser | Testimonial | Title | TwoGrid
+
+input ComponentWrapperFilter {
+  AND: [ComponentWrapperFilter]
+  OR: [ComponentWrapperFilter]
+  components: cfcomponentsMultiTypeNestedFilter
+  componentsCollection_exists: Boolean
+  contentfulMetadata: ContentfulMetadataFilter
+  internalName: String
+  internalName_contains: String
+  internalName_exists: Boolean
+  internalName_in: [String]
+  internalName_not: String
+  internalName_not_contains: String
+  internalName_not_in: [String]
+  sys: SysFilter
+}
+
+type ComponentWrapperLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  pageSectionCollection(limit: Int = 100, locale: String, order: [ComponentWrapperLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
+}
+
+enum ComponentWrapperLinkingCollectionsPageSectionCollectionOrder {
+  componentsGrouped_ASC
+  componentsGrouped_DESC
+  internalName_ASC
+  internalName_DESC
+  sectionType_ASC
+  sectionType_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+enum ComponentWrapperOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 """
@@ -1251,10 +1350,24 @@ input DescriptionFilter {
 }
 
 type DescriptionLinkingCollections {
+  componentWrapperCollection(limit: Int = 100, locale: String, order: [DescriptionLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   pageCollection(limit: Int = 100, locale: String, order: [DescriptionLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [DescriptionLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [DescriptionLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum DescriptionLinkingCollectionsComponentWrapperCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 enum DescriptionLinkingCollectionsPageCollectionOrder {
@@ -1694,10 +1807,24 @@ input ImageCarouselFilter {
 }
 
 type ImageCarouselLinkingCollections {
+  componentWrapperCollection(limit: Int = 100, locale: String, order: [ImageCarouselLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   pageCollection(limit: Int = 100, locale: String, order: [ImageCarouselLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [ImageCarouselLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [ImageCarouselLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum ImageCarouselLinkingCollectionsComponentWrapperCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 enum ImageCarouselLinkingCollectionsPageCollectionOrder {
@@ -1814,9 +1941,23 @@ enum ImageFormat {
 }
 
 type ImageLinkingCollections {
+  componentWrapperCollection(limit: Int = 100, locale: String, order: [ImageLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [ImageLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [ImageLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum ImageLinkingCollectionsComponentWrapperCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 enum ImageLinkingCollectionsPageSectionCollectionOrder {
@@ -2573,7 +2714,7 @@ input PageSectionComponentsFilter {
   sys: SysFilter
 }
 
-union PageSectionComponentsItem = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid
+union PageSectionComponentsItem = Button | ComponentWrapper | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid
 
 input PageSectionFilter {
   AND: [PageSectionFilter]
@@ -2746,6 +2887,8 @@ type Query {
   assetCollection(limit: Int = 100, locale: String, order: [AssetOrder], preview: Boolean, skip: Int = 0, where: AssetFilter): AssetCollection
   button(id: String!, locale: String, preview: Boolean): Button
   buttonCollection(limit: Int = 100, locale: String, order: [ButtonOrder], preview: Boolean, skip: Int = 0, where: ButtonFilter): ButtonCollection
+  componentWrapper(id: String!, locale: String, preview: Boolean): ComponentWrapper
+  componentWrapperCollection(limit: Int = 100, locale: String, order: [ComponentWrapperOrder], preview: Boolean, skip: Int = 0, where: ComponentWrapperFilter): ComponentWrapperCollection
   contentBlock(id: String!, locale: String, preview: Boolean): ContentBlock
   contentBlockCollection(limit: Int = 100, locale: String, order: [ContentBlockOrder], preview: Boolean, skip: Int = 0, where: ContentBlockFilter): ContentBlockCollection
   contentBlok(id: String!, locale: String, preview: Boolean): ContentBlok
@@ -3014,10 +3157,24 @@ input TeaserFilter {
 }
 
 type TeaserLinkingCollections {
+  componentWrapperCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   pageCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum TeaserLinkingCollectionsComponentWrapperCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 enum TeaserLinkingCollectionsPageCollectionOrder {
@@ -3140,10 +3297,24 @@ input TestimonialFilter {
 }
 
 type TestimonialLinkingCollections {
+  componentWrapperCollection(limit: Int = 100, locale: String, order: [TestimonialLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   pageCollection(limit: Int = 100, locale: String, order: [TestimonialLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [TestimonialLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [TestimonialLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum TestimonialLinkingCollectionsComponentWrapperCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 enum TestimonialLinkingCollectionsPageCollectionOrder {
@@ -3344,10 +3515,24 @@ input TitleFilter {
 }
 
 type TitleLinkingCollections {
+  componentWrapperCollection(limit: Int = 100, locale: String, order: [TitleLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   pageCollection(limit: Int = 100, locale: String, order: [TitleLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [TitleLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [TitleLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum TitleLinkingCollectionsComponentWrapperCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 enum TitleLinkingCollectionsPageCollectionOrder {
@@ -3420,8 +3605,8 @@ enum TitleOrder {
 [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/twoGrid)
 """
 type TwoGrid implements Entry {
-  componentLeft(locale: String, preview: Boolean, where: TwoGridComponentLeftFilter): TwoGridComponentLeft
-  componentRight(locale: String, preview: Boolean, where: TwoGridComponentRightFilter): TwoGridComponentRight
+  componentLeft(locale: String, preview: Boolean): TwoGridComponentLeft
+  componentRight(locale: String, preview: Boolean): TwoGridComponentRight
   contentfulMetadata: ContentfulMetadata!
   internalName(locale: String): String
   linkedFrom(allowedLocales: [String]): TwoGridLinkingCollections
@@ -3437,28 +3622,12 @@ type TwoGridCollection {
 
 union TwoGridComponentLeft = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid
 
-input TwoGridComponentLeftFilter {
-  AND: [TwoGridComponentLeftFilter]
-  OR: [TwoGridComponentLeftFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  sys: SysFilter
-}
-
 union TwoGridComponentRight = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid
-
-input TwoGridComponentRightFilter {
-  AND: [TwoGridComponentRightFilter]
-  OR: [TwoGridComponentRightFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  sys: SysFilter
-}
 
 input TwoGridFilter {
   AND: [TwoGridFilter]
   OR: [TwoGridFilter]
-  componentLeft: cfcomponentLeftMultiTypeNestedFilter
   componentLeft_exists: Boolean
-  componentRight: cfcomponentRightMultiTypeNestedFilter
   componentRight_exists: Boolean
   contentfulMetadata: ContentfulMetadataFilter
   internalName: String
@@ -3472,9 +3641,23 @@ input TwoGridFilter {
 }
 
 type TwoGridLinkingCollections {
+  componentWrapperCollection(limit: Int = 100, locale: String, order: [TwoGridLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [TwoGridLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [TwoGridLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum TwoGridLinkingCollectionsComponentWrapperCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 enum TwoGridLinkingCollectionsPageSectionCollectionOrder {
@@ -3636,20 +3819,6 @@ input cfSeoNestedFilter {
   title_not: String
   title_not_contains: String
   title_not_in: [String]
-}
-
-input cfcomponentLeftMultiTypeNestedFilter {
-  AND: [cfcomponentLeftMultiTypeNestedFilter]
-  OR: [cfcomponentLeftMultiTypeNestedFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  sys: SysFilter
-}
-
-input cfcomponentRightMultiTypeNestedFilter {
-  AND: [cfcomponentRightMultiTypeNestedFilter]
-  OR: [cfcomponentRightMultiTypeNestedFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  sys: SysFilter
 }
 
 input cfcomponentsMultiTypeNestedFilter {

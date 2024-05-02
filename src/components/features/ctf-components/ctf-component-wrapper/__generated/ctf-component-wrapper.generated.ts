@@ -54,13 +54,10 @@ export type DefaultInfo_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typ
 
 export type DefaultInfoFragment = DefaultInfo_Button_Fragment | DefaultInfo_ComponentWrapper_Fragment | DefaultInfo_ContentBlock_Fragment | DefaultInfo_ContentBlok_Fragment | DefaultInfo_ContentBlokMetCta_Fragment | DefaultInfo_ContentBlokSplit_Fragment | DefaultInfo_ContentCarousel_Fragment | DefaultInfo_Description_Fragment | DefaultInfo_FooterMenu_Fragment | DefaultInfo_HeroBanner_Fragment | DefaultInfo_Image_Fragment | DefaultInfo_ImageCarousel_Fragment | DefaultInfo_LanguageMetadata_Fragment | DefaultInfo_MainNavigation_Fragment | DefaultInfo_MenuGroup_Fragment | DefaultInfo_NavigationItem_Fragment | DefaultInfo_NavigationMenu_Fragment | DefaultInfo_Page_Fragment | DefaultInfo_PageSection_Fragment | DefaultInfo_Seo_Fragment | DefaultInfo_Teaser_Fragment | DefaultInfo_Testimonial_Fragment | DefaultInfo_TextBanner_Fragment | DefaultInfo_Title_Fragment | DefaultInfo_TwoGrid_Fragment;
 
-export type CtfPageSectionFieldsFragment = (
-  { __typename?: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<(
+export type CtfComponentsWrapperFieldsFragment = (
+  { __typename?: 'ComponentWrapper', componentsCollection?: { __typename?: 'ComponentWrapperComponentsCollection', items: Array<(
       { __typename?: 'Button' }
       & DefaultInfo_Button_Fragment
-    ) | (
-      { __typename?: 'ComponentWrapper' }
-      & DefaultInfo_ComponentWrapper_Fragment
     ) | (
       { __typename?: 'Description' }
       & DefaultInfo_Description_Fragment
@@ -70,9 +67,6 @@ export type CtfPageSectionFieldsFragment = (
     ) | (
       { __typename?: 'ImageCarousel' }
       & DefaultInfo_ImageCarousel_Fragment
-    ) | (
-      { __typename?: 'PageSection' }
-      & DefaultInfo_PageSection_Fragment
     ) | (
       { __typename?: 'Teaser' }
       & DefaultInfo_Teaser_Fragment
@@ -86,19 +80,19 @@ export type CtfPageSectionFieldsFragment = (
       { __typename?: 'TwoGrid' }
       & DefaultInfo_TwoGrid_Fragment
     ) | null> } | null }
-  & DefaultInfo_PageSection_Fragment
+  & DefaultInfo_ComponentWrapper_Fragment
 );
 
-export type CtfPageSectionQueryVariables = Types.Exact<{
+export type CtfComponentWrapperQueryVariables = Types.Exact<{
   id: Types.Scalars['String'];
   locale?: Types.InputMaybe<Types.Scalars['String']>;
   preview?: Types.InputMaybe<Types.Scalars['Boolean']>;
 }>;
 
 
-export type CtfPageSectionQuery = { __typename?: 'Query', pageSection?: (
-    { __typename?: 'PageSection' }
-    & CtfPageSectionFieldsFragment
+export type CtfComponentWrapperQuery = { __typename?: 'Query', componentWrapper?: (
+    { __typename?: 'ComponentWrapper' }
+    & CtfComponentsWrapperFieldsFragment
   ) | null };
 
 export const DefaultInfoFragmentDoc = `
@@ -109,19 +103,11 @@ export const DefaultInfoFragmentDoc = `
   }
 }
     `;
-export const CtfPageSectionFieldsFragmentDoc = `
-    fragment CtfPageSectionFields on PageSection {
+export const CtfComponentsWrapperFieldsFragmentDoc = `
+    fragment CtfComponentsWrapperFields on ComponentWrapper {
   ...DefaultInfo
-  componentsGrouped
-  sectionType
   componentsCollection {
     items {
-      ... on ComponentWrapper {
-        ...DefaultInfo
-      }
-      ... on PageSection {
-        ...DefaultInfo
-      }
       ... on Button {
         ...DefaultInfo
       }
@@ -156,28 +142,28 @@ export const CtfPageSectionFieldsFragmentDoc = `
   }
 }
     `;
-export const CtfPageSectionDocument = `
-    query CtfPageSection($id: String!, $locale: String, $preview: Boolean) {
-  pageSection(id: $id, locale: $locale, preview: $preview) {
-    ...CtfPageSectionFields
+export const CtfComponentWrapperDocument = `
+    query CtfComponentWrapper($id: String!, $locale: String, $preview: Boolean) {
+  componentWrapper(id: $id, locale: $locale, preview: $preview) {
+    ...CtfComponentsWrapperFields
   }
 }
-    ${CtfPageSectionFieldsFragmentDoc}
+    ${CtfComponentsWrapperFieldsFragmentDoc}
 ${DefaultInfoFragmentDoc}`;
-export const useCtfPageSectionQuery = <
-      TData = CtfPageSectionQuery,
+export const useCtfComponentWrapperQuery = <
+      TData = CtfComponentWrapperQuery,
       TError = unknown
     >(
-      variables: CtfPageSectionQueryVariables,
-      options?: UseQueryOptions<CtfPageSectionQuery, TError, TData>
+      variables: CtfComponentWrapperQueryVariables,
+      options?: UseQueryOptions<CtfComponentWrapperQuery, TError, TData>
     ) =>
-    useQuery<CtfPageSectionQuery, TError, TData>(
-      ['CtfPageSection', variables],
-      customFetcher<CtfPageSectionQuery, CtfPageSectionQueryVariables>(CtfPageSectionDocument, variables),
+    useQuery<CtfComponentWrapperQuery, TError, TData>(
+      ['CtfComponentWrapper', variables],
+      customFetcher<CtfComponentWrapperQuery, CtfComponentWrapperQueryVariables>(CtfComponentWrapperDocument, variables),
       options
     );
 
-useCtfPageSectionQuery.getKey = (variables: CtfPageSectionQueryVariables) => ['CtfPageSection', variables];
+useCtfComponentWrapperQuery.getKey = (variables: CtfComponentWrapperQueryVariables) => ['CtfComponentWrapper', variables];
 ;
 
-useCtfPageSectionQuery.fetcher = (variables: CtfPageSectionQueryVariables, options?: RequestInit['headers']) => customFetcher<CtfPageSectionQuery, CtfPageSectionQueryVariables>(CtfPageSectionDocument, variables, options);
+useCtfComponentWrapperQuery.fetcher = (variables: CtfComponentWrapperQueryVariables, options?: RequestInit['headers']) => customFetcher<CtfComponentWrapperQuery, CtfComponentWrapperQueryVariables>(CtfComponentWrapperDocument, variables, options);

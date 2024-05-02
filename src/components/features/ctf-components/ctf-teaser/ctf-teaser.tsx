@@ -1,8 +1,10 @@
+import { sectionTypes } from '@src/components/shared/global';
+
 export const CtfTeaser = (
   props: any
 ) => {
-  const { title, subtitle, buttonText, image , buttonUrl, grouped, gridSystem} = props;
-  if (grouped) {
+  const { title, subtitle, buttonText, image , buttonUrl, sectionType} = props;
+  if (sectionType == sectionTypes.solutionSection) {
     return (
       <div className="flex w-full max-w-[455px] flex-row gap-x-[75px] h-full">
         <img
@@ -26,7 +28,7 @@ export const CtfTeaser = (
     );
   }
 
-  if (!grouped && (gridSystem != null && gridSystem > 1)) {
+  if (sectionType == sectionTypes.hrSection) {
     return (
       <div className="md:px-48z h-auto px-6 pb-14 pt-9 text-base">
         <div className="relative max-h-full overflow-hidden

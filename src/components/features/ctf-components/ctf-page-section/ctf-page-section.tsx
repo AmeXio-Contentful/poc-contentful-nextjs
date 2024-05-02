@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ComponentResolver } from '@src/components/shared/component-resolver';
 import { PageContainer } from '@src/components/templates/page-container';
+import { sectionTypes } from '@src/components/shared/global';
 
 interface PageSectionProps {
   __typename: string;
@@ -13,32 +14,28 @@ interface PageSectionProps {
   sectionType?: string;
 }
 
-const typenameTestimonial = "Testimonial";
-const typenameTeaser = "Teaser";
 
 export const CtfPageSection = (props: PageSectionProps) => {
   const data = props.componentsCollection?.items as any[];
 
-  let classNames = '';
+
   if (data && data.length > 0) {
-    const testimonialCountObj = data.filter(item => item.__typename == typenameTestimonial)
+    const testimonialCountObj = data.filter(item => item.__typename == sectionTypes.testimonialResourceType)
     if (testimonialCountObj && testimonialCountObj.length > 0) {
       data.map(testimonial => testimonial.maxItems = testimonialCountObj.length);
     }
 
-    const teaserCountObj = data.filter(item => item.__typename == typenameTeaser)
-    if (teaserCountObj && teaserCountObj.length > 1) {
-      data.map(teaser => teaser.gridItems = teaserCountObj.length);
-      classNames = 'grid grid-cols-3 gap-x-3 mt-9';
+    if (props.sectionType == sectionTypes.solutionSection) {
+      data.map(item => item.sectionType = props.sectionType);
     }
 
-    if (props.sectionType == 'Solutions Section') {
-      classNames = 'grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pb-14 pt-9 md:px-48 lg:grid-cols-2 m-auto';
+    if (props.sectionType == sectionTypes.hrSection) {
+      data.map(item => item.sectionType = props.sectionType);
     }
   }
 
   return (
-    <PageContainer className={classNames}>
+    <PageContainer>
       {props.componentsCollection && props.componentsCollection?.items.map(entry => (
         <div key={entry!.sys.id}>
           <ComponentResolver componentProps={entry!} />

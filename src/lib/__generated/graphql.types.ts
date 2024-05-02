@@ -368,10 +368,20 @@ export type ButtonFilter = {
 
 export type ButtonLinkingCollections = {
   __typename?: 'ButtonLinkingCollections';
+  componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
   pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type ButtonLinkingCollectionsComponentWrapperCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ButtonLinkingCollectionsComponentWrapperCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -408,6 +418,19 @@ export type ButtonLinkingCollectionsTwoGridCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum ButtonLinkingCollectionsComponentWrapperCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum ButtonLinkingCollectionsPageCollectionOrder {
   InternalNameAsc = 'internalName_ASC',
@@ -471,6 +494,132 @@ export enum ButtonOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
   UrlAsc = 'url_ASC',
   UrlDesc = 'url_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/componentWrapper) */
+export type ComponentWrapper = Entry & {
+  __typename?: 'ComponentWrapper';
+  componentsCollection?: Maybe<ComponentWrapperComponentsCollection>;
+  contentfulMetadata: ContentfulMetadata;
+  internalName?: Maybe<Scalars['String']>;
+  linkedFrom?: Maybe<ComponentWrapperLinkingCollections>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/componentWrapper) */
+export type ComponentWrapperComponentsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ComponentWrapperComponentsFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/componentWrapper) */
+export type ComponentWrapperInternalNameArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/componentWrapper) */
+export type ComponentWrapperLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ComponentWrapperCollection = {
+  __typename?: 'ComponentWrapperCollection';
+  items: Array<Maybe<ComponentWrapper>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type ComponentWrapperComponentsCollection = {
+  __typename?: 'ComponentWrapperComponentsCollection';
+  items: Array<Maybe<ComponentWrapperComponentsItem>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type ComponentWrapperComponentsFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ComponentWrapperComponentsFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ComponentWrapperComponentsFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type ComponentWrapperComponentsItem = Button | Description | Image | ImageCarousel | Teaser | Testimonial | Title | TwoGrid;
+
+export type ComponentWrapperFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ComponentWrapperFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ComponentWrapperFilter>>>;
+  components?: InputMaybe<CfcomponentsMultiTypeNestedFilter>;
+  componentsCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  internalName?: InputMaybe<Scalars['String']>;
+  internalName_contains?: InputMaybe<Scalars['String']>;
+  internalName_exists?: InputMaybe<Scalars['Boolean']>;
+  internalName_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  internalName_not?: InputMaybe<Scalars['String']>;
+  internalName_not_contains?: InputMaybe<Scalars['String']>;
+  internalName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type ComponentWrapperLinkingCollections = {
+  __typename?: 'ComponentWrapperLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  pageSectionCollection?: Maybe<PageSectionCollection>;
+};
+
+
+export type ComponentWrapperLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type ComponentWrapperLinkingCollectionsPageSectionCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ComponentWrapperLinkingCollectionsPageSectionCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum ComponentWrapperLinkingCollectionsPageSectionCollectionOrder {
+  ComponentsGroupedAsc = 'componentsGrouped_ASC',
+  ComponentsGroupedDesc = 'componentsGrouped_DESC',
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SectionTypeAsc = 'sectionType_ASC',
+  SectionTypeDesc = 'sectionType_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum ComponentWrapperOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
 /** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlock) */
@@ -1962,10 +2111,20 @@ export type DescriptionFilter = {
 
 export type DescriptionLinkingCollections = {
   __typename?: 'DescriptionLinkingCollections';
+  componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
   pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type DescriptionLinkingCollectionsComponentWrapperCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<DescriptionLinkingCollectionsComponentWrapperCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -2002,6 +2161,19 @@ export type DescriptionLinkingCollectionsTwoGridCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum DescriptionLinkingCollectionsComponentWrapperCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum DescriptionLinkingCollectionsPageCollectionOrder {
   InternalNameAsc = 'internalName_ASC',
@@ -2638,10 +2810,20 @@ export type ImageCarouselFilter = {
 
 export type ImageCarouselLinkingCollections = {
   __typename?: 'ImageCarouselLinkingCollections';
+  componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
   pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type ImageCarouselLinkingCollectionsComponentWrapperCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ImageCarouselLinkingCollectionsComponentWrapperCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -2678,6 +2860,19 @@ export type ImageCarouselLinkingCollectionsTwoGridCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum ImageCarouselLinkingCollectionsComponentWrapperCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum ImageCarouselLinkingCollectionsPageCollectionOrder {
   InternalNameAsc = 'internalName_ASC',
@@ -2790,9 +2985,19 @@ export enum ImageFormat {
 
 export type ImageLinkingCollections = {
   __typename?: 'ImageLinkingCollections';
+  componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type ImageLinkingCollectionsComponentWrapperCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ImageLinkingCollectionsComponentWrapperCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -2820,6 +3025,19 @@ export type ImageLinkingCollectionsTwoGridCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum ImageLinkingCollectionsComponentWrapperCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum ImageLinkingCollectionsPageSectionCollectionOrder {
   ComponentsGroupedAsc = 'componentsGrouped_ASC',
@@ -3902,7 +4120,7 @@ export type PageSectionComponentsFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
-export type PageSectionComponentsItem = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid;
+export type PageSectionComponentsItem = Button | ComponentWrapper | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid;
 
 export type PageSectionFilter = {
   AND?: InputMaybe<Array<InputMaybe<PageSectionFilter>>>;
@@ -4108,6 +4326,8 @@ export type Query = {
   assetCollection?: Maybe<AssetCollection>;
   button?: Maybe<Button>;
   buttonCollection?: Maybe<ButtonCollection>;
+  componentWrapper?: Maybe<ComponentWrapper>;
+  componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   contentBlock?: Maybe<ContentBlock>;
   contentBlockCollection?: Maybe<ContentBlockCollection>;
   contentBlok?: Maybe<ContentBlok>;
@@ -4196,6 +4416,23 @@ export type QueryButtonCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ButtonFilter>;
+};
+
+
+export type QueryComponentWrapperArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryComponentWrapperCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ComponentWrapperOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ComponentWrapperFilter>;
 };
 
 
@@ -4925,10 +5162,20 @@ export type TeaserFilter = {
 
 export type TeaserLinkingCollections = {
   __typename?: 'TeaserLinkingCollections';
+  componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
   pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type TeaserLinkingCollectionsComponentWrapperCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<TeaserLinkingCollectionsComponentWrapperCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -4965,6 +5212,19 @@ export type TeaserLinkingCollectionsTwoGridCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum TeaserLinkingCollectionsComponentWrapperCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum TeaserLinkingCollectionsPageCollectionOrder {
   InternalNameAsc = 'internalName_ASC',
@@ -5118,10 +5378,20 @@ export type TestimonialFilter = {
 
 export type TestimonialLinkingCollections = {
   __typename?: 'TestimonialLinkingCollections';
+  componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
   pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type TestimonialLinkingCollectionsComponentWrapperCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<TestimonialLinkingCollectionsComponentWrapperCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -5158,6 +5428,19 @@ export type TestimonialLinkingCollectionsTwoGridCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum TestimonialLinkingCollectionsComponentWrapperCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum TestimonialLinkingCollectionsPageCollectionOrder {
   InternalNameAsc = 'internalName_ASC',
@@ -5424,10 +5707,20 @@ export type TitleFilter = {
 
 export type TitleLinkingCollections = {
   __typename?: 'TitleLinkingCollections';
+  componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
   pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type TitleLinkingCollectionsComponentWrapperCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<TitleLinkingCollectionsComponentWrapperCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -5464,6 +5757,19 @@ export type TitleLinkingCollectionsTwoGridCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum TitleLinkingCollectionsComponentWrapperCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum TitleLinkingCollectionsPageCollectionOrder {
   InternalNameAsc = 'internalName_ASC',
@@ -5547,7 +5853,6 @@ export type TwoGrid = Entry & {
 export type TwoGridComponentLeftArgs = {
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
-  where?: InputMaybe<TwoGridComponentLeftFilter>;
 };
 
 
@@ -5555,7 +5860,6 @@ export type TwoGridComponentLeftArgs = {
 export type TwoGridComponentRightArgs = {
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
-  where?: InputMaybe<TwoGridComponentRightFilter>;
 };
 
 
@@ -5580,28 +5884,12 @@ export type TwoGridCollection = {
 
 export type TwoGridComponentLeft = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid;
 
-export type TwoGridComponentLeftFilter = {
-  AND?: InputMaybe<Array<InputMaybe<TwoGridComponentLeftFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<TwoGridComponentLeftFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  sys?: InputMaybe<SysFilter>;
-};
-
 export type TwoGridComponentRight = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid;
-
-export type TwoGridComponentRightFilter = {
-  AND?: InputMaybe<Array<InputMaybe<TwoGridComponentRightFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<TwoGridComponentRightFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  sys?: InputMaybe<SysFilter>;
-};
 
 export type TwoGridFilter = {
   AND?: InputMaybe<Array<InputMaybe<TwoGridFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<TwoGridFilter>>>;
-  componentLeft?: InputMaybe<CfcomponentLeftMultiTypeNestedFilter>;
   componentLeft_exists?: InputMaybe<Scalars['Boolean']>;
-  componentRight?: InputMaybe<CfcomponentRightMultiTypeNestedFilter>;
   componentRight_exists?: InputMaybe<Scalars['Boolean']>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   internalName?: InputMaybe<Scalars['String']>;
@@ -5616,9 +5904,19 @@ export type TwoGridFilter = {
 
 export type TwoGridLinkingCollections = {
   __typename?: 'TwoGridLinkingCollections';
+  componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type TwoGridLinkingCollectionsComponentWrapperCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<TwoGridLinkingCollectionsComponentWrapperCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -5646,6 +5944,19 @@ export type TwoGridLinkingCollectionsTwoGridCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum TwoGridLinkingCollectionsComponentWrapperCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum TwoGridLinkingCollectionsPageSectionCollectionOrder {
   ComponentsGroupedAsc = 'componentsGrouped_ASC',
@@ -5808,20 +6119,6 @@ export type CfSeoNestedFilter = {
   title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
-export type CfcomponentLeftMultiTypeNestedFilter = {
-  AND?: InputMaybe<Array<InputMaybe<CfcomponentLeftMultiTypeNestedFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<CfcomponentLeftMultiTypeNestedFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  sys?: InputMaybe<SysFilter>;
-};
-
-export type CfcomponentRightMultiTypeNestedFilter = {
-  AND?: InputMaybe<Array<InputMaybe<CfcomponentRightMultiTypeNestedFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<CfcomponentRightMultiTypeNestedFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  sys?: InputMaybe<SysFilter>;
-};
-
 export type CfcomponentsMultiTypeNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfcomponentsMultiTypeNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfcomponentsMultiTypeNestedFilter>>>;
@@ -5906,7 +6203,70 @@ export type CtfComponentButtonQueryVariables = Exact<{
 
 export type CtfComponentButtonQuery = { __typename?: 'Query', button?: { __typename: 'Button', url?: string | null, buttonText?: string | null, sys: { __typename?: 'Sys', id: string } } | null };
 
-export type ComponentContentBlocksFieldsFragment = { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string }, contentBlockCtaCollection?: { __typename?: 'ContentBlockContentBlockCtaCollection', total: number, items: Array<{ __typename?: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokMetCta', blockTitle?: string | null, buttonText?: string | null, buttonLink?: string | null, blockImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, contentType?: string | null, fileName?: string | null, url?: string | null, width?: number | null, height?: number | null } | null, blockBody?: { __typename?: 'ContentBlokMetCtaBlockBody', json: any } | null, sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FooterMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MainNavigation', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MenuGroup', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationItem', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Page', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Seo', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null };
+type DefaultInfo_Button_Fragment = { __typename: 'Button', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_ComponentWrapper_Fragment = { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_ContentBlock_Fragment = { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_ContentBlok_Fragment = { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_ContentBlokMetCta_Fragment = { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_ContentBlokSplit_Fragment = { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_ContentCarousel_Fragment = { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_Description_Fragment = { __typename: 'Description', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_FooterMenu_Fragment = { __typename: 'FooterMenu', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_HeroBanner_Fragment = { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_Image_Fragment = { __typename: 'Image', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_ImageCarousel_Fragment = { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_LanguageMetadata_Fragment = { __typename: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_MainNavigation_Fragment = { __typename: 'MainNavigation', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_MenuGroup_Fragment = { __typename: 'MenuGroup', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_NavigationItem_Fragment = { __typename: 'NavigationItem', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_NavigationMenu_Fragment = { __typename: 'NavigationMenu', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_Page_Fragment = { __typename: 'Page', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_PageSection_Fragment = { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_Seo_Fragment = { __typename: 'Seo', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_Teaser_Fragment = { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_Testimonial_Fragment = { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_TextBanner_Fragment = { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_Title_Fragment = { __typename: 'Title', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } };
+
+export type DefaultInfoFragment = DefaultInfo_Button_Fragment | DefaultInfo_ComponentWrapper_Fragment | DefaultInfo_ContentBlock_Fragment | DefaultInfo_ContentBlok_Fragment | DefaultInfo_ContentBlokMetCta_Fragment | DefaultInfo_ContentBlokSplit_Fragment | DefaultInfo_ContentCarousel_Fragment | DefaultInfo_Description_Fragment | DefaultInfo_FooterMenu_Fragment | DefaultInfo_HeroBanner_Fragment | DefaultInfo_Image_Fragment | DefaultInfo_ImageCarousel_Fragment | DefaultInfo_LanguageMetadata_Fragment | DefaultInfo_MainNavigation_Fragment | DefaultInfo_MenuGroup_Fragment | DefaultInfo_NavigationItem_Fragment | DefaultInfo_NavigationMenu_Fragment | DefaultInfo_Page_Fragment | DefaultInfo_PageSection_Fragment | DefaultInfo_Seo_Fragment | DefaultInfo_Teaser_Fragment | DefaultInfo_Testimonial_Fragment | DefaultInfo_TextBanner_Fragment | DefaultInfo_Title_Fragment | DefaultInfo_TwoGrid_Fragment;
+
+export type CtfComponentsWrapperFieldsFragment = { __typename: 'ComponentWrapper', componentsCollection?: { __typename?: 'ComponentWrapperComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } };
+
+export type CtfComponentWrapperQueryVariables = Exact<{
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+}>;
+
+
+export type CtfComponentWrapperQuery = { __typename?: 'Query', componentWrapper?: { __typename: 'ComponentWrapper', componentsCollection?: { __typename?: 'ComponentWrapperComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } } | null };
+
+export type ComponentContentBlocksFieldsFragment = { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string }, contentBlockCtaCollection?: { __typename?: 'ContentBlockContentBlockCtaCollection', total: number, items: Array<{ __typename?: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokMetCta', blockTitle?: string | null, buttonText?: string | null, buttonLink?: string | null, blockImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, contentType?: string | null, fileName?: string | null, url?: string | null, width?: number | null, height?: number | null } | null, blockBody?: { __typename?: 'ContentBlokMetCtaBlockBody', json: any } | null, sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FooterMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MainNavigation', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MenuGroup', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationItem', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Page', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Seo', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null };
 
 export type CtfComponentContentBlockQueryVariables = Exact<{
   id: Scalars['String'];
@@ -5915,7 +6275,7 @@ export type CtfComponentContentBlockQueryVariables = Exact<{
 }>;
 
 
-export type CtfComponentContentBlockQuery = { __typename?: 'Query', contentBlock?: { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string }, contentBlockCtaCollection?: { __typename?: 'ContentBlockContentBlockCtaCollection', total: number, items: Array<{ __typename?: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokMetCta', blockTitle?: string | null, buttonText?: string | null, buttonLink?: string | null, blockImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, contentType?: string | null, fileName?: string | null, url?: string | null, width?: number | null, height?: number | null } | null, blockBody?: { __typename?: 'ContentBlokMetCtaBlockBody', json: any } | null, sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FooterMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MainNavigation', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MenuGroup', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationItem', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Page', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Seo', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null };
+export type CtfComponentContentBlockQuery = { __typename?: 'Query', contentBlock?: { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string }, contentBlockCtaCollection?: { __typename?: 'ContentBlockContentBlockCtaCollection', total: number, items: Array<{ __typename?: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokMetCta', blockTitle?: string | null, buttonText?: string | null, buttonLink?: string | null, blockImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, contentType?: string | null, fileName?: string | null, url?: string | null, width?: number | null, height?: number | null } | null, blockBody?: { __typename?: 'ContentBlokMetCtaBlockBody', json: any } | null, sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FooterMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MainNavigation', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MenuGroup', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationItem', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Page', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Seo', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null };
 
 export type ComponentContentBlokFieldsFragment = { __typename: 'ContentBlok', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonLink?: string | null, sys: { __typename?: 'Sys', id: string }, block1Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block1Body?: { __typename?: 'ContentBlokBlock1Body', json: any } | null, block2Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block2Body?: { __typename?: 'ContentBlokBlock2Body', json: any } | null, block3Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block3Body?: { __typename?: 'ContentBlokBlock3Body', json: any } | null };
 
@@ -5972,57 +6332,7 @@ export type CtfComponentInfiniteCarouselQueryVariables = Exact<{
 
 export type CtfComponentInfiniteCarouselQuery = { __typename?: 'Query', imageCarousel?: { __typename: 'ImageCarousel', autoplay?: boolean | null, sys: { __typename?: 'Sys', id: string }, imageCollection?: { __typename?: 'AssetCollection', total: number, items: Array<{ __typename?: 'Asset', title?: string | null, url?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null } | null };
 
-type DefaultInfo_Button_Fragment = { __typename: 'Button', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ContentBlock_Fragment = { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ContentBlok_Fragment = { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ContentBlokMetCta_Fragment = { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ContentBlokSplit_Fragment = { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ContentCarousel_Fragment = { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_Description_Fragment = { __typename: 'Description', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_FooterMenu_Fragment = { __typename: 'FooterMenu', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_HeroBanner_Fragment = { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_Image_Fragment = { __typename: 'Image', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ImageCarousel_Fragment = { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_LanguageMetadata_Fragment = { __typename: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_MainNavigation_Fragment = { __typename: 'MainNavigation', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_MenuGroup_Fragment = { __typename: 'MenuGroup', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_NavigationItem_Fragment = { __typename: 'NavigationItem', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_NavigationMenu_Fragment = { __typename: 'NavigationMenu', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_Page_Fragment = { __typename: 'Page', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_PageSection_Fragment = { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_Seo_Fragment = { __typename: 'Seo', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_Teaser_Fragment = { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_Testimonial_Fragment = { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_TextBanner_Fragment = { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_Title_Fragment = { __typename: 'Title', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } };
-
-export type DefaultInfoFragment = DefaultInfo_Button_Fragment | DefaultInfo_ContentBlock_Fragment | DefaultInfo_ContentBlok_Fragment | DefaultInfo_ContentBlokMetCta_Fragment | DefaultInfo_ContentBlokSplit_Fragment | DefaultInfo_ContentCarousel_Fragment | DefaultInfo_Description_Fragment | DefaultInfo_FooterMenu_Fragment | DefaultInfo_HeroBanner_Fragment | DefaultInfo_Image_Fragment | DefaultInfo_ImageCarousel_Fragment | DefaultInfo_LanguageMetadata_Fragment | DefaultInfo_MainNavigation_Fragment | DefaultInfo_MenuGroup_Fragment | DefaultInfo_NavigationItem_Fragment | DefaultInfo_NavigationMenu_Fragment | DefaultInfo_Page_Fragment | DefaultInfo_PageSection_Fragment | DefaultInfo_Seo_Fragment | DefaultInfo_Teaser_Fragment | DefaultInfo_Testimonial_Fragment | DefaultInfo_TextBanner_Fragment | DefaultInfo_Title_Fragment | DefaultInfo_TwoGrid_Fragment;
-
-export type CtfPageSectionFieldsFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } };
+export type CtfPageSectionFieldsFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } };
 
 export type CtfPageSectionQueryVariables = Exact<{
   id: Scalars['String'];
@@ -6031,7 +6341,7 @@ export type CtfPageSectionQueryVariables = Exact<{
 }>;
 
 
-export type CtfPageSectionQuery = { __typename?: 'Query', pageSection?: { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } } | null };
+export type CtfPageSectionQuery = { __typename?: 'Query', pageSection?: { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } } | null };
 
 export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null };
 
@@ -6066,9 +6376,11 @@ export type CtfComponentTitleQueryVariables = Exact<{
 
 export type CtfComponentTitleQuery = { __typename?: 'Query', title?: { __typename: 'Title', title?: string | null, alignment?: string | null, fontSize?: string | null, sys: { __typename?: 'Sys', id: string } } | null };
 
-export type ComponentsFieldPageSectionFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null };
+export type ComponentsFieldPageSectionFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null };
 
 type ComponentsFields_Button_Fragment = { __typename: 'Button', sys: { __typename?: 'Sys', id: string } };
+
+type ComponentsFields_ComponentWrapper_Fragment = { __typename?: 'ComponentWrapper' };
 
 type ComponentsFields_ContentBlock_Fragment = { __typename?: 'ContentBlock' };
 
@@ -6116,9 +6428,9 @@ type ComponentsFields_Title_Fragment = { __typename: 'Title', sys: { __typename?
 
 type ComponentsFields_TwoGrid_Fragment = { __typename?: 'TwoGrid' };
 
-export type ComponentsFieldsFragment = ComponentsFields_Button_Fragment | ComponentsFields_ContentBlock_Fragment | ComponentsFields_ContentBlok_Fragment | ComponentsFields_ContentBlokMetCta_Fragment | ComponentsFields_ContentBlokSplit_Fragment | ComponentsFields_ContentCarousel_Fragment | ComponentsFields_Description_Fragment | ComponentsFields_FooterMenu_Fragment | ComponentsFields_HeroBanner_Fragment | ComponentsFields_Image_Fragment | ComponentsFields_ImageCarousel_Fragment | ComponentsFields_LanguageMetadata_Fragment | ComponentsFields_MainNavigation_Fragment | ComponentsFields_MenuGroup_Fragment | ComponentsFields_NavigationItem_Fragment | ComponentsFields_NavigationMenu_Fragment | ComponentsFields_Page_Fragment | ComponentsFields_PageSection_Fragment | ComponentsFields_Seo_Fragment | ComponentsFields_Teaser_Fragment | ComponentsFields_Testimonial_Fragment | ComponentsFields_TextBanner_Fragment | ComponentsFields_Title_Fragment | ComponentsFields_TwoGrid_Fragment;
+export type ComponentsFieldsFragment = ComponentsFields_Button_Fragment | ComponentsFields_ComponentWrapper_Fragment | ComponentsFields_ContentBlock_Fragment | ComponentsFields_ContentBlok_Fragment | ComponentsFields_ContentBlokMetCta_Fragment | ComponentsFields_ContentBlokSplit_Fragment | ComponentsFields_ContentCarousel_Fragment | ComponentsFields_Description_Fragment | ComponentsFields_FooterMenu_Fragment | ComponentsFields_HeroBanner_Fragment | ComponentsFields_Image_Fragment | ComponentsFields_ImageCarousel_Fragment | ComponentsFields_LanguageMetadata_Fragment | ComponentsFields_MainNavigation_Fragment | ComponentsFields_MenuGroup_Fragment | ComponentsFields_NavigationItem_Fragment | ComponentsFields_NavigationMenu_Fragment | ComponentsFields_Page_Fragment | ComponentsFields_PageSection_Fragment | ComponentsFields_Seo_Fragment | ComponentsFields_Teaser_Fragment | ComponentsFields_Testimonial_Fragment | ComponentsFields_TextBanner_Fragment | ComponentsFields_Title_Fragment | ComponentsFields_TwoGrid_Fragment;
 
-export type ComponentTwoGridFieldsFragment = { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null };
+export type ComponentTwoGridFieldsFragment = { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null };
 
 export type CtfComponentTwoGridQueryVariables = Exact<{
   id: Scalars['String'];
@@ -6127,9 +6439,11 @@ export type CtfComponentTwoGridQueryVariables = Exact<{
 }>;
 
 
-export type CtfComponentTwoGridQuery = { __typename?: 'Query', twoGrid?: { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null } | null };
+export type CtfComponentTwoGridQuery = { __typename?: 'Query', twoGrid?: { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null } | null };
 
 type ComponentReferenceFields_Button_Fragment = { __typename: 'Button', sys: { __typename?: 'Sys', id: string } };
+
+type ComponentReferenceFields_ComponentWrapper_Fragment = { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_ContentBlock_Fragment = { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } };
 
@@ -6177,4 +6491,4 @@ type ComponentReferenceFields_Title_Fragment = { __typename: 'Title', sys: { __t
 
 type ComponentReferenceFields_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } };
 
-export type ComponentReferenceFieldsFragment = ComponentReferenceFields_Button_Fragment | ComponentReferenceFields_ContentBlock_Fragment | ComponentReferenceFields_ContentBlok_Fragment | ComponentReferenceFields_ContentBlokMetCta_Fragment | ComponentReferenceFields_ContentBlokSplit_Fragment | ComponentReferenceFields_ContentCarousel_Fragment | ComponentReferenceFields_Description_Fragment | ComponentReferenceFields_FooterMenu_Fragment | ComponentReferenceFields_HeroBanner_Fragment | ComponentReferenceFields_Image_Fragment | ComponentReferenceFields_ImageCarousel_Fragment | ComponentReferenceFields_LanguageMetadata_Fragment | ComponentReferenceFields_MainNavigation_Fragment | ComponentReferenceFields_MenuGroup_Fragment | ComponentReferenceFields_NavigationItem_Fragment | ComponentReferenceFields_NavigationMenu_Fragment | ComponentReferenceFields_Page_Fragment | ComponentReferenceFields_PageSection_Fragment | ComponentReferenceFields_Seo_Fragment | ComponentReferenceFields_Teaser_Fragment | ComponentReferenceFields_Testimonial_Fragment | ComponentReferenceFields_TextBanner_Fragment | ComponentReferenceFields_Title_Fragment | ComponentReferenceFields_TwoGrid_Fragment;
+export type ComponentReferenceFieldsFragment = ComponentReferenceFields_Button_Fragment | ComponentReferenceFields_ComponentWrapper_Fragment | ComponentReferenceFields_ContentBlock_Fragment | ComponentReferenceFields_ContentBlok_Fragment | ComponentReferenceFields_ContentBlokMetCta_Fragment | ComponentReferenceFields_ContentBlokSplit_Fragment | ComponentReferenceFields_ContentCarousel_Fragment | ComponentReferenceFields_Description_Fragment | ComponentReferenceFields_FooterMenu_Fragment | ComponentReferenceFields_HeroBanner_Fragment | ComponentReferenceFields_Image_Fragment | ComponentReferenceFields_ImageCarousel_Fragment | ComponentReferenceFields_LanguageMetadata_Fragment | ComponentReferenceFields_MainNavigation_Fragment | ComponentReferenceFields_MenuGroup_Fragment | ComponentReferenceFields_NavigationItem_Fragment | ComponentReferenceFields_NavigationMenu_Fragment | ComponentReferenceFields_Page_Fragment | ComponentReferenceFields_PageSection_Fragment | ComponentReferenceFields_Seo_Fragment | ComponentReferenceFields_Teaser_Fragment | ComponentReferenceFields_Testimonial_Fragment | ComponentReferenceFields_TextBanner_Fragment | ComponentReferenceFields_Title_Fragment | ComponentReferenceFields_TwoGrid_Fragment;

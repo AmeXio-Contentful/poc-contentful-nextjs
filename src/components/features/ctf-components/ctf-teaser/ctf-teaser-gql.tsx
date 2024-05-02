@@ -11,7 +11,7 @@ export interface DefaultQueryParameters {
   id: any;
   locale: any;
   preview: any;
-  gridSystem: any
+  sectionType: any
 }
 
 export function CtfTeaserGql(props: DefaultQueryParameters) {
@@ -22,7 +22,7 @@ export function CtfTeaserGql(props: DefaultQueryParameters) {
   }) as any;
 
   if (data.data?.teaser) {
-    data.data!.teaser.gridSystem = props.gridSystem;
+    data.data!.teaser.sectionType = props.sectionType;
     return <CtfTeaser {...data.data?.teaser}/>;
   }
   return <></>
