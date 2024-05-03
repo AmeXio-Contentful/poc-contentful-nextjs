@@ -16,15 +16,9 @@
   src: url(../../public/fonts/Lexend.ttf) format('ttf');
 }
 
-.MuiBox-root:nth-of-type(odd) {
-  background: #d9e8f5;
-}
-.MuiBox-root:nth-of-type(even) {
-  background: #fff;
-}
 
 
-main > article {
+.PageSection {
   &:nth-of-type(odd) {
     background: #d9e8f5;
   }
@@ -36,9 +30,4 @@ main > article {
 
 .primary-color {
   color: #084772;
-}
-
-.ContentCarousel,
-.secondary-color {
-  background-color: #d9e8f5;
 }

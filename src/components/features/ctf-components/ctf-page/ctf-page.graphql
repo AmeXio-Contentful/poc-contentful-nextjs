@@ -1,16 +1,3 @@
-fragment PageTopSectionFields on PageTopSectionItem {
-  __typename
-}
-
-fragment PageContentFields on PagePageContentItem {
-  __typename
-}
-
-fragment PageExtraSectionItemFields on PageExtraSectionItem {
-  __typename
-}
-
-
 fragment CtfPageFields on Page {
   __typename
   sys {
@@ -25,45 +12,29 @@ fragment CtfPageFields on Page {
     noIndex
     noFollow
   }
-  topSectionCollection(limit: 20) {
-    items {
-      ... on Entry {
-        __typename
-        sys {
-          id
-        }
-      }
-      ...PageTopSectionFields
-    }
-  }
+
   pageContentCollection {
     items {
-        ... on Entry {
-          __typename
-          sys {
-            id
-          }
-        }
-        ... {
-          __typename
-        }
-      }
-   }
-  extraSectionCollection(limit: 20) {
-    items {
       ... on Entry {
         __typename
         sys {
           id
         }
       }
-      ...PageExtraSectionItemFields
+      ... {
+        __typename
+      }
     }
   }
 }
 
 query CtfPage($slug: String!, $locale: String, $preview: Boolean) {
-  pageCollection(where: { slug: $slug }, locale: $locale, preview: $preview, limit: 1) {
+  pageCollection(
+    where: {slug: $slug}
+    locale: $locale
+    preview: $preview
+    limit: 1
+  ) {
     items {
       ...CtfPageFields
     }

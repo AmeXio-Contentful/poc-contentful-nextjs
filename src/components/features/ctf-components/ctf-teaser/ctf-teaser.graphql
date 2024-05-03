@@ -1,0 +1,21 @@
+fragment ComponentTeaserFields on Teaser {
+  __typename
+  sys {
+    id
+  }
+  title
+  subtitle
+  buttonText
+  buttonUrl
+  grouped
+  image {
+    title
+    url
+  }
+}
+
+query CtfComponentTeaser($id: String!, $locale: String, $preview: Boolean) {
+  teaser(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentTeaserFields
+  }
+}

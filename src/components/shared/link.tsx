@@ -33,6 +33,7 @@ interface Props {
   endIcon?: any;
   urlParams?: string;
   title?: string;
+  legacyBehavior?: boolean
 }
 export type LinkProps = Props;
 
@@ -52,7 +53,8 @@ export const Link = (props: Props) => {
     endIcon,
     urlParams = '',
     title,
-  } = props;
+    legacyBehavior = true
+} = props;
   const router = useRouter();
   let href = props.href || '';
   let { as } = props;
@@ -141,7 +143,7 @@ export const Link = (props: Props) => {
 
   if (isButton === true) {
     return (
-      <NextLink href={href} as={as} passHref>
+      <NextLink href={href} as={as} passHref legacyBehavior>
         <MuiButton
           href={as}
           className={className}
@@ -159,7 +161,7 @@ export const Link = (props: Props) => {
   }
 
   return (
-    <NextLink href={href} as={as} passHref>
+    <NextLink href={href} as={as} passHref legacyBehavior>
       <MuiLink
         href={as}
         className={className}

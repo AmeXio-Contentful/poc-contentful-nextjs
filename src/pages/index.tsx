@@ -25,13 +25,13 @@ export const getServerSideProps = async ({ locale, query }: NextPageContext) => 
     const pageData = await useCtfPageQuery.fetcher({ slug: 'home', locale, preview })();
     const page = pageData.pageCollection?.items[0];
 
-    const topSection = page?.topSectionCollection?.items;
+    // const topSection = page?.topSectionCollection?.items;
     const content = page?.pageContentCollection?.items;
-    const extraSection = page?.extraSectionCollection?.items;
+    // const extraSection = page?.extraSectionCollection?.items;
 
     await Promise.all([
-      ...prefetchPromiseArr({ inputArr: topSection, locale, queryClient }),
-      ...prefetchPromiseArr({ inputArr: extraSection, locale, queryClient }),
+      // ...prefetchPromiseArr({ inputArr: topSection, locale, queryClient }),
+      // ...prefetchPromiseArr({ inputArr: extraSection, locale, queryClient }),
       ...prefetchPromiseArr({ inputArr: [content], locale, queryClient }),
     ]);
 

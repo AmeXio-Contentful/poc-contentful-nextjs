@@ -1,0 +1,47 @@
+fragment ComponentsFieldPageSection on PageSection {
+  __typename
+  sys {
+    id
+  }
+  componentsGrouped
+  componentsCollection {
+    items {
+      ...ComponentsFields
+    }
+  }
+}
+
+fragment ComponentsFields on Entry {
+  ... on Button {
+    ...DefaultInfo
+  }
+  ... on Description {
+    ...DefaultInfo
+  }
+  ... on Image {
+    ...DefaultInfo
+  }
+  ... on Title {
+    ...DefaultInfo
+  }
+}
+
+fragment ComponentTwoGridFields on TwoGrid {
+  __typename
+  internalName
+  sys {
+    id
+  }
+  componentLeft {
+    ...ComponentsFieldPageSection
+  }
+  componentRight {
+    ...ComponentsFieldPageSection
+  }
+}
+
+query CtfComponentTwoGrid($id: String!, $locale: String, $preview: Boolean) {
+  twoGrid(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentTwoGridFields
+  }
+}
