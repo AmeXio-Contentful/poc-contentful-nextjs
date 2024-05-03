@@ -13,8 +13,8 @@ export const componentMap = {
   ),
   Title: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-title-component/ctf-title-component'
-      ).then((module) => module.CtfTitleComponent),
+      '@src/components/features/ctf-components/ctf-title/ctf-title'
+      ).then((module) => module.CtfTitle),
   ),
   Description: dynamic(() =>
     import(
@@ -61,8 +61,8 @@ export const componentGqlMap = {
    ),
   Title: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-title-component/ctf-title-component-gql'
-      ).then((module) => module.CtfTitleComponentGql),
+      '@src/components/features/ctf-components/ctf-title/ctf-title-gql'
+      ).then((module) => module.CtfTitleGql),
   ),
   Description: dynamic(() =>
     import(

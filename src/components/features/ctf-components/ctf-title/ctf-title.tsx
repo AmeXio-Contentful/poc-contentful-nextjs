@@ -2,9 +2,9 @@ import React from 'react';
 
 import {
   ComponentTitleFieldsFragment,
-} from '@src/components/features/ctf-components/ctf-title-component/__generated/ctf-title-component.generated';
+} from '@src/components/features/ctf-components/ctf-title/__generated/ctf-title-component.generated';
 
-export const CtfTitleComponent = (props: ComponentTitleFieldsFragment) => {
+export const CtfTitle = (props: ComponentTitleFieldsFragment) => {
   const { title = '', alignment, fontSize = 'h1' } = props;
   const alignmentDecorator = alignment != null ? 'pl-32 text-' + alignment : 'text-center m-auto';
   const newFontSize = fontSize != null ? fontSize : 'h1';

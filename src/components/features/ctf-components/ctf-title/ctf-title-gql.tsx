@@ -5,11 +5,11 @@ import {
 } from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
 import {
   useCtfComponentTitleQuery
-} from '@src/components/features/ctf-components/ctf-title-component/__generated/ctf-title-component.generated';
-import { CtfTitleComponent } from '@src/components/features/ctf-components/ctf-title-component/ctf-title-component';
+} from '@src/components/features/ctf-components/ctf-title/__generated/ctf-title-component.generated';
+import { CtfTitle } from '@src/components/features/ctf-components/ctf-title/ctf-title';
 
 
-export function CtfTitleComponentGql({
+export function CtfTitleGql({
   id,
   locale,
   preview,
@@ -21,5 +21,5 @@ export function CtfTitleComponentGql({
   })) as any;
 
   // eslint-disable-next-line react/jsx-no-undef
-  return <CtfTitleComponent {...data.data?.title} />;
+  return <CtfTitle {...data.data?.title} />;
 }
