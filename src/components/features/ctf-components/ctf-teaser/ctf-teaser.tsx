@@ -7,12 +7,17 @@ export const CtfTeaser = (
   if (sectionType == sectionTypes.solutionSection) {
     return (
       <div className="flex w-full max-w-[455px] flex-row gap-x-[75px] h-full">
-        <img
-          width="75px"
-          className="place-self-start"
-          alt="icon"
-          src={image?.url as string}
-        />
+        {
+          image?.url ?
+            <img
+              width="75px"
+              className="place-self-start"
+              alt="icon"
+              src={image?.url as string}
+            />
+            :
+            <></>
+        }
         <div className="flex flex-col items-start justify-between">
           <div>
             <h3 className="text-2xl text-blue-900 font-medium">{title}</h3>
@@ -33,13 +38,19 @@ export const CtfTeaser = (
       <div className="md:px-48z h-auto px-6 pb-14 pt-9 text-base">
         <div className="relative max-h-full overflow-hidden
       mx-auto rounded-full m-auto w-28 h-28 bg-blue-900">
-          <img
-            className="min-w-full min-h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            src={image?.url}
-            width="auto"
-            height="auto"
-            alt="alt"
-          />
+          {
+            image?.url ?
+              <img
+                className="min-w-full min-h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                src={image?.url}
+                width="auto"
+                height="auto"
+                alt="alt"
+              />
+              :
+              <></>
+          }
+
         </div>
         <div className="pt-5">
           <div className="text-s text-center">
