@@ -1,0 +1,20 @@
+fragment ComponentHeroBanner on HeroBanner {
+  __typename
+  sys {
+    id
+  }
+  title
+  subtitle
+  buttonUrl
+  buttonText
+  backgroundImage {
+		url
+    title
+  }
+}
+
+query heroBannerComponent($id: String!, $locale: String, $preview: Boolean) {
+  heroBanner(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentHeroBanner
+  }
+}

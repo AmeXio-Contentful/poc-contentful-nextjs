@@ -1,6 +1,6 @@
 import * as Types from '../../../../../lib/__generated/graphql.types';
 
-import { DefaultInfo_Button_Fragment, DefaultInfo_ComponentWrapper_Fragment, DefaultInfo_ContentBlock_Fragment, DefaultInfo_ContentBlok_Fragment, DefaultInfo_ContentBlokMetCta_Fragment, DefaultInfo_ContentBlokSplit_Fragment, DefaultInfo_ContentCarousel_Fragment, DefaultInfo_Description_Fragment, DefaultInfo_FooterMenu_Fragment, DefaultInfo_HeroBanner_Fragment, DefaultInfo_Image_Fragment, DefaultInfo_ImageCarousel_Fragment, DefaultInfo_LanguageMetadata_Fragment, DefaultInfo_MainNavigation_Fragment, DefaultInfo_MenuGroup_Fragment, DefaultInfo_NavigationItem_Fragment, DefaultInfo_NavigationMenu_Fragment, DefaultInfo_Page_Fragment, DefaultInfo_PageSection_Fragment, DefaultInfo_Seo_Fragment, DefaultInfo_Teaser_Fragment, DefaultInfo_Testimonial_Fragment, DefaultInfo_TextBanner_Fragment, DefaultInfo_Title_Fragment, DefaultInfo_TwoGrid_Fragment } from '../../ctf-page-section/__generated/ctf-page-section.generated';
+import { DefaultInfo_Button_Fragment, DefaultInfo_ComponentWrapper_Fragment, DefaultInfo_ContentCarousel_Fragment, DefaultInfo_Description_Fragment, DefaultInfo_FooterMenu_Fragment, DefaultInfo_HeroBanner_Fragment, DefaultInfo_Image_Fragment, DefaultInfo_ImageCarousel_Fragment, DefaultInfo_LanguageMetadata_Fragment, DefaultInfo_MainNavigation_Fragment, DefaultInfo_MenuGroup_Fragment, DefaultInfo_NavigationItem_Fragment, DefaultInfo_NavigationMenu_Fragment, DefaultInfo_Page_Fragment, DefaultInfo_PageSection_Fragment, DefaultInfo_Seo_Fragment, DefaultInfo_Teaser_Fragment, DefaultInfo_Testimonial_Fragment, DefaultInfo_Title_Fragment, DefaultInfo_TwoGrid_Fragment } from '../../ctf-page-section/__generated/ctf-page-section.generated';
 import { DefaultInfoFragmentDoc } from '../../ctf-page-section/__generated/ctf-page-section.generated';
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
 import { customFetcher } from '@src/lib/fetchConfig';
@@ -43,14 +43,6 @@ export type ComponentsFields_Button_Fragment = (
 
 export type ComponentsFields_ComponentWrapper_Fragment = { __typename?: 'ComponentWrapper' };
 
-export type ComponentsFields_ContentBlock_Fragment = { __typename?: 'ContentBlock' };
-
-export type ComponentsFields_ContentBlok_Fragment = { __typename?: 'ContentBlok' };
-
-export type ComponentsFields_ContentBlokMetCta_Fragment = { __typename?: 'ContentBlokMetCta' };
-
-export type ComponentsFields_ContentBlokSplit_Fragment = { __typename?: 'ContentBlokSplit' };
-
 export type ComponentsFields_ContentCarousel_Fragment = { __typename?: 'ContentCarousel' };
 
 export type ComponentsFields_Description_Fragment = (
@@ -89,8 +81,6 @@ export type ComponentsFields_Teaser_Fragment = { __typename?: 'Teaser' };
 
 export type ComponentsFields_Testimonial_Fragment = { __typename?: 'Testimonial' };
 
-export type ComponentsFields_TextBanner_Fragment = { __typename?: 'TextBanner' };
-
 export type ComponentsFields_Title_Fragment = (
   { __typename?: 'Title' }
   & DefaultInfo_Title_Fragment
@@ -98,7 +88,7 @@ export type ComponentsFields_Title_Fragment = (
 
 export type ComponentsFields_TwoGrid_Fragment = { __typename?: 'TwoGrid' };
 
-export type ComponentsFieldsFragment = ComponentsFields_Button_Fragment | ComponentsFields_ComponentWrapper_Fragment | ComponentsFields_ContentBlock_Fragment | ComponentsFields_ContentBlok_Fragment | ComponentsFields_ContentBlokMetCta_Fragment | ComponentsFields_ContentBlokSplit_Fragment | ComponentsFields_ContentCarousel_Fragment | ComponentsFields_Description_Fragment | ComponentsFields_FooterMenu_Fragment | ComponentsFields_HeroBanner_Fragment | ComponentsFields_Image_Fragment | ComponentsFields_ImageCarousel_Fragment | ComponentsFields_LanguageMetadata_Fragment | ComponentsFields_MainNavigation_Fragment | ComponentsFields_MenuGroup_Fragment | ComponentsFields_NavigationItem_Fragment | ComponentsFields_NavigationMenu_Fragment | ComponentsFields_Page_Fragment | ComponentsFields_PageSection_Fragment | ComponentsFields_Seo_Fragment | ComponentsFields_Teaser_Fragment | ComponentsFields_Testimonial_Fragment | ComponentsFields_TextBanner_Fragment | ComponentsFields_Title_Fragment | ComponentsFields_TwoGrid_Fragment;
+export type ComponentsFieldsFragment = ComponentsFields_Button_Fragment | ComponentsFields_ComponentWrapper_Fragment | ComponentsFields_ContentCarousel_Fragment | ComponentsFields_Description_Fragment | ComponentsFields_FooterMenu_Fragment | ComponentsFields_HeroBanner_Fragment | ComponentsFields_Image_Fragment | ComponentsFields_ImageCarousel_Fragment | ComponentsFields_LanguageMetadata_Fragment | ComponentsFields_MainNavigation_Fragment | ComponentsFields_MenuGroup_Fragment | ComponentsFields_NavigationItem_Fragment | ComponentsFields_NavigationMenu_Fragment | ComponentsFields_Page_Fragment | ComponentsFields_PageSection_Fragment | ComponentsFields_Seo_Fragment | ComponentsFields_Teaser_Fragment | ComponentsFields_Testimonial_Fragment | ComponentsFields_Title_Fragment | ComponentsFields_TwoGrid_Fragment;
 
 export type ComponentTwoGridFieldsFragment = { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | (
     { __typename?: 'PageSection' }

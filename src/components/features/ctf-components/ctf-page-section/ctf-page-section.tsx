@@ -19,7 +19,6 @@ export const CtfPageSection = (props: PageSectionProps) => {
   const data = props.componentsCollection?.items as any[];
 
   if (data && data.length > 0) {
-    console.log("data", data);
     const testimonialCountObj = data.filter(item => item.__typename == sectionTypes.testimonialResourceType)
     if (testimonialCountObj && testimonialCountObj.length > 0) {
       data.map(testimonial => testimonial.maxItems = testimonialCountObj.length);

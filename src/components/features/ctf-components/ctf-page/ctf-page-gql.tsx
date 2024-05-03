@@ -15,7 +15,7 @@ interface Props {
 }
 
 const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
-  const slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v2' : slugFromProps;
+  const slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
 
   const { previewActive, locale } = useContentfulContext();
 
@@ -51,6 +51,7 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
     metaTags.no_follow === true ? 'nofollow' : undefined,
   ].filter((x): x is string => x !== undefined);
 
+  console.log("page", page);
   return (
     <>
       <Head>

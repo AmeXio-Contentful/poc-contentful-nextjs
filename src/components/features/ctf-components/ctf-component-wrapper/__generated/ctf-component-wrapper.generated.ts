@@ -6,14 +6,6 @@ export type DefaultInfo_Button_Fragment = { __typename: 'Button', sys: { __typen
 
 export type DefaultInfo_ComponentWrapper_Fragment = { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } };
 
-export type DefaultInfo_ContentBlock_Fragment = { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } };
-
-export type DefaultInfo_ContentBlok_Fragment = { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } };
-
-export type DefaultInfo_ContentBlokMetCta_Fragment = { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } };
-
-export type DefaultInfo_ContentBlokSplit_Fragment = { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } };
-
 export type DefaultInfo_ContentCarousel_Fragment = { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } };
 
 export type DefaultInfo_Description_Fragment = { __typename: 'Description', sys: { __typename?: 'Sys', id: string } };
@@ -46,13 +38,11 @@ export type DefaultInfo_Teaser_Fragment = { __typename: 'Teaser', sys: { __typen
 
 export type DefaultInfo_Testimonial_Fragment = { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } };
 
-export type DefaultInfo_TextBanner_Fragment = { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } };
-
 export type DefaultInfo_Title_Fragment = { __typename: 'Title', sys: { __typename?: 'Sys', id: string } };
 
 export type DefaultInfo_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } };
 
-export type DefaultInfoFragment = DefaultInfo_Button_Fragment | DefaultInfo_ComponentWrapper_Fragment | DefaultInfo_ContentBlock_Fragment | DefaultInfo_ContentBlok_Fragment | DefaultInfo_ContentBlokMetCta_Fragment | DefaultInfo_ContentBlokSplit_Fragment | DefaultInfo_ContentCarousel_Fragment | DefaultInfo_Description_Fragment | DefaultInfo_FooterMenu_Fragment | DefaultInfo_HeroBanner_Fragment | DefaultInfo_Image_Fragment | DefaultInfo_ImageCarousel_Fragment | DefaultInfo_LanguageMetadata_Fragment | DefaultInfo_MainNavigation_Fragment | DefaultInfo_MenuGroup_Fragment | DefaultInfo_NavigationItem_Fragment | DefaultInfo_NavigationMenu_Fragment | DefaultInfo_Page_Fragment | DefaultInfo_PageSection_Fragment | DefaultInfo_Seo_Fragment | DefaultInfo_Teaser_Fragment | DefaultInfo_Testimonial_Fragment | DefaultInfo_TextBanner_Fragment | DefaultInfo_Title_Fragment | DefaultInfo_TwoGrid_Fragment;
+export type DefaultInfoFragment = DefaultInfo_Button_Fragment | DefaultInfo_ComponentWrapper_Fragment | DefaultInfo_ContentCarousel_Fragment | DefaultInfo_Description_Fragment | DefaultInfo_FooterMenu_Fragment | DefaultInfo_HeroBanner_Fragment | DefaultInfo_Image_Fragment | DefaultInfo_ImageCarousel_Fragment | DefaultInfo_LanguageMetadata_Fragment | DefaultInfo_MainNavigation_Fragment | DefaultInfo_MenuGroup_Fragment | DefaultInfo_NavigationItem_Fragment | DefaultInfo_NavigationMenu_Fragment | DefaultInfo_Page_Fragment | DefaultInfo_PageSection_Fragment | DefaultInfo_Seo_Fragment | DefaultInfo_Teaser_Fragment | DefaultInfo_Testimonial_Fragment | DefaultInfo_Title_Fragment | DefaultInfo_TwoGrid_Fragment;
 
 export type CtfComponentsWrapperFieldsFragment = (
   { __typename?: 'ComponentWrapper', componentsCollection?: { __typename?: 'ComponentWrapperComponentsCollection', items: Array<(

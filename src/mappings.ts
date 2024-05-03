@@ -45,6 +45,11 @@ export const componentMap = {
     import(
       '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper'
       ).then((module) => module.CtfComponentWrapper),
+  ),
+  HeroBanner: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component'
+      ).then((module) => module.HeroBannerComponent),
   )
 };
 
@@ -93,5 +98,10 @@ export const componentGqlMap = {
     import(
       '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper-gql'
       ).then((module) => module.CtComponentWrapperGgl),
+  ),
+  HeroBanner: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component-gql'
+      ).then((module) => module.HeroBannerComponentGql),
   )
 };
