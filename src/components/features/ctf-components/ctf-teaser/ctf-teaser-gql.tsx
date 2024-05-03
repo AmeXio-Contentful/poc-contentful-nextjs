@@ -22,8 +22,8 @@ export function CtfTeaserGql(props: DefaultQueryParameters) {
   }) as any;
 
   if (data.data?.teaser) {
-    data.data!.teaser.sectionType = props.sectionType;
-    return <CtfTeaser {...data.data?.teaser}/>;
+    data.data.teaser.sectionType = props.sectionType;
+    return <CtfTeaser {...data.data.teaser}/>;
   }
   return <></>
 }

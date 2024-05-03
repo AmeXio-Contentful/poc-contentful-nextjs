@@ -18,7 +18,7 @@ interface PageSectionProps {
 export const CtfPageSection = (props: PageSectionProps) => {
   const data = props.componentsCollection?.items as any[];
 
-  if (data && data.length > 0) {
+  if (data?.length) {
     const testimonialCountObj = data.filter(item => item.__typename == sectionTypes.testimonialResourceType)
     if (testimonialCountObj && testimonialCountObj.length > 0) {
       data.map(testimonial => testimonial.maxItems = testimonialCountObj.length);
@@ -36,7 +36,7 @@ export const CtfPageSection = (props: PageSectionProps) => {
   return (
     <PageContainer>
       {props.componentsCollection && props.componentsCollection?.items.map(entry => (
-        <div key={entry!.sys.id}>
+        <div key={entry.sys.id}>
           <ComponentResolver componentProps={entry!} />
         </div>
       ))}
