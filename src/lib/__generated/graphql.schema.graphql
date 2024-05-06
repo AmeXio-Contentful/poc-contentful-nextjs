@@ -1962,7 +1962,7 @@ input PagePageContentFilter {
   sys: SysFilter
 }
 
-union PagePageContentItem = Button | ContentCarousel | Description | HeroBanner | ImageCarousel | PageSection | Teaser | Testimonial | Title
+union PagePageContentItem = Button | ContentCarousel | Description | HeroBanner | ImageCarousel | PageSection | SolutionSection | Teaser | Testimonial | Title
 
 """
 [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/pageSection)
@@ -1998,7 +1998,7 @@ input PageSectionComponentsFilter {
   sys: SysFilter
 }
 
-union PageSectionComponentsItem = Button | ComponentWrapper | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid
+union PageSectionComponentsItem = Button | ComponentWrapper | Description | Image | ImageCarousel | PageSection | SolutionSection | Teaser | Testimonial | Title | TwoGrid
 
 input PageSectionFilter {
   AND: [PageSectionFilter]
@@ -2193,6 +2193,8 @@ type Query {
   pageSectionCollection(limit: Int = 100, locale: String, order: [PageSectionOrder], preview: Boolean, skip: Int = 0, where: PageSectionFilter): PageSectionCollection
   seo(id: String!, locale: String, preview: Boolean): Seo
   seoCollection(limit: Int = 100, locale: String, order: [SeoOrder], preview: Boolean, skip: Int = 0, where: SeoFilter): SeoCollection
+  solutionSection(id: String!, locale: String, preview: Boolean): SolutionSection
+  solutionSectionCollection(limit: Int = 100, locale: String, order: [SolutionSectionOrder], preview: Boolean, skip: Int = 0, where: SolutionSectionFilter): SolutionSectionCollection
   teaser(id: String!, locale: String, preview: Boolean): Teaser
   teaserCollection(limit: Int = 100, locale: String, order: [TeaserOrder], preview: Boolean, skip: Int = 0, where: TeaserFilter): TeaserCollection
   testimonial(id: String!, locale: String, preview: Boolean): Testimonial
@@ -2302,6 +2304,123 @@ enum SeoOrder {
   noFollow_DESC
   noIndex_ASC
   noIndex_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/solutionSection)
+"""
+type SolutionSection implements Entry {
+  contentfulMetadata: ContentfulMetadata!
+  linkedFrom(allowedLocales: [String]): SolutionSectionLinkingCollections
+  sys: Sys!
+  teasersCollection(limit: Int = 100, locale: String, order: [SolutionSectionTeasersCollectionOrder], preview: Boolean, skip: Int = 0, where: TeaserFilter): SolutionSectionTeasersCollection
+  title(locale: String): String
+}
+
+type SolutionSectionCollection {
+  items: [SolutionSection]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input SolutionSectionFilter {
+  AND: [SolutionSectionFilter]
+  OR: [SolutionSectionFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  sys: SysFilter
+  teasers: cfTeaserNestedFilter
+  teasersCollection_exists: Boolean
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type SolutionSectionLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  pageCollection(limit: Int = 100, locale: String, order: [SolutionSectionLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
+  pageSectionCollection(limit: Int = 100, locale: String, order: [SolutionSectionLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
+}
+
+enum SolutionSectionLinkingCollectionsPageCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  pageName_ASC
+  pageName_DESC
+  slug_ASC
+  slug_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum SolutionSectionLinkingCollectionsPageSectionCollectionOrder {
+  componentsGrouped_ASC
+  componentsGrouped_DESC
+  internalName_ASC
+  internalName_DESC
+  sectionType_ASC
+  sectionType_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+enum SolutionSectionOrder {
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+type SolutionSectionTeasersCollection {
+  items: [Teaser]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+enum SolutionSectionTeasersCollectionOrder {
+  buttonText_ASC
+  buttonText_DESC
+  buttonUrl_ASC
+  buttonUrl_DESC
+  grouped_ASC
+  grouped_DESC
+  subtitle_ASC
+  subtitle_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -2426,6 +2545,7 @@ type TeaserLinkingCollections {
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   pageCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
+  solutionSectionCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsSolutionSectionCollectionOrder], preview: Boolean, skip: Int = 0): SolutionSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
 }
 
@@ -2476,6 +2596,19 @@ enum TeaserLinkingCollectionsPageSectionCollectionOrder {
   sys_publishedAt_DESC
   sys_publishedVersion_ASC
   sys_publishedVersion_DESC
+}
+
+enum TeaserLinkingCollectionsSolutionSectionCollectionOrder {
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
 }
 
 enum TeaserLinkingCollectionsTwoGridCollectionOrder {
@@ -2990,6 +3123,45 @@ input cfSeoNestedFilter {
   noIndex: Boolean
   noIndex_exists: Boolean
   noIndex_not: Boolean
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+input cfTeaserNestedFilter {
+  AND: [cfTeaserNestedFilter]
+  OR: [cfTeaserNestedFilter]
+  buttonText: String
+  buttonText_contains: String
+  buttonText_exists: Boolean
+  buttonText_in: [String]
+  buttonText_not: String
+  buttonText_not_contains: String
+  buttonText_not_in: [String]
+  buttonUrl: String
+  buttonUrl_contains: String
+  buttonUrl_exists: Boolean
+  buttonUrl_in: [String]
+  buttonUrl_not: String
+  buttonUrl_not_contains: String
+  buttonUrl_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  grouped: Boolean
+  grouped_exists: Boolean
+  grouped_not: Boolean
+  image_exists: Boolean
+  subtitle: String
+  subtitle_contains: String
+  subtitle_exists: Boolean
+  subtitle_in: [String]
+  subtitle_not: String
+  subtitle_not_contains: String
+  subtitle_not_in: [String]
   sys: SysFilter
   title: String
   title_contains: String

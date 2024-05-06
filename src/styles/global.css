@@ -18,7 +18,7 @@
 
 
 
-.PageSection {
+.page-section {
   &:nth-of-type(odd) {
     background: #d9e8f5;
   }

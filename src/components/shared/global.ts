@@ -3,5 +3,6 @@ export const sectionTypes = {
   pageSection: 'page Section',
   hrSection: 'HR Section',
   testimonialSection: 'Testimonial Section',
-  testimonialResourceType: 'Testimonial'
+  testimonialResourceType: 'Testimonial',
+  bannerSection: 'Banner Section'
 }

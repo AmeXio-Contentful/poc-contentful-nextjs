@@ -50,7 +50,12 @@ export const componentMap = {
     import(
       '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component'
       ).then((module) => module.HeroBannerComponent),
-  )
+  ),
+  SolutionSection: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/solution-component/solution-component'
+      ).then((module) => module.SolutionComponent),
+  ),
 };
 
 export const componentGqlMap = {
@@ -103,5 +108,10 @@ export const componentGqlMap = {
     import(
       '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component-gql'
       ).then((module) => module.HeroBannerComponentGql),
-  )
+  ),
+  SolutionSection: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/solution-component/solution-component-gql'
+      ).then((module) => module.SolutionComponentGql),
+  ),
 };

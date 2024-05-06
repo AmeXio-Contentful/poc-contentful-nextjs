@@ -1,0 +1,27 @@
+fragment ComponentSolutionSection on SolutionSection {
+  __typename
+  sys {
+    id
+  }
+  title
+  teasersCollection {
+    items {
+      ... on Teaser {
+        title
+        subtitle
+        buttonText
+        buttonUrl
+        image {
+        	url
+          title
+        }
+      }
+    }
+  }
+}
+
+query solutionSectionComponent($id: String!, $locale: String, $preview: Boolean) {
+  solutionSection(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentSolutionSection
+  }
+}
