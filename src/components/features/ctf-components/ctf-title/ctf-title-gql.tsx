@@ -1,11 +1,7 @@
 import React from 'react';
 
-import {
-  DefaultQueryParameters
-} from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
-import {
-  useCtfComponentTitleQuery
-} from '@src/components/features/ctf-components/ctf-title/__generated/ctf-title-component.generated';
+import { DefaultQueryParameters } from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
+import { useCtfComponentTitleQuery } from '@src/components/features/ctf-components/ctf-title/__generated/ctf-title.generated';
 import { CtfTitle } from '@src/components/features/ctf-components/ctf-title/ctf-title';
 
 
