@@ -15,7 +15,6 @@ export interface Teaser {
 }
 
 export const SolutionComponent = (props: ComponentSolutionSectionFragment) => {
-  console.log("props", props);
   const titleProps: Props = {
     text: props.title as string,
     heading: 'h2',

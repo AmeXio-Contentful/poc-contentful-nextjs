@@ -51,7 +51,6 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
     metaTags.no_follow === true ? 'nofollow' : undefined,
   ].filter((x): x is string => x !== undefined);
 
-  console.log("page", page);
   return (
     <>
       <Head>
