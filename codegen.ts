@@ -11,7 +11,7 @@ export const config: CodegenConfig = {
     },
   ],
   generates: {
-    './src/components/**': {
+    './src/components/features/ctf-components/ctf-button': {
       documents: ['./src/**/*.graphql'],
       preset: 'near-operation-file',
       presetConfig: {
