@@ -4,7 +4,7 @@ dist
 .next
 out
 tsconfig.tsbuildinfo
-src/components/features/ctf-components/*/__generated
+#src/components/features/ctf-components/*/__generated
 
 ### Paw ###
 *.paw
