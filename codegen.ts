@@ -11,7 +11,7 @@ export const config: CodegenConfig = {
     },
   ],
   generates: {
-    './src/': {
+    './src/components/*': {
       documents: ['./src/**/*.graphql'],
       preset: 'near-operation-file',
       presetConfig: {
