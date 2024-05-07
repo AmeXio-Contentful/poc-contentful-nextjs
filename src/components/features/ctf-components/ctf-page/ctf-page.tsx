@@ -11,7 +11,6 @@ import LayoutContext, { defaultLayout } from '@src/layout-context';
 const CtfPage = (props: CtfPageFieldsFragment) => {
 
   const content = props.pageContentCollection;
-
   return (
     <PageContainer>
       {content && content.items?.map(entry => (

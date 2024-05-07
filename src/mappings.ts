@@ -45,7 +45,27 @@ export const componentMap = {
     import(
       '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper'
       ).then((module) => module.CtfComponentWrapper),
-  )
+  ),
+  HeroBanner: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component'
+      ).then((module) => module.HeroBannerComponent),
+  ),
+  SolutionSection: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/solution-component/solution-component'
+      ).then((module) => module.SolutionComponent),
+  ),
+  ReferenceClients: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/reference-client-component/reference-client-component'
+      ).then((module) => module.ReferenceClientComponent),
+  ),
+  JoinUs: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/join-us-component/join-us-component'
+      ).then((module) => module.JoinUsComponent),
+  ),
 };
 
 export const componentGqlMap = {
@@ -93,5 +113,25 @@ export const componentGqlMap = {
     import(
       '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper-gql'
       ).then((module) => module.CtComponentWrapperGgl),
-  )
+  ),
+  HeroBanner: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component-gql'
+      ).then((module) => module.HeroBannerComponentGql),
+  ),
+  SolutionSection: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/solution-component/solution-component-gql'
+      ).then((module) => module.SolutionComponentGql),
+  ),
+  ReferenceClients: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/reference-client-component/reference-client-component-gql'
+      ).then((module) => module.ReferenceClientComponentGql),
+  ),
+  JoinUs: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/join-us-component/join-us-component-gql'
+      ).then((module) => module.JoinUsComponentGql),
+  ),
 };
