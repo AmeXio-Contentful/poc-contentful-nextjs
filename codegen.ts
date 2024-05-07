@@ -11,7 +11,17 @@ export const config: CodegenConfig = {
     },
   ],
   generates: {
-    './src/components/features/ctf-components/ctf-button': {
+    './src/lib/__generated/graphql.schema.json': {
+      plugins: ['introspection'],
+    },
+    './src/lib/__generated/graphql.schema.graphql': {
+      plugins: ['schema-ast'],
+    },
+    './src/lib/__generated/graphql.types.ts': {
+      plugins: ['typescript', 'typescript-operations'],
+      documents: ['./src/**/*.graphql'],
+    },
+    './src/': {
       documents: ['./src/**/*.graphql'],
       preset: 'near-operation-file',
       presetConfig: {
@@ -36,16 +46,6 @@ export const config: CodegenConfig = {
         fetcher: '@src/lib/fetchConfig#customFetcher',
       },
     },
-    './src/lib/__generated/graphql.schema.json': {
-      plugins: ['introspection'],
-    },
-    './src/lib/__generated/graphql.schema.graphql': {
-      plugins: ['schema-ast'],
-    },
-    './src/lib/__generated/graphql.types.ts': {
-      plugins: ['typescript', 'typescript-operations'],
-      documents: ['./src/**/*.graphql'],
-    }
   },
 };
 
