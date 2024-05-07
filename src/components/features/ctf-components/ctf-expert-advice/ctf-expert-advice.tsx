@@ -1,13 +1,26 @@
+import { ButtonComponent } from '@src/components/features/decoupled-components/button-component/button-component';
 interface ExpertProps {
   title: string;
   subtitle: string;
   buttonLink: string;
   buttonText: string;
-  advices: any;
+  advices: Items;
 }
 
+interface Items {
+  items: [{
+    title: string;
+    buttonUrl: string;
+  }]
+}
 export default function CtfExpertAdvice({title, subtitle, buttonLink, buttonText, advices}: ExpertProps) {
-    return (
+   const buttonProps = {
+     buttonText,
+     buttonUrl: buttonLink,
+     classes: 'mb-16 mt-9 bg-orange-500 px-5 py-3.5 text-sm text-white',
+   }
+
+  return (
         <div
             className='relative bg-no-repeat bg-cover bg-center py-14 pr-9 pl-9 md:pl-[100px] flex flex-col gap-y-6 items-start'
             style={{ backgroundImage: `url('https://www.amexio.fr/wp-content/uploads/2023/09/header-amexio.jpg?id=8062')` }}
@@ -37,9 +50,7 @@ export default function CtfExpertAdvice({title, subtitle, buttonLink, buttonText
               }
             </div>
 
-            <button className="mb-16 mt-9 bg-orange-500 px-5 py-3.5 text-sm text-white">
-              <a href={buttonLink}> {buttonText} </a>
-            </button>
+            <ButtonComponent {...buttonProps} />
           </div>
         </div>
     )
