@@ -1,11 +1,7 @@
 import React from 'react';
 
-import {
-  CtfTeaser
-} from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser';
-import {
-  useCtfComponentTeaserQuery
-} from '@src/components/features/ctf-components/ctf-teaser/__generated/ctf-teaser.generated';
+import { useCtfComponentTeaserQuery } from '@src/components/features/ctf-components/ctf-teaser/__generated/ctf-teaser.generated';
+import { CtfTeaser } from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser';
 
 export interface DefaultQueryParameters {
   id: any;
