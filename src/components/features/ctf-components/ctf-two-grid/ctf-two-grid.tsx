@@ -5,7 +5,6 @@ import CtfFeaturedArticle from '@src/components/features/ctf-components/ctf-feat
 
 export const CtfTwoGrid = (props: any) => {
   if (props?.componentLeft && props?.componentRight) {
-    console.log("props", props);
     const left = props.componentLeft;
     const right = props.componentRight;
     return (
