@@ -4,5 +4,6 @@ export const sectionTypes = {
   hrSection: 'HR Section',
   testimonialSection: 'Testimonial Section',
   testimonialResourceType: 'Testimonial',
-  bannerSection: 'Banner Section'
+  bannerSection: 'Banner Section',
+  clientReferenceSection: 'Client Reference'
 }

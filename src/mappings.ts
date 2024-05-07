@@ -56,6 +56,16 @@ export const componentMap = {
       '@src/components/features/decoupled-components/solution-component/solution-component'
       ).then((module) => module.SolutionComponent),
   ),
+  ReferenceClients: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/reference-client-component/reference-client-component'
+      ).then((module) => module.ReferenceClientComponent),
+  ),
+  JoinUs: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/join-us-component/join-us-component'
+      ).then((module) => module.JoinUsComponent),
+  ),
 };
 
 export const componentGqlMap = {
@@ -113,5 +123,15 @@ export const componentGqlMap = {
     import(
       '@src/components/features/decoupled-components/solution-component/solution-component-gql'
       ).then((module) => module.SolutionComponentGql),
+  ),
+  ReferenceClients: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/reference-client-component/reference-client-component-gql'
+      ).then((module) => module.ReferenceClientComponentGql),
+  ),
+  JoinUs: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/join-us-component/join-us-component-gql'
+      ).then((module) => module.JoinUsComponentGql),
   ),
 };

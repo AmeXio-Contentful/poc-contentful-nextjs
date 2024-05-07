@@ -21,7 +21,6 @@ export const SolutionComponent = (props: ComponentSolutionSectionFragment) => {
     classes: 'font-semibold text-4xl text-center mt-8 primary-color w-2/5 m-auto mb-24'
   };
 
-
   const titleTeaserProp = {
     heading: 'h3',
     classes: 'text-2xl text-blue-900 font-medium'

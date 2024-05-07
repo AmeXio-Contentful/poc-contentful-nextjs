@@ -1,26 +1,27 @@
-import { ComponentResolver } from '@src/components/shared/component-resolver';
 import React from 'react';
 
-export const CtfTwoGrid = (props: any) => {
-  if (props?.componentLeft) {
-    const left = props.componentLeft.componentsCollection.items;
-    const right = props.componentRight.componentsCollection.items;
-    return (
-      <div className="grid grid-cols-2 divide-x">
-        <div className="h-auto text-center">
-          {left.map((item: any) => (
-            <div key={item.sys.id}>
-              <ComponentResolver componentProps={item!} />
-            </div>
-          ))}
+import CtfExpertAdvice from '@src/components/features/ctf-components/ctf-expert-advice/ctf-expert-advice';
+import CtfFeaturedArticle from '@src/components/features/ctf-components/ctf-featured-article/ctf-featured-article';
 
+export const CtfTwoGrid = (props: any) => {
+  if (props?.componentLeft && props?.componentRight) {
+    console.log("props", props);
+    const left = props.componentLeft;
+    const right = props.componentRight;
+    return (
+      <div className="grid grid-cols-2 divide-x mb-24">
+        <div className="h-auto text-center">
+          <CtfExpertAdvice title={left.title as string}
+                           subtitle={left.subtitle as string}
+                           buttonLink={left.buttonUrl}
+                           buttonText={left.buttonText}
+                           advices={left.advicesCollection}
+                            />
         </div>
         <div className="h-auto text-center secondary-color">
-          {right.map((item: any) => (
-            <div key={item.sys.id}>
-              <ComponentResolver componentProps={item!} />
-            </div>
-          ))}
+          <CtfFeaturedArticle subtitle={right.subtitle as string}
+                              title={right.title as string}
+                              buttonLink={right.buttonUrl as string}/>
         </div>
       </div>
     );

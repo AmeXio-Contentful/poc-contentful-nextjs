@@ -6,7 +6,7 @@ import {
 
 export const CtfTitle = (props: ComponentTitleFieldsFragment) => {
   const { title = '', alignment, fontSize = 'h1' } = props;
-  const alignmentDecorator = alignment != null ? 'pl-32 text-' + alignment : 'text-center m-auto';
+  const alignmentDecorator = alignment != null ? 'text-left' : '';
   const newFontSize = fontSize != null ? fontSize : 'h1';
 
   const element = React.createElement(
@@ -15,8 +15,8 @@ export const CtfTitle = (props: ComponentTitleFieldsFragment) => {
     title,
   );
   return (
-    <div className="md:px-48z h-auto w-full px-6 pb-9 pt-9 text-center">
-      <h2 className="text-4xl">{element}</h2>
+    <div className="md:px-48z h-auto w-full px-6 pb-9 pt-9 lg:px-40">
+      <h5>{element}</h5>
     </div>
   );
 };

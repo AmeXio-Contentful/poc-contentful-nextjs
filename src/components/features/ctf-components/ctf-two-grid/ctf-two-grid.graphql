@@ -1,28 +1,22 @@
-fragment ComponentsFieldPageSection on PageSection {
-  __typename
-  sys {
-    id
-  }
-  componentsGrouped
-  componentsCollection {
-    items {
-      ...ComponentsFields
-    }
-  }
-}
-
 fragment ComponentsFields on Entry {
-  ... on Button {
-    ...DefaultInfo
+  ... on FeaturedArticle {
+    title
+    subtitle
+    buttonUrl
   }
-  ... on Description {
-    ...DefaultInfo
-  }
-  ... on Image {
-    ...DefaultInfo
-  }
-  ... on Title {
-    ...DefaultInfo
+  ... on ExpertAdvice {
+    title
+    subtitle
+    buttonUrl
+    buttonText
+    advicesCollection {
+      items {
+        ... on Title {
+          title
+          buttonUrl
+        }
+      }
+    }
   }
 }
 
@@ -33,10 +27,10 @@ fragment ComponentTwoGridFields on TwoGrid {
     id
   }
   componentLeft {
-    ...ComponentsFieldPageSection
+    ...ComponentsFields
   }
   componentRight {
-    ...ComponentsFieldPageSection
+    ...ComponentsFields
   }
 }
 
