@@ -167,9 +167,6 @@ export type AssetFilter = {
 
 export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
-  contentBlokCollection?: Maybe<ContentBlokCollection>;
-  contentBlokMetCtaCollection?: Maybe<ContentBlokMetCtaCollection>;
-  contentBlokSplitCollection?: Maybe<ContentBlokSplitCollection>;
   contentCarouselCollection?: Maybe<ContentCarouselCollection>;
   entryCollection?: Maybe<EntryCollection>;
   heroBannerCollection?: Maybe<HeroBannerCollection>;
@@ -180,30 +177,6 @@ export type AssetLinkingCollections = {
   seoCollection?: Maybe<SeoCollection>;
   teaserCollection?: Maybe<TeaserCollection>;
   testimonialCollection?: Maybe<TestimonialCollection>;
-};
-
-
-export type AssetLinkingCollectionsContentBlokCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-
-export type AssetLinkingCollectionsContentBlokMetCtaCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-
-export type AssetLinkingCollectionsContentBlokSplitCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
 };
 
 
@@ -621,987 +594,6 @@ export enum ComponentWrapperOrder {
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
-
-/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlock) */
-export type ContentBlock = Entry & {
-  __typename?: 'ContentBlock';
-  contentBlockCtaCollection?: Maybe<ContentBlockContentBlockCtaCollection>;
-  contentfulMetadata: ContentfulMetadata;
-  linkedFrom?: Maybe<ContentBlockLinkingCollections>;
-  sys: Sys;
-  testField?: Maybe<Scalars['String']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlock) */
-export type ContentBlockContentBlockCtaCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlock) */
-export type ContentBlockLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlock) */
-export type ContentBlockTestFieldArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-export type ContentBlockCollection = {
-  __typename?: 'ContentBlockCollection';
-  items: Array<Maybe<ContentBlock>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type ContentBlockContentBlockCtaCollection = {
-  __typename?: 'ContentBlockContentBlockCtaCollection';
-  items: Array<Maybe<Entry>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type ContentBlockFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ContentBlockFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ContentBlockFilter>>>;
-  contentBlockCtaCollection_exists?: InputMaybe<Scalars['Boolean']>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  sys?: InputMaybe<SysFilter>;
-  testField?: InputMaybe<Scalars['String']>;
-  testField_contains?: InputMaybe<Scalars['String']>;
-  testField_exists?: InputMaybe<Scalars['Boolean']>;
-  testField_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  testField_not?: InputMaybe<Scalars['String']>;
-  testField_not_contains?: InputMaybe<Scalars['String']>;
-  testField_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-export type ContentBlockLinkingCollections = {
-  __typename?: 'ContentBlockLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-  pageCollection?: Maybe<PageCollection>;
-};
-
-
-export type ContentBlockLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-
-export type ContentBlockLinkingCollectionsPageCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ContentBlockLinkingCollectionsPageCollectionOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-export enum ContentBlockLinkingCollectionsPageCollectionOrder {
-  InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC',
-  PageNameAsc = 'pageName_ASC',
-  PageNameDesc = 'pageName_DESC',
-  SlugAsc = 'slug_ASC',
-  SlugDesc = 'slug_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-export enum ContentBlockOrder {
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TestFieldAsc = 'testField_ASC',
-  TestFieldDesc = 'testField_DESC'
-}
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlok = Entry & {
-  __typename?: 'ContentBlok';
-  block1Body?: Maybe<ContentBlokBlock1Body>;
-  block1Image?: Maybe<Asset>;
-  block2Body?: Maybe<ContentBlokBlock2Body>;
-  block2Image?: Maybe<Asset>;
-  block3Body?: Maybe<ContentBlokBlock3Body>;
-  block3Image?: Maybe<Asset>;
-  buttonLink?: Maybe<Scalars['String']>;
-  buttonText?: Maybe<Scalars['String']>;
-  contentfulMetadata: ContentfulMetadata;
-  linkedFrom?: Maybe<ContentBlokLinkingCollections>;
-  subtitle?: Maybe<Scalars['String']>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokBlock1BodyArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokBlock1ImageArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokBlock2BodyArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokBlock2ImageArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokBlock3BodyArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokBlock3ImageArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokButtonLinkArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokButtonTextArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokSubtitleArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Join us! [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlok) */
-export type ContentBlokTitleArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-export type ContentBlokBlock1Body = {
-  __typename?: 'ContentBlokBlock1Body';
-  json: Scalars['JSON'];
-  links: ContentBlokBlock1BodyLinks;
-};
-
-export type ContentBlokBlock1BodyAssets = {
-  __typename?: 'ContentBlokBlock1BodyAssets';
-  block: Array<Maybe<Asset>>;
-  hyperlink: Array<Maybe<Asset>>;
-};
-
-export type ContentBlokBlock1BodyEntries = {
-  __typename?: 'ContentBlokBlock1BodyEntries';
-  block: Array<Maybe<Entry>>;
-  hyperlink: Array<Maybe<Entry>>;
-  inline: Array<Maybe<Entry>>;
-};
-
-export type ContentBlokBlock1BodyLinks = {
-  __typename?: 'ContentBlokBlock1BodyLinks';
-  assets: ContentBlokBlock1BodyAssets;
-  entries: ContentBlokBlock1BodyEntries;
-  resources: ContentBlokBlock1BodyResources;
-};
-
-export type ContentBlokBlock1BodyResources = {
-  __typename?: 'ContentBlokBlock1BodyResources';
-  block: Array<ContentBlokBlock1BodyResourcesBlock>;
-  hyperlink: Array<ContentBlokBlock1BodyResourcesHyperlink>;
-  inline: Array<ContentBlokBlock1BodyResourcesInline>;
-};
-
-export type ContentBlokBlock1BodyResourcesBlock = ResourceLink & {
-  __typename?: 'ContentBlokBlock1BodyResourcesBlock';
-  sys: ResourceSys;
-};
-
-export type ContentBlokBlock1BodyResourcesHyperlink = ResourceLink & {
-  __typename?: 'ContentBlokBlock1BodyResourcesHyperlink';
-  sys: ResourceSys;
-};
-
-export type ContentBlokBlock1BodyResourcesInline = ResourceLink & {
-  __typename?: 'ContentBlokBlock1BodyResourcesInline';
-  sys: ResourceSys;
-};
-
-export type ContentBlokBlock2Body = {
-  __typename?: 'ContentBlokBlock2Body';
-  json: Scalars['JSON'];
-  links: ContentBlokBlock2BodyLinks;
-};
-
-export type ContentBlokBlock2BodyAssets = {
-  __typename?: 'ContentBlokBlock2BodyAssets';
-  block: Array<Maybe<Asset>>;
-  hyperlink: Array<Maybe<Asset>>;
-};
-
-export type ContentBlokBlock2BodyEntries = {
-  __typename?: 'ContentBlokBlock2BodyEntries';
-  block: Array<Maybe<Entry>>;
-  hyperlink: Array<Maybe<Entry>>;
-  inline: Array<Maybe<Entry>>;
-};
-
-export type ContentBlokBlock2BodyLinks = {
-  __typename?: 'ContentBlokBlock2BodyLinks';
-  assets: ContentBlokBlock2BodyAssets;
-  entries: ContentBlokBlock2BodyEntries;
-  resources: ContentBlokBlock2BodyResources;
-};
-
-export type ContentBlokBlock2BodyResources = {
-  __typename?: 'ContentBlokBlock2BodyResources';
-  block: Array<ContentBlokBlock2BodyResourcesBlock>;
-  hyperlink: Array<ContentBlokBlock2BodyResourcesHyperlink>;
-  inline: Array<ContentBlokBlock2BodyResourcesInline>;
-};
-
-export type ContentBlokBlock2BodyResourcesBlock = ResourceLink & {
-  __typename?: 'ContentBlokBlock2BodyResourcesBlock';
-  sys: ResourceSys;
-};
-
-export type ContentBlokBlock2BodyResourcesHyperlink = ResourceLink & {
-  __typename?: 'ContentBlokBlock2BodyResourcesHyperlink';
-  sys: ResourceSys;
-};
-
-export type ContentBlokBlock2BodyResourcesInline = ResourceLink & {
-  __typename?: 'ContentBlokBlock2BodyResourcesInline';
-  sys: ResourceSys;
-};
-
-export type ContentBlokBlock3Body = {
-  __typename?: 'ContentBlokBlock3Body';
-  json: Scalars['JSON'];
-  links: ContentBlokBlock3BodyLinks;
-};
-
-export type ContentBlokBlock3BodyAssets = {
-  __typename?: 'ContentBlokBlock3BodyAssets';
-  block: Array<Maybe<Asset>>;
-  hyperlink: Array<Maybe<Asset>>;
-};
-
-export type ContentBlokBlock3BodyEntries = {
-  __typename?: 'ContentBlokBlock3BodyEntries';
-  block: Array<Maybe<Entry>>;
-  hyperlink: Array<Maybe<Entry>>;
-  inline: Array<Maybe<Entry>>;
-};
-
-export type ContentBlokBlock3BodyLinks = {
-  __typename?: 'ContentBlokBlock3BodyLinks';
-  assets: ContentBlokBlock3BodyAssets;
-  entries: ContentBlokBlock3BodyEntries;
-  resources: ContentBlokBlock3BodyResources;
-};
-
-export type ContentBlokBlock3BodyResources = {
-  __typename?: 'ContentBlokBlock3BodyResources';
-  block: Array<ContentBlokBlock3BodyResourcesBlock>;
-  hyperlink: Array<ContentBlokBlock3BodyResourcesHyperlink>;
-  inline: Array<ContentBlokBlock3BodyResourcesInline>;
-};
-
-export type ContentBlokBlock3BodyResourcesBlock = ResourceLink & {
-  __typename?: 'ContentBlokBlock3BodyResourcesBlock';
-  sys: ResourceSys;
-};
-
-export type ContentBlokBlock3BodyResourcesHyperlink = ResourceLink & {
-  __typename?: 'ContentBlokBlock3BodyResourcesHyperlink';
-  sys: ResourceSys;
-};
-
-export type ContentBlokBlock3BodyResourcesInline = ResourceLink & {
-  __typename?: 'ContentBlokBlock3BodyResourcesInline';
-  sys: ResourceSys;
-};
-
-export type ContentBlokCollection = {
-  __typename?: 'ContentBlokCollection';
-  items: Array<Maybe<ContentBlok>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type ContentBlokFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ContentBlokFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ContentBlokFilter>>>;
-  block1Body_contains?: InputMaybe<Scalars['String']>;
-  block1Body_exists?: InputMaybe<Scalars['Boolean']>;
-  block1Body_not_contains?: InputMaybe<Scalars['String']>;
-  block1Image_exists?: InputMaybe<Scalars['Boolean']>;
-  block2Body_contains?: InputMaybe<Scalars['String']>;
-  block2Body_exists?: InputMaybe<Scalars['Boolean']>;
-  block2Body_not_contains?: InputMaybe<Scalars['String']>;
-  block2Image_exists?: InputMaybe<Scalars['Boolean']>;
-  block3Body_contains?: InputMaybe<Scalars['String']>;
-  block3Body_exists?: InputMaybe<Scalars['Boolean']>;
-  block3Body_not_contains?: InputMaybe<Scalars['String']>;
-  block3Image_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink?: InputMaybe<Scalars['String']>;
-  buttonLink_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonLink_not?: InputMaybe<Scalars['String']>;
-  buttonLink_not_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonText?: InputMaybe<Scalars['String']>;
-  buttonText_contains?: InputMaybe<Scalars['String']>;
-  buttonText_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonText_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonText_not?: InputMaybe<Scalars['String']>;
-  buttonText_not_contains?: InputMaybe<Scalars['String']>;
-  buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  subtitle?: InputMaybe<Scalars['String']>;
-  subtitle_contains?: InputMaybe<Scalars['String']>;
-  subtitle_exists?: InputMaybe<Scalars['Boolean']>;
-  subtitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  subtitle_not?: InputMaybe<Scalars['String']>;
-  subtitle_not_contains?: InputMaybe<Scalars['String']>;
-  subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars['String']>;
-  title_contains?: InputMaybe<Scalars['String']>;
-  title_exists?: InputMaybe<Scalars['Boolean']>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  title_not?: InputMaybe<Scalars['String']>;
-  title_not_contains?: InputMaybe<Scalars['String']>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-export type ContentBlokLinkingCollections = {
-  __typename?: 'ContentBlokLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-  pageCollection?: Maybe<PageCollection>;
-};
-
-
-export type ContentBlokLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-
-export type ContentBlokLinkingCollectionsPageCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ContentBlokLinkingCollectionsPageCollectionOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-export enum ContentBlokLinkingCollectionsPageCollectionOrder {
-  InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC',
-  PageNameAsc = 'pageName_ASC',
-  PageNameDesc = 'pageName_DESC',
-  SlugAsc = 'slug_ASC',
-  SlugDesc = 'slug_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-/** Enterprise Content Management [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokMetCta) */
-export type ContentBlokMetCta = Entry & {
-  __typename?: 'ContentBlokMetCta';
-  blockBody?: Maybe<ContentBlokMetCtaBlockBody>;
-  blockImage?: Maybe<Asset>;
-  blockTitle?: Maybe<Scalars['String']>;
-  buttonLink?: Maybe<Scalars['String']>;
-  buttonText?: Maybe<Scalars['String']>;
-  contentfulMetadata: ContentfulMetadata;
-  linkedFrom?: Maybe<ContentBlokMetCtaLinkingCollections>;
-  sys: Sys;
-};
-
-
-/** Enterprise Content Management [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokMetCta) */
-export type ContentBlokMetCtaBlockBodyArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Enterprise Content Management [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokMetCta) */
-export type ContentBlokMetCtaBlockImageArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-/** Enterprise Content Management [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokMetCta) */
-export type ContentBlokMetCtaBlockTitleArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Enterprise Content Management [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokMetCta) */
-export type ContentBlokMetCtaButtonLinkArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Enterprise Content Management [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokMetCta) */
-export type ContentBlokMetCtaButtonTextArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Enterprise Content Management [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokMetCta) */
-export type ContentBlokMetCtaLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-export type ContentBlokMetCtaBlockBody = {
-  __typename?: 'ContentBlokMetCtaBlockBody';
-  json: Scalars['JSON'];
-  links: ContentBlokMetCtaBlockBodyLinks;
-};
-
-export type ContentBlokMetCtaBlockBodyAssets = {
-  __typename?: 'ContentBlokMetCtaBlockBodyAssets';
-  block: Array<Maybe<Asset>>;
-  hyperlink: Array<Maybe<Asset>>;
-};
-
-export type ContentBlokMetCtaBlockBodyEntries = {
-  __typename?: 'ContentBlokMetCtaBlockBodyEntries';
-  block: Array<Maybe<Entry>>;
-  hyperlink: Array<Maybe<Entry>>;
-  inline: Array<Maybe<Entry>>;
-};
-
-export type ContentBlokMetCtaBlockBodyLinks = {
-  __typename?: 'ContentBlokMetCtaBlockBodyLinks';
-  assets: ContentBlokMetCtaBlockBodyAssets;
-  entries: ContentBlokMetCtaBlockBodyEntries;
-  resources: ContentBlokMetCtaBlockBodyResources;
-};
-
-export type ContentBlokMetCtaBlockBodyResources = {
-  __typename?: 'ContentBlokMetCtaBlockBodyResources';
-  block: Array<ContentBlokMetCtaBlockBodyResourcesBlock>;
-  hyperlink: Array<ContentBlokMetCtaBlockBodyResourcesHyperlink>;
-  inline: Array<ContentBlokMetCtaBlockBodyResourcesInline>;
-};
-
-export type ContentBlokMetCtaBlockBodyResourcesBlock = ResourceLink & {
-  __typename?: 'ContentBlokMetCtaBlockBodyResourcesBlock';
-  sys: ResourceSys;
-};
-
-export type ContentBlokMetCtaBlockBodyResourcesHyperlink = ResourceLink & {
-  __typename?: 'ContentBlokMetCtaBlockBodyResourcesHyperlink';
-  sys: ResourceSys;
-};
-
-export type ContentBlokMetCtaBlockBodyResourcesInline = ResourceLink & {
-  __typename?: 'ContentBlokMetCtaBlockBodyResourcesInline';
-  sys: ResourceSys;
-};
-
-export type ContentBlokMetCtaCollection = {
-  __typename?: 'ContentBlokMetCtaCollection';
-  items: Array<Maybe<ContentBlokMetCta>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type ContentBlokMetCtaFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ContentBlokMetCtaFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ContentBlokMetCtaFilter>>>;
-  blockBody_contains?: InputMaybe<Scalars['String']>;
-  blockBody_exists?: InputMaybe<Scalars['Boolean']>;
-  blockBody_not_contains?: InputMaybe<Scalars['String']>;
-  blockImage_exists?: InputMaybe<Scalars['Boolean']>;
-  blockTitle?: InputMaybe<Scalars['String']>;
-  blockTitle_contains?: InputMaybe<Scalars['String']>;
-  blockTitle_exists?: InputMaybe<Scalars['Boolean']>;
-  blockTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  blockTitle_not?: InputMaybe<Scalars['String']>;
-  blockTitle_not_contains?: InputMaybe<Scalars['String']>;
-  blockTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonLink?: InputMaybe<Scalars['String']>;
-  buttonLink_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonLink_not?: InputMaybe<Scalars['String']>;
-  buttonLink_not_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonText?: InputMaybe<Scalars['String']>;
-  buttonText_contains?: InputMaybe<Scalars['String']>;
-  buttonText_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonText_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonText_not?: InputMaybe<Scalars['String']>;
-  buttonText_not_contains?: InputMaybe<Scalars['String']>;
-  buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  sys?: InputMaybe<SysFilter>;
-};
-
-export type ContentBlokMetCtaLinkingCollections = {
-  __typename?: 'ContentBlokMetCtaLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-  pageCollection?: Maybe<PageCollection>;
-};
-
-
-export type ContentBlokMetCtaLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-
-export type ContentBlokMetCtaLinkingCollectionsPageCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ContentBlokMetCtaLinkingCollectionsPageCollectionOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-export enum ContentBlokMetCtaLinkingCollectionsPageCollectionOrder {
-  InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC',
-  PageNameAsc = 'pageName_ASC',
-  PageNameDesc = 'pageName_DESC',
-  SlugAsc = 'slug_ASC',
-  SlugDesc = 'slug_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-export enum ContentBlokMetCtaOrder {
-  BlockTitleAsc = 'blockTitle_ASC',
-  BlockTitleDesc = 'blockTitle_DESC',
-  ButtonLinkAsc = 'buttonLink_ASC',
-  ButtonLinkDesc = 'buttonLink_DESC',
-  ButtonTextAsc = 'buttonText_ASC',
-  ButtonTextDesc = 'buttonText_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
-
-export enum ContentBlokOrder {
-  ButtonLinkAsc = 'buttonLink_ASC',
-  ButtonLinkDesc = 'buttonLink_DESC',
-  ButtonTextAsc = 'buttonText_ASC',
-  ButtonTextDesc = 'buttonText_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplit = Entry & {
-  __typename?: 'ContentBlokSplit';
-  backgroundColor?: Maybe<Scalars['String']>;
-  backgroundImage?: Maybe<Asset>;
-  button1?: Maybe<ContentBlokSplitButton1>;
-  buttonLink?: Maybe<Scalars['String']>;
-  buttonText?: Maybe<Scalars['String']>;
-  contentfulMetadata: ContentfulMetadata;
-  fullWidth?: Maybe<Scalars['Boolean']>;
-  image?: Maybe<Asset>;
-  linkedFrom?: Maybe<ContentBlokSplitLinkingCollections>;
-  subtitle?: Maybe<Scalars['String']>;
-  sys: Sys;
-  text?: Maybe<ContentBlokSplitText>;
-  title?: Maybe<Scalars['String']>;
-  title2?: Maybe<Scalars['String']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitBackgroundColorArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitBackgroundImageArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitButton1Args = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitButtonLinkArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitButtonTextArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitFullWidthArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitImageArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitSubtitleArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitTextArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitTitleArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Expert advice [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentBlokSplit) */
-export type ContentBlokSplitTitle2Args = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-export type ContentBlokSplitButton1 = {
-  __typename?: 'ContentBlokSplitButton1';
-  json: Scalars['JSON'];
-  links: ContentBlokSplitButton1Links;
-};
-
-export type ContentBlokSplitButton1Assets = {
-  __typename?: 'ContentBlokSplitButton1Assets';
-  block: Array<Maybe<Asset>>;
-  hyperlink: Array<Maybe<Asset>>;
-};
-
-export type ContentBlokSplitButton1Entries = {
-  __typename?: 'ContentBlokSplitButton1Entries';
-  block: Array<Maybe<Entry>>;
-  hyperlink: Array<Maybe<Entry>>;
-  inline: Array<Maybe<Entry>>;
-};
-
-export type ContentBlokSplitButton1Links = {
-  __typename?: 'ContentBlokSplitButton1Links';
-  assets: ContentBlokSplitButton1Assets;
-  entries: ContentBlokSplitButton1Entries;
-  resources: ContentBlokSplitButton1Resources;
-};
-
-export type ContentBlokSplitButton1Resources = {
-  __typename?: 'ContentBlokSplitButton1Resources';
-  block: Array<ContentBlokSplitButton1ResourcesBlock>;
-  hyperlink: Array<ContentBlokSplitButton1ResourcesHyperlink>;
-  inline: Array<ContentBlokSplitButton1ResourcesInline>;
-};
-
-export type ContentBlokSplitButton1ResourcesBlock = ResourceLink & {
-  __typename?: 'ContentBlokSplitButton1ResourcesBlock';
-  sys: ResourceSys;
-};
-
-export type ContentBlokSplitButton1ResourcesHyperlink = ResourceLink & {
-  __typename?: 'ContentBlokSplitButton1ResourcesHyperlink';
-  sys: ResourceSys;
-};
-
-export type ContentBlokSplitButton1ResourcesInline = ResourceLink & {
-  __typename?: 'ContentBlokSplitButton1ResourcesInline';
-  sys: ResourceSys;
-};
-
-export type ContentBlokSplitCollection = {
-  __typename?: 'ContentBlokSplitCollection';
-  items: Array<Maybe<ContentBlokSplit>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type ContentBlokSplitFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ContentBlokSplitFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ContentBlokSplitFilter>>>;
-  backgroundColor?: InputMaybe<Scalars['String']>;
-  backgroundColor_contains?: InputMaybe<Scalars['String']>;
-  backgroundColor_exists?: InputMaybe<Scalars['Boolean']>;
-  backgroundColor_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  backgroundColor_not?: InputMaybe<Scalars['String']>;
-  backgroundColor_not_contains?: InputMaybe<Scalars['String']>;
-  backgroundColor_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  backgroundImage_exists?: InputMaybe<Scalars['Boolean']>;
-  button1_contains?: InputMaybe<Scalars['String']>;
-  button1_exists?: InputMaybe<Scalars['Boolean']>;
-  button1_not_contains?: InputMaybe<Scalars['String']>;
-  buttonLink?: InputMaybe<Scalars['String']>;
-  buttonLink_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonLink_not?: InputMaybe<Scalars['String']>;
-  buttonLink_not_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonText?: InputMaybe<Scalars['String']>;
-  buttonText_contains?: InputMaybe<Scalars['String']>;
-  buttonText_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonText_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonText_not?: InputMaybe<Scalars['String']>;
-  buttonText_not_contains?: InputMaybe<Scalars['String']>;
-  buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  fullWidth?: InputMaybe<Scalars['Boolean']>;
-  fullWidth_exists?: InputMaybe<Scalars['Boolean']>;
-  fullWidth_not?: InputMaybe<Scalars['Boolean']>;
-  image_exists?: InputMaybe<Scalars['Boolean']>;
-  subtitle?: InputMaybe<Scalars['String']>;
-  subtitle_contains?: InputMaybe<Scalars['String']>;
-  subtitle_exists?: InputMaybe<Scalars['Boolean']>;
-  subtitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  subtitle_not?: InputMaybe<Scalars['String']>;
-  subtitle_not_contains?: InputMaybe<Scalars['String']>;
-  subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  sys?: InputMaybe<SysFilter>;
-  text_contains?: InputMaybe<Scalars['String']>;
-  text_exists?: InputMaybe<Scalars['Boolean']>;
-  text_not_contains?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  title2?: InputMaybe<Scalars['String']>;
-  title2_contains?: InputMaybe<Scalars['String']>;
-  title2_exists?: InputMaybe<Scalars['Boolean']>;
-  title2_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  title2_not?: InputMaybe<Scalars['String']>;
-  title2_not_contains?: InputMaybe<Scalars['String']>;
-  title2_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  title_contains?: InputMaybe<Scalars['String']>;
-  title_exists?: InputMaybe<Scalars['Boolean']>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  title_not?: InputMaybe<Scalars['String']>;
-  title_not_contains?: InputMaybe<Scalars['String']>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-export type ContentBlokSplitLinkingCollections = {
-  __typename?: 'ContentBlokSplitLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-  pageCollection?: Maybe<PageCollection>;
-};
-
-
-export type ContentBlokSplitLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-
-export type ContentBlokSplitLinkingCollectionsPageCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ContentBlokSplitLinkingCollectionsPageCollectionOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-export enum ContentBlokSplitLinkingCollectionsPageCollectionOrder {
-  InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC',
-  PageNameAsc = 'pageName_ASC',
-  PageNameDesc = 'pageName_DESC',
-  SlugAsc = 'slug_ASC',
-  SlugDesc = 'slug_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-export enum ContentBlokSplitOrder {
-  BackgroundColorAsc = 'backgroundColor_ASC',
-  BackgroundColorDesc = 'backgroundColor_DESC',
-  ButtonLinkAsc = 'buttonLink_ASC',
-  ButtonLinkDesc = 'buttonLink_DESC',
-  ButtonTextAsc = 'buttonText_ASC',
-  ButtonTextDesc = 'buttonText_DESC',
-  FullWidthAsc = 'fullWidth_ASC',
-  FullWidthDesc = 'fullWidth_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  Title2Asc = 'title2_ASC',
-  Title2Desc = 'title2_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-export type ContentBlokSplitText = {
-  __typename?: 'ContentBlokSplitText';
-  json: Scalars['JSON'];
-  links: ContentBlokSplitTextLinks;
-};
-
-export type ContentBlokSplitTextAssets = {
-  __typename?: 'ContentBlokSplitTextAssets';
-  block: Array<Maybe<Asset>>;
-  hyperlink: Array<Maybe<Asset>>;
-};
-
-export type ContentBlokSplitTextEntries = {
-  __typename?: 'ContentBlokSplitTextEntries';
-  block: Array<Maybe<Entry>>;
-  hyperlink: Array<Maybe<Entry>>;
-  inline: Array<Maybe<Entry>>;
-};
-
-export type ContentBlokSplitTextLinks = {
-  __typename?: 'ContentBlokSplitTextLinks';
-  assets: ContentBlokSplitTextAssets;
-  entries: ContentBlokSplitTextEntries;
-  resources: ContentBlokSplitTextResources;
-};
-
-export type ContentBlokSplitTextResources = {
-  __typename?: 'ContentBlokSplitTextResources';
-  block: Array<ContentBlokSplitTextResourcesBlock>;
-  hyperlink: Array<ContentBlokSplitTextResourcesHyperlink>;
-  inline: Array<ContentBlokSplitTextResourcesInline>;
-};
-
-export type ContentBlokSplitTextResourcesBlock = ResourceLink & {
-  __typename?: 'ContentBlokSplitTextResourcesBlock';
-  sys: ResourceSys;
-};
-
-export type ContentBlokSplitTextResourcesHyperlink = ResourceLink & {
-  __typename?: 'ContentBlokSplitTextResourcesHyperlink';
-  sys: ResourceSys;
-};
-
-export type ContentBlokSplitTextResourcesInline = ResourceLink & {
-  __typename?: 'ContentBlokSplitTextResourcesInline';
-  sys: ResourceSys;
-};
 
 /** Why AmeXio [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/contentCarousel) */
 export type ContentCarousel = Entry & {
@@ -2463,81 +1455,59 @@ export enum FooterMenuOrder {
   YoutubeDesc = 'youtube_DESC'
 }
 
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
 export type HeroBanner = Entry & {
   __typename?: 'HeroBanner';
   backgroundImage?: Maybe<Asset>;
-  buttonLink?: Maybe<Scalars['String']>;
   buttonText?: Maybe<Scalars['String']>;
+  buttonUrl?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
-  fullWidth?: Maybe<Scalars['Boolean']>;
   internalName?: Maybe<Scalars['String']>;
   linkedFrom?: Maybe<HeroBannerLinkingCollections>;
-  subtitle?: Maybe<HeroBannerSubtitle>;
+  subtitle?: Maybe<Scalars['String']>;
   sys: Sys;
-  test?: Maybe<Scalars['Int']>;
-  testmeer?: Maybe<Entry>;
   title?: Maybe<Scalars['String']>;
 };
 
 
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
 export type HeroBannerBackgroundImageArgs = {
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
 };
 
 
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
-export type HeroBannerButtonLinkArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
 export type HeroBannerButtonTextArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
 
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
-export type HeroBannerFullWidthArgs = {
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+export type HeroBannerButtonUrlArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
 
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
 export type HeroBannerInternalNameArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
 
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
 export type HeroBannerLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
 
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
 export type HeroBannerSubtitleArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
 
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
-export type HeroBannerTestArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
-export type HeroBannerTestmeerArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-/** Your Partner in Digital Transformation [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/heroBanner) */
 export type HeroBannerTitleArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
@@ -2554,13 +1524,6 @@ export type HeroBannerFilter = {
   AND?: InputMaybe<Array<InputMaybe<HeroBannerFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<HeroBannerFilter>>>;
   backgroundImage_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink?: InputMaybe<Scalars['String']>;
-  buttonLink_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonLink_not?: InputMaybe<Scalars['String']>;
-  buttonLink_not_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   buttonText?: InputMaybe<Scalars['String']>;
   buttonText_contains?: InputMaybe<Scalars['String']>;
   buttonText_exists?: InputMaybe<Scalars['Boolean']>;
@@ -2568,10 +1531,14 @@ export type HeroBannerFilter = {
   buttonText_not?: InputMaybe<Scalars['String']>;
   buttonText_not_contains?: InputMaybe<Scalars['String']>;
   buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl?: InputMaybe<Scalars['String']>;
+  buttonUrl_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl_not?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  fullWidth?: InputMaybe<Scalars['Boolean']>;
-  fullWidth_exists?: InputMaybe<Scalars['Boolean']>;
-  fullWidth_not?: InputMaybe<Scalars['Boolean']>;
   internalName?: InputMaybe<Scalars['String']>;
   internalName_contains?: InputMaybe<Scalars['String']>;
   internalName_exists?: InputMaybe<Scalars['Boolean']>;
@@ -2579,20 +1546,14 @@ export type HeroBannerFilter = {
   internalName_not?: InputMaybe<Scalars['String']>;
   internalName_not_contains?: InputMaybe<Scalars['String']>;
   internalName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle?: InputMaybe<Scalars['String']>;
   subtitle_contains?: InputMaybe<Scalars['String']>;
   subtitle_exists?: InputMaybe<Scalars['Boolean']>;
+  subtitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle_not?: InputMaybe<Scalars['String']>;
   subtitle_not_contains?: InputMaybe<Scalars['String']>;
+  subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   sys?: InputMaybe<SysFilter>;
-  test?: InputMaybe<Scalars['Int']>;
-  test_exists?: InputMaybe<Scalars['Boolean']>;
-  test_gt?: InputMaybe<Scalars['Int']>;
-  test_gte?: InputMaybe<Scalars['Int']>;
-  test_in?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  test_lt?: InputMaybe<Scalars['Int']>;
-  test_lte?: InputMaybe<Scalars['Int']>;
-  test_not?: InputMaybe<Scalars['Int']>;
-  test_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  testmeer_exists?: InputMaybe<Scalars['Boolean']>;
   title?: InputMaybe<Scalars['String']>;
   title_contains?: InputMaybe<Scalars['String']>;
   title_exists?: InputMaybe<Scalars['Boolean']>;
@@ -2645,14 +1606,14 @@ export enum HeroBannerLinkingCollectionsPageCollectionOrder {
 }
 
 export enum HeroBannerOrder {
-  ButtonLinkAsc = 'buttonLink_ASC',
-  ButtonLinkDesc = 'buttonLink_DESC',
   ButtonTextAsc = 'buttonText_ASC',
   ButtonTextDesc = 'buttonText_DESC',
-  FullWidthAsc = 'fullWidth_ASC',
-  FullWidthDesc = 'fullWidth_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
   InternalNameAsc = 'internalName_ASC',
   InternalNameDesc = 'internalName_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -2661,59 +1622,9 @@ export enum HeroBannerOrder {
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TestAsc = 'test_ASC',
-  TestDesc = 'test_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
 }
-
-export type HeroBannerSubtitle = {
-  __typename?: 'HeroBannerSubtitle';
-  json: Scalars['JSON'];
-  links: HeroBannerSubtitleLinks;
-};
-
-export type HeroBannerSubtitleAssets = {
-  __typename?: 'HeroBannerSubtitleAssets';
-  block: Array<Maybe<Asset>>;
-  hyperlink: Array<Maybe<Asset>>;
-};
-
-export type HeroBannerSubtitleEntries = {
-  __typename?: 'HeroBannerSubtitleEntries';
-  block: Array<Maybe<Entry>>;
-  hyperlink: Array<Maybe<Entry>>;
-  inline: Array<Maybe<Entry>>;
-};
-
-export type HeroBannerSubtitleLinks = {
-  __typename?: 'HeroBannerSubtitleLinks';
-  assets: HeroBannerSubtitleAssets;
-  entries: HeroBannerSubtitleEntries;
-  resources: HeroBannerSubtitleResources;
-};
-
-export type HeroBannerSubtitleResources = {
-  __typename?: 'HeroBannerSubtitleResources';
-  block: Array<HeroBannerSubtitleResourcesBlock>;
-  hyperlink: Array<HeroBannerSubtitleResourcesHyperlink>;
-  inline: Array<HeroBannerSubtitleResourcesInline>;
-};
-
-export type HeroBannerSubtitleResourcesBlock = ResourceLink & {
-  __typename?: 'HeroBannerSubtitleResourcesBlock';
-  sys: ResourceSys;
-};
-
-export type HeroBannerSubtitleResourcesHyperlink = ResourceLink & {
-  __typename?: 'HeroBannerSubtitleResourcesHyperlink';
-  sys: ResourceSys;
-};
-
-export type HeroBannerSubtitleResourcesInline = ResourceLink & {
-  __typename?: 'HeroBannerSubtitleResourcesInline';
-  sys: ResourceSys;
-};
 
 /** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/image) */
 export type Image = Entry & {
@@ -4049,7 +2960,7 @@ export type PagePageContentFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
-export type PagePageContentItem = Button | ContentBlock | ContentBlok | ContentBlokMetCta | ContentBlokSplit | ContentCarousel | Description | HeroBanner | ImageCarousel | PageSection | Teaser | Testimonial | TextBanner | Title;
+export type PagePageContentItem = Button | ContentCarousel | Description | HeroBanner | ImageCarousel | PageSection | SolutionSection | Teaser | Testimonial | Title;
 
 /** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/pageSection) */
 export type PageSection = Entry & {
@@ -4120,7 +3031,7 @@ export type PageSectionComponentsFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
-export type PageSectionComponentsItem = Button | ComponentWrapper | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid;
+export type PageSectionComponentsItem = Button | ComponentWrapper | Description | Image | ImageCarousel | PageSection | SolutionSection | Teaser | Testimonial | Title | TwoGrid;
 
 export type PageSectionFilter = {
   AND?: InputMaybe<Array<InputMaybe<PageSectionFilter>>>;
@@ -4269,13 +3180,6 @@ export type PageTopSectionFilter = {
   AND?: InputMaybe<Array<InputMaybe<PageTopSectionFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<PageTopSectionFilter>>>;
   backgroundImage_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink?: InputMaybe<Scalars['String']>;
-  buttonLink_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonLink_not?: InputMaybe<Scalars['String']>;
-  buttonLink_not_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   buttonText?: InputMaybe<Scalars['String']>;
   buttonText_contains?: InputMaybe<Scalars['String']>;
   buttonText_exists?: InputMaybe<Scalars['Boolean']>;
@@ -4283,10 +3187,14 @@ export type PageTopSectionFilter = {
   buttonText_not?: InputMaybe<Scalars['String']>;
   buttonText_not_contains?: InputMaybe<Scalars['String']>;
   buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl?: InputMaybe<Scalars['String']>;
+  buttonUrl_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl_not?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  fullWidth?: InputMaybe<Scalars['Boolean']>;
-  fullWidth_exists?: InputMaybe<Scalars['Boolean']>;
-  fullWidth_not?: InputMaybe<Scalars['Boolean']>;
   internalName?: InputMaybe<Scalars['String']>;
   internalName_contains?: InputMaybe<Scalars['String']>;
   internalName_exists?: InputMaybe<Scalars['Boolean']>;
@@ -4294,20 +3202,14 @@ export type PageTopSectionFilter = {
   internalName_not?: InputMaybe<Scalars['String']>;
   internalName_not_contains?: InputMaybe<Scalars['String']>;
   internalName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle?: InputMaybe<Scalars['String']>;
   subtitle_contains?: InputMaybe<Scalars['String']>;
   subtitle_exists?: InputMaybe<Scalars['Boolean']>;
+  subtitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle_not?: InputMaybe<Scalars['String']>;
   subtitle_not_contains?: InputMaybe<Scalars['String']>;
+  subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   sys?: InputMaybe<SysFilter>;
-  test?: InputMaybe<Scalars['Int']>;
-  test_exists?: InputMaybe<Scalars['Boolean']>;
-  test_gt?: InputMaybe<Scalars['Int']>;
-  test_gte?: InputMaybe<Scalars['Int']>;
-  test_in?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  test_lt?: InputMaybe<Scalars['Int']>;
-  test_lte?: InputMaybe<Scalars['Int']>;
-  test_not?: InputMaybe<Scalars['Int']>;
-  test_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  testmeer_exists?: InputMaybe<Scalars['Boolean']>;
   title?: InputMaybe<Scalars['String']>;
   title_contains?: InputMaybe<Scalars['String']>;
   title_exists?: InputMaybe<Scalars['Boolean']>;
@@ -4328,14 +3230,6 @@ export type Query = {
   buttonCollection?: Maybe<ButtonCollection>;
   componentWrapper?: Maybe<ComponentWrapper>;
   componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
-  contentBlock?: Maybe<ContentBlock>;
-  contentBlockCollection?: Maybe<ContentBlockCollection>;
-  contentBlok?: Maybe<ContentBlok>;
-  contentBlokCollection?: Maybe<ContentBlokCollection>;
-  contentBlokMetCta?: Maybe<ContentBlokMetCta>;
-  contentBlokMetCtaCollection?: Maybe<ContentBlokMetCtaCollection>;
-  contentBlokSplit?: Maybe<ContentBlokSplit>;
-  contentBlokSplitCollection?: Maybe<ContentBlokSplitCollection>;
   contentCarousel?: Maybe<ContentCarousel>;
   contentCarouselCollection?: Maybe<ContentCarouselCollection>;
   description?: Maybe<Description>;
@@ -4365,12 +3259,12 @@ export type Query = {
   pageSectionCollection?: Maybe<PageSectionCollection>;
   seo?: Maybe<Seo>;
   seoCollection?: Maybe<SeoCollection>;
+  solutionSection?: Maybe<SolutionSection>;
+  solutionSectionCollection?: Maybe<SolutionSectionCollection>;
   teaser?: Maybe<Teaser>;
   teaserCollection?: Maybe<TeaserCollection>;
   testimonial?: Maybe<Testimonial>;
   testimonialCollection?: Maybe<TestimonialCollection>;
-  textBanner?: Maybe<TextBanner>;
-  textBannerCollection?: Maybe<TextBannerCollection>;
   title?: Maybe<Title>;
   titleCollection?: Maybe<TitleCollection>;
   twoGrid?: Maybe<TwoGrid>;
@@ -4433,74 +3327,6 @@ export type QueryComponentWrapperCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ComponentWrapperFilter>;
-};
-
-
-export type QueryContentBlockArgs = {
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-export type QueryContentBlockCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ContentBlockOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<ContentBlockFilter>;
-};
-
-
-export type QueryContentBlokArgs = {
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-export type QueryContentBlokCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ContentBlokOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<ContentBlokFilter>;
-};
-
-
-export type QueryContentBlokMetCtaArgs = {
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-export type QueryContentBlokMetCtaCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ContentBlokMetCtaOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<ContentBlokMetCtaFilter>;
-};
-
-
-export type QueryContentBlokSplitArgs = {
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-export type QueryContentBlokSplitCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<ContentBlokSplitOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<ContentBlokSplitFilter>;
 };
 
 
@@ -4752,6 +3578,23 @@ export type QuerySeoCollectionArgs = {
 };
 
 
+export type QuerySolutionSectionArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QuerySolutionSectionCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<SolutionSectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<SolutionSectionFilter>;
+};
+
+
 export type QueryTeaserArgs = {
   id: Scalars['String'];
   locale?: InputMaybe<Scalars['String']>;
@@ -4783,23 +3626,6 @@ export type QueryTestimonialCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<TestimonialFilter>;
-};
-
-
-export type QueryTextBannerArgs = {
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-};
-
-
-export type QueryTextBannerCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<TextBannerOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<TextBannerFilter>;
 };
 
 
@@ -5009,6 +3835,174 @@ export enum SeoOrder {
   TitleDesc = 'title_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/solutionSection) */
+export type SolutionSection = Entry & {
+  __typename?: 'SolutionSection';
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<SolutionSectionLinkingCollections>;
+  sys: Sys;
+  teasersCollection?: Maybe<SolutionSectionTeasersCollection>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/solutionSection) */
+export type SolutionSectionLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/solutionSection) */
+export type SolutionSectionTeasersCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<SolutionSectionTeasersCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<TeaserFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/solutionSection) */
+export type SolutionSectionTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+export type SolutionSectionCollection = {
+  __typename?: 'SolutionSectionCollection';
+  items: Array<Maybe<SolutionSection>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type SolutionSectionFilter = {
+  AND?: InputMaybe<Array<InputMaybe<SolutionSectionFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<SolutionSectionFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  sys?: InputMaybe<SysFilter>;
+  teasers?: InputMaybe<CfTeaserNestedFilter>;
+  teasersCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type SolutionSectionLinkingCollections = {
+  __typename?: 'SolutionSectionLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  pageCollection?: Maybe<PageCollection>;
+  pageSectionCollection?: Maybe<PageSectionCollection>;
+};
+
+
+export type SolutionSectionLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type SolutionSectionLinkingCollectionsPageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<SolutionSectionLinkingCollectionsPageCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type SolutionSectionLinkingCollectionsPageSectionCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<SolutionSectionLinkingCollectionsPageSectionCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum SolutionSectionLinkingCollectionsPageCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  PageNameAsc = 'pageName_ASC',
+  PageNameDesc = 'pageName_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum SolutionSectionLinkingCollectionsPageSectionCollectionOrder {
+  ComponentsGroupedAsc = 'componentsGrouped_ASC',
+  ComponentsGroupedDesc = 'componentsGrouped_DESC',
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SectionTypeAsc = 'sectionType_ASC',
+  SectionTypeDesc = 'sectionType_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum SolutionSectionOrder {
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export type SolutionSectionTeasersCollection = {
+  __typename?: 'SolutionSectionTeasersCollection';
+  items: Array<Maybe<Teaser>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export enum SolutionSectionTeasersCollectionOrder {
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
+  GroupedAsc = 'grouped_ASC',
+  GroupedDesc = 'grouped_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 export type Sys = {
   __typename?: 'Sys';
   environmentId: Scalars['String'];
@@ -5166,6 +4160,7 @@ export type TeaserLinkingCollections = {
   entryCollection?: Maybe<EntryCollection>;
   pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
+  solutionSectionCollection?: Maybe<SolutionSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
 };
 
@@ -5200,6 +4195,15 @@ export type TeaserLinkingCollectionsPageSectionCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   order?: InputMaybe<Array<InputMaybe<TeaserLinkingCollectionsPageSectionCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type TeaserLinkingCollectionsSolutionSectionCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<TeaserLinkingCollectionsSolutionSectionCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
@@ -5260,6 +4264,19 @@ export enum TeaserLinkingCollectionsPageSectionCollectionOrder {
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum TeaserLinkingCollectionsSolutionSectionCollectionOrder {
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
 }
 
 export enum TeaserLinkingCollectionsTwoGridCollectionOrder {
@@ -5494,134 +4511,6 @@ export enum TestimonialLinkingCollectionsTwoGridCollectionOrder {
 export enum TestimonialOrder {
   QuoteAsc = 'quote_ASC',
   QuoteDesc = 'quote_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-/** A full width banner with title and description. [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/textBanner) */
-export type TextBanner = Entry & {
-  __typename?: 'TextBanner';
-  contentfulMetadata: ContentfulMetadata;
-  description?: Maybe<Scalars['String']>;
-  linkedFrom?: Maybe<TextBannerLinkingCollections>;
-  slug?: Maybe<Scalars['String']>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']>;
-};
-
-
-/** A full width banner with title and description. [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/textBanner) */
-export type TextBannerDescriptionArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** A full width banner with title and description. [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/textBanner) */
-export type TextBannerLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
-/** A full width banner with title and description. [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/textBanner) */
-export type TextBannerSlugArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-
-/** A full width banner with title and description. [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/textBanner) */
-export type TextBannerTitleArgs = {
-  locale?: InputMaybe<Scalars['String']>;
-};
-
-export type TextBannerCollection = {
-  __typename?: 'TextBannerCollection';
-  items: Array<Maybe<TextBanner>>;
-  limit: Scalars['Int'];
-  skip: Scalars['Int'];
-  total: Scalars['Int'];
-};
-
-export type TextBannerFilter = {
-  AND?: InputMaybe<Array<InputMaybe<TextBannerFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<TextBannerFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  description?: InputMaybe<Scalars['String']>;
-  description_contains?: InputMaybe<Scalars['String']>;
-  description_exists?: InputMaybe<Scalars['Boolean']>;
-  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  description_not?: InputMaybe<Scalars['String']>;
-  description_not_contains?: InputMaybe<Scalars['String']>;
-  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  slug?: InputMaybe<Scalars['String']>;
-  slug_contains?: InputMaybe<Scalars['String']>;
-  slug_exists?: InputMaybe<Scalars['Boolean']>;
-  slug_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  slug_not?: InputMaybe<Scalars['String']>;
-  slug_not_contains?: InputMaybe<Scalars['String']>;
-  slug_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars['String']>;
-  title_contains?: InputMaybe<Scalars['String']>;
-  title_exists?: InputMaybe<Scalars['Boolean']>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  title_not?: InputMaybe<Scalars['String']>;
-  title_not_contains?: InputMaybe<Scalars['String']>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-export type TextBannerLinkingCollections = {
-  __typename?: 'TextBannerLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-  pageCollection?: Maybe<PageCollection>;
-};
-
-
-export type TextBannerLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-
-export type TextBannerLinkingCollectionsPageCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']>;
-  locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<TextBannerLinkingCollectionsPageCollectionOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-  skip?: InputMaybe<Scalars['Int']>;
-};
-
-export enum TextBannerLinkingCollectionsPageCollectionOrder {
-  InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC',
-  PageNameAsc = 'pageName_ASC',
-  PageNameDesc = 'pageName_DESC',
-  SlugAsc = 'slug_ASC',
-  SlugDesc = 'slug_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-export enum TextBannerOrder {
-  SlugAsc = 'slug_ASC',
-  SlugDesc = 'slug_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -6119,6 +5008,45 @@ export type CfSeoNestedFilter = {
   title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
+export type CfTeaserNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfTeaserNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfTeaserNestedFilter>>>;
+  buttonText?: InputMaybe<Scalars['String']>;
+  buttonText_contains?: InputMaybe<Scalars['String']>;
+  buttonText_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonText_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonText_not?: InputMaybe<Scalars['String']>;
+  buttonText_not_contains?: InputMaybe<Scalars['String']>;
+  buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl?: InputMaybe<Scalars['String']>;
+  buttonUrl_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl_not?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  grouped?: InputMaybe<Scalars['Boolean']>;
+  grouped_exists?: InputMaybe<Scalars['Boolean']>;
+  grouped_not?: InputMaybe<Scalars['Boolean']>;
+  image_exists?: InputMaybe<Scalars['Boolean']>;
+  subtitle?: InputMaybe<Scalars['String']>;
+  subtitle_contains?: InputMaybe<Scalars['String']>;
+  subtitle_exists?: InputMaybe<Scalars['Boolean']>;
+  subtitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle_not?: InputMaybe<Scalars['String']>;
+  subtitle_not_contains?: InputMaybe<Scalars['String']>;
+  subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
 export type CfcomponentsMultiTypeNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfcomponentsMultiTypeNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfcomponentsMultiTypeNestedFilter>>>;
@@ -6144,13 +5072,6 @@ export type CftopSectionMultiTypeNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CftopSectionMultiTypeNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CftopSectionMultiTypeNestedFilter>>>;
   backgroundImage_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink?: InputMaybe<Scalars['String']>;
-  buttonLink_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_exists?: InputMaybe<Scalars['Boolean']>;
-  buttonLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  buttonLink_not?: InputMaybe<Scalars['String']>;
-  buttonLink_not_contains?: InputMaybe<Scalars['String']>;
-  buttonLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   buttonText?: InputMaybe<Scalars['String']>;
   buttonText_contains?: InputMaybe<Scalars['String']>;
   buttonText_exists?: InputMaybe<Scalars['Boolean']>;
@@ -6158,10 +5079,14 @@ export type CftopSectionMultiTypeNestedFilter = {
   buttonText_not?: InputMaybe<Scalars['String']>;
   buttonText_not_contains?: InputMaybe<Scalars['String']>;
   buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl?: InputMaybe<Scalars['String']>;
+  buttonUrl_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl_not?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  fullWidth?: InputMaybe<Scalars['Boolean']>;
-  fullWidth_exists?: InputMaybe<Scalars['Boolean']>;
-  fullWidth_not?: InputMaybe<Scalars['Boolean']>;
   internalName?: InputMaybe<Scalars['String']>;
   internalName_contains?: InputMaybe<Scalars['String']>;
   internalName_exists?: InputMaybe<Scalars['Boolean']>;
@@ -6169,20 +5094,14 @@ export type CftopSectionMultiTypeNestedFilter = {
   internalName_not?: InputMaybe<Scalars['String']>;
   internalName_not_contains?: InputMaybe<Scalars['String']>;
   internalName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle?: InputMaybe<Scalars['String']>;
   subtitle_contains?: InputMaybe<Scalars['String']>;
   subtitle_exists?: InputMaybe<Scalars['Boolean']>;
+  subtitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle_not?: InputMaybe<Scalars['String']>;
   subtitle_not_contains?: InputMaybe<Scalars['String']>;
+  subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   sys?: InputMaybe<SysFilter>;
-  test?: InputMaybe<Scalars['Int']>;
-  test_exists?: InputMaybe<Scalars['Boolean']>;
-  test_gt?: InputMaybe<Scalars['Int']>;
-  test_gte?: InputMaybe<Scalars['Int']>;
-  test_in?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  test_lt?: InputMaybe<Scalars['Int']>;
-  test_lte?: InputMaybe<Scalars['Int']>;
-  test_not?: InputMaybe<Scalars['Int']>;
-  test_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
-  testmeer_exists?: InputMaybe<Scalars['Boolean']>;
   title?: InputMaybe<Scalars['String']>;
   title_contains?: InputMaybe<Scalars['String']>;
   title_exists?: InputMaybe<Scalars['Boolean']>;
@@ -6206,14 +5125,6 @@ export type CtfComponentButtonQuery = { __typename?: 'Query', button?: { __typen
 type DefaultInfo_Button_Fragment = { __typename: 'Button', sys: { __typename?: 'Sys', id: string } };
 
 type DefaultInfo_ComponentWrapper_Fragment = { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ContentBlock_Fragment = { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ContentBlok_Fragment = { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ContentBlokMetCta_Fragment = { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_ContentBlokSplit_Fragment = { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } };
 
 type DefaultInfo_ContentCarousel_Fragment = { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } };
 
@@ -6243,17 +5154,17 @@ type DefaultInfo_PageSection_Fragment = { __typename: 'PageSection', sys: { __ty
 
 type DefaultInfo_Seo_Fragment = { __typename: 'Seo', sys: { __typename?: 'Sys', id: string } };
 
+type DefaultInfo_SolutionSection_Fragment = { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } };
+
 type DefaultInfo_Teaser_Fragment = { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } };
 
 type DefaultInfo_Testimonial_Fragment = { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } };
-
-type DefaultInfo_TextBanner_Fragment = { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } };
 
 type DefaultInfo_Title_Fragment = { __typename: 'Title', sys: { __typename?: 'Sys', id: string } };
 
 type DefaultInfo_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } };
 
-export type DefaultInfoFragment = DefaultInfo_Button_Fragment | DefaultInfo_ComponentWrapper_Fragment | DefaultInfo_ContentBlock_Fragment | DefaultInfo_ContentBlok_Fragment | DefaultInfo_ContentBlokMetCta_Fragment | DefaultInfo_ContentBlokSplit_Fragment | DefaultInfo_ContentCarousel_Fragment | DefaultInfo_Description_Fragment | DefaultInfo_FooterMenu_Fragment | DefaultInfo_HeroBanner_Fragment | DefaultInfo_Image_Fragment | DefaultInfo_ImageCarousel_Fragment | DefaultInfo_LanguageMetadata_Fragment | DefaultInfo_MainNavigation_Fragment | DefaultInfo_MenuGroup_Fragment | DefaultInfo_NavigationItem_Fragment | DefaultInfo_NavigationMenu_Fragment | DefaultInfo_Page_Fragment | DefaultInfo_PageSection_Fragment | DefaultInfo_Seo_Fragment | DefaultInfo_Teaser_Fragment | DefaultInfo_Testimonial_Fragment | DefaultInfo_TextBanner_Fragment | DefaultInfo_Title_Fragment | DefaultInfo_TwoGrid_Fragment;
+export type DefaultInfoFragment = DefaultInfo_Button_Fragment | DefaultInfo_ComponentWrapper_Fragment | DefaultInfo_ContentCarousel_Fragment | DefaultInfo_Description_Fragment | DefaultInfo_FooterMenu_Fragment | DefaultInfo_HeroBanner_Fragment | DefaultInfo_Image_Fragment | DefaultInfo_ImageCarousel_Fragment | DefaultInfo_LanguageMetadata_Fragment | DefaultInfo_MainNavigation_Fragment | DefaultInfo_MenuGroup_Fragment | DefaultInfo_NavigationItem_Fragment | DefaultInfo_NavigationMenu_Fragment | DefaultInfo_Page_Fragment | DefaultInfo_PageSection_Fragment | DefaultInfo_Seo_Fragment | DefaultInfo_SolutionSection_Fragment | DefaultInfo_Teaser_Fragment | DefaultInfo_Testimonial_Fragment | DefaultInfo_Title_Fragment | DefaultInfo_TwoGrid_Fragment;
 
 export type CtfComponentsWrapperFieldsFragment = { __typename: 'ComponentWrapper', componentsCollection?: { __typename?: 'ComponentWrapperComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } };
 
@@ -6265,50 +5176,6 @@ export type CtfComponentWrapperQueryVariables = Exact<{
 
 
 export type CtfComponentWrapperQuery = { __typename?: 'Query', componentWrapper?: { __typename: 'ComponentWrapper', componentsCollection?: { __typename?: 'ComponentWrapperComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } } | null };
-
-export type ComponentContentBlocksFieldsFragment = { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string }, contentBlockCtaCollection?: { __typename?: 'ContentBlockContentBlockCtaCollection', total: number, items: Array<{ __typename?: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokMetCta', blockTitle?: string | null, buttonText?: string | null, buttonLink?: string | null, blockImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, contentType?: string | null, fileName?: string | null, url?: string | null, width?: number | null, height?: number | null } | null, blockBody?: { __typename?: 'ContentBlokMetCtaBlockBody', json: any } | null, sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FooterMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MainNavigation', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MenuGroup', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationItem', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Page', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Seo', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null };
-
-export type CtfComponentContentBlockQueryVariables = Exact<{
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-}>;
-
-
-export type CtfComponentContentBlockQuery = { __typename?: 'Query', contentBlock?: { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string }, contentBlockCtaCollection?: { __typename?: 'ContentBlockContentBlockCtaCollection', total: number, items: Array<{ __typename?: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokMetCta', blockTitle?: string | null, buttonText?: string | null, buttonLink?: string | null, blockImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, contentType?: string | null, fileName?: string | null, url?: string | null, width?: number | null, height?: number | null } | null, blockBody?: { __typename?: 'ContentBlokMetCtaBlockBody', json: any } | null, sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'FooterMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MainNavigation', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'MenuGroup', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationItem', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'NavigationMenu', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Page', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Seo', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null };
-
-export type ComponentContentBlokFieldsFragment = { __typename: 'ContentBlok', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonLink?: string | null, sys: { __typename?: 'Sys', id: string }, block1Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block1Body?: { __typename?: 'ContentBlokBlock1Body', json: any } | null, block2Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block2Body?: { __typename?: 'ContentBlokBlock2Body', json: any } | null, block3Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block3Body?: { __typename?: 'ContentBlokBlock3Body', json: any } | null };
-
-export type CtfContentBlokComponentQueryVariables = Exact<{
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-}>;
-
-
-export type CtfContentBlokComponentQuery = { __typename?: 'Query', contentBlok?: { __typename: 'ContentBlok', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonLink?: string | null, sys: { __typename?: 'Sys', id: string }, block1Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block1Body?: { __typename?: 'ContentBlokBlock1Body', json: any } | null, block2Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block2Body?: { __typename?: 'ContentBlokBlock2Body', json: any } | null, block3Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block3Body?: { __typename?: 'ContentBlokBlock3Body', json: any } | null } | null };
-
-export type ComponentContentBlokSplitFieldsFragment = { __typename: 'ContentBlokSplit', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonLink?: string | null, fullWidth?: boolean | null, title2?: string | null, backgroundColor?: string | null, sys: { __typename?: 'Sys', id: string }, button1?: { __typename?: 'ContentBlokSplitButton1', json: any } | null, backgroundImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, url?: string | null, contentType?: string | null } | null, image?: { __typename?: 'Asset', title?: string | null, description?: string | null, url?: string | null, contentType?: string | null } | null };
-
-export type CtfComponentSplitBlockQueryVariables = Exact<{
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-}>;
-
-
-export type CtfComponentSplitBlockQuery = { __typename?: 'Query', contentBlokSplit?: { __typename: 'ContentBlokSplit', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonLink?: string | null, fullWidth?: boolean | null, title2?: string | null, backgroundColor?: string | null, sys: { __typename?: 'Sys', id: string }, button1?: { __typename?: 'ContentBlokSplitButton1', json: any } | null, backgroundImage?: { __typename?: 'Asset', title?: string | null, description?: string | null, url?: string | null, contentType?: string | null } | null, image?: { __typename?: 'Asset', title?: string | null, description?: string | null, url?: string | null, contentType?: string | null } | null } | null };
-
-export type ComponentContentCarouselFieldsFragment = { __typename: 'ContentCarousel', title?: string | null, subtitle?: string | null, autoplay?: boolean | null, blockJobTitle?: string | null, block2JobTitle?: string | null, block3JobTitle?: string | null, blockName?: string | null, block2Name?: string | null, block3Name?: string | null, sys: { __typename?: 'Sys', id: string }, blockImage?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, blockBody?: { __typename?: 'ContentCarouselBlockBody', json: any } | null, block2Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block2Body?: { __typename?: 'ContentCarouselBlock2Body', json: any } | null, block3Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block3Body?: { __typename?: 'ContentCarouselBlock3Body', json: any } | null };
-
-export type CtfComponentContentCarouselQueryVariables = Exact<{
-  id: Scalars['String'];
-  locale?: InputMaybe<Scalars['String']>;
-  preview?: InputMaybe<Scalars['Boolean']>;
-}>;
-
-
-export type CtfComponentContentCarouselQuery = { __typename?: 'Query', contentCarousel?: { __typename: 'ContentCarousel', title?: string | null, subtitle?: string | null, autoplay?: boolean | null, blockJobTitle?: string | null, block2JobTitle?: string | null, block3JobTitle?: string | null, blockName?: string | null, block2Name?: string | null, block3Name?: string | null, sys: { __typename?: 'Sys', id: string }, blockImage?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, blockBody?: { __typename?: 'ContentCarouselBlockBody', json: any } | null, block2Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block2Body?: { __typename?: 'ContentCarouselBlock2Body', json: any } | null, block3Image?: { __typename?: 'Asset', url?: string | null, title?: string | null, contentType?: string | null } | null, block3Body?: { __typename?: 'ContentCarouselBlock3Body', json: any } | null } | null };
 
 export type ComponentDescriptionFieldsFragment = { __typename: 'Description', description?: string | null, sys: { __typename?: 'Sys', id: string } };
 
@@ -6332,7 +5199,7 @@ export type CtfComponentInfiniteCarouselQueryVariables = Exact<{
 
 export type CtfComponentInfiniteCarouselQuery = { __typename?: 'Query', imageCarousel?: { __typename: 'ImageCarousel', autoplay?: boolean | null, sys: { __typename?: 'Sys', id: string }, imageCollection?: { __typename?: 'AssetCollection', total: number, items: Array<{ __typename?: 'Asset', title?: string | null, url?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null } | null };
 
-export type CtfPageSectionFieldsFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } };
+export type CtfPageSectionFieldsFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'SolutionSection' } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } };
 
 export type CtfPageSectionQueryVariables = Exact<{
   id: Scalars['String'];
@@ -6341,9 +5208,9 @@ export type CtfPageSectionQueryVariables = Exact<{
 }>;
 
 
-export type CtfPageSectionQuery = { __typename?: 'Query', pageSection?: { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } } | null };
+export type CtfPageSectionQuery = { __typename?: 'Query', pageSection?: { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'SolutionSection' } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } } | null };
 
-export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null };
+export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null };
 
 export type CtfPageQueryVariables = Exact<{
   slug: Scalars['String'];
@@ -6352,7 +5219,7 @@ export type CtfPageQueryVariables = Exact<{
 }>;
 
 
-export type CtfPageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null };
+export type CtfPageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null };
 
 export type ComponentTeaserFieldsFragment = { __typename: 'Teaser', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonUrl?: string | null, grouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, image?: { __typename?: 'Asset', title?: string | null, url?: string | null } | null };
 
@@ -6376,19 +5243,11 @@ export type CtfComponentTitleQueryVariables = Exact<{
 
 export type CtfComponentTitleQuery = { __typename?: 'Query', title?: { __typename: 'Title', title?: string | null, alignment?: string | null, fontSize?: string | null, sys: { __typename?: 'Sys', id: string } } | null };
 
-export type ComponentsFieldPageSectionFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null };
+export type ComponentsFieldPageSectionFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null };
 
 type ComponentsFields_Button_Fragment = { __typename: 'Button', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentsFields_ComponentWrapper_Fragment = { __typename?: 'ComponentWrapper' };
-
-type ComponentsFields_ContentBlock_Fragment = { __typename?: 'ContentBlock' };
-
-type ComponentsFields_ContentBlok_Fragment = { __typename?: 'ContentBlok' };
-
-type ComponentsFields_ContentBlokMetCta_Fragment = { __typename?: 'ContentBlokMetCta' };
-
-type ComponentsFields_ContentBlokSplit_Fragment = { __typename?: 'ContentBlokSplit' };
 
 type ComponentsFields_ContentCarousel_Fragment = { __typename?: 'ContentCarousel' };
 
@@ -6418,19 +5277,19 @@ type ComponentsFields_PageSection_Fragment = { __typename?: 'PageSection' };
 
 type ComponentsFields_Seo_Fragment = { __typename?: 'Seo' };
 
+type ComponentsFields_SolutionSection_Fragment = { __typename?: 'SolutionSection' };
+
 type ComponentsFields_Teaser_Fragment = { __typename?: 'Teaser' };
 
 type ComponentsFields_Testimonial_Fragment = { __typename?: 'Testimonial' };
-
-type ComponentsFields_TextBanner_Fragment = { __typename?: 'TextBanner' };
 
 type ComponentsFields_Title_Fragment = { __typename: 'Title', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentsFields_TwoGrid_Fragment = { __typename?: 'TwoGrid' };
 
-export type ComponentsFieldsFragment = ComponentsFields_Button_Fragment | ComponentsFields_ComponentWrapper_Fragment | ComponentsFields_ContentBlock_Fragment | ComponentsFields_ContentBlok_Fragment | ComponentsFields_ContentBlokMetCta_Fragment | ComponentsFields_ContentBlokSplit_Fragment | ComponentsFields_ContentCarousel_Fragment | ComponentsFields_Description_Fragment | ComponentsFields_FooterMenu_Fragment | ComponentsFields_HeroBanner_Fragment | ComponentsFields_Image_Fragment | ComponentsFields_ImageCarousel_Fragment | ComponentsFields_LanguageMetadata_Fragment | ComponentsFields_MainNavigation_Fragment | ComponentsFields_MenuGroup_Fragment | ComponentsFields_NavigationItem_Fragment | ComponentsFields_NavigationMenu_Fragment | ComponentsFields_Page_Fragment | ComponentsFields_PageSection_Fragment | ComponentsFields_Seo_Fragment | ComponentsFields_Teaser_Fragment | ComponentsFields_Testimonial_Fragment | ComponentsFields_TextBanner_Fragment | ComponentsFields_Title_Fragment | ComponentsFields_TwoGrid_Fragment;
+export type ComponentsFieldsFragment = ComponentsFields_Button_Fragment | ComponentsFields_ComponentWrapper_Fragment | ComponentsFields_ContentCarousel_Fragment | ComponentsFields_Description_Fragment | ComponentsFields_FooterMenu_Fragment | ComponentsFields_HeroBanner_Fragment | ComponentsFields_Image_Fragment | ComponentsFields_ImageCarousel_Fragment | ComponentsFields_LanguageMetadata_Fragment | ComponentsFields_MainNavigation_Fragment | ComponentsFields_MenuGroup_Fragment | ComponentsFields_NavigationItem_Fragment | ComponentsFields_NavigationMenu_Fragment | ComponentsFields_Page_Fragment | ComponentsFields_PageSection_Fragment | ComponentsFields_Seo_Fragment | ComponentsFields_SolutionSection_Fragment | ComponentsFields_Teaser_Fragment | ComponentsFields_Testimonial_Fragment | ComponentsFields_Title_Fragment | ComponentsFields_TwoGrid_Fragment;
 
-export type ComponentTwoGridFieldsFragment = { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null };
+export type ComponentTwoGridFieldsFragment = { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null };
 
 export type CtfComponentTwoGridQueryVariables = Exact<{
   id: Scalars['String'];
@@ -6439,19 +5298,11 @@ export type CtfComponentTwoGridQueryVariables = Exact<{
 }>;
 
 
-export type CtfComponentTwoGridQuery = { __typename?: 'Query', twoGrid?: { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null } | null };
+export type CtfComponentTwoGridQuery = { __typename?: 'Query', twoGrid?: { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null } | null };
 
 type ComponentReferenceFields_Button_Fragment = { __typename: 'Button', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_ComponentWrapper_Fragment = { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } };
-
-type ComponentReferenceFields_ContentBlock_Fragment = { __typename: 'ContentBlock', sys: { __typename?: 'Sys', id: string } };
-
-type ComponentReferenceFields_ContentBlok_Fragment = { __typename: 'ContentBlok', sys: { __typename?: 'Sys', id: string } };
-
-type ComponentReferenceFields_ContentBlokMetCta_Fragment = { __typename: 'ContentBlokMetCta', sys: { __typename?: 'Sys', id: string } };
-
-type ComponentReferenceFields_ContentBlokSplit_Fragment = { __typename: 'ContentBlokSplit', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_ContentCarousel_Fragment = { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } };
 
@@ -6481,14 +5332,14 @@ type ComponentReferenceFields_PageSection_Fragment = { __typename: 'PageSection'
 
 type ComponentReferenceFields_Seo_Fragment = { __typename: 'Seo', sys: { __typename?: 'Sys', id: string } };
 
+type ComponentReferenceFields_SolutionSection_Fragment = { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } };
+
 type ComponentReferenceFields_Teaser_Fragment = { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_Testimonial_Fragment = { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } };
-
-type ComponentReferenceFields_TextBanner_Fragment = { __typename: 'TextBanner', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_Title_Fragment = { __typename: 'Title', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } };
 
-export type ComponentReferenceFieldsFragment = ComponentReferenceFields_Button_Fragment | ComponentReferenceFields_ComponentWrapper_Fragment | ComponentReferenceFields_ContentBlock_Fragment | ComponentReferenceFields_ContentBlok_Fragment | ComponentReferenceFields_ContentBlokMetCta_Fragment | ComponentReferenceFields_ContentBlokSplit_Fragment | ComponentReferenceFields_ContentCarousel_Fragment | ComponentReferenceFields_Description_Fragment | ComponentReferenceFields_FooterMenu_Fragment | ComponentReferenceFields_HeroBanner_Fragment | ComponentReferenceFields_Image_Fragment | ComponentReferenceFields_ImageCarousel_Fragment | ComponentReferenceFields_LanguageMetadata_Fragment | ComponentReferenceFields_MainNavigation_Fragment | ComponentReferenceFields_MenuGroup_Fragment | ComponentReferenceFields_NavigationItem_Fragment | ComponentReferenceFields_NavigationMenu_Fragment | ComponentReferenceFields_Page_Fragment | ComponentReferenceFields_PageSection_Fragment | ComponentReferenceFields_Seo_Fragment | ComponentReferenceFields_Teaser_Fragment | ComponentReferenceFields_Testimonial_Fragment | ComponentReferenceFields_TextBanner_Fragment | ComponentReferenceFields_Title_Fragment | ComponentReferenceFields_TwoGrid_Fragment;
+export type ComponentReferenceFieldsFragment = ComponentReferenceFields_Button_Fragment | ComponentReferenceFields_ComponentWrapper_Fragment | ComponentReferenceFields_ContentCarousel_Fragment | ComponentReferenceFields_Description_Fragment | ComponentReferenceFields_FooterMenu_Fragment | ComponentReferenceFields_HeroBanner_Fragment | ComponentReferenceFields_Image_Fragment | ComponentReferenceFields_ImageCarousel_Fragment | ComponentReferenceFields_LanguageMetadata_Fragment | ComponentReferenceFields_MainNavigation_Fragment | ComponentReferenceFields_MenuGroup_Fragment | ComponentReferenceFields_NavigationItem_Fragment | ComponentReferenceFields_NavigationMenu_Fragment | ComponentReferenceFields_Page_Fragment | ComponentReferenceFields_PageSection_Fragment | ComponentReferenceFields_Seo_Fragment | ComponentReferenceFields_SolutionSection_Fragment | ComponentReferenceFields_Teaser_Fragment | ComponentReferenceFields_Testimonial_Fragment | ComponentReferenceFields_Title_Fragment | ComponentReferenceFields_TwoGrid_Fragment;
