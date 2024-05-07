@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   ComponentTitleFieldsFragment,
-} from '@src/components/features/ctf-components/ctf-title/__generated/ctf-title-component.generated';
+} from '@src/components/features/ctf-components/ctf-title/__generated/ctf-title.generated';
 
 export const CtfTitle = (props: ComponentTitleFieldsFragment) => {
   const { title = '', alignment, fontSize = 'h1' } = props;
