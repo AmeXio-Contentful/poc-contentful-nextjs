@@ -38,7 +38,7 @@ export function customFetcher<TData, TVariables extends { preview?: boolean | nu
     const env = process.env.NODE_ENV;
     let endpoint = fetchConfig.localEndpoint;
     let apiToken = fetchConfig.localParams;
-    if(env == "development"){
+    if (env == "development") {
       endpoint = fetchConfig.localEndpoint;
       apiToken = variables?.preview ? fetchConfig.localPreviewParams : fetchConfig.localParams;
     }
