@@ -76,7 +76,7 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
               languageItem =>
                 <li
                   key={languageItem.sys.id}
-                  className='capitalize inline-flex h-[8rem] relative items-center pt-[24px]'
+                  className='capitalize inline-flex h-[8rem] relative items-center pl-9'
                   {...inspectorMode({
                     entryId: languageItem.sys.id,
                     fieldId: 'groupName',
