@@ -1,5 +1,6 @@
 fragment ComponentsFields on Entry {
   ... on FeaturedArticle {
+    heading
     title
     subtitle
     buttonUrl
