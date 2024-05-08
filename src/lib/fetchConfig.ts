@@ -1,5 +1,3 @@
-import { end } from '@popperjs/core';
-
 export const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${String(process.env.CONTENTFUL_SPACE_ID,)}`;
 
 export const fetchConfig = {
