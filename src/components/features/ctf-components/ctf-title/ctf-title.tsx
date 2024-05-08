@@ -9,6 +9,7 @@ export const CtfTitle = (props: ComponentTitleFieldsFragment) => {
   const alignmentDecorator = alignment != null ? 'text-left' : '';
   const newFontSize = fontSize != null ? fontSize : 'h1';
 
+
   const element = React.createElement(
     newFontSize,
     { className: 'primary-color font-semibold ' + alignmentDecorator },

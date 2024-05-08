@@ -16,6 +16,6 @@ export function CtfTitleGql({
     preview: preview,
   })) as any;
 
-  // eslint-disable-next-line react/jsx-no-undef
+  console.log("data", data.data?.title);
   return <CtfTitle {...data.data?.title} />;
 }
