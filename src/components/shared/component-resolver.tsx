@@ -10,6 +10,7 @@ interface Props {
     sys: { id: string };
     __typename: string;
     [k: string]: any;
+    sectionType?: number;
   };
 
   /**
@@ -85,6 +86,7 @@ export const ComponentResolver = (props: Props) => {
           preview={previewActive}
           locale={locale}
           previousComponent={previousComponentProp}
+          sectionType={componentProps.sectionType}
         />
       )}
     </Box>

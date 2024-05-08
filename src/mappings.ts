@@ -1,77 +1,137 @@
 import dynamic from 'next/dynamic';
 
 export const componentMap = {
-  HeroBanner: dynamic(() =>
+  PageSection: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-cta-banner-component/ctf-cta-banner-component'
-      ).then((module) => module.CtfCtaBannerComponent),
+      '@src/components/features/ctf-components/ctf-page-section/ctf-page-section'
+      ).then((module) => module.CtfPageSection),
+  ),
+  Teaser: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-teaser/ctf-teaser'
+      ).then((module) => module.CtfTeaser),
   ),
   Title: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-title-component/ctf-title-component'
-      ).then((module) => module.CtfTitleComponent),
+      '@src/components/features/ctf-components/ctf-title/ctf-title'
+      ).then((module) => module.CtfTitle),
   ),
-  ContentBlock: dynamic(() =>
+  Description: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-content-block-component/ctf-content-block-component'
-      ).then((module) => module.CtfContentBlockComponent),
+      '@src/components/features/ctf-components/ctf-description/ctf-description'
+      ).then((module) => module.CtfDescription),
   ),
-  ContentCarousel: dynamic(() =>
+  Testimonial: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-content-carousel-component/ctf-content-carousel-component'
-      ).then((module) => module.CtfContentCarouselComponent),
+      '@src/components/features/ctf-components/ctf-testimonial/ctf-testimonial'
+      ).then((module) => module.CtfTestimonial),
   ),
-  ContentBlok: dynamic(() =>
+  Button: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-content-block-join-us/ctf-content-block-join-us'
-      ).then((module) => module.CtfContentBlockJoinUs),
+      '@src/components/features/ctf-components/ctf-button/ctf-button'
+      ).then((module) => module.CtfButton),
   ),
   ImageCarousel: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-infinite-carousel-component/ctf-infinite-carousel-component'
-      ).then((module) => module.CtfInfiniteCarouselComponent),
+      '@src/components/features/ctf-components/ctf-infinite-carousel/ctf-infinite-carousel'
+      ).then((module) => module.CtfInfiniteCarousel),
   ),
-  ContentBlokSplit: dynamic(() =>
+  TwoGrid: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-content-block-split/ctf-content-block-split'
-      ).then((module) => module.CtfContentBlockSplit),
+      '@src/components/features/ctf-components/ctf-two-grid/ctf-two-grid'
+      ).then((module) => module.CtfTwoGrid),
+  ),
+  ComponentWrapper: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper'
+      ).then((module) => module.CtfComponentWrapper),
+  ),
+  HeroBanner: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component'
+      ).then((module) => module.HeroBannerComponent),
+  ),
+  SolutionSection: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/solution-component/solution-component'
+      ).then((module) => module.SolutionComponent),
+  ),
+  ReferenceClients: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/reference-client-component/reference-client-component'
+      ).then((module) => module.ReferenceClientComponent),
+  ),
+  JoinUs: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/join-us-component/join-us-component'
+      ).then((module) => module.JoinUsComponent),
   ),
 };
 
 export const componentGqlMap = {
-  HeroBanner: dynamic(() =>
+  PageSection: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-cta-banner-component/ctf-cta-banner-component-gql'
-      ).then((module) => module.CtfCtaBannerComponentGql),
+      '@src/components/features/ctf-components/ctf-page-section/ctf-page-section-gql'
+      ).then((module) => module.CtfPageSectionGgl),
   ),
+  Teaser: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql'
+      ).then((module) => module.CtfTeaserGql),
+   ),
   Title: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-title-component/ctf-title-component-gql'
-      ).then((module) => module.CtfTitleComponentGql),
+      '@src/components/features/ctf-components/ctf-title/ctf-title-gql'
+      ).then((module) => module.CtfTitleGql),
   ),
-  ContentBlock: dynamic(() =>
+  Description: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-content-block-component/ctf-content-block-component-gql'
-      ).then((module) => module.CtfContentBlockComponentGql),
+      '@src/components/features/ctf-components/ctf-description/ctf-description-gql'
+      ).then((module) => module.CtfDescriptionGql),
   ),
-  ContentCarousel: dynamic(() =>
+  Testimonial: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-content-carousel-component/ctf-content-carousel-component-gql'
-      ).then((module) => module.CtfContentCarouselComponentGql),
+      '@src/components/features/ctf-components/ctf-testimonial/ctf-testimonial-gql'
+      ).then((module) => module.CtfTestimonialGql),
   ),
-  ContentBlok: dynamic(() =>
+  Button: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-content-block-join-us/ctf-content-block-join-us-gql'
-      ).then((module) => module.CtfContentBlockJoinUsGql),
+      '@src/components/features/ctf-components/ctf-button/ctf-button-gql'
+      ).then((module) => module.CtfButtonGql),
   ),
   ImageCarousel: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-infinite-carousel-component/ctf-infinite-carousel-component-gql'
-      ).then((module) => module.CtfInfiniteCarouselComponentGql),
+      '@src/components/features/ctf-components/ctf-infinite-carousel/ctf-infinite-carousel-gql'
+      ).then((module) => module.CtfInfiniteCarouselGql),
   ),
-  ContentBlokSplit: dynamic(() =>
+  TwoGrid: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-content-block-split/ctf-content-block-split-gql'
-      ).then((module) => module.CtfContentBlockSplitGql),
+      '@src/components/features/ctf-components/ctf-two-grid/ctf-two-grid-gql'
+      ).then((module) => module.CtfTwoGridGql),
+  ),
+  ComponentWrapper: dynamic(() =>
+    import(
+      '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper-gql'
+      ).then((module) => module.CtComponentWrapperGgl),
+  ),
+  HeroBanner: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component-gql'
+      ).then((module) => module.HeroBannerComponentGql),
+  ),
+  SolutionSection: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/solution-component/solution-component-gql'
+      ).then((module) => module.SolutionComponentGql),
+  ),
+  ReferenceClients: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/reference-client-component/reference-client-component-gql'
+      ).then((module) => module.ReferenceClientComponentGql),
+  ),
+  JoinUs: dynamic(() =>
+    import(
+      '@src/components/features/decoupled-components/join-us-component/join-us-component-gql'
+      ).then((module) => module.JoinUsComponentGql),
   ),
 };

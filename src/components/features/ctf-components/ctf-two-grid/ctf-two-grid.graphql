@@ -1,0 +1,41 @@
+fragment ComponentsFields on Entry {
+  ... on FeaturedArticle {
+    title
+    subtitle
+    buttonUrl
+  }
+  ... on ExpertAdvice {
+    title
+    subtitle
+    buttonUrl
+    buttonText
+    advicesCollection {
+      items {
+        ... on Title {
+          title
+          buttonUrl
+        }
+      }
+    }
+  }
+}
+
+fragment ComponentTwoGridFields on TwoGrid {
+  __typename
+  internalName
+  sys {
+    id
+  }
+  componentLeft {
+    ...ComponentsFields
+  }
+  componentRight {
+    ...ComponentsFields
+  }
+}
+
+query CtfComponentTwoGrid($id: String!, $locale: String, $preview: Boolean) {
+  twoGrid(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentTwoGridFields
+  }
+}

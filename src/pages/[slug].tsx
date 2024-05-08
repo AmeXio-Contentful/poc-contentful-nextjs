@@ -48,13 +48,13 @@ export const getServerSideProps = async ({ locale, params, query }: CustomNextPa
     const pageData = await useCtfPageQuery.fetcher({ slug, locale, preview })();
     const page = pageData.pageCollection?.items[0];
 
-    const topSection = page?.topSectionCollection?.items;
-    const extraSection = page?.extraSectionCollection?.items;
+    // const topSection = page?.topSectionCollection?.items;
+    // const extraSection = page?.extraSectionCollection?.items;
     const content: ComponentReferenceFieldsFragment | undefined | null = page?.pageContentCollection?.items as any;
 
     await Promise.all([
-      ...prefetchPromiseArr({ inputArr: topSection, locale, queryClient }),
-      ...prefetchPromiseArr({ inputArr: extraSection, locale, queryClient }),
+      // ...prefetchPromiseArr({ inputArr: topSection, locale, queryClient }),
+      // ...prefetchPromiseArr({ inputArr: extraSection, locale, queryClient }),
       ...prefetchPromiseArr({ inputArr: [content], locale, queryClient }),
     ]);
 

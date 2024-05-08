@@ -1,0 +1,13 @@
+fragment ComponentDescriptionFields on Description {
+  __typename
+  sys {
+    id
+  }
+	description
+}
+
+query CtfComponentDescription($id: String!, $locale: String, $preview: Boolean) {
+  description(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentDescriptionFields
+  }
+}

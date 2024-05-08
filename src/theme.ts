@@ -14,9 +14,9 @@ interface ColorConfigInterface {
 }
 
 const colorConfigs: { [key: string]: ColorConfigInterface } = {
-  'palette-1. White (#FFFFFF)': {
-    headlineColor: '#1B273A',
-    textColor: '#414D63',
+  'palette-1. White (#fff)': {
+    headlineColor: '#1b273a',
+    textColor: '#414d63',
     backgroundColor: '#fff',
     buttonColor: 'primary',
   },
@@ -27,12 +27,12 @@ const colorConfigs: { [key: string]: ColorConfigInterface } = {
     buttonColor: 'secondary',
   },
   'palette-2. White Smoke (#FCFCFC)': {
-    headlineColor: '#1B273A',
-    textColor: '#414D63',
+    headlineColor: '#1b273a',
+    textColor: '#414d63',
     backgroundColor: '#fcfcfc',
     buttonColor: 'primary',
   },
-  'palette-3. Light Gray (#F4F4F4)': {
+  'palette-3. Light Gray (#f4f4f4)': {
     headlineColor: '#000',
     textColor: '#000',
     backgroundColor: '#f4f4f4',
@@ -69,8 +69,8 @@ export const getColorConfigFromPalette = (palette: string): ColorConfigInterface
 const colorfulTheme = createTheme({
   spacing: SPACER,
   typography: {
-    fontFamily: `'Red Hat Display', sans-serif`,
-    htmlFontSize: 10,
+    fontFamily: `'Lexend', sans-serif;`,
+    htmlFontSize: 16,
     caption: {
       fontSize: '1.5rem',
       opacity: 0.6,
@@ -87,7 +87,7 @@ const colorfulTheme = createTheme({
       main: '#fff',
     },
     background: {
-      default: 'white',
+      default: '#fff',
     },
   },
 
@@ -197,7 +197,7 @@ const colorfulTheme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         html: {
-          fontSize: '10px',
+          fontSize: '16px',
           minHeight: '100%',
         },
         body: {
@@ -228,7 +228,7 @@ colorfulTheme.typography.body2 = {
 
 colorfulTheme.typography.h1 = {
   ...colorfulTheme.typography.h1,
-  fontSize: '3.8rem',
+  fontSize: '4rem',
   lineHeight: 1.089,
   fontWeight: 600,
 };

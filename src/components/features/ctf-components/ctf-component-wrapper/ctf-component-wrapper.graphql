@@ -1,0 +1,54 @@
+fragment DefaultInfo on Entry {
+  __typename
+  sys {
+    id
+  }
+}
+
+fragment CtfComponentsWrapperFields on ComponentWrapper {
+  ...DefaultInfo
+  componentsCollection {
+    items {
+      ... on Button {
+        ...DefaultInfo
+      }
+      ... on Description {
+        ...DefaultInfo
+      }
+      ... on Image {
+        ...DefaultInfo
+      }
+      ... on ImageCarousel {
+        ...DefaultInfo
+      }
+
+      ... on Teaser {
+        ...DefaultInfo
+      }
+
+      ... on Testimonial {
+        ...DefaultInfo
+        title
+        subtitle
+        quote
+        image {
+          url
+        }
+      }
+
+      ... on Title {
+        ...DefaultInfo
+      }
+
+      ... on TwoGrid {
+        ...DefaultInfo
+      }
+    }
+  }
+}
+
+query CtfComponentWrapper($id: String!, $locale: String, $preview: Boolean) {
+  componentWrapper(id: $id, locale: $locale, preview: $preview) {
+    ...CtfComponentsWrapperFields
+  }
+}

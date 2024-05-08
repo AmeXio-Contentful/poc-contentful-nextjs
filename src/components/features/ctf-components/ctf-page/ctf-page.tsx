@@ -9,38 +9,16 @@ import LayoutContext, { defaultLayout } from '@src/layout-context';
 
 
 const CtfPage = (props: CtfPageFieldsFragment) => {
-  const topSection =
-    props.topSectionCollection && props.topSectionCollection.items.filter(it => !!it);
+
   const content = props.pageContentCollection;
-  const extraSection =
-    props.extraSectionCollection && props.extraSectionCollection.items.filter(it => !!it);
-
-  const layoutConfig = {
-    ...defaultLayout,
-    containerWidth: 1262,
-  };
-
   return (
     <PageContainer>
-      {topSection &&
-        topSection.map(entry => (
-          <LayoutContext.Provider value={layoutConfig} key={entry!.sys.id}>
-            <ComponentResolver componentProps={entry!} />
-          </LayoutContext.Provider>
-        ))}
-
-      {content && content.items.map(entry => (
+      {content && content.items?.map(entry => (
         <LayoutContext.Provider value={defaultLayout} key={entry!.sys.id}>
           <ComponentResolver componentProps={entry!} />
         </LayoutContext.Provider>
       ))}
 
-      {extraSection &&
-        extraSection.map(entry => (
-          <LayoutContext.Provider value={layoutConfig} key={entry!.sys.id}>
-            <ComponentResolver componentProps={entry!} />
-          </LayoutContext.Provider>
-        ))}
       <Box
         position="relative"
         className="form-component"
