@@ -1,11 +1,13 @@
-import {
-  ComponentHeroBannerFragment
-} from '@src/components/features/decoupled-components/hero-banner-component/__generated/hero-banner-component.generated';
-import { Props } from '@src/components/features/decoupled-components/title-component/title-component';
+import styles from './hero-banner-component.module.scss';
+
 import {
   ButtonProps,
 } from '@src/components/features/decoupled-components/button-component/button-component';
+import {
+  ComponentHeroBannerFragment
+} from '@src/components/features/decoupled-components/hero-banner-component/__generated/hero-banner-component.generated';
 import { TeaserComponent } from '@src/components/features/decoupled-components/teaser-component/teaser-component';
+import { Props } from '@src/components/features/decoupled-components/title-component/title-component';
 import { sectionTypes } from '@src/components/shared/global';
 
 export const HeroBannerComponent = (props: ComponentHeroBannerFragment) => {
@@ -28,7 +30,7 @@ export const HeroBannerComponent = (props: ComponentHeroBannerFragment) => {
   }
 
   return (
-    <div>
+    <div className={styles.custom_button_class}>
       <TeaserComponent
         type={sectionTypes.bannerSection}
         title={title as string}
