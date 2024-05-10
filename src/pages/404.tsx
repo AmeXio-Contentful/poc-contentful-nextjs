@@ -6,6 +6,7 @@ import { getServerSideTranslations } from '@src/lib/get-serverside-translations'
 import {
   useCtfNavigationQuery
 } from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
+import { useCtfFooterQuery } from '@src/components/features/ctf-components/ctf-footer/__generated/ctf-footer.generated';
 
 const ErrorPage404 = () => {
   return <PageError error={{ code: 404 }} />;
@@ -17,6 +18,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   await queryClient.prefetchQuery(
     useCtfNavigationQuery.getKey({ locale, preview: false }),
     useCtfNavigationQuery.fetcher({ locale, preview: false }),
+  );
+
+  await queryClient.prefetchQuery(
+    useCtfFooterQuery.getKey({ locale, preview: false }),
+    useCtfFooterQuery.fetcher({ locale, preview: false }),
   );
 
   return {

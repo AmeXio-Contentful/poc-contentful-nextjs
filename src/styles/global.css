@@ -16,8 +16,6 @@
   src: url(../../public/fonts/Lexend.ttf) format('ttf');
 }
 
-
-
 .page-section {
   &:nth-of-type(odd) {
     background: #d9e8f5;
@@ -30,4 +28,8 @@
 
 .primary-color {
   color: #084772;
+}
+
+.invert {
+  filter: invert(1);
 }

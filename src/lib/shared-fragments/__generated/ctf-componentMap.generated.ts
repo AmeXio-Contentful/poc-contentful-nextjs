@@ -8,6 +8,10 @@ export type ComponentReferenceFields_ContentCarousel_Fragment = { __typename: 'C
 
 export type ComponentReferenceFields_Description_Fragment = { __typename: 'Description', sys: { __typename?: 'Sys', id: string } };
 
+export type ComponentReferenceFields_ExpertAdvice_Fragment = { __typename: 'ExpertAdvice', sys: { __typename?: 'Sys', id: string } };
+
+export type ComponentReferenceFields_FeaturedArticle_Fragment = { __typename: 'FeaturedArticle', sys: { __typename?: 'Sys', id: string } };
+
 export type ComponentReferenceFields_FooterMenu_Fragment = { __typename: 'FooterMenu', sys: { __typename?: 'Sys', id: string } };
 
 export type ComponentReferenceFields_HeroBanner_Fragment = { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } };
@@ -15,6 +19,8 @@ export type ComponentReferenceFields_HeroBanner_Fragment = { __typename: 'HeroBa
 export type ComponentReferenceFields_Image_Fragment = { __typename: 'Image', sys: { __typename?: 'Sys', id: string } };
 
 export type ComponentReferenceFields_ImageCarousel_Fragment = { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } };
+
+export type ComponentReferenceFields_JoinUs_Fragment = { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } };
 
 export type ComponentReferenceFields_LanguageMetadata_Fragment = { __typename: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } };
 
@@ -30,6 +36,8 @@ export type ComponentReferenceFields_Page_Fragment = { __typename: 'Page', sys: 
 
 export type ComponentReferenceFields_PageSection_Fragment = { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } };
 
+export type ComponentReferenceFields_ReferenceClients_Fragment = { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } };
+
 export type ComponentReferenceFields_Seo_Fragment = { __typename: 'Seo', sys: { __typename?: 'Sys', id: string } };
 
 export type ComponentReferenceFields_SolutionSection_Fragment = { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } };
@@ -42,7 +50,7 @@ export type ComponentReferenceFields_Title_Fragment = { __typename: 'Title', sys
 
 export type ComponentReferenceFields_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } };
 
-export type ComponentReferenceFieldsFragment = ComponentReferenceFields_Button_Fragment | ComponentReferenceFields_ComponentWrapper_Fragment | ComponentReferenceFields_ContentCarousel_Fragment | ComponentReferenceFields_Description_Fragment | ComponentReferenceFields_FooterMenu_Fragment | ComponentReferenceFields_HeroBanner_Fragment | ComponentReferenceFields_Image_Fragment | ComponentReferenceFields_ImageCarousel_Fragment | ComponentReferenceFields_LanguageMetadata_Fragment | ComponentReferenceFields_MainNavigation_Fragment | ComponentReferenceFields_MenuGroup_Fragment | ComponentReferenceFields_NavigationItem_Fragment | ComponentReferenceFields_NavigationMenu_Fragment | ComponentReferenceFields_Page_Fragment | ComponentReferenceFields_PageSection_Fragment | ComponentReferenceFields_Seo_Fragment | ComponentReferenceFields_SolutionSection_Fragment | ComponentReferenceFields_Teaser_Fragment | ComponentReferenceFields_Testimonial_Fragment | ComponentReferenceFields_Title_Fragment | ComponentReferenceFields_TwoGrid_Fragment;
+export type ComponentReferenceFieldsFragment = ComponentReferenceFields_Button_Fragment | ComponentReferenceFields_ComponentWrapper_Fragment | ComponentReferenceFields_ContentCarousel_Fragment | ComponentReferenceFields_Description_Fragment | ComponentReferenceFields_ExpertAdvice_Fragment | ComponentReferenceFields_FeaturedArticle_Fragment | ComponentReferenceFields_FooterMenu_Fragment | ComponentReferenceFields_HeroBanner_Fragment | ComponentReferenceFields_Image_Fragment | ComponentReferenceFields_ImageCarousel_Fragment | ComponentReferenceFields_JoinUs_Fragment | ComponentReferenceFields_LanguageMetadata_Fragment | ComponentReferenceFields_MainNavigation_Fragment | ComponentReferenceFields_MenuGroup_Fragment | ComponentReferenceFields_NavigationItem_Fragment | ComponentReferenceFields_NavigationMenu_Fragment | ComponentReferenceFields_Page_Fragment | ComponentReferenceFields_PageSection_Fragment | ComponentReferenceFields_ReferenceClients_Fragment | ComponentReferenceFields_Seo_Fragment | ComponentReferenceFields_SolutionSection_Fragment | ComponentReferenceFields_Teaser_Fragment | ComponentReferenceFields_Testimonial_Fragment | ComponentReferenceFields_Title_Fragment | ComponentReferenceFields_TwoGrid_Fragment;
 
 export const ComponentReferenceFieldsFragmentDoc = `
     fragment ComponentReferenceFields on Entry {
