@@ -1,4 +1,4 @@
-import styles from './hero-banner-component.module.scss';
+import button from '../button/button.module.scss';
 
 import {
   ButtonProps,
@@ -30,7 +30,7 @@ export const HeroBannerComponent = (props: ComponentHeroBannerFragment) => {
   }
 
   return (
-    <div className={styles.custom_button_class}>
+    <div className={button.hero_context}>
       <TeaserComponent
         type={sectionTypes.bannerSection}
         title={title as string}

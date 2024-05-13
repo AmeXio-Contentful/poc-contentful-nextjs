@@ -1,20 +1,25 @@
 @use '../../../../styles/theme' as theme;
 
-$button-background: theme.$brand-main !default;
-$button-background-hover: theme.$brand-main-hover !default;
-$button-color: #fff !default;
-$button-font-family: theme.$brand-font-family !default;
-$button-font-size: 14px !default;
-$button-padding: 14px 20px;
+.hero_context {
+  .button {
+    --button-background: red;
+  }
+}
 
 .button {
-  background-color: $button-background;
-  color: $button-color;
-  font-family: $button-font-family;
-  font-size: $button-font-size;
-  padding: $button-padding;
+  --button-background: #{theme.$brand-accent};
+  --button-color: #fff;
+  --button-font-family: #{theme.$brand-font-family};
+  --button-font-size: 14px;
+  --button-padding: 14px 20px;
+
+  background-color: var(--button-background);
+  color: var(--button-color);
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  padding: var(--button-padding);
 
   &:hover {
-    background-color: $button-background-hover;
+    --button-background: #{theme.$brand-accent-hover};
   }
 }

@@ -9,8 +9,8 @@ import {
   ButtonProps,
 } from '@src/components/features/decoupled-components/button/button';
 import {
-  DescriptionComponent
-} from '@src/components/features/decoupled-components/description-component/description-component';
+  Description
+} from '@src/components/features/decoupled-components/description/description';
 import {
   ComponentJoinUsFragment
 } from '@src/components/features/decoupled-components/join-us-component/__generated/join-us-component.generated';
@@ -45,7 +45,7 @@ export const JoinUsComponent = (props: ComponentJoinUsFragment) => {
   return (
     <div className="mx-auto max-w-[800px] pt-16 text-center">
       <TitleComponent {...titleProps} />
-      <DescriptionComponent {...descriptionProps} />
+      <Description {...descriptionProps} />
       <div className="grid grid-cols-3 gap-x-3 mt-9">
         {teasersCollection && teasersCollection.items?.map((item: any) => (
           <div key={item.title}>
