@@ -2,7 +2,7 @@ import styles from './hero-banner-component.module.scss';
 
 import {
   ButtonProps,
-} from '@src/components/features/decoupled-components/button-component/button-component';
+} from '@src/components/features/decoupled-components/button/button';
 import {
   ComponentHeroBannerFragment
 } from '@src/components/features/decoupled-components/hero-banner-component/__generated/hero-banner-component.generated';

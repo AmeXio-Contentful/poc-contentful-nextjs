@@ -5,9 +5,9 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {
-  ButtonComponent,
+  Button,
   ButtonProps,
-} from '@src/components/features/decoupled-components/button-component/button-component';
+} from '@src/components/features/decoupled-components/button/button';
 import {
   DescriptionComponent
 } from '@src/components/features/decoupled-components/description-component/description-component';
@@ -60,7 +60,7 @@ export const JoinUsComponent = (props: ComponentJoinUsFragment) => {
           </div>
         ))}
       </div>
-      <ButtonComponent {...buttonProps} />
+      <Button {...buttonProps} />
       <div className="m-auto mt-24 mb-24">
         <Swiper
           loop={true as boolean}

@@ -1,4 +1,4 @@
-import { ButtonComponent } from '@src/components/features/decoupled-components/button-component/button-component';
+import { Button } from '@src/components/features/decoupled-components/button/button';
 interface ExpertProps {
   title: string;
   subtitle: string;
@@ -50,7 +50,7 @@ export default function CtfExpertAdvice({title, subtitle, buttonLink, buttonText
               }
             </div>
 
-            <ButtonComponent {...buttonProps} />
+            <Button {...buttonProps} />
           </div>
         </div>
     )

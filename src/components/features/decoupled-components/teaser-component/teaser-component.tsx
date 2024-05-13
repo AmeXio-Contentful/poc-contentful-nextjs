@@ -1,6 +1,6 @@
 import {
-  ButtonComponent,
-} from '@src/components/features/decoupled-components/button-component/button-component';
+  Button,
+} from '@src/components/features/decoupled-components/button/button';
 import {
   DescriptionComponent,
 } from '@src/components/features/decoupled-components/description-component/description-component';
@@ -58,7 +58,7 @@ export const TeaserComponent = (props: TeaserProps) => {
             <TitleComponent {...titleProps} />
             <DescriptionComponent {...descriptionProps} />
           </div>
-          <ButtonComponent {...buttonProps} />
+          <Button {...buttonProps} />
         </div>
       </div>;
     case sectionTypes.bannerSection:
@@ -69,7 +69,7 @@ export const TeaserComponent = (props: TeaserProps) => {
           <div className="w-full mx-auto max-w-6xl px-4 md:px-20">
             <TitleComponent {...titleProps} />
             <DescriptionComponent {...descriptionProps} />
-            <ButtonComponent {...buttonProps} />
+            <Button {...buttonProps} />
           </div>
         </div>
       );
