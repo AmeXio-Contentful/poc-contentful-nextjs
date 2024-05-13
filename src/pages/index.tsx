@@ -10,15 +10,16 @@ const LangPage: NextPage = () => {
   return <CtfPageGgl slug="/" />;
 };
 
-export const getServerSideProps = async ({ locale, query }: NextPageContext) => {
+
+export async function getStaticProps({ locale, query }: NextPageContext) {
   try {
-    const preview = Boolean(query.preview);
+    const preview = false;
     const queryClient = new QueryClient();
 
     // Default queries
     await queryClient.prefetchQuery(
-      useCtfPageQuery.getKey({ slug: 'home', locale, preview }),
-      useCtfPageQuery.fetcher({ slug: 'home', locale, preview }),
+      useCtfPageQuery.getKey({ slug: 'home-page-v3-decouple-components', locale, preview }),
+      useCtfPageQuery.fetcher({ slug: 'home-page-v3-decouple-components', locale, preview }),
     );
 
     // Dynamic queries
@@ -46,6 +47,7 @@ export const getServerSideProps = async ({ locale, query }: NextPageContext) => 
       notFound: true,
     };
   }
-};
+}
+
 
 export default LangPage;
