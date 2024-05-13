@@ -1,4 +1,5 @@
 import button from '../button/button.module.scss';
+import styles from './hero-banner-component.module.scss';
 
 import {
   ButtonProps,
@@ -26,7 +27,7 @@ export const HeroBannerComponent = (props: ComponentHeroBannerFragment) => {
   const buttonProps: ButtonProps = {
     buttonText: buttonText as string,
     buttonUrl: buttonUrl as string,
-    classes: 'mt-6 bg-orange-500 px-5 py-3.5 text-base text-white'
+    classes: styles.hero_button // 'mt-6 bg-blue-500 px-5 py-3.5 text-base text-white'
   }
 
   return (
