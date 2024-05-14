@@ -10,7 +10,6 @@ interface Props {
     sys: { id: string };
     __typename: string;
     [k: string]: any;
-    sectionType?: number;
   };
 
   /**
