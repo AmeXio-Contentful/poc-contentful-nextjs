@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use '../config/breakpoints' as *;
+
+@mixin breakpoint-from($point, $value: 0) {
+  @if $point == tablet {
+    @media screen and (min-width: map.get($breakpoints, tablet)) {
+      @content;
+    }
+  } @else if $point == desktop-small {
+    @media screen and (min-width: map.get($breakpoints, desktop-small)) {
+      @content;
+    }
+  } @else if $point == desktop-large {
+    @media screen and (min-width: map.get($breakpoints, desktop-large)) {
+      @content;
+    }
+  } @else {
+    @media screen and ($point: $value) {
+      @content;
+    }
+  }
+
+}

@@ -26,6 +26,9 @@ import 'swiper/css/pagination';
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css/scrollbar';
 
+import '../styles/default-theme.scss';
+
+
 const LivePreviewProvider = ({ children }) => {
   const { previewActive, locale } = useContentfulContext();
 
