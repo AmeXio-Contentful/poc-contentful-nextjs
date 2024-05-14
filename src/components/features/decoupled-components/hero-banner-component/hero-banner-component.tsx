@@ -1,11 +1,14 @@
+import button from '../button/button.module.scss';
+import styles from './hero-banner-component.module.scss';
+
+import {
+  ButtonProps,
+} from '@src/components/features/decoupled-components/button/button';
 import {
   ComponentHeroBannerFragment
 } from '@src/components/features/decoupled-components/hero-banner-component/__generated/hero-banner-component.generated';
-import { Props } from '@src/components/features/decoupled-components/title-component/title-component';
-import {
-  ButtonProps,
-} from '@src/components/features/decoupled-components/button-component/button-component';
 import { TeaserComponent } from '@src/components/features/decoupled-components/teaser-component/teaser-component';
+import { Props } from '@src/components/features/decoupled-components/title-component/title-component';
 import { sectionTypes } from '@src/components/shared/global';
 
 export const HeroBannerComponent = (props: ComponentHeroBannerFragment) => {
@@ -24,11 +27,11 @@ export const HeroBannerComponent = (props: ComponentHeroBannerFragment) => {
   const buttonProps: ButtonProps = {
     buttonText: buttonText as string,
     buttonUrl: buttonUrl as string,
-    classes: 'mt-6 bg-orange-500 px-5 py-3.5 text-base text-white'
+    classes: styles.hero_button // 'mt-6 bg-blue-500 px-5 py-3.5 text-base text-white'
   }
 
   return (
-    <div>
+    <div className={button.hero_context}>
       <TeaserComponent
         type={sectionTypes.bannerSection}
         title={title as string}
