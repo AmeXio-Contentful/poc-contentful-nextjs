@@ -1,10 +1,8 @@
-import {
-  ButtonProps,
-} from '@src/components/features/decoupled-components/button/button.typings';
+import {ButtonProps} from '@src/components/features/decoupled-components/button/button.typings';
 import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
-import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
-import { TitleProps } from '@src/components/features/decoupled-components/title/title.typings';
-import { sectionTypes } from '@src/components/shared/global';
+import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
+import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
+// import { sectionTypes } from '@src/components/shared/global';
 import {
   ComponentHeroBannerFragment
 } from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
@@ -31,7 +29,11 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
   return (
     <div>
       <Teaser
-        type={sectionTypes.bannerSection}
+        icon={backgroundImage}
+        titleProps={titleProps}
+        descriptionProps={descriptionProps}
+        buttonProps={buttonProps}
+        /* type={sectionTypes.bannerSection}
         title={title as string}
         subtitle={subtitle as string}
         image={backgroundImage}
@@ -39,7 +41,8 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
         buttonText={buttonText as string}
         titleProps={titleProps}
         descriptionProps={descriptionProps}
-        buttonProps={buttonProps}/>
+        buttonProps={buttonProps}*/
+      />
     </div>
   )
 };

@@ -1,12 +1,8 @@
-import {
-  Button,
-} from '@src/components/features/decoupled-components/button/button';
-import {
-  Description,
-} from '@src/components/features/decoupled-components/description/description';
+import { Button } from '@src/components/features/decoupled-components/button/button';
+import { Description } from '@src/components/features/decoupled-components/description/description';
 import { TeaserProps } from '@src/components/features/decoupled-components/teaser/teaser.typings';
 import { Title } from '@src/components/features/decoupled-components/title/title';
-import { sectionTypes } from '@src/components/shared/global';
+// import { sectionTypes } from '@src/components/shared/global';
 
 export const Teaser = (props: TeaserProps) => {
   /* const titleProps = {
@@ -30,7 +26,7 @@ return <div>
   { props.icon &&
       <img
         alt="icon"
-        src={props.icon}
+        src={props.icon.url}
       />
   }
   <div>

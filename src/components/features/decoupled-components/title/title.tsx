@@ -1,8 +1,11 @@
 import React from 'react';
-import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
+
 import styles from './title.module.scss';
+
+import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
+
 export const Title = (props: TitleProps) => {
-  const {title, heading, titleClasses} = props;
+  const {title, heading="h2", titleClasses} = props;
   const headingElement = React.createElement(
     heading as string,
     { className: ''},

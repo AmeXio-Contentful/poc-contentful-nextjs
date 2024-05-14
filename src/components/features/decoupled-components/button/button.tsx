@@ -1,7 +1,6 @@
 import styles from './button.module.scss';
 import { ButtonProps } from './button.typings';
 
-
 export const Button = (props: ButtonProps) => {
   const { buttonUrl, buttonText, buttonClasses } = props;
 

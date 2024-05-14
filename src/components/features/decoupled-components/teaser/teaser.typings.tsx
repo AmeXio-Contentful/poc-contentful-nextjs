@@ -13,7 +13,7 @@ import {TitleProps} from "@src/components/features/decoupled-components/title/ti
 } */
 
 export interface TeaserProps {
-  icon?: string;
+  icon?: any; // define a more specific type for assets
   titleProps: TitleProps;
   descriptionProps: DescriptionProps;
   buttonProps?: ButtonProps;
