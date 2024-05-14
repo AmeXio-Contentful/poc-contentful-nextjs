@@ -7,6 +7,8 @@ import {
   ComponentHeroBannerFragment
 } from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
 
+import styles from './hero-banner.module.scss';
+
 export const HeroBanner = (props: ComponentHeroBannerFragment) => {
   const { backgroundImage , title, subtitle, buttonText, buttonUrl} = props;
   const titleProps: TitleProps = {
@@ -27,9 +29,11 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
   }
 
   return (
-    <div>
+    <div className={styles.hero_banner}
+         style={{ backgroundImage: `url(${backgroundImage?.url})` }}
+    >
+
       <Teaser
-        icon={backgroundImage}
         titleProps={titleProps}
         descriptionProps={descriptionProps}
         buttonProps={buttonProps}

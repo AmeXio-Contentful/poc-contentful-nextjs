@@ -1,5 +1,6 @@
+@use '../../../../styles/theme' as theme;
 $secondary-color: green;
 
-.hero_button {
-    background-color: $secondary-color;
-  }
+.hero_banner {
+  background: theme.$brand-main;
+}
