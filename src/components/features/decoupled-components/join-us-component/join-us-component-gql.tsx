@@ -6,7 +6,7 @@ import {
 import {
   useJoinUsComponentQuery
 } from '@src/components/features/decoupled-components/join-us-component/__generated/join-us-component.generated';
-import { JoinUsComponent } from '@src/components/features/decoupled-components/join-us-component/join-us-component';
+import { UniversalLayer } from '@src/components/shared/universal-layer';
 
 
 export function JoinUsComponentGql({
@@ -20,5 +20,5 @@ export function JoinUsComponentGql({
     preview: preview,
   })) as any;
 
-  return <JoinUsComponent {...data.data?.joinUs} />;
+  return <UniversalLayer data={...data.data?.joinUs} component="JoinUs"/>
 }

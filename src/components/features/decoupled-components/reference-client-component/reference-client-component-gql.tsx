@@ -6,9 +6,7 @@ import {
 import {
   useReferencedClientsComponentQuery
 } from '@src/components/features/decoupled-components/reference-client-component/__generated/reference-client-component.generated';
-import {
-  ReferenceClientComponent
-} from '@src/components/features/decoupled-components/reference-client-component/reference-client-component';
+import { UniversalLayer } from '@src/components/shared/universal-layer';
 
 
 export function ReferenceClientComponentGql({
@@ -22,5 +20,5 @@ export function ReferenceClientComponentGql({
     preview: preview,
   })) as any;
 
-  return <ReferenceClientComponent {...data.data?.referenceClients} />;
+  return <UniversalLayer data={...data.data?.referenceClients} component="ReferenceClients"/>
 }

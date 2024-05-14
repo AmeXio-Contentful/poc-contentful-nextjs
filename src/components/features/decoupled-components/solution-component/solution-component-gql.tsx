@@ -6,7 +6,7 @@ import {
 import {
   useSolutionSectionComponentQuery
 } from '@src/components/features/decoupled-components/solution-component/__generated/solution-component.generated';
-import { SolutionComponent } from '@src/components/features/decoupled-components/solution-component/solution-component';
+import { UniversalLayer } from '@src/components/shared/universal-layer';
 
 
 export function SolutionComponentGql({
@@ -20,5 +20,5 @@ export function SolutionComponentGql({
     preview: preview,
   })) as any;
 
-  return <SolutionComponent {...data.data?.solutionSection} />;
+  return <UniversalLayer data={...data.data?.solutionSection} component="SolutionSection"/>
 }

@@ -6,9 +6,7 @@ import {
 import {
   useHeroBannerComponentQuery
 } from '@src/components/features/decoupled-components/hero-banner-component/__generated/hero-banner-component.generated';
-import {
-  HeroBannerComponent
-} from '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component';
+import { UniversalLayer } from '@src/components/shared/universal-layer';
 
 
 export function HeroBannerComponentGql({
@@ -22,5 +20,5 @@ export function HeroBannerComponentGql({
     preview: preview,
   })) as any;
 
-  return <HeroBannerComponent {...data.data?.heroBanner} />;
+  return <UniversalLayer data={...data.data?.heroBanner} component="HeroBanner"/>
 }
