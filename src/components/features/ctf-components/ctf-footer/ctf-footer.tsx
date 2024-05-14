@@ -34,7 +34,7 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
             fieldId: 'pageName',
           })}
         >
-          <Link href={href}>
+          <Link href={href} title={linkText}>
             {linkText}
           </Link>
         </li>
@@ -44,6 +44,36 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
 
   return (
     <>
+      <div className={styles.doormat}>
+        {footerContent && footerContent.menuItemsCollection && footerContent.menuItemsCollection.items.map(
+          menuItem =>
+            menuItem && (
+              <div className={styles.doormat__column} key={menuItem.sys.id}>
+                <img className='text-white' src={menuItem.footerImage?.url as string}
+                     alt={menuItem.footerImage?.title as string}
+                />
+                <h3
+                  {...inspectorMode({
+                    entryId: menuItem.sys.id,
+                    fieldId: 'groupName',
+                    locale,
+                  })}
+                >
+                  {menuItem.groupName}
+                </h3>
+                {menuItem.featuredPagesCollection && (
+                  <ul>
+                    {renderMenuGroupLinks(
+                      menuItem.featuredPagesCollection,
+                    )}
+                  </ul>
+                )}
+              </div>
+            ),
+        )}
+
+
+      </div>
       <footer className={styles.footer}>
         {footerContent?.legalLinks?.featuredPagesCollection?.items?.length && (
           <ul className={styles.footer__mainnav}>
