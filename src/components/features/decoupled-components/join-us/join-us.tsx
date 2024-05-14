@@ -13,13 +13,13 @@ import {
 } from '@src/components/features/decoupled-components/description/description';
 import {
   ComponentJoinUsFragment
-} from '@src/components/features/decoupled-components/join-us-component/__generated/join-us-component.generated';
-import { TeaserComponent } from '@src/components/features/decoupled-components/teaser-component/teaser-component';
-import { Props, TitleComponent } from '@src/components/features/decoupled-components/title-component/title-component';
+} from '@src/data/contentful/join-us/__generated/join-us-component.generated';
+import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
+import { Props, Title } from '@src/components/features/decoupled-components/title/title';
 import { sectionTypes } from '@src/components/shared/global';
 
 
-export const JoinUsComponent = (props: ComponentJoinUsFragment) => {
+export const JoinUs = (props: ComponentJoinUsFragment) => {
   const { title, description, buttonUrl, buttonText, clientsCollection, teasersCollection} = props;
   const titleProps: Props = {
     text: title as string,
@@ -44,19 +44,19 @@ export const JoinUsComponent = (props: ComponentJoinUsFragment) => {
 
   return (
     <div className="mx-auto max-w-[800px] pt-16 text-center">
-      <TitleComponent {...titleProps} />
+      <Title {...titleProps} />
       <Description {...descriptionProps} />
       <div className="grid grid-cols-3 gap-x-3 mt-9">
         {teasersCollection && teasersCollection.items?.map((item: any) => (
           <div key={item.title}>
-            <TeaserComponent type={sectionTypes.hrSection}
-                             title={item?.title as string}
-                             image={item.image}
-                             subtitle={item?.subtitle as string}
-                             buttonUrl=""
-                             buttonText=""
-                             titleProps={titleTeaserProp}
-                             descriptionProps={descriptionProps} />
+            <Teaser type={sectionTypes.hrSection}
+                    title={item?.title as string}
+                    image={item.image}
+                    subtitle={item?.subtitle as string}
+                    buttonUrl=""
+                    buttonText=""
+                    titleProps={titleTeaserProp}
+                    descriptionProps={descriptionProps} />
           </div>
         ))}
       </div>

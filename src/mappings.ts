@@ -48,23 +48,23 @@ export const componentMap = {
   ),
   HeroBanner: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component'
-      ).then((module) => module.HeroBannerComponent),
+      '@src/components/features/decoupled-components/hero-banner/hero-banner'
+      ).then((module) => module.HeroBanner),
   ),
   SolutionSection: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/solution-component/solution-component'
-      ).then((module) => module.SolutionComponent),
+      '@src/components/features/decoupled-components/solution/solution'
+      ).then((module) => module.Solution),
   ),
   ReferenceClients: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/reference-client-component/reference-client-component'
-      ).then((module) => module.ReferenceClientComponent),
+      '@src/components/features/decoupled-components/reference-client/reference-client'
+      ).then((module) => module.ReferenceClient),
   ),
   JoinUs: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/join-us-component/join-us-component'
-      ).then((module) => module.JoinUsComponent),
+      '@src/components/features/decoupled-components/join-us/join-us'
+      ).then((module) => module.JoinUs),
   ),
 };
 
@@ -116,22 +116,22 @@ export const componentGqlMap = {
   ),
   HeroBanner: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component-gql'
-      ).then((module) => module.HeroBannerComponentGql),
+      '@src/data/contentful/hero-banner/hero-banner-gql'
+      ).then((module) => module.HeroBannerGql),
   ),
   SolutionSection: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/solution-component/solution-component-gql'
-      ).then((module) => module.SolutionComponentGql),
+      '@src/data/contentful/solution/solution-gql'
+      ).then((module) => module.SolutionGql),
   ),
   ReferenceClients: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/reference-client-component/reference-client-component-gql'
-      ).then((module) => module.ReferenceClientComponentGql),
+      '@src/data/contentful/reference-client/reference-client-gql'
+      ).then((module) => module.ReferenceClientGql),
   ),
   JoinUs: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/join-us-component/join-us-component-gql'
-      ).then((module) => module.JoinUsComponentGql),
+      '@src/data/contentful/join-us/join-us-gql'
+      ).then((module) => module.JoinUsGql),
   ),
 };

@@ -4,7 +4,7 @@ import {
 import {
   Description,
 } from '@src/components/features/decoupled-components/description/description';
-import { TitleComponent } from '@src/components/features/decoupled-components/title-component/title-component';
+import { Title } from '@src/components/features/decoupled-components/title/title';
 import { sectionTypes } from '@src/components/shared/global';
 
 
@@ -21,7 +21,7 @@ interface TeaserProps {
   quote?: string;
 }
 
-export const TeaserComponent = (props: TeaserProps) => {
+export const Teaser = (props: TeaserProps) => {
   const titleProps = {
     text: props.title,
     heading: props.titleProps.heading,
@@ -55,7 +55,7 @@ export const TeaserComponent = (props: TeaserProps) => {
         }
         <div className="flex flex-col items-start justify-between">
           <div>
-            <TitleComponent {...titleProps} />
+            <Title {...titleProps} />
             <Description {...descriptionProps} />
           </div>
           <Button {...buttonProps} />
@@ -67,7 +67,7 @@ export const TeaserComponent = (props: TeaserProps) => {
           className="md:px-48z h-auto w-full pb-24 pt-14 bg-no-repeat bg-cover bg-center"
           style={{ backgroundImage: `url(${props.image?.url})` }}>
           <div className="w-full mx-auto max-w-6xl px-4 md:px-20">
-            <TitleComponent {...titleProps} />
+            <Title {...titleProps} />
             <Description {...descriptionProps} />
             <Button {...buttonProps} />
           </div>

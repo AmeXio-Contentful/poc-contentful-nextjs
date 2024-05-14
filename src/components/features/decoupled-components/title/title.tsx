@@ -6,7 +6,7 @@ export interface Props {
   classes: string;
 }
 
-export const TitleComponent = (props: Props) => {
+export const Title = (props: Props) => {
   const {text, heading, classes} = props;
   const headingElement = React.createElement(
     heading as string,

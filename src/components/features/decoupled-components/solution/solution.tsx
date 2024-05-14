@@ -1,8 +1,8 @@
 import {
   ComponentSolutionSectionFragment
-} from '@src/components/features/decoupled-components/solution-component/__generated/solution-component.generated';
-import { Props, TitleComponent } from '@src/components/features/decoupled-components/title-component/title-component';
-import { TeaserComponent } from '@src/components/features/decoupled-components/teaser-component/teaser-component';
+} from '@src/components/features/decoupled-components/solution/__generated/solution-component.generated';
+import { Props, Title } from '@src/components/features/decoupled-components/title/title';
+import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { sectionTypes } from '@src/components/shared/global';
 
 
@@ -14,7 +14,7 @@ export interface Teaser {
   buttonText: string;
 }
 
-export const SolutionComponent = (props: ComponentSolutionSectionFragment) => {
+export const Solution = (props: ComponentSolutionSectionFragment) => {
   const titleProps: Props = {
     text: props.title as string,
     heading: 'h2',
@@ -35,7 +35,7 @@ export const SolutionComponent = (props: ComponentSolutionSectionFragment) => {
   }
   return (
     <div className="pt-5">
-      <TitleComponent {...titleProps}/>
+      <Title {...titleProps}/>
       <div className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pb-14 pt-9 md:px-48 lg:grid-cols-2 m-auto">
         {
           props.teasersCollection && props.teasersCollection.items.map((item) => (
@@ -43,15 +43,15 @@ export const SolutionComponent = (props: ComponentSolutionSectionFragment) => {
               {
 
               }
-              <TeaserComponent type={sectionTypes.solutionSection}
-                               title={item?.title as string}
-                               subtitle={item?.subtitle as string}
-                               image={item?.image}
-                               buttonUrl={item?.buttonUrl as string}
-                               buttonText={item?.buttonText as string}
-                               titleProps={titleTeaserProp}
-                               descriptionProps={descriptionProps}
-                               buttonProps={buttonProps}/>
+              <Teaser type={sectionTypes.solutionSection}
+                      title={item?.title as string}
+                      subtitle={item?.subtitle as string}
+                      image={item?.image}
+                      buttonUrl={item?.buttonUrl as string}
+                      buttonText={item?.buttonText as string}
+                      titleProps={titleTeaserProp}
+                      descriptionProps={descriptionProps}
+                      buttonProps={buttonProps}/>
             </div>
           ))
         }

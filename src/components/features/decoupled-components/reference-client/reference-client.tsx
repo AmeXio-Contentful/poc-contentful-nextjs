@@ -8,13 +8,13 @@ import {
 } from '@src/components/features/decoupled-components/description/description';
 import {
   ComponentRerenceClientFragment
-} from '@src/components/features/decoupled-components/reference-client-component/__generated/reference-client-component.generated';
-import { Props, TitleComponent } from '@src/components/features/decoupled-components/title-component/title-component';
-import { TeaserComponent } from '@src/components/features/decoupled-components/teaser-component/teaser-component';
+} from '@src/components/features/decoupled-components/reference-client/__generated/reference-client-component.generated';
+import { Props, Title } from '@src/components/features/decoupled-components/title/title';
+import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { sectionTypes } from '@src/components/shared/global';
 
 
-export const ReferenceClientComponent = (props: ComponentRerenceClientFragment) => {
+export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
 
   const titleProps: Props = {
     text: props.title as string,
@@ -35,7 +35,7 @@ export const ReferenceClientComponent = (props: ComponentRerenceClientFragment) 
 
   return (
     <div className="pt-5 page-section">
-      <TitleComponent {...titleProps}/>
+      <Title {...titleProps}/>
       <Description {...descriptionProps} />
       <div className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pb-14 pt-9 md:px-48  m-auto">
         <Swiper
@@ -45,15 +45,15 @@ export const ReferenceClientComponent = (props: ComponentRerenceClientFragment) 
         >
           {props.clientsCollection && props.clientsCollection.items?.map((item: any) => (
             <SwiperSlide className="w-full px-4 pb-10" key={item.id}>
-              <TeaserComponent type={sectionTypes.clientReferenceSection}
-                               title={item?.title as string}
-                               subtitle={item?.subtitle as string}
-                               image={item?.image}
-                               buttonUrl={item?.buttonUrl as string}
-                               buttonText={item?.buttonText as string}
-                               titleProps={titleTeaserProp}
-                               quote={item.quote}
-                               descriptionProps={descriptionProps} />
+              <Teaser type={sectionTypes.clientReferenceSection}
+                      title={item?.title as string}
+                      subtitle={item?.subtitle as string}
+                      image={item?.image}
+                      buttonUrl={item?.buttonUrl as string}
+                      buttonText={item?.buttonText as string}
+                      titleProps={titleTeaserProp}
+                      quote={item.quote}
+                      descriptionProps={descriptionProps} />
             </SwiperSlide>
           ))}
         </Swiper>
