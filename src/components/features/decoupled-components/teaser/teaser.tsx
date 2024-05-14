@@ -4,39 +4,29 @@ import {
 import {
   Description,
 } from '@src/components/features/decoupled-components/description/description';
+
+import { TeaserProps } from '@src/components/features/decoupled-components/teaser/teaser.typings';
 import { Title } from '@src/components/features/decoupled-components/title/title';
 import { sectionTypes } from '@src/components/shared/global';
 
 
-interface TeaserProps {
-  type: string;
-  image?: any;
-  title: string;
-  subtitle: string;
-  buttonUrl: string;
-  buttonText: string;
-  titleProps: any;
-  descriptionProps: any;
-  buttonProps?: any;
-  quote?: string;
-}
 
 export const Teaser = (props: TeaserProps) => {
   const titleProps = {
-    text: props.title,
+    title: props.title,
     heading: props.titleProps.heading,
-    classes: props.titleProps.classes,
+    titleClasses: props.titleProps.classes,
   };
 
   const descriptionProps = {
-    text: props.subtitle,
-    classes: props.descriptionProps.classes,
+    description: props.subtitle,
+    descriptionClasses: props.descriptionProps.classes,
   };
 
   const buttonProps = {
     buttonText: props.buttonText,
     buttonUrl: props.buttonUrl,
-    classes: props.buttonProps?.classes,
+    buttonClasses: props.buttonProps?.classes,
   };
 
   switch (props.type) {

@@ -1,20 +1,15 @@
 import React from 'react';
+import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
 
-export interface Props {
-  text: string;
-  heading?: string;
-  classes: string;
-}
-
-export const Title = (props: Props) => {
-  const {text, heading, classes} = props;
+export const Title = (props: TitleProps) => {
+  const {title, heading, titleClasses} = props;
   const headingElement = React.createElement(
     heading as string,
     { className: ''},
-    text,
+    title,
   );
   return (
-    <div className={classes}>
+    <div className={titleClasses}>
         { headingElement }
     </div>
   );

@@ -1,16 +1,12 @@
 import styles from './button.module.scss';
+import { ButtonProps } from './button.typings';
 
-export interface ButtonProps {
-  buttonUrl: string;
-  buttonText: string;
-  classes?: string
-}
 
 export const Button = (props: ButtonProps) => {
-  const { buttonUrl, buttonText, classes } = props;
+  const { buttonUrl, buttonText, buttonClasses } = props;
 
   return (
-      <button className={`${styles.button} ${classes}`}>
+      <button className={`${styles.button} ${buttonClasses}`}>
         <a href={buttonUrl as string}> {buttonText} </a>
       </button>
   );
