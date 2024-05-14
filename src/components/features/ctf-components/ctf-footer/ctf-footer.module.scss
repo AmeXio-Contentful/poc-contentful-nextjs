@@ -1,17 +1,21 @@
 @use 'src/styles/utilities/breakpoint-mixins' as m;
+@import "src/styles/default-theme";
 
+.doormat_container {
+  border-top: 25px solid $secondary-color;
+  background: linear-gradient(35deg, rgba(0,0,0,1) 2%, rgba(8,71,114,1) 89%);
+}
 .doormat {
   display: flex;
-  justify-content: center;
-  background: linear-gradient(35deg, rgba(0,0,0,1) 2%, rgba(8,71,114,1) 89%);
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
   font-family: Lexend, sans-serif;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border-top: 25px solid #ED6C25;
 
   &__column {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 25px 15px;
 
     > img {
       width: 50px;
@@ -21,8 +25,8 @@
 
     > h3 {
       font-size: 19.8px;
-      color: #ED6C25;
-      font-weight: bold;
+      color: $secondary-color;
+      font-weight: 500;
       margin-top: 15px;
       margin-bottom: 16px;
     }
@@ -30,10 +34,15 @@
     > ul > li {
       margin: 0 0 0 0 !important;
       padding: 0 !important;
+      font-size: initial;
 
       > a {
         color: white;
         font-size: 14.4px;
+      }
+
+      > a:hover {
+        color: $secondary-color;
       }
     }
   }
@@ -62,19 +71,26 @@
       content: "|";
       margin-left: 6px;
       margin-right: 6px;
-      color: #ED6C25;
+      color: $secondary-color;
     }
 
     > li:hover {
       > a {
-        color: #ED6C25;
+        color: $secondary-color;
       }
     }
   }
 
   &__socials {
+    overflow: visible !important;
+
     > li:not(:first-child) {
       margin-left: 10px;
+    }
+
+    > li {
+      height: 20px;
+      overflow-y: visible;
     }
   }
 
@@ -89,25 +105,24 @@
       display: flex;
       color: white;
       font-size: 16px;
+      line-height: normal;
+
       > a {
         display: block;
         color: white;
         text-align: center;
         text-decoration: none;
         font-size: 16px;
+        line-height: normal;
       }
     }
 
   }
-
-
 
   &__section {
     padding-left: 90px;
     padding-right: 90px;
     width: 100%;
   }
-
-
 }
 
