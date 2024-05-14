@@ -5,6 +5,37 @@ import { getLinkDisplayText, getLinkHrefPrefix } from './utils';
 
 import { Link } from '@src/components/shared/link';
 
+interface SysId {
+  sys: {
+    id: string;
+  }
+}
+
+interface ChildMenuItem {
+  _typename: string;
+  sys: SysId;
+  slug: string;
+  pageName: string;
+  pageContentCollection: any
+}
+
+interface MenuItem {
+  groupName: string;
+  _typename: string;
+  sys: SysId;
+  link: {
+    pageContentCollection: {
+      items: any[]
+    }
+    pageName: string;
+    slug: string;
+    sys: SysId
+    __typename: string;
+  }
+  children: {
+    items: ChildMenuItem[]
+  }
+}
 
 export const CtfNavigation = (props: NavigationFieldsFragment) => {
   const inspectorMode = useContentfulInspectorMode();
@@ -34,8 +65,8 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
   const navigationItems: any[] = [];
   const languageItems: any[] = [];
 
-
-  navigationContent?.menuItemsCollection?.items.forEach((item:any) => {
+  console.log("navigationContent?.menuItemsCollection?.items", navigationContent?.menuItemsCollection?.items);
+  navigationContent?.menuItemsCollection?.items.forEach((item:MenuItem) => {
       if (item.groupName && (item.children || item.link)) {
         navigationItems.push(item);
       } else {
@@ -57,7 +88,6 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
                       entryId: menuItem.sys.id,
                       fieldId: 'groupName',
                     })}
-
                   >
                     {!menuItem.link ? (
                       <p className='hover:bg-primary hover:text-white transition-all duration-150 px-5 py-3'>{menuItem.groupName}</p>
