@@ -1,12 +1,11 @@
 import dynamic from 'next/dynamic';
 
 export const componentMap = {
-  /* PageSection: dynamic(() =>
+  PageSection: dynamic(() =>
     import(
       '@src/components/features/ctf-components/ctf-page-section/ctf-page-section'
       ).then((module) => module.CtfPageSection),
   ),
-  */
   Teaser: dynamic(() =>
     import(
       '@src/components/features/ctf-components/ctf-teaser/ctf-teaser'
@@ -32,7 +31,6 @@ export const componentMap = {
       '@src/components/features/ctf-components/ctf-button/ctf-button'
       ).then((module) => module.CtfButton),
   ),
-  /*
   ImageCarousel: dynamic(() =>
     import(
       '@src/components/features/ctf-components/ctf-infinite-carousel/ctf-infinite-carousel'
@@ -47,7 +45,7 @@ export const componentMap = {
     import(
       '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper'
       ).then((module) => module.CtfComponentWrapper),
-  ), */
+  ),
   HeroBanner: dynamic(() =>
     import(
       '@src/components/features/decoupled-components/hero-banner/hero-banner'
