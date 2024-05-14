@@ -1,57 +1,56 @@
 import {
   ComponentSolutionSectionFragment
-} from '@src/components/features/decoupled-components/solution/__generated/solution-component.generated';
-import { Props, Title } from '@src/components/features/decoupled-components/title/title';
+} from '@src/data/contentful/solution/__generated/solution.generated';
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
+import { Title } from '@src/components/features/decoupled-components/title/title';
 import { sectionTypes } from '@src/components/shared/global';
+import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
 
 
-export interface Teaser {
+/* export interface Teaser {
   title: string;
   subtitle: string;
   image: any;
   buttonUrl: string;
   buttonText: string;
 }
+*/
+
 
 export const Solution = (props: ComponentSolutionSectionFragment) => {
-  const titleProps: Props = {
-    text: props.title as string,
+  const titleProps: TitleProps = {
+    title: props.title as string,
     heading: 'h2',
-    classes: 'font-semibold text-4xl text-center mt-8 primary-color w-2/5 m-auto mb-24'
+    titleClasses: 'font-semibold text-4xl text-center mt-8 primary-color w-2/5 m-auto mb-24'
   };
 
-  const titleTeaserProp = {
-    heading: 'h3',
-    classes: 'text-2xl text-blue-900 font-medium'
-  }
-
-  const descriptionProps = {
-    classes: 'my-3 h-auto text-base'
-  }
-
-  const buttonProps = {
-    classes: 'mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white mb-16'
-  }
   return (
     <div className="pt-5">
       <Title {...titleProps}/>
       <div className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pb-14 pt-9 md:px-48 lg:grid-cols-2 m-auto">
         {
-          props.teasersCollection && props.teasersCollection.items.map((item) => (
+          props.teasersCollection?.items.map((item) => (
             <div key={item?.title}>
               {
 
               }
-              <Teaser type={sectionTypes.solutionSection}
-                      title={item?.title as string}
-                      subtitle={item?.subtitle as string}
-                      image={item?.image}
-                      buttonUrl={item?.buttonUrl as string}
-                      buttonText={item?.buttonText as string}
-                      titleProps={titleTeaserProp}
-                      descriptionProps={descriptionProps}
-                      buttonProps={buttonProps}/>
+              <Teaser
+                icon={item?.image}
+                titleProps={{
+                  'title': item?.title as string,
+                  'heading': 'h3',
+                  'titleClasses': 'text-2xl text-blue-900 font-medium'
+                }}
+                descriptionProps={{
+                  description: item?.subtitle as string,
+                  'descriptionClasses': 'my-3 h-auto text-base'
+                }}
+                buttonProps={{
+                  'buttonUrl': item?.buttonUrl as string,
+                  'buttonText': item?.buttonText as string,
+                  'buttonClasses': 'mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white mb-16'
+                }}
+              />
             </div>
           ))
         }

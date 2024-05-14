@@ -53,7 +53,7 @@ export const componentMap = {
       '@src/components/features/decoupled-components/hero-banner/hero-banner'
       ).then((module) => module.HeroBanner),
   ),
-  /* SolutionSection: dynamic(() =>
+  SolutionSection: dynamic(() =>
     import(
       '@src/components/features/decoupled-components/solution/solution'
       ).then((module) => module.Solution),
@@ -67,7 +67,7 @@ export const componentMap = {
     import(
       '@src/components/features/decoupled-components/join-us/join-us'
       ).then((module) => module.JoinUs),
-  ), */
+  ),
 };
 
 export const componentGqlMap = {
