@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+
   @include m.breakpoint-from(tablet) {
     flex-direction: row;
     gap: 80px;
