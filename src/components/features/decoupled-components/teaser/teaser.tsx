@@ -8,10 +8,8 @@ import { TeaserProps } from '@src/components/features/decoupled-components/tease
 import { Title } from '@src/components/features/decoupled-components/title/title';
 import { sectionTypes } from '@src/components/shared/global';
 
-
-
 export const Teaser = (props: TeaserProps) => {
-  const titleProps = {
+  /* const titleProps = {
     title: props.title,
     heading: props.titleProps.heading,
     titleClasses: props.titleProps.classes,
@@ -26,9 +24,27 @@ export const Teaser = (props: TeaserProps) => {
     buttonText: props.buttonText,
     buttonUrl: props.buttonUrl,
     buttonClasses: props.buttonProps?.classes,
-  };
+  }; */
+// This should be styled differently with scss according to where it is used, not have a different markup
+return <div>
+  { props.icon &&
+      <img
+        alt="icon"
+        src={props.icon}
+      />
+  }
+  <div>
+    <div>
+        <Title {...props.titleProps} />
+        <Description {...props.descriptionProps} />
+    </div>
+    { props.buttonProps &&
+      <Button {...props.buttonProps} />
+    }
+  </div>
+</div>;
 
-  switch (props.type) {
+/*   switch (props.type) {
     case sectionTypes.solutionSection:
       return <div className="flex w-full max-w-[455px] flex-row gap-x-[75px] h-full">
         {
@@ -107,5 +123,5 @@ export const Teaser = (props: TeaserProps) => {
       );
 
   }
-  return <></>;
+  return <></>; */
 };
