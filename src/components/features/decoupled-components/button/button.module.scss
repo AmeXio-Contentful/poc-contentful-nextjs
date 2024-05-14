@@ -1,10 +1,10 @@
 @use '../../../../styles/theme' as theme;
 
-.hero_context {
+/* .hero_context {
   .button {
     --button-background: red;
   }
-}
+} */
 
 .button {
   --button-background: #{theme.$brand-accent};

@@ -4,7 +4,6 @@ import {
 import {
   Description,
 } from '@src/components/features/decoupled-components/description/description';
-
 import { TeaserProps } from '@src/components/features/decoupled-components/teaser/teaser.typings';
 import { Title } from '@src/components/features/decoupled-components/title/title';
 import { sectionTypes } from '@src/components/shared/global';

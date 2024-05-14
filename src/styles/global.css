@@ -16,7 +16,9 @@
   src: url(../../public/fonts/Lexend.ttf) format('ttf');
 }
 
-
+body {
+  font-size: 16px !important;
+}
 
 .page-section {
   &:nth-of-type(odd) {
