@@ -2,7 +2,7 @@
 
 .hero_context {
   .button {
-    --button-background: red;
+    --button-background: #{theme.$brand-accent};
   }
 }
 
