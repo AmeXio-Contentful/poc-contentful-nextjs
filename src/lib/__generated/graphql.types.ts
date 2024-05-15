@@ -172,6 +172,7 @@ export type AssetLinkingCollections = {
   heroBannerCollection?: Maybe<HeroBannerCollection>;
   imageCarouselCollection?: Maybe<ImageCarouselCollection>;
   imageCollection?: Maybe<ImageCollection>;
+  joinUsCollection?: Maybe<JoinUsCollection>;
   languageMetadataCollection?: Maybe<LanguageMetadataCollection>;
   menuGroupCollection?: Maybe<MenuGroupCollection>;
   seoCollection?: Maybe<SeoCollection>;
@@ -213,6 +214,14 @@ export type AssetLinkingCollectionsImageCarouselCollectionArgs = {
 
 
 export type AssetLinkingCollectionsImageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type AssetLinkingCollectionsJoinUsCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
@@ -1258,6 +1267,325 @@ export enum EntryOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/expertAdvice) */
+export type ExpertAdvice = Entry & {
+  __typename?: 'ExpertAdvice';
+  advicesCollection?: Maybe<ExpertAdviceAdvicesCollection>;
+  buttonText?: Maybe<Scalars['String']>;
+  buttonUrl?: Maybe<Scalars['String']>;
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<ExpertAdviceLinkingCollections>;
+  subtitle?: Maybe<Scalars['String']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/expertAdvice) */
+export type ExpertAdviceAdvicesCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ExpertAdviceAdvicesCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<TitleFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/expertAdvice) */
+export type ExpertAdviceButtonTextArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/expertAdvice) */
+export type ExpertAdviceButtonUrlArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/expertAdvice) */
+export type ExpertAdviceLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/expertAdvice) */
+export type ExpertAdviceSubtitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/expertAdvice) */
+export type ExpertAdviceTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+export type ExpertAdviceAdvicesCollection = {
+  __typename?: 'ExpertAdviceAdvicesCollection';
+  items: Array<Maybe<Title>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export enum ExpertAdviceAdvicesCollectionOrder {
+  AlignmentAsc = 'alignment_ASC',
+  AlignmentDesc = 'alignment_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
+  FontSizeAsc = 'fontSize_ASC',
+  FontSizeDesc = 'fontSize_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export type ExpertAdviceCollection = {
+  __typename?: 'ExpertAdviceCollection';
+  items: Array<Maybe<ExpertAdvice>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type ExpertAdviceFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ExpertAdviceFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ExpertAdviceFilter>>>;
+  advices?: InputMaybe<CfTitleNestedFilter>;
+  advicesCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonText?: InputMaybe<Scalars['String']>;
+  buttonText_contains?: InputMaybe<Scalars['String']>;
+  buttonText_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonText_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonText_not?: InputMaybe<Scalars['String']>;
+  buttonText_not_contains?: InputMaybe<Scalars['String']>;
+  buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl?: InputMaybe<Scalars['String']>;
+  buttonUrl_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl_not?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  subtitle?: InputMaybe<Scalars['String']>;
+  subtitle_contains?: InputMaybe<Scalars['String']>;
+  subtitle_exists?: InputMaybe<Scalars['Boolean']>;
+  subtitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle_not?: InputMaybe<Scalars['String']>;
+  subtitle_not_contains?: InputMaybe<Scalars['String']>;
+  subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ExpertAdviceLinkingCollections = {
+  __typename?: 'ExpertAdviceLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type ExpertAdviceLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type ExpertAdviceLinkingCollectionsTwoGridCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ExpertAdviceLinkingCollectionsTwoGridCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum ExpertAdviceLinkingCollectionsTwoGridCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum ExpertAdviceOrder {
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/featuredArticle) */
+export type FeaturedArticle = Entry & {
+  __typename?: 'FeaturedArticle';
+  buttonUrl?: Maybe<Scalars['String']>;
+  contentfulMetadata: ContentfulMetadata;
+  heading?: Maybe<Scalars['String']>;
+  linkedFrom?: Maybe<FeaturedArticleLinkingCollections>;
+  subtitle?: Maybe<Scalars['String']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/featuredArticle) */
+export type FeaturedArticleButtonUrlArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/featuredArticle) */
+export type FeaturedArticleHeadingArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/featuredArticle) */
+export type FeaturedArticleLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/featuredArticle) */
+export type FeaturedArticleSubtitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/featuredArticle) */
+export type FeaturedArticleTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+export type FeaturedArticleCollection = {
+  __typename?: 'FeaturedArticleCollection';
+  items: Array<Maybe<FeaturedArticle>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type FeaturedArticleFilter = {
+  AND?: InputMaybe<Array<InputMaybe<FeaturedArticleFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<FeaturedArticleFilter>>>;
+  buttonUrl?: InputMaybe<Scalars['String']>;
+  buttonUrl_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl_not?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  heading?: InputMaybe<Scalars['String']>;
+  heading_contains?: InputMaybe<Scalars['String']>;
+  heading_exists?: InputMaybe<Scalars['Boolean']>;
+  heading_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  heading_not?: InputMaybe<Scalars['String']>;
+  heading_not_contains?: InputMaybe<Scalars['String']>;
+  heading_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle?: InputMaybe<Scalars['String']>;
+  subtitle_contains?: InputMaybe<Scalars['String']>;
+  subtitle_exists?: InputMaybe<Scalars['Boolean']>;
+  subtitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle_not?: InputMaybe<Scalars['String']>;
+  subtitle_not_contains?: InputMaybe<Scalars['String']>;
+  subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type FeaturedArticleLinkingCollections = {
+  __typename?: 'FeaturedArticleLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  twoGridCollection?: Maybe<TwoGridCollection>;
+};
+
+
+export type FeaturedArticleLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type FeaturedArticleLinkingCollectionsTwoGridCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<FeaturedArticleLinkingCollectionsTwoGridCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum FeaturedArticleLinkingCollectionsTwoGridCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum FeaturedArticleOrder {
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
+  HeadingAsc = 'heading_ASC',
+  HeadingDesc = 'heading_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** Navigation content type used for powering the Footer menu [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/footerMenu) */
 export type FooterMenu = Entry & {
   __typename?: 'FooterMenu';
@@ -2065,6 +2393,208 @@ export type ImageTransformOptions = {
   /** Desired width in pixels. Defaults to the original image width. */
   width?: InputMaybe<Scalars['Dimension']>;
 };
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/joinUs) */
+export type JoinUs = Entry & {
+  __typename?: 'JoinUs';
+  buttonText?: Maybe<Scalars['String']>;
+  buttonUrl?: Maybe<Scalars['String']>;
+  clientsCollection?: Maybe<AssetCollection>;
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']>;
+  linkedFrom?: Maybe<JoinUsLinkingCollections>;
+  sys: Sys;
+  teasersCollection?: Maybe<JoinUsTeasersCollection>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/joinUs) */
+export type JoinUsButtonTextArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/joinUs) */
+export type JoinUsButtonUrlArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/joinUs) */
+export type JoinUsClientsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/joinUs) */
+export type JoinUsDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/joinUs) */
+export type JoinUsLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/joinUs) */
+export type JoinUsTeasersCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<JoinUsTeasersCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<TeaserFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/joinUs) */
+export type JoinUsTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+export type JoinUsCollection = {
+  __typename?: 'JoinUsCollection';
+  items: Array<Maybe<JoinUs>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type JoinUsFilter = {
+  AND?: InputMaybe<Array<InputMaybe<JoinUsFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<JoinUsFilter>>>;
+  buttonText?: InputMaybe<Scalars['String']>;
+  buttonText_contains?: InputMaybe<Scalars['String']>;
+  buttonText_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonText_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonText_not?: InputMaybe<Scalars['String']>;
+  buttonText_not_contains?: InputMaybe<Scalars['String']>;
+  buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl?: InputMaybe<Scalars['String']>;
+  buttonUrl_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl_not?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  clientsCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars['String']>;
+  description_contains?: InputMaybe<Scalars['String']>;
+  description_exists?: InputMaybe<Scalars['Boolean']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  description_not?: InputMaybe<Scalars['String']>;
+  description_not_contains?: InputMaybe<Scalars['String']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+  teasers?: InputMaybe<CfTeaserNestedFilter>;
+  teasersCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type JoinUsLinkingCollections = {
+  __typename?: 'JoinUsLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  pageCollection?: Maybe<PageCollection>;
+};
+
+
+export type JoinUsLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type JoinUsLinkingCollectionsPageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<JoinUsLinkingCollectionsPageCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum JoinUsLinkingCollectionsPageCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  PageNameAsc = 'pageName_ASC',
+  PageNameDesc = 'pageName_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum JoinUsOrder {
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export type JoinUsTeasersCollection = {
+  __typename?: 'JoinUsTeasersCollection';
+  items: Array<Maybe<Teaser>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export enum JoinUsTeasersCollectionOrder {
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
+  GroupedAsc = 'grouped_ASC',
+  GroupedDesc = 'grouped_DESC',
+  QuoteAsc = 'quote_ASC',
+  QuoteDesc = 'quote_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
 
 /** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/languageMetadata) */
 export type LanguageMetadata = Entry & {
@@ -2960,7 +3490,7 @@ export type PagePageContentFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
-export type PagePageContentItem = Button | ContentCarousel | Description | HeroBanner | ImageCarousel | PageSection | SolutionSection | Teaser | Testimonial | Title;
+export type PagePageContentItem = Button | ContentCarousel | Description | HeroBanner | ImageCarousel | JoinUs | PageSection | ReferenceClients | SolutionSection | Teaser | Testimonial | Title | TwoGrid;
 
 /** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/pageSection) */
 export type PageSection = Entry & {
@@ -3235,6 +3765,10 @@ export type Query = {
   description?: Maybe<Description>;
   descriptionCollection?: Maybe<DescriptionCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  expertAdvice?: Maybe<ExpertAdvice>;
+  expertAdviceCollection?: Maybe<ExpertAdviceCollection>;
+  featuredArticle?: Maybe<FeaturedArticle>;
+  featuredArticleCollection?: Maybe<FeaturedArticleCollection>;
   footerMenu?: Maybe<FooterMenu>;
   footerMenuCollection?: Maybe<FooterMenuCollection>;
   heroBanner?: Maybe<HeroBanner>;
@@ -3243,6 +3777,8 @@ export type Query = {
   imageCarousel?: Maybe<ImageCarousel>;
   imageCarouselCollection?: Maybe<ImageCarouselCollection>;
   imageCollection?: Maybe<ImageCollection>;
+  joinUs?: Maybe<JoinUs>;
+  joinUsCollection?: Maybe<JoinUsCollection>;
   languageMetadata?: Maybe<LanguageMetadata>;
   languageMetadataCollection?: Maybe<LanguageMetadataCollection>;
   mainNavigation?: Maybe<MainNavigation>;
@@ -3257,6 +3793,8 @@ export type Query = {
   pageCollection?: Maybe<PageCollection>;
   pageSection?: Maybe<PageSection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
+  referenceClients?: Maybe<ReferenceClients>;
+  referenceClientsCollection?: Maybe<ReferenceClientsCollection>;
   seo?: Maybe<Seo>;
   seoCollection?: Maybe<SeoCollection>;
   solutionSection?: Maybe<SolutionSection>;
@@ -3374,6 +3912,40 @@ export type QueryEntryCollectionArgs = {
 };
 
 
+export type QueryExpertAdviceArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryExpertAdviceCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ExpertAdviceOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ExpertAdviceFilter>;
+};
+
+
+export type QueryFeaturedArticleArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryFeaturedArticleCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<FeaturedArticleOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<FeaturedArticleFilter>;
+};
+
+
 export type QueryFooterMenuArgs = {
   id: Scalars['String'];
   locale?: InputMaybe<Scalars['String']>;
@@ -3439,6 +4011,23 @@ export type QueryImageCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<ImageFilter>;
+};
+
+
+export type QueryJoinUsArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryJoinUsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<JoinUsOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<JoinUsFilter>;
 };
 
 
@@ -3561,6 +4150,23 @@ export type QueryPageSectionCollectionArgs = {
 };
 
 
+export type QueryReferenceClientsArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryReferenceClientsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ReferenceClientsOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ReferenceClientsFilter>;
+};
+
+
 export type QuerySeoArgs = {
   id: Scalars['String'];
   locale?: InputMaybe<Scalars['String']>;
@@ -3661,6 +4267,165 @@ export type QueryTwoGridCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<TwoGridFilter>;
 };
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/referenceClients) */
+export type ReferenceClients = Entry & {
+  __typename?: 'ReferenceClients';
+  clientsCollection?: Maybe<ReferenceClientsClientsCollection>;
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']>;
+  linkedFrom?: Maybe<ReferenceClientsLinkingCollections>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/referenceClients) */
+export type ReferenceClientsClientsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ReferenceClientsClientsCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<TeaserFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/referenceClients) */
+export type ReferenceClientsDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/referenceClients) */
+export type ReferenceClientsLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/referenceClients) */
+export type ReferenceClientsTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+export type ReferenceClientsClientsCollection = {
+  __typename?: 'ReferenceClientsClientsCollection';
+  items: Array<Maybe<Teaser>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export enum ReferenceClientsClientsCollectionOrder {
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
+  GroupedAsc = 'grouped_ASC',
+  GroupedDesc = 'grouped_DESC',
+  QuoteAsc = 'quote_ASC',
+  QuoteDesc = 'quote_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export type ReferenceClientsCollection = {
+  __typename?: 'ReferenceClientsCollection';
+  items: Array<Maybe<ReferenceClients>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type ReferenceClientsFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ReferenceClientsFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ReferenceClientsFilter>>>;
+  clients?: InputMaybe<CfTeaserNestedFilter>;
+  clientsCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars['String']>;
+  description_contains?: InputMaybe<Scalars['String']>;
+  description_exists?: InputMaybe<Scalars['Boolean']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  description_not?: InputMaybe<Scalars['String']>;
+  description_not_contains?: InputMaybe<Scalars['String']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ReferenceClientsLinkingCollections = {
+  __typename?: 'ReferenceClientsLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  pageCollection?: Maybe<PageCollection>;
+};
+
+
+export type ReferenceClientsLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type ReferenceClientsLinkingCollectionsPageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<ReferenceClientsLinkingCollectionsPageCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum ReferenceClientsLinkingCollectionsPageCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  PageNameAsc = 'pageName_ASC',
+  PageNameDesc = 'pageName_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum ReferenceClientsOrder {
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
 
 export type ResourceLink = {
   sys: ResourceSys;
@@ -3989,6 +4754,8 @@ export enum SolutionSectionTeasersCollectionOrder {
   ButtonUrlDesc = 'buttonUrl_DESC',
   GroupedAsc = 'grouped_ASC',
   GroupedDesc = 'grouped_DESC',
+  QuoteAsc = 'quote_ASC',
+  QuoteDesc = 'quote_DESC',
   SubtitleAsc = 'subtitle_ASC',
   SubtitleDesc = 'subtitle_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -4059,6 +4826,7 @@ export type Teaser = Entry & {
   grouped?: Maybe<Scalars['Boolean']>;
   image?: Maybe<Asset>;
   linkedFrom?: Maybe<TeaserLinkingCollections>;
+  quote?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
   sys: Sys;
   title?: Maybe<Scalars['String']>;
@@ -4093,6 +4861,12 @@ export type TeaserImageArgs = {
 /** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/teaser) */
 export type TeaserLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/teaser) */
+export type TeaserQuoteArgs = {
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -4137,6 +4911,13 @@ export type TeaserFilter = {
   grouped_exists?: InputMaybe<Scalars['Boolean']>;
   grouped_not?: InputMaybe<Scalars['Boolean']>;
   image_exists?: InputMaybe<Scalars['Boolean']>;
+  quote?: InputMaybe<Scalars['String']>;
+  quote_contains?: InputMaybe<Scalars['String']>;
+  quote_exists?: InputMaybe<Scalars['Boolean']>;
+  quote_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  quote_not?: InputMaybe<Scalars['String']>;
+  quote_not_contains?: InputMaybe<Scalars['String']>;
+  quote_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   subtitle?: InputMaybe<Scalars['String']>;
   subtitle_contains?: InputMaybe<Scalars['String']>;
   subtitle_exists?: InputMaybe<Scalars['Boolean']>;
@@ -4158,8 +4939,10 @@ export type TeaserLinkingCollections = {
   __typename?: 'TeaserLinkingCollections';
   componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  joinUsCollection?: Maybe<JoinUsCollection>;
   pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
+  referenceClientsCollection?: Maybe<ReferenceClientsCollection>;
   solutionSectionCollection?: Maybe<SolutionSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
 };
@@ -4182,6 +4965,15 @@ export type TeaserLinkingCollectionsEntryCollectionArgs = {
 };
 
 
+export type TeaserLinkingCollectionsJoinUsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<TeaserLinkingCollectionsJoinUsCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
 export type TeaserLinkingCollectionsPageCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
@@ -4195,6 +4987,15 @@ export type TeaserLinkingCollectionsPageSectionCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   order?: InputMaybe<Array<InputMaybe<TeaserLinkingCollectionsPageSectionCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type TeaserLinkingCollectionsReferenceClientsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<TeaserLinkingCollectionsReferenceClientsCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
@@ -4228,6 +5029,25 @@ export enum TeaserLinkingCollectionsComponentWrapperCollectionOrder {
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum TeaserLinkingCollectionsJoinUsCollectionOrder {
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
 }
 
 export enum TeaserLinkingCollectionsPageCollectionOrder {
@@ -4266,6 +5086,21 @@ export enum TeaserLinkingCollectionsPageSectionCollectionOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+export enum TeaserLinkingCollectionsReferenceClientsCollectionOrder {
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 export enum TeaserLinkingCollectionsSolutionSectionCollectionOrder {
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
@@ -4299,6 +5134,8 @@ export enum TeaserOrder {
   ButtonUrlDesc = 'buttonUrl_DESC',
   GroupedAsc = 'grouped_ASC',
   GroupedDesc = 'grouped_DESC',
+  QuoteAsc = 'quote_ASC',
+  QuoteDesc = 'quote_DESC',
   SubtitleAsc = 'subtitle_ASC',
   SubtitleDesc = 'subtitle_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -4527,6 +5364,7 @@ export enum TestimonialOrder {
 export type Title = Entry & {
   __typename?: 'Title';
   alignment?: Maybe<Scalars['String']>;
+  buttonUrl?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
   fontSize?: Maybe<Scalars['String']>;
   linkedFrom?: Maybe<TitleLinkingCollections>;
@@ -4537,6 +5375,12 @@ export type Title = Entry & {
 
 /** How we help businesses with their digital growth [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/title) */
 export type TitleAlignmentArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** How we help businesses with their digital growth [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/title) */
+export type TitleButtonUrlArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
@@ -4576,6 +5420,13 @@ export type TitleFilter = {
   alignment_not?: InputMaybe<Scalars['String']>;
   alignment_not_contains?: InputMaybe<Scalars['String']>;
   alignment_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl?: InputMaybe<Scalars['String']>;
+  buttonUrl_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl_not?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   fontSize?: InputMaybe<Scalars['String']>;
   fontSize_contains?: InputMaybe<Scalars['String']>;
@@ -4598,6 +5449,7 @@ export type TitleLinkingCollections = {
   __typename?: 'TitleLinkingCollections';
   componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  expertAdviceCollection?: Maybe<ExpertAdviceCollection>;
   pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
@@ -4616,6 +5468,15 @@ export type TitleLinkingCollectionsComponentWrapperCollectionArgs = {
 export type TitleLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type TitleLinkingCollectionsExpertAdviceCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<TitleLinkingCollectionsExpertAdviceCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
@@ -4658,6 +5519,25 @@ export enum TitleLinkingCollectionsComponentWrapperCollectionOrder {
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum TitleLinkingCollectionsExpertAdviceCollectionOrder {
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
 }
 
 export enum TitleLinkingCollectionsPageCollectionOrder {
@@ -4712,6 +5592,8 @@ export enum TitleLinkingCollectionsTwoGridCollectionOrder {
 export enum TitleOrder {
   AlignmentAsc = 'alignment_ASC',
   AlignmentDesc = 'alignment_DESC',
+  ButtonUrlAsc = 'buttonUrl_ASC',
+  ButtonUrlDesc = 'buttonUrl_DESC',
   FontSizeAsc = 'fontSize_ASC',
   FontSizeDesc = 'fontSize_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -4771,9 +5653,9 @@ export type TwoGridCollection = {
   total: Scalars['Int'];
 };
 
-export type TwoGridComponentLeft = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid;
+export type TwoGridComponentLeft = Button | Description | ExpertAdvice | FeaturedArticle | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid;
 
-export type TwoGridComponentRight = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid;
+export type TwoGridComponentRight = Button | Description | ExpertAdvice | FeaturedArticle | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid;
 
 export type TwoGridFilter = {
   AND?: InputMaybe<Array<InputMaybe<TwoGridFilter>>>;
@@ -4795,6 +5677,7 @@ export type TwoGridLinkingCollections = {
   __typename?: 'TwoGridLinkingCollections';
   componentWrapperCollection?: Maybe<ComponentWrapperCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  pageCollection?: Maybe<PageCollection>;
   pageSectionCollection?: Maybe<PageSectionCollection>;
   twoGridCollection?: Maybe<TwoGridCollection>;
 };
@@ -4812,6 +5695,15 @@ export type TwoGridLinkingCollectionsComponentWrapperCollectionArgs = {
 export type TwoGridLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type TwoGridLinkingCollectionsPageCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<TwoGridLinkingCollectionsPageCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
@@ -4845,6 +5737,25 @@ export enum TwoGridLinkingCollectionsComponentWrapperCollectionOrder {
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum TwoGridLinkingCollectionsPageCollectionOrder {
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC',
+  PageNameAsc = 'pageName_ASC',
+  PageNameDesc = 'pageName_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
 }
 
 export enum TwoGridLinkingCollectionsPageSectionCollectionOrder {
@@ -5030,6 +5941,13 @@ export type CfTeaserNestedFilter = {
   grouped_exists?: InputMaybe<Scalars['Boolean']>;
   grouped_not?: InputMaybe<Scalars['Boolean']>;
   image_exists?: InputMaybe<Scalars['Boolean']>;
+  quote?: InputMaybe<Scalars['String']>;
+  quote_contains?: InputMaybe<Scalars['String']>;
+  quote_exists?: InputMaybe<Scalars['Boolean']>;
+  quote_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  quote_not?: InputMaybe<Scalars['String']>;
+  quote_not_contains?: InputMaybe<Scalars['String']>;
+  quote_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   subtitle?: InputMaybe<Scalars['String']>;
   subtitle_contains?: InputMaybe<Scalars['String']>;
   subtitle_exists?: InputMaybe<Scalars['Boolean']>;
@@ -5037,6 +5955,41 @@ export type CfTeaserNestedFilter = {
   subtitle_not?: InputMaybe<Scalars['String']>;
   subtitle_not_contains?: InputMaybe<Scalars['String']>;
   subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type CfTitleNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfTitleNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfTitleNestedFilter>>>;
+  alignment?: InputMaybe<Scalars['String']>;
+  alignment_contains?: InputMaybe<Scalars['String']>;
+  alignment_exists?: InputMaybe<Scalars['Boolean']>;
+  alignment_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  alignment_not?: InputMaybe<Scalars['String']>;
+  alignment_not_contains?: InputMaybe<Scalars['String']>;
+  alignment_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl?: InputMaybe<Scalars['String']>;
+  buttonUrl_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonUrl_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonUrl_not?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_contains?: InputMaybe<Scalars['String']>;
+  buttonUrl_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  fontSize?: InputMaybe<Scalars['String']>;
+  fontSize_contains?: InputMaybe<Scalars['String']>;
+  fontSize_exists?: InputMaybe<Scalars['Boolean']>;
+  fontSize_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  fontSize_not?: InputMaybe<Scalars['String']>;
+  fontSize_not_contains?: InputMaybe<Scalars['String']>;
+  fontSize_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars['String']>;
   title_contains?: InputMaybe<Scalars['String']>;
@@ -5130,6 +6083,10 @@ type DefaultInfo_ContentCarousel_Fragment = { __typename: 'ContentCarousel', sys
 
 type DefaultInfo_Description_Fragment = { __typename: 'Description', sys: { __typename?: 'Sys', id: string } };
 
+type DefaultInfo_ExpertAdvice_Fragment = { __typename: 'ExpertAdvice', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_FeaturedArticle_Fragment = { __typename: 'FeaturedArticle', sys: { __typename?: 'Sys', id: string } };
+
 type DefaultInfo_FooterMenu_Fragment = { __typename: 'FooterMenu', sys: { __typename?: 'Sys', id: string } };
 
 type DefaultInfo_HeroBanner_Fragment = { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } };
@@ -5137,6 +6094,8 @@ type DefaultInfo_HeroBanner_Fragment = { __typename: 'HeroBanner', sys: { __type
 type DefaultInfo_Image_Fragment = { __typename: 'Image', sys: { __typename?: 'Sys', id: string } };
 
 type DefaultInfo_ImageCarousel_Fragment = { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } };
+
+type DefaultInfo_JoinUs_Fragment = { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } };
 
 type DefaultInfo_LanguageMetadata_Fragment = { __typename: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } };
 
@@ -5152,6 +6111,8 @@ type DefaultInfo_Page_Fragment = { __typename: 'Page', sys: { __typename?: 'Sys'
 
 type DefaultInfo_PageSection_Fragment = { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } };
 
+type DefaultInfo_ReferenceClients_Fragment = { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } };
+
 type DefaultInfo_Seo_Fragment = { __typename: 'Seo', sys: { __typename?: 'Sys', id: string } };
 
 type DefaultInfo_SolutionSection_Fragment = { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } };
@@ -5164,7 +6125,7 @@ type DefaultInfo_Title_Fragment = { __typename: 'Title', sys: { __typename?: 'Sy
 
 type DefaultInfo_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } };
 
-export type DefaultInfoFragment = DefaultInfo_Button_Fragment | DefaultInfo_ComponentWrapper_Fragment | DefaultInfo_ContentCarousel_Fragment | DefaultInfo_Description_Fragment | DefaultInfo_FooterMenu_Fragment | DefaultInfo_HeroBanner_Fragment | DefaultInfo_Image_Fragment | DefaultInfo_ImageCarousel_Fragment | DefaultInfo_LanguageMetadata_Fragment | DefaultInfo_MainNavigation_Fragment | DefaultInfo_MenuGroup_Fragment | DefaultInfo_NavigationItem_Fragment | DefaultInfo_NavigationMenu_Fragment | DefaultInfo_Page_Fragment | DefaultInfo_PageSection_Fragment | DefaultInfo_Seo_Fragment | DefaultInfo_SolutionSection_Fragment | DefaultInfo_Teaser_Fragment | DefaultInfo_Testimonial_Fragment | DefaultInfo_Title_Fragment | DefaultInfo_TwoGrid_Fragment;
+export type DefaultInfoFragment = DefaultInfo_Button_Fragment | DefaultInfo_ComponentWrapper_Fragment | DefaultInfo_ContentCarousel_Fragment | DefaultInfo_Description_Fragment | DefaultInfo_ExpertAdvice_Fragment | DefaultInfo_FeaturedArticle_Fragment | DefaultInfo_FooterMenu_Fragment | DefaultInfo_HeroBanner_Fragment | DefaultInfo_Image_Fragment | DefaultInfo_ImageCarousel_Fragment | DefaultInfo_JoinUs_Fragment | DefaultInfo_LanguageMetadata_Fragment | DefaultInfo_MainNavigation_Fragment | DefaultInfo_MenuGroup_Fragment | DefaultInfo_NavigationItem_Fragment | DefaultInfo_NavigationMenu_Fragment | DefaultInfo_Page_Fragment | DefaultInfo_PageSection_Fragment | DefaultInfo_ReferenceClients_Fragment | DefaultInfo_Seo_Fragment | DefaultInfo_SolutionSection_Fragment | DefaultInfo_Teaser_Fragment | DefaultInfo_Testimonial_Fragment | DefaultInfo_Title_Fragment | DefaultInfo_TwoGrid_Fragment;
 
 export type CtfComponentsWrapperFieldsFragment = { __typename: 'ComponentWrapper', componentsCollection?: { __typename?: 'ComponentWrapperComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } };
 
@@ -5199,6 +6160,16 @@ export type CtfComponentInfiniteCarouselQueryVariables = Exact<{
 
 export type CtfComponentInfiniteCarouselQuery = { __typename?: 'Query', imageCarousel?: { __typename: 'ImageCarousel', autoplay?: boolean | null, sys: { __typename?: 'Sys', id: string }, imageCollection?: { __typename?: 'AssetCollection', total: number, items: Array<{ __typename?: 'Asset', title?: string | null, url?: string | null, sys: { __typename?: 'Sys', id: string } } | null> } | null } | null };
 
+export type NavigationFieldsFragment = { __typename?: 'NavigationMenuCollection', items: Array<{ __typename?: 'NavigationMenu', menuItemsCollection?: { __typename?: 'NavigationMenuMenuItemsCollection', items: Array<{ __typename?: 'LanguageMetadata', locale?: string | null, localeUrl?: string | null, sys: { __typename?: 'Sys', id: string }, localeImage?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | { __typename: 'MenuGroup', groupName?: string | null, sys: { __typename?: 'Sys', id: string }, link?: { __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null, children?: { __typename?: 'MenuGroupFeaturedPagesCollection', items: Array<{ __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null } | null> } | null } | null> };
+
+export type CtfNavigationQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+}>;
+
+
+export type CtfNavigationQuery = { __typename?: 'Query', navigationMenuCollection?: { __typename?: 'NavigationMenuCollection', items: Array<{ __typename?: 'NavigationMenu', menuItemsCollection?: { __typename?: 'NavigationMenuMenuItemsCollection', items: Array<{ __typename?: 'LanguageMetadata', locale?: string | null, localeUrl?: string | null, sys: { __typename?: 'Sys', id: string }, localeImage?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | { __typename: 'MenuGroup', groupName?: string | null, sys: { __typename?: 'Sys', id: string }, link?: { __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null, children?: { __typename?: 'MenuGroupFeaturedPagesCollection', items: Array<{ __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null } | null> } | null } | null> } | null };
+
 export type CtfPageSectionFieldsFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'SolutionSection' } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } };
 
 export type CtfPageSectionQueryVariables = Exact<{
@@ -5210,7 +6181,7 @@ export type CtfPageSectionQueryVariables = Exact<{
 
 export type CtfPageSectionQuery = { __typename?: 'Query', pageSection?: { __typename: 'PageSection', componentsGrouped?: boolean | null, sectionType?: string | null, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ComponentWrapper', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'SolutionSection' } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', title?: string | null, subtitle?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null } | null, sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null, sys: { __typename?: 'Sys', id: string } } | null };
 
-export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null };
+export type CtfPageFieldsFragment = { __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null };
 
 export type CtfPageQueryVariables = Exact<{
   slug: Scalars['String'];
@@ -5219,7 +6190,7 @@ export type CtfPageQueryVariables = Exact<{
 }>;
 
 
-export type CtfPageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null };
+export type CtfPageQuery = { __typename?: 'Query', pageCollection?: { __typename?: 'PageCollection', items: Array<{ __typename: 'Page', pageName?: string | null, slug?: string | null, internalName?: string | null, sys: { __typename?: 'Sys', id: string }, seo?: { __typename?: 'Seo', title?: string | null, description?: string | null, noIndex?: boolean | null, noFollow?: boolean | null } | null, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> } | null };
 
 export type ComponentTeaserFieldsFragment = { __typename: 'Teaser', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonUrl?: string | null, grouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, image?: { __typename?: 'Asset', title?: string | null, url?: string | null } | null };
 
@@ -5243,23 +6214,27 @@ export type CtfComponentTitleQueryVariables = Exact<{
 
 export type CtfComponentTitleQuery = { __typename?: 'Query', title?: { __typename: 'Title', title?: string | null, alignment?: string | null, fontSize?: string | null, sys: { __typename?: 'Sys', id: string } } | null };
 
-export type ComponentsFieldPageSectionFragment = { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null };
-
-type ComponentsFields_Button_Fragment = { __typename: 'Button', sys: { __typename?: 'Sys', id: string } };
+type ComponentsFields_Button_Fragment = { __typename?: 'Button' };
 
 type ComponentsFields_ComponentWrapper_Fragment = { __typename?: 'ComponentWrapper' };
 
 type ComponentsFields_ContentCarousel_Fragment = { __typename?: 'ContentCarousel' };
 
-type ComponentsFields_Description_Fragment = { __typename: 'Description', sys: { __typename?: 'Sys', id: string } };
+type ComponentsFields_Description_Fragment = { __typename?: 'Description' };
+
+type ComponentsFields_ExpertAdvice_Fragment = { __typename?: 'ExpertAdvice', title?: string | null, subtitle?: string | null, buttonUrl?: string | null, buttonText?: string | null, advicesCollection?: { __typename?: 'ExpertAdviceAdvicesCollection', items: Array<{ __typename?: 'Title', title?: string | null, buttonUrl?: string | null } | null> } | null };
+
+type ComponentsFields_FeaturedArticle_Fragment = { __typename?: 'FeaturedArticle', heading?: string | null, title?: string | null, subtitle?: string | null, buttonUrl?: string | null };
 
 type ComponentsFields_FooterMenu_Fragment = { __typename?: 'FooterMenu' };
 
 type ComponentsFields_HeroBanner_Fragment = { __typename?: 'HeroBanner' };
 
-type ComponentsFields_Image_Fragment = { __typename: 'Image', sys: { __typename?: 'Sys', id: string } };
+type ComponentsFields_Image_Fragment = { __typename?: 'Image' };
 
 type ComponentsFields_ImageCarousel_Fragment = { __typename?: 'ImageCarousel' };
+
+type ComponentsFields_JoinUs_Fragment = { __typename?: 'JoinUs' };
 
 type ComponentsFields_LanguageMetadata_Fragment = { __typename?: 'LanguageMetadata' };
 
@@ -5275,6 +6250,8 @@ type ComponentsFields_Page_Fragment = { __typename?: 'Page' };
 
 type ComponentsFields_PageSection_Fragment = { __typename?: 'PageSection' };
 
+type ComponentsFields_ReferenceClients_Fragment = { __typename?: 'ReferenceClients' };
+
 type ComponentsFields_Seo_Fragment = { __typename?: 'Seo' };
 
 type ComponentsFields_SolutionSection_Fragment = { __typename?: 'SolutionSection' };
@@ -5283,13 +6260,13 @@ type ComponentsFields_Teaser_Fragment = { __typename?: 'Teaser' };
 
 type ComponentsFields_Testimonial_Fragment = { __typename?: 'Testimonial' };
 
-type ComponentsFields_Title_Fragment = { __typename: 'Title', sys: { __typename?: 'Sys', id: string } };
+type ComponentsFields_Title_Fragment = { __typename?: 'Title' };
 
 type ComponentsFields_TwoGrid_Fragment = { __typename?: 'TwoGrid' };
 
-export type ComponentsFieldsFragment = ComponentsFields_Button_Fragment | ComponentsFields_ComponentWrapper_Fragment | ComponentsFields_ContentCarousel_Fragment | ComponentsFields_Description_Fragment | ComponentsFields_FooterMenu_Fragment | ComponentsFields_HeroBanner_Fragment | ComponentsFields_Image_Fragment | ComponentsFields_ImageCarousel_Fragment | ComponentsFields_LanguageMetadata_Fragment | ComponentsFields_MainNavigation_Fragment | ComponentsFields_MenuGroup_Fragment | ComponentsFields_NavigationItem_Fragment | ComponentsFields_NavigationMenu_Fragment | ComponentsFields_Page_Fragment | ComponentsFields_PageSection_Fragment | ComponentsFields_Seo_Fragment | ComponentsFields_SolutionSection_Fragment | ComponentsFields_Teaser_Fragment | ComponentsFields_Testimonial_Fragment | ComponentsFields_Title_Fragment | ComponentsFields_TwoGrid_Fragment;
+export type ComponentsFieldsFragment = ComponentsFields_Button_Fragment | ComponentsFields_ComponentWrapper_Fragment | ComponentsFields_ContentCarousel_Fragment | ComponentsFields_Description_Fragment | ComponentsFields_ExpertAdvice_Fragment | ComponentsFields_FeaturedArticle_Fragment | ComponentsFields_FooterMenu_Fragment | ComponentsFields_HeroBanner_Fragment | ComponentsFields_Image_Fragment | ComponentsFields_ImageCarousel_Fragment | ComponentsFields_JoinUs_Fragment | ComponentsFields_LanguageMetadata_Fragment | ComponentsFields_MainNavigation_Fragment | ComponentsFields_MenuGroup_Fragment | ComponentsFields_NavigationItem_Fragment | ComponentsFields_NavigationMenu_Fragment | ComponentsFields_Page_Fragment | ComponentsFields_PageSection_Fragment | ComponentsFields_ReferenceClients_Fragment | ComponentsFields_Seo_Fragment | ComponentsFields_SolutionSection_Fragment | ComponentsFields_Teaser_Fragment | ComponentsFields_Testimonial_Fragment | ComponentsFields_Title_Fragment | ComponentsFields_TwoGrid_Fragment;
 
-export type ComponentTwoGridFieldsFragment = { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null };
+export type ComponentTwoGridFieldsFragment = { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'ExpertAdvice', title?: string | null, subtitle?: string | null, buttonUrl?: string | null, buttonText?: string | null, advicesCollection?: { __typename?: 'ExpertAdviceAdvicesCollection', items: Array<{ __typename?: 'Title', title?: string | null, buttonUrl?: string | null } | null> } | null } | { __typename?: 'FeaturedArticle', heading?: string | null, title?: string | null, subtitle?: string | null, buttonUrl?: string | null } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'ExpertAdvice', title?: string | null, subtitle?: string | null, buttonUrl?: string | null, buttonText?: string | null, advicesCollection?: { __typename?: 'ExpertAdviceAdvicesCollection', items: Array<{ __typename?: 'Title', title?: string | null, buttonUrl?: string | null } | null> } | null } | { __typename?: 'FeaturedArticle', heading?: string | null, title?: string | null, subtitle?: string | null, buttonUrl?: string | null } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null };
 
 export type CtfComponentTwoGridQueryVariables = Exact<{
   id: Scalars['String'];
@@ -5298,7 +6275,53 @@ export type CtfComponentTwoGridQueryVariables = Exact<{
 }>;
 
 
-export type CtfComponentTwoGridQuery = { __typename?: 'Query', twoGrid?: { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename: 'PageSection', componentsGrouped?: boolean | null, sys: { __typename?: 'Sys', id: string }, componentsCollection?: { __typename?: 'PageSectionComponentsCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ComponentWrapper' } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Image', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'SolutionSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename?: 'TwoGrid' } | null> } | null } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null } | null };
+export type CtfComponentTwoGridQuery = { __typename?: 'Query', twoGrid?: { __typename: 'TwoGrid', internalName?: string | null, sys: { __typename?: 'Sys', id: string }, componentLeft?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'ExpertAdvice', title?: string | null, subtitle?: string | null, buttonUrl?: string | null, buttonText?: string | null, advicesCollection?: { __typename?: 'ExpertAdviceAdvicesCollection', items: Array<{ __typename?: 'Title', title?: string | null, buttonUrl?: string | null } | null> } | null } | { __typename?: 'FeaturedArticle', heading?: string | null, title?: string | null, subtitle?: string | null, buttonUrl?: string | null } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null, componentRight?: { __typename?: 'Button' } | { __typename?: 'Description' } | { __typename?: 'ExpertAdvice', title?: string | null, subtitle?: string | null, buttonUrl?: string | null, buttonText?: string | null, advicesCollection?: { __typename?: 'ExpertAdviceAdvicesCollection', items: Array<{ __typename?: 'Title', title?: string | null, buttonUrl?: string | null } | null> } | null } | { __typename?: 'FeaturedArticle', heading?: string | null, title?: string | null, subtitle?: string | null, buttonUrl?: string | null } | { __typename?: 'Image' } | { __typename?: 'ImageCarousel' } | { __typename?: 'PageSection' } | { __typename?: 'Teaser' } | { __typename?: 'Testimonial' } | { __typename?: 'Title' } | { __typename?: 'TwoGrid' } | null } | null };
+
+export type ComponentHeroBannerFragment = { __typename: 'HeroBanner', title?: string | null, subtitle?: string | null, buttonUrl?: string | null, buttonText?: string | null, sys: { __typename?: 'Sys', id: string }, backgroundImage?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null };
+
+export type HeroBannerComponentQueryVariables = Exact<{
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+}>;
+
+
+export type HeroBannerComponentQuery = { __typename?: 'Query', heroBanner?: { __typename: 'HeroBanner', title?: string | null, subtitle?: string | null, buttonUrl?: string | null, buttonText?: string | null, sys: { __typename?: 'Sys', id: string }, backgroundImage?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | null };
+
+export type ComponentJoinUsFragment = { __typename: 'JoinUs', title?: string | null, description?: string | null, buttonText?: string | null, buttonUrl?: string | null, sys: { __typename?: 'Sys', id: string }, teasersCollection?: { __typename?: 'JoinUsTeasersCollection', items: Array<{ __typename?: 'Teaser', title?: string | null, subtitle?: string | null, image?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | null> } | null, clientsCollection?: { __typename?: 'AssetCollection', items: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null } | null> } | null };
+
+export type JoinUsComponentQueryVariables = Exact<{
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+}>;
+
+
+export type JoinUsComponentQuery = { __typename?: 'Query', joinUs?: { __typename: 'JoinUs', title?: string | null, description?: string | null, buttonText?: string | null, buttonUrl?: string | null, sys: { __typename?: 'Sys', id: string }, teasersCollection?: { __typename?: 'JoinUsTeasersCollection', items: Array<{ __typename?: 'Teaser', title?: string | null, subtitle?: string | null, image?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | null> } | null, clientsCollection?: { __typename?: 'AssetCollection', items: Array<{ __typename?: 'Asset', url?: string | null, title?: string | null } | null> } | null } | null };
+
+export type ComponentRerenceClientFragment = { __typename: 'ReferenceClients', title?: string | null, description?: string | null, sys: { __typename?: 'Sys', id: string }, clientsCollection?: { __typename?: 'ReferenceClientsClientsCollection', items: Array<{ __typename?: 'Teaser', title?: string | null, subtitle?: string | null, buttonUrl?: string | null, buttonText?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | null> } | null };
+
+export type ReferencedClientsComponentQueryVariables = Exact<{
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+}>;
+
+
+export type ReferencedClientsComponentQuery = { __typename?: 'Query', referenceClients?: { __typename: 'ReferenceClients', title?: string | null, description?: string | null, sys: { __typename?: 'Sys', id: string }, clientsCollection?: { __typename?: 'ReferenceClientsClientsCollection', items: Array<{ __typename?: 'Teaser', title?: string | null, subtitle?: string | null, buttonUrl?: string | null, buttonText?: string | null, quote?: string | null, image?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | null> } | null } | null };
+
+export type ComponentSolutionSectionFragment = { __typename: 'SolutionSection', title?: string | null, sys: { __typename?: 'Sys', id: string }, teasersCollection?: { __typename?: 'SolutionSectionTeasersCollection', items: Array<{ __typename?: 'Teaser', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonUrl?: string | null, image?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | null> } | null };
+
+export type SolutionSectionComponentQueryVariables = Exact<{
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+}>;
+
+
+export type SolutionSectionComponentQuery = { __typename?: 'Query', solutionSection?: { __typename: 'SolutionSection', title?: string | null, sys: { __typename?: 'Sys', id: string }, teasersCollection?: { __typename?: 'SolutionSectionTeasersCollection', items: Array<{ __typename?: 'Teaser', title?: string | null, subtitle?: string | null, buttonText?: string | null, buttonUrl?: string | null, image?: { __typename?: 'Asset', url?: string | null, title?: string | null } | null } | null> } | null } | null };
+
+export type PageLinkFieldsFragment = { __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null };
 
 type ComponentReferenceFields_Button_Fragment = { __typename: 'Button', sys: { __typename?: 'Sys', id: string } };
 
@@ -5308,6 +6331,10 @@ type ComponentReferenceFields_ContentCarousel_Fragment = { __typename: 'ContentC
 
 type ComponentReferenceFields_Description_Fragment = { __typename: 'Description', sys: { __typename?: 'Sys', id: string } };
 
+type ComponentReferenceFields_ExpertAdvice_Fragment = { __typename: 'ExpertAdvice', sys: { __typename?: 'Sys', id: string } };
+
+type ComponentReferenceFields_FeaturedArticle_Fragment = { __typename: 'FeaturedArticle', sys: { __typename?: 'Sys', id: string } };
+
 type ComponentReferenceFields_FooterMenu_Fragment = { __typename: 'FooterMenu', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_HeroBanner_Fragment = { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } };
@@ -5315,6 +6342,8 @@ type ComponentReferenceFields_HeroBanner_Fragment = { __typename: 'HeroBanner', 
 type ComponentReferenceFields_Image_Fragment = { __typename: 'Image', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_ImageCarousel_Fragment = { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } };
+
+type ComponentReferenceFields_JoinUs_Fragment = { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_LanguageMetadata_Fragment = { __typename: 'LanguageMetadata', sys: { __typename?: 'Sys', id: string } };
 
@@ -5330,6 +6359,8 @@ type ComponentReferenceFields_Page_Fragment = { __typename: 'Page', sys: { __typ
 
 type ComponentReferenceFields_PageSection_Fragment = { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } };
 
+type ComponentReferenceFields_ReferenceClients_Fragment = { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } };
+
 type ComponentReferenceFields_Seo_Fragment = { __typename: 'Seo', sys: { __typename?: 'Sys', id: string } };
 
 type ComponentReferenceFields_SolutionSection_Fragment = { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } };
@@ -5342,4 +6373,6 @@ type ComponentReferenceFields_Title_Fragment = { __typename: 'Title', sys: { __t
 
 type ComponentReferenceFields_TwoGrid_Fragment = { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } };
 
-export type ComponentReferenceFieldsFragment = ComponentReferenceFields_Button_Fragment | ComponentReferenceFields_ComponentWrapper_Fragment | ComponentReferenceFields_ContentCarousel_Fragment | ComponentReferenceFields_Description_Fragment | ComponentReferenceFields_FooterMenu_Fragment | ComponentReferenceFields_HeroBanner_Fragment | ComponentReferenceFields_Image_Fragment | ComponentReferenceFields_ImageCarousel_Fragment | ComponentReferenceFields_LanguageMetadata_Fragment | ComponentReferenceFields_MainNavigation_Fragment | ComponentReferenceFields_MenuGroup_Fragment | ComponentReferenceFields_NavigationItem_Fragment | ComponentReferenceFields_NavigationMenu_Fragment | ComponentReferenceFields_Page_Fragment | ComponentReferenceFields_PageSection_Fragment | ComponentReferenceFields_Seo_Fragment | ComponentReferenceFields_SolutionSection_Fragment | ComponentReferenceFields_Teaser_Fragment | ComponentReferenceFields_Testimonial_Fragment | ComponentReferenceFields_Title_Fragment | ComponentReferenceFields_TwoGrid_Fragment;
+export type ComponentReferenceFieldsFragment = ComponentReferenceFields_Button_Fragment | ComponentReferenceFields_ComponentWrapper_Fragment | ComponentReferenceFields_ContentCarousel_Fragment | ComponentReferenceFields_Description_Fragment | ComponentReferenceFields_ExpertAdvice_Fragment | ComponentReferenceFields_FeaturedArticle_Fragment | ComponentReferenceFields_FooterMenu_Fragment | ComponentReferenceFields_HeroBanner_Fragment | ComponentReferenceFields_Image_Fragment | ComponentReferenceFields_ImageCarousel_Fragment | ComponentReferenceFields_JoinUs_Fragment | ComponentReferenceFields_LanguageMetadata_Fragment | ComponentReferenceFields_MainNavigation_Fragment | ComponentReferenceFields_MenuGroup_Fragment | ComponentReferenceFields_NavigationItem_Fragment | ComponentReferenceFields_NavigationMenu_Fragment | ComponentReferenceFields_Page_Fragment | ComponentReferenceFields_PageSection_Fragment | ComponentReferenceFields_ReferenceClients_Fragment | ComponentReferenceFields_Seo_Fragment | ComponentReferenceFields_SolutionSection_Fragment | ComponentReferenceFields_Teaser_Fragment | ComponentReferenceFields_Testimonial_Fragment | ComponentReferenceFields_Title_Fragment | ComponentReferenceFields_TwoGrid_Fragment;
+
+export type MenuGroupFieldsFragment = { __typename?: 'MenuGroupFeaturedPagesCollection', items: Array<{ __typename: 'Page', slug?: string | null, pageName?: string | null, sys: { __typename?: 'Sys', id: string }, pageContentCollection?: { __typename?: 'PagePageContentCollection', items: Array<{ __typename: 'Button', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ContentCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Description', sys: { __typename?: 'Sys', id: string } } | { __typename: 'HeroBanner', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ImageCarousel', sys: { __typename?: 'Sys', id: string } } | { __typename: 'JoinUs', sys: { __typename?: 'Sys', id: string } } | { __typename: 'PageSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'ReferenceClients', sys: { __typename?: 'Sys', id: string } } | { __typename: 'SolutionSection', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Teaser', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Testimonial', sys: { __typename?: 'Sys', id: string } } | { __typename: 'Title', sys: { __typename?: 'Sys', id: string } } | { __typename: 'TwoGrid', sys: { __typename?: 'Sys', id: string } } | null> } | null } | null> };

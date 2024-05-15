@@ -95,6 +95,7 @@ type AssetLinkingCollections {
   heroBannerCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): HeroBannerCollection
   imageCarouselCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): ImageCarouselCollection
   imageCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): ImageCollection
+  joinUsCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): JoinUsCollection
   languageMetadataCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): LanguageMetadataCollection
   menuGroupCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): MenuGroupCollection
   seoCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): SeoCollection
@@ -804,6 +805,217 @@ enum EntryOrder {
 }
 
 """
+[See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/expertAdvice)
+"""
+type ExpertAdvice implements Entry {
+  advicesCollection(limit: Int = 100, locale: String, order: [ExpertAdviceAdvicesCollectionOrder], preview: Boolean, skip: Int = 0, where: TitleFilter): ExpertAdviceAdvicesCollection
+  buttonText(locale: String): String
+  buttonUrl(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  linkedFrom(allowedLocales: [String]): ExpertAdviceLinkingCollections
+  subtitle(locale: String): String
+  sys: Sys!
+  title(locale: String): String
+}
+
+type ExpertAdviceAdvicesCollection {
+  items: [Title]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+enum ExpertAdviceAdvicesCollectionOrder {
+  alignment_ASC
+  alignment_DESC
+  buttonUrl_ASC
+  buttonUrl_DESC
+  fontSize_ASC
+  fontSize_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+type ExpertAdviceCollection {
+  items: [ExpertAdvice]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input ExpertAdviceFilter {
+  AND: [ExpertAdviceFilter]
+  OR: [ExpertAdviceFilter]
+  advices: cfTitleNestedFilter
+  advicesCollection_exists: Boolean
+  buttonText: String
+  buttonText_contains: String
+  buttonText_exists: Boolean
+  buttonText_in: [String]
+  buttonText_not: String
+  buttonText_not_contains: String
+  buttonText_not_in: [String]
+  buttonUrl: String
+  buttonUrl_contains: String
+  buttonUrl_exists: Boolean
+  buttonUrl_in: [String]
+  buttonUrl_not: String
+  buttonUrl_not_contains: String
+  buttonUrl_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  subtitle: String
+  subtitle_contains: String
+  subtitle_exists: Boolean
+  subtitle_in: [String]
+  subtitle_not: String
+  subtitle_not_contains: String
+  subtitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type ExpertAdviceLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  twoGridCollection(limit: Int = 100, locale: String, order: [ExpertAdviceLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum ExpertAdviceLinkingCollectionsTwoGridCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+enum ExpertAdviceOrder {
+  buttonText_ASC
+  buttonText_DESC
+  buttonUrl_ASC
+  buttonUrl_DESC
+  subtitle_ASC
+  subtitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/featuredArticle)
+"""
+type FeaturedArticle implements Entry {
+  buttonUrl(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  heading(locale: String): String
+  linkedFrom(allowedLocales: [String]): FeaturedArticleLinkingCollections
+  subtitle(locale: String): String
+  sys: Sys!
+  title(locale: String): String
+}
+
+type FeaturedArticleCollection {
+  items: [FeaturedArticle]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input FeaturedArticleFilter {
+  AND: [FeaturedArticleFilter]
+  OR: [FeaturedArticleFilter]
+  buttonUrl: String
+  buttonUrl_contains: String
+  buttonUrl_exists: Boolean
+  buttonUrl_in: [String]
+  buttonUrl_not: String
+  buttonUrl_not_contains: String
+  buttonUrl_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  heading: String
+  heading_contains: String
+  heading_exists: Boolean
+  heading_in: [String]
+  heading_not: String
+  heading_not_contains: String
+  heading_not_in: [String]
+  subtitle: String
+  subtitle_contains: String
+  subtitle_exists: Boolean
+  subtitle_in: [String]
+  subtitle_not: String
+  subtitle_not_contains: String
+  subtitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type FeaturedArticleLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  twoGridCollection(limit: Int = 100, locale: String, order: [FeaturedArticleLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
+}
+
+enum FeaturedArticleLinkingCollectionsTwoGridCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+enum FeaturedArticleOrder {
+  buttonUrl_ASC
+  buttonUrl_DESC
+  heading_ASC
+  heading_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
 Navigation content type used for powering the Footer menu [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/footerMenu)
 """
 type FooterMenu implements Entry {
@@ -1394,6 +1606,139 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 scalar JSON
 
 """
+[See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/joinUs)
+"""
+type JoinUs implements Entry {
+  buttonText(locale: String): String
+  buttonUrl(locale: String): String
+  clientsCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): AssetCollection
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  linkedFrom(allowedLocales: [String]): JoinUsLinkingCollections
+  sys: Sys!
+  teasersCollection(limit: Int = 100, locale: String, order: [JoinUsTeasersCollectionOrder], preview: Boolean, skip: Int = 0, where: TeaserFilter): JoinUsTeasersCollection
+  title(locale: String): String
+}
+
+type JoinUsCollection {
+  items: [JoinUs]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input JoinUsFilter {
+  AND: [JoinUsFilter]
+  OR: [JoinUsFilter]
+  buttonText: String
+  buttonText_contains: String
+  buttonText_exists: Boolean
+  buttonText_in: [String]
+  buttonText_not: String
+  buttonText_not_contains: String
+  buttonText_not_in: [String]
+  buttonUrl: String
+  buttonUrl_contains: String
+  buttonUrl_exists: Boolean
+  buttonUrl_in: [String]
+  buttonUrl_not: String
+  buttonUrl_not_contains: String
+  buttonUrl_not_in: [String]
+  clientsCollection_exists: Boolean
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  sys: SysFilter
+  teasers: cfTeaserNestedFilter
+  teasersCollection_exists: Boolean
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type JoinUsLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  pageCollection(limit: Int = 100, locale: String, order: [JoinUsLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
+}
+
+enum JoinUsLinkingCollectionsPageCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  pageName_ASC
+  pageName_DESC
+  slug_ASC
+  slug_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum JoinUsOrder {
+  buttonText_ASC
+  buttonText_DESC
+  buttonUrl_ASC
+  buttonUrl_DESC
+  description_ASC
+  description_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+type JoinUsTeasersCollection {
+  items: [Teaser]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+enum JoinUsTeasersCollectionOrder {
+  buttonText_ASC
+  buttonText_DESC
+  buttonUrl_ASC
+  buttonUrl_DESC
+  grouped_ASC
+  grouped_DESC
+  quote_ASC
+  quote_DESC
+  subtitle_ASC
+  subtitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
 [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/languageMetadata)
 """
 type LanguageMetadata implements Entry {
@@ -1962,7 +2307,7 @@ input PagePageContentFilter {
   sys: SysFilter
 }
 
-union PagePageContentItem = Button | ContentCarousel | Description | HeroBanner | ImageCarousel | PageSection | SolutionSection | Teaser | Testimonial | Title
+union PagePageContentItem = Button | ContentCarousel | Description | HeroBanner | ImageCarousel | JoinUs | PageSection | ReferenceClients | SolutionSection | Teaser | Testimonial | Title | TwoGrid
 
 """
 [See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/pageSection)
@@ -2169,6 +2514,10 @@ type Query {
   description(id: String!, locale: String, preview: Boolean): Description
   descriptionCollection(limit: Int = 100, locale: String, order: [DescriptionOrder], preview: Boolean, skip: Int = 0, where: DescriptionFilter): DescriptionCollection
   entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
+  expertAdvice(id: String!, locale: String, preview: Boolean): ExpertAdvice
+  expertAdviceCollection(limit: Int = 100, locale: String, order: [ExpertAdviceOrder], preview: Boolean, skip: Int = 0, where: ExpertAdviceFilter): ExpertAdviceCollection
+  featuredArticle(id: String!, locale: String, preview: Boolean): FeaturedArticle
+  featuredArticleCollection(limit: Int = 100, locale: String, order: [FeaturedArticleOrder], preview: Boolean, skip: Int = 0, where: FeaturedArticleFilter): FeaturedArticleCollection
   footerMenu(id: String!, locale: String, preview: Boolean): FooterMenu
   footerMenuCollection(limit: Int = 100, locale: String, order: [FooterMenuOrder], preview: Boolean, skip: Int = 0, where: FooterMenuFilter): FooterMenuCollection
   heroBanner(id: String!, locale: String, preview: Boolean): HeroBanner
@@ -2177,6 +2526,8 @@ type Query {
   imageCarousel(id: String!, locale: String, preview: Boolean): ImageCarousel
   imageCarouselCollection(limit: Int = 100, locale: String, order: [ImageCarouselOrder], preview: Boolean, skip: Int = 0, where: ImageCarouselFilter): ImageCarouselCollection
   imageCollection(limit: Int = 100, locale: String, order: [ImageOrder], preview: Boolean, skip: Int = 0, where: ImageFilter): ImageCollection
+  joinUs(id: String!, locale: String, preview: Boolean): JoinUs
+  joinUsCollection(limit: Int = 100, locale: String, order: [JoinUsOrder], preview: Boolean, skip: Int = 0, where: JoinUsFilter): JoinUsCollection
   languageMetadata(id: String!, locale: String, preview: Boolean): LanguageMetadata
   languageMetadataCollection(limit: Int = 100, locale: String, order: [LanguageMetadataOrder], preview: Boolean, skip: Int = 0, where: LanguageMetadataFilter): LanguageMetadataCollection
   mainNavigation(id: String!, locale: String, preview: Boolean): MainNavigation
@@ -2191,6 +2542,8 @@ type Query {
   pageCollection(limit: Int = 100, locale: String, order: [PageOrder], preview: Boolean, skip: Int = 0, where: PageFilter): PageCollection
   pageSection(id: String!, locale: String, preview: Boolean): PageSection
   pageSectionCollection(limit: Int = 100, locale: String, order: [PageSectionOrder], preview: Boolean, skip: Int = 0, where: PageSectionFilter): PageSectionCollection
+  referenceClients(id: String!, locale: String, preview: Boolean): ReferenceClients
+  referenceClientsCollection(limit: Int = 100, locale: String, order: [ReferenceClientsOrder], preview: Boolean, skip: Int = 0, where: ReferenceClientsFilter): ReferenceClientsCollection
   seo(id: String!, locale: String, preview: Boolean): Seo
   seoCollection(limit: Int = 100, locale: String, order: [SeoOrder], preview: Boolean, skip: Int = 0, where: SeoFilter): SeoCollection
   solutionSection(id: String!, locale: String, preview: Boolean): SolutionSection
@@ -2203,6 +2556,117 @@ type Query {
   titleCollection(limit: Int = 100, locale: String, order: [TitleOrder], preview: Boolean, skip: Int = 0, where: TitleFilter): TitleCollection
   twoGrid(id: String!, locale: String, preview: Boolean): TwoGrid
   twoGridCollection(limit: Int = 100, locale: String, order: [TwoGridOrder], preview: Boolean, skip: Int = 0, where: TwoGridFilter): TwoGridCollection
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/2p89d5j9ulp9/content_types/referenceClients)
+"""
+type ReferenceClients implements Entry {
+  clientsCollection(limit: Int = 100, locale: String, order: [ReferenceClientsClientsCollectionOrder], preview: Boolean, skip: Int = 0, where: TeaserFilter): ReferenceClientsClientsCollection
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  linkedFrom(allowedLocales: [String]): ReferenceClientsLinkingCollections
+  sys: Sys!
+  title(locale: String): String
+}
+
+type ReferenceClientsClientsCollection {
+  items: [Teaser]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+enum ReferenceClientsClientsCollectionOrder {
+  buttonText_ASC
+  buttonText_DESC
+  buttonUrl_ASC
+  buttonUrl_DESC
+  grouped_ASC
+  grouped_DESC
+  quote_ASC
+  quote_DESC
+  subtitle_ASC
+  subtitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+type ReferenceClientsCollection {
+  items: [ReferenceClients]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input ReferenceClientsFilter {
+  AND: [ReferenceClientsFilter]
+  OR: [ReferenceClientsFilter]
+  clients: cfTeaserNestedFilter
+  clientsCollection_exists: Boolean
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type ReferenceClientsLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  pageCollection(limit: Int = 100, locale: String, order: [ReferenceClientsLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
+}
+
+enum ReferenceClientsLinkingCollectionsPageCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  pageName_ASC
+  pageName_DESC
+  slug_ASC
+  slug_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum ReferenceClientsOrder {
+  description_ASC
+  description_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
 }
 
 interface ResourceLink {
@@ -2419,6 +2883,8 @@ enum SolutionSectionTeasersCollectionOrder {
   buttonUrl_DESC
   grouped_ASC
   grouped_DESC
+  quote_ASC
+  quote_DESC
   subtitle_ASC
   subtitle_DESC
   sys_firstPublishedAt_ASC
@@ -2489,6 +2955,7 @@ type Teaser implements Entry {
   grouped(locale: String): Boolean
   image(locale: String, preview: Boolean): Asset
   linkedFrom(allowedLocales: [String]): TeaserLinkingCollections
+  quote(locale: String): String
   subtitle(locale: String): String
   sys: Sys!
   title(locale: String): String
@@ -2523,6 +2990,13 @@ input TeaserFilter {
   grouped_exists: Boolean
   grouped_not: Boolean
   image_exists: Boolean
+  quote: String
+  quote_contains: String
+  quote_exists: Boolean
+  quote_in: [String]
+  quote_not: String
+  quote_not_contains: String
+  quote_not_in: [String]
   subtitle: String
   subtitle_contains: String
   subtitle_exists: Boolean
@@ -2543,8 +3017,10 @@ input TeaserFilter {
 type TeaserLinkingCollections {
   componentWrapperCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  joinUsCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsJoinUsCollectionOrder], preview: Boolean, skip: Int = 0): JoinUsCollection
   pageCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
+  referenceClientsCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsReferenceClientsCollectionOrder], preview: Boolean, skip: Int = 0): ReferenceClientsCollection
   solutionSectionCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsSolutionSectionCollectionOrder], preview: Boolean, skip: Int = 0): SolutionSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [TeaserLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
 }
@@ -2560,6 +3036,25 @@ enum TeaserLinkingCollectionsComponentWrapperCollectionOrder {
   sys_publishedAt_DESC
   sys_publishedVersion_ASC
   sys_publishedVersion_DESC
+}
+
+enum TeaserLinkingCollectionsJoinUsCollectionOrder {
+  buttonText_ASC
+  buttonText_DESC
+  buttonUrl_ASC
+  buttonUrl_DESC
+  description_ASC
+  description_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
 }
 
 enum TeaserLinkingCollectionsPageCollectionOrder {
@@ -2598,6 +3093,21 @@ enum TeaserLinkingCollectionsPageSectionCollectionOrder {
   sys_publishedVersion_DESC
 }
 
+enum TeaserLinkingCollectionsReferenceClientsCollectionOrder {
+  description_ASC
+  description_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
 enum TeaserLinkingCollectionsSolutionSectionCollectionOrder {
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
@@ -2631,6 +3141,8 @@ enum TeaserOrder {
   buttonUrl_DESC
   grouped_ASC
   grouped_DESC
+  quote_ASC
+  quote_DESC
   subtitle_ASC
   subtitle_DESC
   sys_firstPublishedAt_ASC
@@ -2784,6 +3296,7 @@ How we help businesses with their digital growth [See type definition](https://a
 """
 type Title implements Entry {
   alignment(locale: String): String
+  buttonUrl(locale: String): String
   contentfulMetadata: ContentfulMetadata!
   fontSize(locale: String): String
   linkedFrom(allowedLocales: [String]): TitleLinkingCollections
@@ -2808,6 +3321,13 @@ input TitleFilter {
   alignment_not: String
   alignment_not_contains: String
   alignment_not_in: [String]
+  buttonUrl: String
+  buttonUrl_contains: String
+  buttonUrl_exists: Boolean
+  buttonUrl_in: [String]
+  buttonUrl_not: String
+  buttonUrl_not_contains: String
+  buttonUrl_not_in: [String]
   contentfulMetadata: ContentfulMetadataFilter
   fontSize: String
   fontSize_contains: String
@@ -2829,6 +3349,7 @@ input TitleFilter {
 type TitleLinkingCollections {
   componentWrapperCollection(limit: Int = 100, locale: String, order: [TitleLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  expertAdviceCollection(limit: Int = 100, locale: String, order: [TitleLinkingCollectionsExpertAdviceCollectionOrder], preview: Boolean, skip: Int = 0): ExpertAdviceCollection
   pageCollection(limit: Int = 100, locale: String, order: [TitleLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [TitleLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [TitleLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
@@ -2845,6 +3366,25 @@ enum TitleLinkingCollectionsComponentWrapperCollectionOrder {
   sys_publishedAt_DESC
   sys_publishedVersion_ASC
   sys_publishedVersion_DESC
+}
+
+enum TitleLinkingCollectionsExpertAdviceCollectionOrder {
+  buttonText_ASC
+  buttonText_DESC
+  buttonUrl_ASC
+  buttonUrl_DESC
+  subtitle_ASC
+  subtitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
 }
 
 enum TitleLinkingCollectionsPageCollectionOrder {
@@ -2899,6 +3439,8 @@ enum TitleLinkingCollectionsTwoGridCollectionOrder {
 enum TitleOrder {
   alignment_ASC
   alignment_DESC
+  buttonUrl_ASC
+  buttonUrl_DESC
   fontSize_ASC
   fontSize_DESC
   sys_firstPublishedAt_ASC
@@ -2932,9 +3474,9 @@ type TwoGridCollection {
   total: Int!
 }
 
-union TwoGridComponentLeft = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid
+union TwoGridComponentLeft = Button | Description | ExpertAdvice | FeaturedArticle | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid
 
-union TwoGridComponentRight = Button | Description | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid
+union TwoGridComponentRight = Button | Description | ExpertAdvice | FeaturedArticle | Image | ImageCarousel | PageSection | Teaser | Testimonial | Title | TwoGrid
 
 input TwoGridFilter {
   AND: [TwoGridFilter]
@@ -2955,6 +3497,7 @@ input TwoGridFilter {
 type TwoGridLinkingCollections {
   componentWrapperCollection(limit: Int = 100, locale: String, order: [TwoGridLinkingCollectionsComponentWrapperCollectionOrder], preview: Boolean, skip: Int = 0): ComponentWrapperCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  pageCollection(limit: Int = 100, locale: String, order: [TwoGridLinkingCollectionsPageCollectionOrder], preview: Boolean, skip: Int = 0): PageCollection
   pageSectionCollection(limit: Int = 100, locale: String, order: [TwoGridLinkingCollectionsPageSectionCollectionOrder], preview: Boolean, skip: Int = 0): PageSectionCollection
   twoGridCollection(limit: Int = 100, locale: String, order: [TwoGridLinkingCollectionsTwoGridCollectionOrder], preview: Boolean, skip: Int = 0): TwoGridCollection
 }
@@ -2970,6 +3513,25 @@ enum TwoGridLinkingCollectionsComponentWrapperCollectionOrder {
   sys_publishedAt_DESC
   sys_publishedVersion_ASC
   sys_publishedVersion_DESC
+}
+
+enum TwoGridLinkingCollectionsPageCollectionOrder {
+  internalName_ASC
+  internalName_DESC
+  pageName_ASC
+  pageName_DESC
+  slug_ASC
+  slug_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
 }
 
 enum TwoGridLinkingCollectionsPageSectionCollectionOrder {
@@ -3155,6 +3717,13 @@ input cfTeaserNestedFilter {
   grouped_exists: Boolean
   grouped_not: Boolean
   image_exists: Boolean
+  quote: String
+  quote_contains: String
+  quote_exists: Boolean
+  quote_in: [String]
+  quote_not: String
+  quote_not_contains: String
+  quote_not_in: [String]
   subtitle: String
   subtitle_contains: String
   subtitle_exists: Boolean
@@ -3162,6 +3731,41 @@ input cfTeaserNestedFilter {
   subtitle_not: String
   subtitle_not_contains: String
   subtitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+input cfTitleNestedFilter {
+  AND: [cfTitleNestedFilter]
+  OR: [cfTitleNestedFilter]
+  alignment: String
+  alignment_contains: String
+  alignment_exists: Boolean
+  alignment_in: [String]
+  alignment_not: String
+  alignment_not_contains: String
+  alignment_not_in: [String]
+  buttonUrl: String
+  buttonUrl_contains: String
+  buttonUrl_exists: Boolean
+  buttonUrl_in: [String]
+  buttonUrl_not: String
+  buttonUrl_not_contains: String
+  buttonUrl_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  fontSize: String
+  fontSize_contains: String
+  fontSize_exists: Boolean
+  fontSize_in: [String]
+  fontSize_not: String
+  fontSize_not_contains: String
+  fontSize_not_in: [String]
   sys: SysFilter
   title: String
   title_contains: String

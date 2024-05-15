@@ -1,0 +1,18 @@
+fragment PageLinkFields on Page {
+  __typename
+  slug
+  sys {
+    id
+  }
+  pageName
+  pageContentCollection(locale: $locale, preview: $preview) {
+    items {
+      ... on Entry {
+        __typename
+        sys {
+          id
+        }
+      }
+    }
+  }
+}
