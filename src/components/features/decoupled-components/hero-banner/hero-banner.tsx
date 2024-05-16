@@ -13,8 +13,7 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
   const { backgroundImage , title, subtitle, buttonText, buttonUrl} = props;
   const titleProps: TitleProps = {
     title: title as string,
-    heading: 'h1',
-    titleClasses: 'font-semibold text-white text-4xl max-w-xl'
+    heading: 'h1'
   };
 
   const descriptionProps: DescriptionProps = {
