@@ -6,20 +6,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Description
 } from '@src/components/features/decoupled-components/description/description';
+import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
+import { Title } from '@src/components/features/decoupled-components/title/title';
+import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
+import { sectionTypes } from '@src/components/shared/global';
 import {
   ComponentRerenceClientFragment
 } from '@src/data/contentful/reference-client/__generated/reference-client.generated';
-import { Props, Title } from '@src/components/features/decoupled-components/title/title';
-import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
-import { sectionTypes } from '@src/components/shared/global';
 
 
 export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
 
-  const titleProps: Props = {
-    text: props.title as string,
+  const titleProps: TitleProps = {
+    title: props.title as string,
     heading: 'h2',
-    classes: 'font-semibold text-4xl text-center mt-8 primary-color w-2/5 m-auto'
+    titleClasses: 'font-semibold text-4xl text-center mt-8 primary-color w-2/5 m-auto'
   };
 
 
@@ -29,8 +30,8 @@ export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
   }
 
   const descriptionProps = {
-    classes: 'my-3 h-auto text-base w-2/5 m-auto text-center font-semibold',
-    text: props.description as string
+    description: props.description as string,
+    descriptionClasses: 'my-3 h-auto text-base w-2/5 m-auto text-center font-semibold'
   }
 
   return (
@@ -45,15 +46,20 @@ export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
         >
           {props.clientsCollection && props.clientsCollection.items?.map((item: any) => (
             <SwiperSlide className="w-full px-4 pb-10" key={item.id}>
-              <Teaser type={sectionTypes.clientReferenceSection}
-                      title={item?.title as string}
-                      subtitle={item?.subtitle as string}
-                      image={item?.image}
-                      buttonUrl={item?.buttonUrl as string}
-                      buttonText={item?.buttonText as string}
-                      titleProps={titleTeaserProp}
-                      quote={item.quote}
-                      descriptionProps={descriptionProps} />
+              <Teaser
+                      // subtitle={item?.subtitle as string}
+                      icon={item?.image}
+                      titleProps={{
+                        'title': item?.title as string,
+                        ...titleTeaserProp
+                      }}
+                      buttonProps={{
+                        'buttonUrl': item?.buttonUrl as string,
+                        'buttonText': item?.buttonText as string
+                      }}
+                      // quote={item.quote}
+                      descriptionProps={descriptionProps}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
