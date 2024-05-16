@@ -8,7 +8,7 @@ export const Title = (props: TitleProps) => {
   const {title, heading="h2", titleClasses} = props;
   const headingElement = React.createElement(
     heading as string,
-    { className: ''},
+    { className: heading},
     title,
   );
   return (

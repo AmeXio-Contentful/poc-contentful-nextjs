@@ -2,7 +2,7 @@
 @use './breakpoint-mixins';
 @use '../config/breakpoints';
 
-@mixin full-width-boxed-content($max-width: map.get(breakpoints.$breakpoints, l), $padding: 20px) {
+@mixin full-width-boxed-content($max-width: map.get(breakpoints.$breakpoints, l), $padding: 12px) {
   padding-left: $padding;
   padding-right: $padding;
 

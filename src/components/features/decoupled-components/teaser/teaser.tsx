@@ -22,15 +22,15 @@ export const Teaser = (props: TeaserProps) => {
     buttonClasses: props.buttonProps?.classes,
   }; */
 // This should be styled differently with scss according to where it is used, not have a different markup
-return <div>
+return <div className="teaser">
   { props.icon &&
       <img
         alt="icon"
         src={props.icon.url}
       />
   }
-  <div>
-    <div>
+  <div className="teaser__content">
+    <div className="teaser__info">
         <Title {...props.titleProps} />
         <Description {...props.descriptionProps} />
     </div>
