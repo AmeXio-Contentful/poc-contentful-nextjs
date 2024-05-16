@@ -6,14 +6,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {
   Button,
-  ButtonProps,
 } from '@src/components/features/decoupled-components/button/button';
 import {
   Description
 } from '@src/components/features/decoupled-components/description/description';
 import {
   ComponentJoinUsFragment
-} from '@src/data/contentful/join-us/__generated/join-us-component.generated';
+} from '@src/data/contentful/join-us/__generated/join-us.generated';
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { Props, Title } from '@src/components/features/decoupled-components/title/title';
 import { sectionTypes } from '@src/components/shared/global';

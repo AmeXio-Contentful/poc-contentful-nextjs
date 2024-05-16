@@ -8,7 +8,7 @@ import {
 } from '@src/components/features/decoupled-components/description/description';
 import {
   ComponentRerenceClientFragment
-} from '@src/components/features/decoupled-components/reference-client/__generated/reference-client-component.generated';
+} from '@src/data/contentful/reference-client/__generated/reference-client.generated';
 import { Props, Title } from '@src/components/features/decoupled-components/title/title';
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { sectionTypes } from '@src/components/shared/global';
