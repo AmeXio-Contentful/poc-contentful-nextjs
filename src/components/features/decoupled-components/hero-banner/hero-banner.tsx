@@ -37,15 +37,6 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
         titleProps={titleProps}
         descriptionProps={descriptionProps}
         buttonProps={buttonProps}
-        /* type={sectionTypes.bannerSection}
-        title={title as string}
-        subtitle={subtitle as string}
-        image={backgroundImage}
-        buttonUrl={buttonUrl as string}
-        buttonText={buttonText as string}
-        titleProps={titleProps}
-        descriptionProps={descriptionProps}
-        buttonProps={buttonProps}*/
       />
     </div>
   )
