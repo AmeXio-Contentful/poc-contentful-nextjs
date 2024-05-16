@@ -1,6 +1,7 @@
 // mobile first (no breakpoints for mobile, default is up to the tablet size)
+// using generic sizes (s) is implicit
 $breakpoints: (
-  tablet: 481px,
-  desktop-small: 1025px,
-  desktop-large: 1441px
+  m: 576px,
+  l: 992px,
+  xl: 1200px
 );

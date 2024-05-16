@@ -1,0 +1,7 @@
+@use 'sass:map';
+@use '../config/breakpoints' as breakpoints;
+
+@mixin full-width-boxed-content($max-width: map.get(breakpoints.$breakpoints, xl), $padding: 20px) {
+  padding-left: calc(((100% - #{$max-width}) / 2) + #{$padding});
+  padding-right: calc(((100% - #{$max-width}) / 2) + #{$padding});
+}

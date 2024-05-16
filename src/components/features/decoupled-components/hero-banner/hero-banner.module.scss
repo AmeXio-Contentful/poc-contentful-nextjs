@@ -1,6 +1,13 @@
+@use 'sass:map';
 @use '../../../../styles/theme' as theme;
-$secondary-color: green;
+@use '../../../../styles/config/breakpoints' as breakpoints;
+@use '../../../../styles/utilities/container-mixins' as container;
 
 .hero_banner {
-  background: theme.$brand-main;
+  @include container.full-width-boxed-content(map.get(breakpoints.$breakpoints, xl), 116px);
+  background-color: theme.$brand-main;
+  padding-top: 85px;
+  padding-bottom: 95px;
+  background-size: cover;
+  background-position: center;
 }

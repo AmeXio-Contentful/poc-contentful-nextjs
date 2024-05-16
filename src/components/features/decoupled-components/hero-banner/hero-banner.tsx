@@ -32,7 +32,6 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
     <div className={styles.hero_banner}
          style={{ backgroundImage: `url(${backgroundImage?.url})` }}
     >
-
       <Teaser
         titleProps={titleProps}
         descriptionProps={descriptionProps}
