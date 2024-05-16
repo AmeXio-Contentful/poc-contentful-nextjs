@@ -4,7 +4,7 @@
 @use '../../../../styles/utilities/container-mixins' as container;
 
 .hero_banner {
-  @include container.full-width-boxed-content(map.get(breakpoints.$breakpoints, xl), 116px);
+  @include container.full-width-boxed-content(map.get(breakpoints.$breakpoints, l), 20px);
   background-color: theme.$brand-main;
   padding-top: 85px;
   padding-bottom: 95px;
