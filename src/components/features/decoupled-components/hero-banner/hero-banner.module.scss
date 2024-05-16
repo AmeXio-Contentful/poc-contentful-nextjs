@@ -7,7 +7,7 @@
   @include container.full-width-boxed-content(map.get(breakpoints.$breakpoints, l), 20px);
   background-color: theme.$brand-main;
   padding-top: 85px;
-  padding-bottom: 95px;
+  padding-bottom: 115px;
   background-size: cover;
   background-position: center;
 }
