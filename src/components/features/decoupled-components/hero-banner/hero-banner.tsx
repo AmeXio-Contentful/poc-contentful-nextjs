@@ -1,3 +1,5 @@
+import styles from './hero-banner.module.scss';
+
 import {ButtonProps} from '@src/components/features/decoupled-components/button/button.typings';
 import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
 import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
@@ -7,7 +9,7 @@ import {
   ComponentHeroBannerFragment
 } from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
 
-import styles from './hero-banner.module.scss';
+
 
 export const HeroBanner = (props: ComponentHeroBannerFragment) => {
   const { backgroundImage , title, subtitle, buttonText, buttonUrl} = props;
