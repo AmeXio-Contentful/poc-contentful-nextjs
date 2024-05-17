@@ -8,7 +8,7 @@ src/components/features/ctf-components/*/__generated
 
 ### Paw ###
 *.paw
-
+__generated
 # Created by https://www.gitignore.io/api/linux,osx,visualstudiocode,sublimetext,intellij,node,bower
 
 ### Linux ###
