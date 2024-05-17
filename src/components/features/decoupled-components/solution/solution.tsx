@@ -3,7 +3,6 @@ import {
 } from '@src/data/contentful/solution/__generated/solution.generated';
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { Title } from '@src/components/features/decoupled-components/title/title';
-import { sectionTypes } from '@src/components/shared/global';
 import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
 
 

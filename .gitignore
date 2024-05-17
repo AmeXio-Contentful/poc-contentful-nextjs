@@ -9,6 +9,7 @@ src/data/*/*/__generated
 src/lib/__generated
 src/lib/shared-fragments/__generated
 
+
 ### Paw ###
 *.paw
 

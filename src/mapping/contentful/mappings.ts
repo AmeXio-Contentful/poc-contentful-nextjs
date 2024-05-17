@@ -48,7 +48,7 @@ export const componentMap = {
   ),
   HeroBanner: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/hero-banner/hero-banner'
+      '@src/mapping/contentful/hero-banner'
       ).then((module) => module.HeroBanner),
   ),
   SolutionSection: dynamic(() =>

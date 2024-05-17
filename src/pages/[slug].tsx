@@ -4,10 +4,10 @@ import { useRouter } from 'next/router';
 
 import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
 import CtfPageGgl from '@src/components/features/ctf-components/ctf-page/ctf-page-gql';
-import { ComponentReferenceFieldsFragment } from '@src/lib/__generated/graphql.types';
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
 import { prefetchMap } from '@src/lib/prefetch-mappings';
 import { prefetchPromiseArr } from '@src/lib/prefetch-promise-array';
+import { ComponentReferenceFieldsFragment } from '@src/lib/shared-fragments/__generated/ctf-componentMap.generated';
 
 const SlugPage: NextPage = () => {
   const router = useRouter();
