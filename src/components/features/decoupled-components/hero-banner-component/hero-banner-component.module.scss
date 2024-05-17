@@ -1,5 +1,5 @@
-$secondary-color: green;
+//$secondary-color: green;
 
 .hero_button {
-    background-color: $secondary-color;
+    background-color: var(--button-background);
   }
