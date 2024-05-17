@@ -6,8 +6,6 @@ import { ComponentResolver } from '@src/components/shared/component-resolver';
 import { PageContainer } from '@src/components/templates/page-container';
 import LayoutContext, { defaultLayout } from '@src/layout-context';
 
-
-// TODO CREATE GENERIC INTERFACE FOR SANITY AND CONTENTFUL
 const CtfPage = (props: any) => {
 
   const content = props.pageContentCollection;
