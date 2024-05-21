@@ -1,8 +1,6 @@
-export const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${String(process.env.CONTENTFUL_SPACE_ID,)}`;
 
 export const fetchConfig = {
-  endpoint: `${baseUrl}`,
-  localEndpoint: `${baseUrl}/environments/local`,
+  endpoint: `${process.env.CONTENTFUL_ENDPOINT}`,
   params: {
     headers: {
       'Content-Type': 'application/json',
@@ -14,19 +12,7 @@ export const fetchConfig = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN}`,
     },
-  },
-  localParams: {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN_LOCAL}`,
-    },
-  },
-  localPreviewParams: {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN_LOCAL}`,
-    },
-  },
+  }
 };
 
 export function customFetcher<TData, TVariables extends { preview?: boolean | null }>(
@@ -35,21 +21,10 @@ export function customFetcher<TData, TVariables extends { preview?: boolean | nu
   options?: RequestInit['headers'],
 ) {
   return async (): Promise<TData> => {
-    const env = process.env.NODE_ENV;
-    let endpoint = fetchConfig.localEndpoint;
-    let apiToken = fetchConfig.localParams;
-    if (env == "development") {
-      endpoint = fetchConfig.localEndpoint;
-      apiToken = variables?.preview ? fetchConfig.localPreviewParams : fetchConfig.localParams;
-    }
-    else if (env == "production") {
-      endpoint = fetchConfig.endpoint;
-      apiToken = variables?.preview ? fetchConfig.previewParams : fetchConfig.params
-    }
-    const res = await fetch(endpoint, {
+    const res = await fetch(fetchConfig.endpoint, {
       method: 'POST',
       ...options,
-      ...(apiToken),
+      ...(variables?.preview ? fetchConfig.previewParams : fetchConfig.params),
       body: JSON.stringify({ query, variables }),
     });
 
