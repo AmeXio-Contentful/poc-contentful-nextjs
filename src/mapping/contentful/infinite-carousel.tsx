@@ -5,10 +5,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {
   ComponentImageCarouselFieldsFragment
-} from '@src/components/features/ctf-components/ctf-infinite-carousel/__generated/ctf-infinite-carousel.generated';
+} from '@src/data/contentful/infinite-carousel/__generated/ctf-infinite-carousel.generated';
 
 
-export const CtfInfiniteCarousel = (
+export const InfiniteCarousel = (
   props: ComponentImageCarouselFieldsFragment,
 ) => {
   const { autoplay, imageCollection } = props;

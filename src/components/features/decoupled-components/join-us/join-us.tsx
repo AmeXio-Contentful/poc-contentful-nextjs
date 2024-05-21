@@ -7,34 +7,36 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {
   Button,
 } from '@src/components/features/decoupled-components/button/button';
+import { ButtonProps } from '@src/components/features/decoupled-components/button/button.typings';
 import {
   Description
 } from '@src/components/features/decoupled-components/description/description';
+import { DescriptionProps } from '@src/components/features/decoupled-components/description/description.typings';
+import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
+import { Title } from '@src/components/features/decoupled-components/title/title';
+import { TitleProps } from '@src/components/features/decoupled-components/title/title.typings';
 import {
   ComponentJoinUsFragment
 } from '@src/data/contentful/join-us/__generated/join-us.generated';
-import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
-import { Props, Title } from '@src/components/features/decoupled-components/title/title';
-import { sectionTypes } from '@src/components/shared/global';
 
 
 export const JoinUs = (props: ComponentJoinUsFragment) => {
   const { title, description, buttonUrl, buttonText, clientsCollection, teasersCollection} = props;
-  const titleProps: Props = {
-    text: title as string,
+  const titleProps: TitleProps = {
+    title: title as string,
     heading: 'h3',
-    classes: 'font-semibold text-black text-4xl max-w-xl m-auto'
+    titleClasses: 'font-semibold text-black text-4xl max-w-xl m-auto'
   };
 
-  const descriptionProps: Props = {
-    text: description as string,
-    classes: 'mt-6 mb-5 text-xl text-black max-w-xl m-auto'
+  const descriptionProps: DescriptionProps = {
+    description: description as string,
+    descriptionClasses: 'mt-6 mb-5 text-xl text-black max-w-xl m-auto'
   }
 
   const buttonProps: ButtonProps = {
     buttonText: buttonText as string,
     buttonUrl: buttonUrl as string,
-    classes: 'mt-6 bg-orange-500 px-5 py-3.5 text-base text-white'
+    buttonClasses: 'mt-6 bg-orange-500 px-5 py-3.5 text-base text-white'
   }
 
   const titleTeaserProp = {
@@ -46,15 +48,16 @@ export const JoinUs = (props: ComponentJoinUsFragment) => {
       <Title {...titleProps} />
       <Description {...descriptionProps} />
       <div className="grid grid-cols-3 gap-x-3 mt-9">
-        {teasersCollection && teasersCollection.items?.map((item: any) => (
+        {teasersCollection?.items?.map((item: any) => (
           <div key={item.title}>
-            <Teaser type={sectionTypes.hrSection}
-                    title={item?.title as string}
-                    image={item.image}
-                    subtitle={item?.subtitle as string}
-                    buttonUrl=""
-                    buttonText=""
-                    titleProps={titleTeaserProp}
+            <Teaser
+                    icon={item.image}
+                    // buttonUrl=""
+                    // buttonText=""
+                    titleProps={{
+                      'title': item?.title as string,
+                      ...titleTeaserProp
+                    }}
                     descriptionProps={descriptionProps} />
           </div>
         ))}
@@ -84,7 +87,7 @@ export const JoinUs = (props: ComponentJoinUsFragment) => {
             },
           }}
         >
-          {clientsCollection && clientsCollection?.items.map((item: any) => (
+          {clientsCollection?.items.map((item: any) => (
             <SwiperSlide key={item?.title}>
               <img src={item.url} alt={item?.title} width='150px'/>
             </SwiperSlide>

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import CtfPage from '@src/components/features/ctf-components/ctf-page/ctf-page';
-import { MetaTags, Props } from '@src/components/features/ctf-components/ctf-page/ctf-page-gql';
+import Page from '@src/mapping/contentful/page';
+import { MetaTags, Props } from '@src/data/contentful/page/ctf-page-gql';
 import { PageError } from '@src/components/features/errors/page-error';
 import { useContentfulContext } from '@src/contentful-context';
 import { useLandingPageByIdQuery } from '@src/data/sanity/landing-page/__generated/landing-page.generated';
@@ -97,7 +97,7 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
         </Head>
-        <CtfPage {...page} />
+        <Page {...page} />
       </>
     );
   }

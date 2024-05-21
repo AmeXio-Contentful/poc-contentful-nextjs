@@ -38,7 +38,7 @@ export const fetchConfigSanity = {
   },
 }
 
-export function customFetcherSanity<TData, TVariables extends { preview?: boolean | null }>(
+export function customFetcherSanity<TData, TVariables>(
   query: string,
   variables?: TVariables,
   options?: RequestInit['headers'],
@@ -47,7 +47,7 @@ export function customFetcherSanity<TData, TVariables extends { preview?: boolea
     const res = await fetch(fetchConfigSanity.endpoint, {
       method: 'POST',
       ...options,
-      ...(variables?.preview ? fetchConfigSanity.params : fetchConfigSanity.params),
+      ...(fetchConfigSanity.params),
       body: JSON.stringify({ query, variables }),
     });
 

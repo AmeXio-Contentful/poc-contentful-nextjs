@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useCtfComponentTeaserQuery } from '@src/components/features/ctf-components/ctf-teaser/__generated/ctf-teaser.generated';
-import { CtfTeaser } from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser';
+import { useCtfComponentTeaserQuery } from '@src/data/contentful/teaser/__generated/ctf-teaser.generated';
+import { Teaser } from '@src/mapping/contentful/teaser';
 
 export interface DefaultQueryParameters {
   id: any;
@@ -19,7 +19,7 @@ export function CtfTeaserGql(props: DefaultQueryParameters) {
 
   if (data.data?.teaser) {
     data.data.teaser.sectionType = props.sectionType;
-    return <CtfTeaser {...data.data.teaser}/>;
+    return <Teaser {...data.data.teaser}/>;
   }
   return <></>
 }

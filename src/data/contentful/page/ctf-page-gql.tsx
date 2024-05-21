@@ -1,9 +1,9 @@
 import { useContentfulLiveUpdates } from '@contentful/live-preview/react';
 import Head from 'next/head';
 
-import CtfPage from './ctf-page';
+import Page from '@src/mapping/contentful/page';
 
-import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
+import { useCtfPageQuery } from '@src/data/contentful/page/__generated/ctf-page.generated';
 import { PageError } from '@src/components/features/errors/page-error';
 import { useContentfulContext } from '@src/contentful-context';
 import { tryget } from '@src/utils';
@@ -95,7 +95,7 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         />
       </Head>
-      <CtfPage {...page} />
+      <Page {...page} />
     </>
   );
 };

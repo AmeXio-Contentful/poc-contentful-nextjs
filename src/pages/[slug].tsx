@@ -2,8 +2,8 @@ import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
 import { useRouter } from 'next/router';
 
-import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
-import CtfPageGgl from '@src/components/features/ctf-components/ctf-page/ctf-page-gql';
+import { useCtfPageQuery } from '@src/data/contentful/page/__generated/ctf-page.generated';
+import CtfPageGgl from '@src/data/contentful/page/ctf-page-gql';
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
 import { prefetchMap } from '@src/lib/prefetch-mappings';
 import { prefetchPromiseArr } from '@src/lib/prefetch-promise-array';

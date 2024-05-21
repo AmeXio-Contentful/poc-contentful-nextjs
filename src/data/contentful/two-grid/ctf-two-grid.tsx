@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CtfExpertAdvice from '@src/components/features/ctf-components/ctf-expert-advice/ctf-expert-advice';
-import CtfFeaturedArticle from '@src/components/features/ctf-components/ctf-featured-article/ctf-featured-article';
+import CtfExpertAdvice from '@src/components/features/ctf-components/expert-advice/ctf-expert-advice';
+import CtfFeaturedArticle from '@src/components/features/ctf-components/featured-article/ctf-featured-article';
 
 export const CtfTwoGrid = (props: any) => {
   if (props?.componentLeft && props?.componentRight) {

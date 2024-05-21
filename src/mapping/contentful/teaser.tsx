@@ -1,6 +1,6 @@
 import { sectionTypes } from '@src/components/shared/global';
 
-export const CtfTeaser = (
+export const Teaser = (
   props: any
 ) => {
   const { title, subtitle, buttonText, image , buttonUrl, sectionType} = props;

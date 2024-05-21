@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CtfTestimonial } from '@src/components/features/ctf-components/ctf-testimonial/ctf-testimonial';
+import { CtfTestimonial } from '@src/components/features/ctf-components/testimonial/ctf-testimonial';
 
 export interface DefaultQueryParameters {
   id: any;

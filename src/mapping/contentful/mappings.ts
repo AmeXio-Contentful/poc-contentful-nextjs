@@ -3,37 +3,22 @@ import dynamic from 'next/dynamic';
 export const componentMap = {
   Teaser: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-teaser/ctf-teaser'
-      ).then((module) => module.CtfTeaser),
-  ),
-  Title: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-title/ctf-title'
-      ).then((module) => module.CtfTitle),
-  ),
-  Description: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-description/ctf-description'
-      ).then((module) => module.CtfDescription),
+      '@src/mapping/contentful/teaser'
+      ).then((module) => module.Teaser),
   ),
   Testimonial: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-testimonial/ctf-testimonial'
+      '@src/components/features/ctf-components/testimonial/ctf-testimonial'
       ).then((module) => module.CtfTestimonial),
-  ),
-  Button: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-button/ctf-button'
-      ).then((module) => module.CtfButton),
   ),
   ImageCarousel: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-infinite-carousel/ctf-infinite-carousel'
-      ).then((module) => module.CtfInfiniteCarousel),
+      '@src/mapping/contentful/infinite-carousel'
+      ).then((module) => module.InfiniteCarousel),
   ),
   TwoGrid: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-two-grid/ctf-two-grid'
+      '@src/data/contentful/two-grid/ctf-two-grid'
       ).then((module) => module.CtfTwoGrid),
   ),
   HeroBanner: dynamic(() =>
@@ -61,37 +46,22 @@ export const componentMap = {
 export const componentGqlMap = {
   Teaser: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql'
+      '@src/data/contentful/teaser/ctf-teaser-gql'
       ).then((module) => module.CtfTeaserGql),
    ),
-  Title: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-title/ctf-title-gql'
-      ).then((module) => module.CtfTitleGql),
-  ),
-  Description: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-description/ctf-description-gql'
-      ).then((module) => module.CtfDescriptionGql),
-  ),
   Testimonial: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-testimonial/ctf-testimonial-gql'
+      '@src/components/features/ctf-components/testimonial/ctf-testimonial-gql'
       ).then((module) => module.CtfTestimonialGql),
-  ),
-  Button: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-button/ctf-button-gql'
-      ).then((module) => module.CtfButtonGql),
   ),
   ImageCarousel: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-infinite-carousel/ctf-infinite-carousel-gql'
+      '@src/data/contentful/infinite-carousel/ctf-infinite-carousel-gql'
       ).then((module) => module.CtfInfiniteCarouselGql),
   ),
   TwoGrid: dynamic(() =>
     import(
-      '@src/components/features/ctf-components/ctf-two-grid/ctf-two-grid-gql'
+      '@src/data/contentful/two-grid/ctf-two-grid-gql'
       ).then((module) => module.CtfTwoGridGql),
   ),
   HeroBanner: dynamic(() =>
