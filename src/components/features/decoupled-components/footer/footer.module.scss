@@ -1,0 +1,81 @@
+@use 'src/styles/utilities/breakpoint-mixins' as m;
+@import "src/styles/default-theme";
+
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: white !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: Lexend, sans-serif;
+
+  @include m.breakpoint-from(tablet) {
+    flex-direction: row;
+    gap: 80px;
+  }
+
+  &__mainnav {
+    > li:not(:last-child):after {
+      content: "|";
+      margin-left: 6px;
+      margin-right: 6px;
+      color: $secondary-color;
+    }
+
+    > li:hover {
+      > a {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__socials {
+    overflow: visible !important;
+
+    > li:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    > li {
+      height: 20px;
+      overflow-y: visible;
+    }
+  }
+
+  > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    > li {
+      float: left;
+      display: flex;
+      color: white;
+      font-size: 16px;
+      line-height: normal;
+
+      > a {
+        display: block;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: normal;
+      }
+    }
+
+  }
+
+  &__section {
+    padding-left: 90px;
+    padding-right: 90px;
+    width: 100%;
+  }
+}
+

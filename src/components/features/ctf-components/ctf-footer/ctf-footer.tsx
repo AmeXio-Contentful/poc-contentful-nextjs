@@ -12,6 +12,7 @@ import {
   getLinkDisplayText,
   getLinkHrefPrefix,
 } from '@src/components/features/ctf-components/ctf-navigation/utils';
+import { FooterComponent, FooterProps } from '@src/components/features/decoupled-components/footer/footer';
 import { Link } from '@src/components/shared/link';
 import { useContentfulContext } from '@src/contentful-context';
 
@@ -22,26 +23,19 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
   const { locale } = useContentfulContext();
   const inspectorMode = useContentfulInspectorMode();
 
-  const renderMenuGroupLinks = (menuGroup) => {
-    return menuGroup?.items?.map(menuItem => {
-      const href = getLinkHrefPrefix(menuItem);
-      const linkText = getLinkDisplayText(menuItem);
-      return (
-        <li
-          key={menuItem.sys.id}
-          {...inspectorMode({
-            entryId: menuItem.sys.id,
-            fieldId: 'pageName',
-          })}
-        >
-          <Link href={href} title={linkText}>
-            {linkText}
-          </Link>
-        </li>
-      );
-    });
-  };
+  const footerProps: FooterProps = {};
+  footerProps.legalLinks = footerContent?.legalLinks?.featuredPagesCollection?.items?.map(item => ({
+    title: getLinkDisplayText(item),
+    link: getLinkHrefPrefix(item)
+  })) || [];
 
+  footerProps.socials = {
+    facebookLink: footerContent?.facebookLink || undefined,
+    twitterLink: footerContent?.twitterLink || undefined,
+    linkedInLink: footerContent?.linkedinLink || undefined,
+    instagramLink: footerContent?.instagramLink || undefined,
+
+  }
   return (
     <>
       <div className={styles.doormat_container}>
@@ -64,9 +58,23 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
                   </h3>
                   {menuItem.featuredPagesCollection && (
                     <ul>
-                      {renderMenuGroupLinks(
-                        menuItem.featuredPagesCollection,
-                      )}
+                      {menuItem.featuredPagesCollection.items.map((item)=>{
+                        if(item){
+                          return (
+                            <li
+                              key={item.sys.id}
+                              {...inspectorMode({
+                                entryId: item.sys.id,
+                                fieldId: 'pageName',
+                              })}
+                            >
+                              <Link href={getLinkHrefPrefix(item)} title={getLinkDisplayText(item)}>
+                                {getLinkDisplayText(item)}
+                              </Link>
+                            </li>
+                          )
+                        }
+                      })}
                     </ul>
                   )}
                 </div>
@@ -74,67 +82,7 @@ export const CtfFooter = (props: FooterFieldsFragment) => {
           )}
         </div>
       </div>
-
-      <footer className={styles.footer}>
-        {footerContent?.legalLinks?.featuredPagesCollection?.items?.length && (
-          <ul className={styles.footer__mainnav}>
-            {renderMenuGroupLinks(
-              footerContent.legalLinks.featuredPagesCollection,
-            )}
-          </ul>
-        )}
-
-        <ul className={styles.footer__socials}>
-          {footerContent?.twitterLink && (
-            <li>
-              <a
-                href={footerContent.twitterLink}
-                title={t('socials.twitter')}
-                target="_blank"
-                rel="nofollow noreferrer"
-              >
-                <Twitter />
-              </a>
-            </li>
-          )}
-          {footerContent?.facebookLink && (
-            <li>
-              <a
-                href={footerContent.facebookLink}
-                title={t('socials.facebook')}
-                target="_blank"
-                rel="nofollow noreferrer"
-              >
-                <Facebook />
-              </a>
-            </li>
-          )}
-          {footerContent?.linkedinLink && (
-            <li>
-              <a
-                href={footerContent.linkedinLink}
-                title={t('socials.linkedin')}
-                target="_blank"
-                rel="nofollow noreferrer"
-              >
-                <LinkedIn />
-              </a>
-            </li>
-          )}
-          {footerContent?.instagramLink && (
-            <li>
-              <a
-                href={footerContent.instagramLink}
-                title={t('socials.instagram')}
-                target="_blank"
-                rel="nofollow noreferrer"
-              >
-                <Instagram />
-              </a>
-            </li>
-          )}
-        </ul>
-      </footer>
+      <FooterComponent legalLinks={footerProps.legalLinks} socials={footerProps.socials}  />
     </>
   );
 };
