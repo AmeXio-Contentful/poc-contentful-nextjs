@@ -5,7 +5,6 @@ import { PageContainer } from '@src/components/templates/page-container';
 
 
 const typenameTestimonial = "Testimonial";
-const typenameTeaser = "Teaser";
 
 export const CtfComponentWrapper = (props: any) => {
 

@@ -1,5 +1,5 @@
-import button from '../button/button.module.scss';
 import styles from './hero-banner-component.module.scss';
+import button from '../button/button.module.scss';
 
 import {
   ButtonProps,

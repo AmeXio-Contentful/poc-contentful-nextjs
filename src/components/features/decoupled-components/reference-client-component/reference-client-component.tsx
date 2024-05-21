@@ -9,8 +9,8 @@ import {
 import {
   ComponentRerenceClientFragment
 } from '@src/components/features/decoupled-components/reference-client-component/__generated/reference-client-component.generated';
-import { Props, TitleComponent } from '@src/components/features/decoupled-components/title-component/title-component';
 import { TeaserComponent } from '@src/components/features/decoupled-components/teaser-component/teaser-component';
+import { Props, TitleComponent } from '@src/components/features/decoupled-components/title-component/title-component';
 import { sectionTypes } from '@src/components/shared/global';
 
 

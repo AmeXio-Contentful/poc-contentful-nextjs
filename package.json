@@ -10,6 +10,7 @@
   "scripts": {
     "start": "next start",
     "dev": "npm run graphql-codegen:generate && next dev",
+    "prebuild": "npm run graphql-codegen:generate",
     "build": "next build",
     "export": "next build && next export",
     "type-check": "tsc --noEmit",

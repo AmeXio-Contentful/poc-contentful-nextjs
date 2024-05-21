@@ -1,12 +1,12 @@
 import React from 'react';
 
 import {
-  DefaultQueryParameters
-} from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
-import { CtfButton } from '@src/components/features/ctf-components/ctf-button/ctf-button';
-import {
   useCtfComponentButtonQuery
 } from '@src/components/features/ctf-components/ctf-button/__generated/ctf-button.generated';
+import { CtfButton } from '@src/components/features/ctf-components/ctf-button/ctf-button';
+import {
+  DefaultQueryParameters
+} from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
 
 
 

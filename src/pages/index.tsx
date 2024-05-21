@@ -1,7 +1,7 @@
-import { useCtfFooterQuery } from '@src/components/features/ctf-components/ctf-footer/__generated/ctf-footer.generated';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
 
+import { useCtfFooterQuery } from '@src/components/features/ctf-components/ctf-footer/__generated/ctf-footer.generated';
 import {
   useCtfNavigationQuery
 } from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';

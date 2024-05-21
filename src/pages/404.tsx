@@ -1,12 +1,12 @@
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { GetStaticProps } from 'next';
 
-import { PageError } from '@src/components/features/errors/page-error';
-import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
+import { useCtfFooterQuery } from '@src/components/features/ctf-components/ctf-footer/__generated/ctf-footer.generated';
 import {
   useCtfNavigationQuery
 } from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
-import { useCtfFooterQuery } from '@src/components/features/ctf-components/ctf-footer/__generated/ctf-footer.generated';
+import { PageError } from '@src/components/features/errors/page-error';
+import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
 
 const ErrorPage404 = () => {
   return <PageError error={{ code: 404 }} />;

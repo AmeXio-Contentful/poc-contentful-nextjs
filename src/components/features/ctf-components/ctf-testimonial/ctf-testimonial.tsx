@@ -1,8 +1,7 @@
 // eslint-disable-next-line import/no-unresolved
 import { Pagination } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 interface Testimonial {
    quote: string;

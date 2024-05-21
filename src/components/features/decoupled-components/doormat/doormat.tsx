@@ -31,11 +31,10 @@ export const DoormatComponent = (props: DoormatProps) => {
                 </h3>
                 {menuItem.children && (
                   <ul>
-                    {menuItem.children.map((item) => {
+                    {menuItem.children.map((item, index) => {
                       if (item) {
                         return (
-                          <li
-                          >
+                          <li key={index}>
                             <Link href={item.url} title={item.title}>
                               {item.title}
                             </Link>

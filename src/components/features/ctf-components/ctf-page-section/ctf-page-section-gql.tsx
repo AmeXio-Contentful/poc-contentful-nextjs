@@ -1,8 +1,8 @@
-import { useContentfulContext } from '@src/contentful-context';
 import {
   useCtfPageSectionQuery
 } from '@src/components/features/ctf-components/ctf-page-section/__generated/ctf-page-section.generated';
 import { CtfPageSection } from '@src/components/features/ctf-components/ctf-page-section/ctf-page-section';
+import { useContentfulContext } from '@src/contentful-context';
 
 
 

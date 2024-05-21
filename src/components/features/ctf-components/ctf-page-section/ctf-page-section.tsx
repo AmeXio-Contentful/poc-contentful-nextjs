@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { ComponentResolver } from '@src/components/shared/component-resolver';
-import { PageContainer } from '@src/components/templates/page-container';
 import { sectionTypes } from '@src/components/shared/global';
+import { PageContainer } from '@src/components/templates/page-container';
 
 interface PageSectionProps {
   __typename: string;

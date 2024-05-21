@@ -6,7 +6,6 @@ import { useTranslation } from 'next-i18next';
 
 import styles from './footer.module.scss'
 
-import { getLinkDisplayText, getLinkHrefPrefix } from '@src/components/features/ctf-components/ctf-navigation/utils';
 import { Link } from '@src/components/shared/link';
 
 export interface FooterProps {

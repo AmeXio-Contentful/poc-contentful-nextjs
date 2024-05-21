@@ -1,8 +1,8 @@
 import {
   ComponentSolutionSectionFragment
 } from '@src/components/features/decoupled-components/solution-component/__generated/solution-component.generated';
-import { Props, TitleComponent } from '@src/components/features/decoupled-components/title-component/title-component';
 import { TeaserComponent } from '@src/components/features/decoupled-components/teaser-component/teaser-component';
+import { Props, TitleComponent } from '@src/components/features/decoupled-components/title-component/title-component';
 import { sectionTypes } from '@src/components/shared/global';
 
 
