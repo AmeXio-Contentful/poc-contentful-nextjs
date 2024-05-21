@@ -32,10 +32,6 @@ export const ComponentResolver = (props: Props) => {
   const { locale } = useContentfulContext();
 
   const componentMapToUse = props.componentProps.isSanity ? componentMapSanity : componentMap;
-  // if (props.componentProps.isSanity) {
-  //
-  // }
-
   const ComponentGql = componentGqlMap[componentProps.__typename];
 
   const shouldForceGql = useMemo(() => {

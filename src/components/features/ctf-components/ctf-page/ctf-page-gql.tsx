@@ -8,15 +8,14 @@ import { PageError } from '@src/components/features/errors/page-error';
 import { useContentfulContext } from '@src/contentful-context';
 import { tryget } from '@src/utils';
 import contentfulConfig from 'contentful.config';
-import { useSearchParams } from 'next/navigation';
-import { useLandingPageByIdQuery } from '@src/data/sanity/landing-page/__generated/landing-page.generated';
 
-interface Props {
+
+export interface Props {
   topic?: string;
   slug: string;
 }
 
-interface MetaTags {
+export interface MetaTags {
   title: string;
   description: string;
   no_index: boolean;
@@ -24,82 +23,31 @@ interface MetaTags {
   slug: string;
 }
 
-interface SanityPageInformation {
-  seoTitle: string;
-  noIndex?: boolean;
-  noFollow?: boolean;
-  description: string;
-  slug?: {
-    current: string
-  };
-}
-
 const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
 
-  const isSanity = useSearchParams().get('sanity');
   const { previewActive, locale } = useContentfulContext();
   const slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
-  let page, loading;
 
+
+  // LOAD CONTENTFUL
+  const { isLoading, data } = useCtfPageQuery({
+    slug,
+    locale,
+    preview: previewActive,
+  });
+
+  const page = useContentfulLiveUpdates(tryget(() => data?.pageCollection!.items[0]));
   const { seo } = page || {};
 
   const metaTags: MetaTags = {
-    title: '',
-    description: '',
-    no_follow: false,
-    no_index: false,
-    slug: '',
+    title: (seo?.title ?? page?.pageName) as string,
+    description: seo?.description as string,
+    no_follow: seo?.noIndex as boolean,
+    no_index: seo?.noFollow as boolean,
+    slug: page?.slug as string,
   };
 
-  if (isSanity != 'true') {
-
-    // LOAD CONTENTFUL
-    const { isLoading, data } = useCtfPageQuery({
-      slug,
-      locale,
-      preview: previewActive,
-    });
-    loading = isLoading;
-    page = useContentfulLiveUpdates(tryget(() => data?.pageCollection!.items[0]));
-
-    if (page) {
-      metaTags.title = seo?.title ?? page.pageName;
-      metaTags.description = seo?.description;
-      metaTags.no_index = seo?.noIndex;
-      metaTags.no_follow = seo?.noFollow;
-      metaTags.slug = page.slug;
-    }
-  } else {
-    // LOAD SANITY
-    const sanityId = '9a080216-21ab-4ac9-9200-1b9d9d6ffab1';
-    const { isLoading, data } = useLandingPageByIdQuery({ id: sanityId });
-    loading = isLoading;
-
-    if (data) {
-      const components = Object.values(data?.allLandingPage[0] as any);
-      const keys = Object.keys(data?.allLandingPage[0] as any);
-      components.map((entry: any, index) => {
-        entry['__typename'] = (keys[index] as string)[0].toUpperCase() + keys[index].slice(1);
-        entry['isSanity'] = true;
-      });
-
-      const pageInformation = components.find((element: any) => element.__typename == 'PageInformation') as SanityPageInformation;
-
-      metaTags.title = pageInformation.seoTitle;
-      metaTags.description = pageInformation?.description;
-      metaTags.no_index = !!pageInformation?.noIndex;
-      metaTags.no_follow = !!pageInformation?.noFollow;
-      metaTags.slug = pageInformation.slug?.current as string;
-
-      page = {
-        pageContentCollection: {
-          items: components,
-        },
-      };
-    }
-  }
-
-  if (loading) return <></>;
+  if (isLoading) return <></>;
 
   if (!page) {
     const error = {

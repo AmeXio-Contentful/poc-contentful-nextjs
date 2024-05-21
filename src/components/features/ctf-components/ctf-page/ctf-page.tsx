@@ -11,7 +11,7 @@ const CtfPage = (props: any) => {
   const content = props.pageContentCollection;
   return (
     <PageContainer>
-      {content && content.items?.map(entry => (
+      {content.items?.map(entry => (
         <LayoutContext.Provider value={defaultLayout} key={entry!.title}>
           <ComponentResolver componentProps={entry!} forceGql={!entry!.isSanity} className={entry.__typename}/>
         </LayoutContext.Provider>

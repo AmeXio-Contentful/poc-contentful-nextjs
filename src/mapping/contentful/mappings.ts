@@ -1,11 +1,6 @@
 import dynamic from 'next/dynamic';
 
 export const componentMap = {
-  PageSection: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-page-section/ctf-page-section'
-      ).then((module) => module.CtfPageSection),
-  ),
   Teaser: dynamic(() =>
     import(
       '@src/components/features/ctf-components/ctf-teaser/ctf-teaser'
@@ -41,11 +36,6 @@ export const componentMap = {
       '@src/components/features/ctf-components/ctf-two-grid/ctf-two-grid'
       ).then((module) => module.CtfTwoGrid),
   ),
-  ComponentWrapper: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper'
-      ).then((module) => module.CtfComponentWrapper),
-  ),
   HeroBanner: dynamic(() =>
     import(
       '@src/mapping/contentful/hero-banner'
@@ -69,11 +59,6 @@ export const componentMap = {
 };
 
 export const componentGqlMap = {
-  PageSection: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-page-section/ctf-page-section-gql'
-      ).then((module) => module.CtfPageSectionGgl),
-  ),
   Teaser: dynamic(() =>
     import(
       '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql'
@@ -108,11 +93,6 @@ export const componentGqlMap = {
     import(
       '@src/components/features/ctf-components/ctf-two-grid/ctf-two-grid-gql'
       ).then((module) => module.CtfTwoGridGql),
-  ),
-  ComponentWrapper: dynamic(() =>
-    import(
-      '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper-gql'
-      ).then((module) => module.CtComponentWrapperGgl),
   ),
   HeroBanner: dynamic(() =>
     import(
