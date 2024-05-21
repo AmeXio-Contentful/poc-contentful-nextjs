@@ -7,7 +7,7 @@ export const config: CodegenConfig = {
   ignoreNoDocuments: true,
   generates: {
     './src': {
-      documents: ['./src/data/contentful/**/*.graphql'],
+      documents: ['./src/lib/shared-fragments/*.graphql'],
       preset: 'near-operation-file',
       schema: [
         {
