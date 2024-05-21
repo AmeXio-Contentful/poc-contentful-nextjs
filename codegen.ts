@@ -16,7 +16,7 @@ export const config: CodegenConfig = {
       ],
       presetConfig: {
         extension: '.generated.ts',
-        baseTypesPath: '../../lib/contentful/__generated/graphql.types.ts',
+        baseTypesPath: 'lib/contentful/__generated/graphql.types.ts',
         folder: '__generated',
       },
       plugins: [
