@@ -11,7 +11,7 @@
     "start": "next start",
     "dev": "env-cmd -f .env.local next dev",
     "staging": "env-cmd -f .env.staging next dev",
-    "build": "env-cmd -f .env.production next build",
+    "build": "next build",
     "export": "next build && next export",
     "type-check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1",
