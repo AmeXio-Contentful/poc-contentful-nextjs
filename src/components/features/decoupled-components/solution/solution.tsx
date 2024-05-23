@@ -6,16 +6,6 @@ import { Title } from '@src/components/features/decoupled-components/title/title
 import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
 
 
-/* export interface Teaser {
-  title: string;
-  subtitle: string;
-  image: any;
-  buttonUrl: string;
-  buttonText: string;
-}
-*/
-
-
 export const Solution = (props: ComponentSolutionSectionFragment) => {
   const titleProps: TitleProps = {
     title: props.title as string,

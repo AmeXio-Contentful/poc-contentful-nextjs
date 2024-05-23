@@ -52,8 +52,6 @@ export const JoinUs = (props: ComponentJoinUsFragment) => {
           <div key={item.title}>
             <Teaser
                     icon={item.image}
-                    // buttonUrl=""
-                    // buttonText=""
                     titleProps={{
                       'title': item?.title as string,
                       ...titleTeaserProp

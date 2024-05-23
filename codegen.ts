@@ -1,6 +1,7 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
 
-import { fetchConfig, fetchConfigSanity } from './src/lib/fetchConfig';
+import { contentful } from '@src/lib/fetchConfig/contentful';
+import { fetchConfigSanity } from '@src/lib/fetchConfig/sanity';
 
 export const config: CodegenConfig = {
   overwrite: true,
@@ -11,7 +12,7 @@ export const config: CodegenConfig = {
       preset: 'near-operation-file',
       schema: [
         {
-          [fetchConfig.endpoint]: fetchConfig.params,
+          [contentful.endpoint]: contentful.params,
         },
       ],
       presetConfig: {
@@ -33,7 +34,7 @@ export const config: CodegenConfig = {
         dedupeFragments: true,
         preResolveTypes: true,
         withHooks: true,
-        fetcher: '@src/lib/fetchConfig#customFetcher',
+        fetcher: '@src/lib/contentful#customFetcher',
       },
     },
     './src/lib/sanity/__generated/graphql.types.ts': {
@@ -72,14 +73,14 @@ export const config: CodegenConfig = {
         dedupeFragments: true,
         preResolveTypes: true,
         withHooks: true,
-        fetcher: '@src/lib/fetchConfig#customFetcherSanity',
+        fetcher: '@src/lib/contentful#customFetcherSanity',
       },
     },
     './src/lib/contentful/__generated/graphql.schema.json': {
       plugins: ['introspection'],
       schema: [
         {
-          [fetchConfig.endpoint]: fetchConfig.params,
+          [contentful.endpoint]: contentful.params,
         },
       ],
     },
@@ -87,7 +88,7 @@ export const config: CodegenConfig = {
       plugins: ['schema-ast'],
       schema: [
         {
-          [fetchConfig.endpoint]: fetchConfig.params,
+          [contentful.endpoint]: contentful.params,
         },
       ],
     },
@@ -96,7 +97,7 @@ export const config: CodegenConfig = {
       documents: ['./src/data/contentful/**/*.graphql'],
       schema: [
         {
-          [fetchConfig.endpoint]: fetchConfig.params,
+          [contentful.endpoint]: contentful.params,
         },
       ],
     },
@@ -105,7 +106,7 @@ export const config: CodegenConfig = {
       preset: 'near-operation-file',
       schema: [
         {
-          [fetchConfig.endpoint]: fetchConfig.params,
+          [contentful.endpoint]: contentful.params,
         },
       ],
       presetConfig: {
@@ -127,7 +128,7 @@ export const config: CodegenConfig = {
         dedupeFragments: true,
         preResolveTypes: true,
         withHooks: true,
-        fetcher: '@src/lib/fetchConfig#customFetcher',
+        fetcher: '@src/lib/contentful#customFetcher',
       },
     }
   },

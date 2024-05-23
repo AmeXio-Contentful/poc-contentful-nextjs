@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/no-unresolved
 import { Pagination } from 'swiper/modules';
-// eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {
@@ -48,7 +46,6 @@ export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
           {props?.clientsCollection?.items?.map((item: any) => (
             <SwiperSlide className="w-full px-4 pb-10" key={item.id}>
               <Teaser
-                // subtitle={item?.subtitle as string}
                 icon={item?.image}
                 titleProps={{
                   'title': item?.title as string,
@@ -58,7 +55,6 @@ export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
                   'buttonUrl': item?.buttonUrl as string,
                   'buttonText': item?.buttonText as string,
                 }}
-                // quote={item.quote}
                 descriptionProps={descriptionProps}
               />
             </SwiperSlide>
