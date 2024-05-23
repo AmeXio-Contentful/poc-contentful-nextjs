@@ -1,8 +1,8 @@
 import { CssBaseline, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
-import React, { useState, useEffect, ReactElement } from 'react';
-import { Header } from '../header';
+import React, { useEffect, ReactElement, useState } from 'react';
+import { Header } from '@src/mapping/contentful/header';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -21,7 +21,6 @@ interface LayoutPropsInterface {
 }
 
 export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const classes = useStyles();
   const router = useRouter();
 
@@ -41,8 +40,6 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
   return (
     <>
       <CssBaseline />
-
-      <Header isMenuOpen={isMenuOpen} onMenuClick={() => setMenuOpen(true)} />
 
       {/* content */}
       <div className={classes.content}>{children}</div>

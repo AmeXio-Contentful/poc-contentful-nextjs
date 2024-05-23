@@ -3,8 +3,8 @@ import { AppBar, Container, IconButton, Theme, Toolbar, Box } from '@mui/materia
 import { makeStyles } from '@mui/styles';
 import { useTranslation } from 'next-i18next';
 
-import { CtfNavigationGql } from '@src/components/features/ctf-components/ctf-navigation/ctf-navigation-gql';
 import { Link } from '@src/components/shared/link';
+import { SanityNavigationGql } from '@src/data/sanity/navigation/navigation-gql';
 import Logo from '@src/icons/amexio-logo.svg';
 import { HEADER_HEIGHT, HEADER_HEIGHT_MD, CONTAINER_WIDTH } from '@src/theme';
 
@@ -90,12 +90,12 @@ export const Header = (props: HeaderPropsInterface) => {
           style={{
             maxWidth: `${CONTAINER_WIDTH / 10}rem`,
           }}>
-          <Link href="/" withoutMaterial title={t('common.homepage')}>
+          <Link href="/">
             <Logo className={classes.corporateLogo} />
           </Link>
           <Box display={{ xs: 'none', md: 'block' }} className={classes.noBackground}>
             <div className={classes.menuWrapper}>
-              <CtfNavigationGql />
+              <SanityNavigationGql />
             </div>
           </Box>
         </Container>

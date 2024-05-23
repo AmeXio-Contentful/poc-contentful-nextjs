@@ -1,6 +1,6 @@
 export const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${String(process.env.CONTENTFUL_SPACE_ID,)}`;
 
-export const contentful = {
+export const fetcherConfigContentful = {
   endpoint: `${baseUrl}`,
   localEndpoint: `${baseUrl}/environments/local`,
   params: {
@@ -36,15 +36,15 @@ export function customFetcher<TData, TVariables extends { preview?: boolean | nu
 ) {
   return async (): Promise<TData> => {
     const env = process.env.NODE_ENV;
-    let endpoint = contentful.localEndpoint;
-    let apiToken = contentful.localParams;
+    let endpoint = fetcherConfigContentful.localEndpoint;
+    let apiToken = fetcherConfigContentful.localParams;
     if (env == "development") {
-      endpoint = contentful.localEndpoint;
-      apiToken = variables?.preview ? contentful.localPreviewParams : contentful.localParams;
+      endpoint = fetcherConfigContentful.localEndpoint;
+      apiToken = variables?.preview ? fetcherConfigContentful.localPreviewParams : fetcherConfigContentful.localParams;
     }
     else if (env == "production") {
-      endpoint = contentful.endpoint;
-      apiToken = variables?.preview ? contentful.previewParams : contentful.params
+      endpoint = fetcherConfigContentful.endpoint;
+      apiToken = variables?.preview ? fetcherConfigContentful.previewParams : fetcherConfigContentful.params
     }
     const res = await fetch(endpoint, {
       method: 'POST',

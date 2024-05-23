@@ -26,5 +26,5 @@ export const PageLink = (props: PageLinkProps) => {
     urlParams: props.urlParams,
   };
 
-  return <Link {...linkProps}>{props.render ? props.render(pathname) : props.children}</Link>;
+  return <Link {...linkProps} legacyBehavior>{props.render ? props.render(pathname) : props.children}</Link>;
 };

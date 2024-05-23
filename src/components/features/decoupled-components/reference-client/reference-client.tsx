@@ -1,4 +1,6 @@
+// eslint-disable-next-line import/no-unresolved
 import { Pagination } from 'swiper/modules';
+// eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {

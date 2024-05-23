@@ -1,13 +1,13 @@
+import styles from '../../components/features/decoupled-components/hero-banner/hero-banner.module.scss';
+
 import {ButtonProps} from '@src/components/features/decoupled-components/button/button.typings';
 import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
 import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
 import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
-// import { sectionTypes } from '@src/components/shared/global';
 import {
   ComponentHeroBannerFragment
 } from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
 
-import styles from '../../components/features/decoupled-components/hero-banner/hero-banner.module.scss';
 
 export const HeroBanner = (props: ComponentHeroBannerFragment) => {
   const { backgroundImage , title, subtitle, buttonText, buttonUrl} = props;

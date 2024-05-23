@@ -1,11 +1,16 @@
 import Head from 'next/head';
 
-import Page from '@src/mapping/contentful/page';
-import { MetaTags, Props } from '@src/data/contentful/page/ctf-page-gql';
+import React, { useState } from 'react';
+
 import { PageError } from '@src/components/features/errors/page-error';
 import { useContentfulContext } from '@src/contentful-context';
-import { useLandingPageByIdQuery } from '@src/data/sanity/landing-page/__generated/landing-page.generated';
+import { MetaTags, Props } from '@src/data/contentful/page/ctf-page-gql';
+import { useLandingPageByIdQuery } from '@src/data/sanity/page/__generated/page.generated';
+import { Header } from '@src/mapping/sanity/header';
+import Page from '@src/mapping/shared/page';
 import contentfulConfig from 'contentful.config';
+
+
 
 export interface SanityPageInformation {
   seoTitle: string;
@@ -18,7 +23,7 @@ export interface SanityPageInformation {
 }
 
 const SanityPageGql = ({ slug: slugFromProps }: Props) => {
-
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const { previewActive, locale } = useContentfulContext();
   const slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
 
@@ -97,6 +102,7 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
           />
         </Head>
+        <Header isMenuOpen={isMenuOpen} onMenuClick={() => setMenuOpen(true)} />
         <Page {...page} />
       </>
     );
