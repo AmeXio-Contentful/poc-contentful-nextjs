@@ -36,13 +36,11 @@ export const getServerSideProps = async ({ locale, params, query }: CustomNextPa
       useCtfNavigationQuery.fetcher({ locale, preview }),
     );
 
-    // Default queries
     await queryClient.prefetchQuery(
       useCtfPageQuery.getKey({ slug, locale, preview }),
       useCtfPageQuery.fetcher({ slug, locale, preview }),
     );
 
-    // Dynamic queries
     const pageData = await useCtfPageQuery.fetcher({ slug, locale, preview })();
     const page = pageData.pageCollection?.items[0];
 
