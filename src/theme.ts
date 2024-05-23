@@ -3,7 +3,7 @@ import { TypographyStyleOptions } from '@mui/material/styles/createTypography';
 
 export const CONTAINER_WIDTH = 1260;
 export const SPACER = 5;
-export const HEADER_HEIGHT = '9rem';
+export const HEADER_HEIGHT = '0rem';
 export const HEADER_HEIGHT_MD = '8rem';
 
 interface ColorConfigInterface {
@@ -266,7 +266,7 @@ colorfulTheme.mixins.toolbar = {
   ...colorfulTheme.mixins.toolbar,
   height: HEADER_HEIGHT_MD,
   [colorfulTheme.breakpoints.up('md')]: {
-    height: '9rem',
+    height: '5rem',
   },
 };
 
