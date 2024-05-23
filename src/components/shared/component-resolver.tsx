@@ -33,6 +33,7 @@ export const ComponentResolver = (props: Props) => {
 
   const { locale } = useContentfulContext();
 
+  // mapping for Gql
   const ComponentGql = componentGqlMap[componentProps.__typename];
 
   const shouldForceGql = useMemo(() => {
@@ -59,6 +60,7 @@ export const ComponentResolver = (props: Props) => {
     return true;
   }, [ComponentGql, componentProps, props.forceGql]);
 
+  // regular mapping
   const Component = !shouldForceGql && componentMap[componentProps.__typename];
 
   const previousComponentProp = previousComponent;

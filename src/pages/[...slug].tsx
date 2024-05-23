@@ -1,10 +1,10 @@
-import { dehydrate, QueryClient } from '@tanstack/react-query';
-import { NextPage, NextPageContext } from 'next';
+// import { dehydrate, QueryClient } from '@tanstack/react-query';
+import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
-import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
+// import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
 import CtfPageGgl from '@src/components/features/ctf-components/ctf-page/ctf-page-gql';
-import { ComponentReferenceFieldsFragment } from '@src/lib/__generated/graphql.types';
+/* import { ComponentReferenceFieldsFragment } from '@src/lib/__generated/graphql.types';
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
 import { prefetchMap } from '@src/lib/prefetch-mappings';
 import { prefetchPromiseArr } from '@src/lib/prefetch-promise-array';
@@ -12,13 +12,16 @@ import {
   useCtfNavigationQuery
 } from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
 
+*/
 const SlugPage: NextPage = () => {
   const router = useRouter();
-  const slug = (router?.query.slug as string) || '';
+  const slug = (router?.query.slug) || '';
 
-  return <CtfPageGgl slug={slug} />;
+  console.log(`slug: ${slug[0]}`);
+  return <div>Test</div>;
+  // return <CtfPageGgl slug={slug} />;
 };
-
+/*
 export interface CustomNextPageContext extends NextPageContext {
   params: {
     slug: string;
@@ -117,5 +120,17 @@ export const getServerSideProps = async ({ locale, params, query }: CustomNextPa
     };
   }
 };
-
+*/
 export default SlugPage;
+
+/*
+import {NextPage} from "next";
+
+const Page: NextPage = () => {
+
+}
+
+console.log("test");
+
+export default Page;
+*/
