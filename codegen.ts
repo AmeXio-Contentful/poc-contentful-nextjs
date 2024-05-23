@@ -1,7 +1,7 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
 
-import { contentful } from '@src/lib/fetchConfig/contentful';
-import { fetchConfigSanity } from '@src/lib/fetchConfig/sanity';
+import { contentful } from './src/lib/fetchConfig/contentful';
+import { fetchConfigSanity } from './src/lib/fetchConfig/sanity';
 
 export const config: CodegenConfig = {
   overwrite: true,
