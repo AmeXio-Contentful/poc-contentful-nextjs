@@ -1,12 +1,13 @@
-import { useContentfulContext } from '@src/contentful-context';
+import React from 'react';
+
 import {
   useCtfComponentWrapperQuery
 } from '@src/components/features/ctf-components/ctf-component-wrapper/__generated/ctf-component-wrapper.generated';
 import {
   CtfComponentWrapper
 } from '@src/components/features/ctf-components/ctf-component-wrapper/ctf-component-wrapper';
-import { CtfTeaser } from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser';
-import React from 'react';
+import { useContentfulContext } from '@src/contentful-context';
+
 
 
 export const CtComponentWrapperGgl = (props: any) => {

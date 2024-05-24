@@ -1,5 +1,6 @@
-import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 import {setTimeout} from "timers";
+
+import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 import { useState } from 'react';
 
 import { NavigationFieldsFragment } from './__generated/ctf-navigation.generated';

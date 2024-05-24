@@ -2,7 +2,10 @@ import { CssBaseline, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
 import React, { useState, useEffect, ReactElement } from 'react';
+
 import { Header } from '../header';
+
+import { CtfFooterGql } from '@src/components/features/ctf-components/ctf-footer/ctf-footer-gql';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -47,6 +50,7 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
       {/* content */}
       <div className={classes.content}>{children}</div>
 
+      <CtfFooterGql/>
     </>
   );
 };
