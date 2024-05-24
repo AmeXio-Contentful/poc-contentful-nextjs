@@ -185,10 +185,11 @@ bower_components
 .bower-tmp
 /public/data/mind.json
 
-.env
-
+.env.local
+.env.*
 ### Intellij ###
 .idea/
 
 ### Install artifacts ###
 package-lock.json
+/.env.staging
