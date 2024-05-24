@@ -5,11 +5,11 @@ import {
 } from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
 import {
   useSolutionSectionComponentQuery
-} from '@src/components/features/decoupled-components/solution-component/__generated/solution-component.generated';
-import { SolutionComponent } from '@src/components/features/decoupled-components/solution-component/solution-component';
+} from '@src/data/contentful/solution/__generated/solution.generated';
+import { Solution } from '@src/components/features/decoupled-components/solution/solution';
 
 
-export function SolutionComponentGql({
+export function SolutionGql({
   id,
   locale,
   preview,
@@ -20,5 +20,5 @@ export function SolutionComponentGql({
     preview: preview,
   })) as any;
 
-  return <SolutionComponent {...data.data?.solutionSection} />;
+  return <Solution {...data.data?.solutionSection} />;
 }

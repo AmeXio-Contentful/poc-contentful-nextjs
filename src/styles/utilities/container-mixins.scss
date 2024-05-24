@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use './breakpoint-mixins';
+@use '../config/breakpoints';
+
+@mixin full-width-boxed-content($max-width: map.get(breakpoints.$breakpoints, l), $padding: 12px) {
+  padding-left: $padding;
+  padding-right: $padding;
+
+  @include breakpoint-mixins.breakpoint-from(l) {
+    padding-left: calc(((100% - #{$max-width}) / 2) + #{$padding});
+    padding-right: calc(((100% - #{$max-width}) / 2) + #{$padding});
+  }
+}
+
+@mixin readable-width($max-width: 790px) {
+  @include breakpoint-mixins.breakpoint-from(m) {
+    max-width: $max-width;
+  }
+}

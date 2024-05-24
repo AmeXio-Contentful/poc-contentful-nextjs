@@ -4,38 +4,38 @@ import { Autoplay } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import {
-  Button,
-  ButtonProps,
-} from '@src/components/features/decoupled-components/button/button';
-import {
-  Description
-} from '@src/components/features/decoupled-components/description/description';
+import { Button } from '@src/components/features/decoupled-components/button/button';
+import {ButtonProps} from "@src/components/features/decoupled-components/button/button.typings";
+import { Description } from '@src/components/features/decoupled-components/description/description';
+import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
+import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
+import { Title } from '@src/components/features/decoupled-components/title/title';
+import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
+import { sectionTypes } from '@src/components/shared/global';
 import {
   ComponentJoinUsFragment
-} from '@src/components/features/decoupled-components/join-us-component/__generated/join-us-component.generated';
-import { TeaserComponent } from '@src/components/features/decoupled-components/teaser-component/teaser-component';
-import { Props, TitleComponent } from '@src/components/features/decoupled-components/title-component/title-component';
-import { sectionTypes } from '@src/components/shared/global';
+} from '@src/data/contentful/join-us/__generated/join-us.generated';
 
 
-export const JoinUsComponent = (props: ComponentJoinUsFragment) => {
+
+
+export const JoinUs = (props: ComponentJoinUsFragment) => {
   const { title, description, buttonUrl, buttonText, clientsCollection, teasersCollection} = props;
-  const titleProps: Props = {
-    text: title as string,
+  const titleProps: TitleProps = {
+    title: title as string,
     heading: 'h3',
-    classes: 'font-semibold text-black text-4xl max-w-xl m-auto'
+    titleClasses: 'font-semibold text-black text-4xl max-w-xl m-auto'
   };
 
-  const descriptionProps: Props = {
-    text: description as string,
-    classes: 'mt-6 mb-5 text-xl text-black max-w-xl m-auto'
+  const descriptionProps: DescriptionProps = {
+    description: description as string,
+    descriptionClasses: 'mt-6 mb-5 text-xl text-black max-w-xl m-auto'
   }
 
   const buttonProps: ButtonProps = {
     buttonText: buttonText as string,
     buttonUrl: buttonUrl as string,
-    classes: 'mt-6 bg-orange-500 px-5 py-3.5 text-base text-white'
+    buttonClasses: 'mt-6 bg-orange-500 px-5 py-3.5 text-base text-white'
   }
 
   const titleTeaserProp = {
@@ -44,19 +44,21 @@ export const JoinUsComponent = (props: ComponentJoinUsFragment) => {
 
   return (
     <div className="mx-auto max-w-[800px] pt-16 text-center">
-      <TitleComponent {...titleProps} />
+      <Title {...titleProps} />
       <Description {...descriptionProps} />
       <div className="grid grid-cols-3 gap-x-3 mt-9">
         {teasersCollection && teasersCollection.items?.map((item: any) => (
           <div key={item.title}>
-            <TeaserComponent type={sectionTypes.hrSection}
-                             title={item?.title as string}
-                             image={item.image}
-                             subtitle={item?.subtitle as string}
-                             buttonUrl=""
-                             buttonText=""
-                             titleProps={titleTeaserProp}
-                             descriptionProps={descriptionProps} />
+            <Teaser
+                    icon={item.image}
+                    // subtitle={item?.subtitle as string}
+                    // buttonUrl=""
+                    // buttonText=""
+                    titleProps={{
+                      'title': item?.title as string,
+                      ...titleTeaserProp
+                    }}
+                    descriptionProps={descriptionProps} />
           </div>
         ))}
       </div>

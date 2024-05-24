@@ -5,6 +5,9 @@ dist
 out
 tsconfig.tsbuildinfo
 src/components/features/ctf-components/*/__generated
+src/data/*/*/__generated
+src/lib/__generated
+src/lib/shared-fragments/__generated
 
 ### Paw ###
 *.paw

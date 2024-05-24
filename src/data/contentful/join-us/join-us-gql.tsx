@@ -5,11 +5,11 @@ import {
 } from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
 import {
   useJoinUsComponentQuery
-} from '@src/components/features/decoupled-components/join-us-component/__generated/join-us-component.generated';
-import { JoinUsComponent } from '@src/components/features/decoupled-components/join-us-component/join-us-component';
+} from '@src/data/contentful/join-us/__generated/join-us.generated';
+import { JoinUs } from '@src/components/features/decoupled-components/join-us/join-us';
 
 
-export function JoinUsComponentGql({
+export function JoinUsGql({
   id,
   locale,
   preview,
@@ -20,5 +20,5 @@ export function JoinUsComponentGql({
     preview: preview,
   })) as any;
 
-  return <JoinUsComponent {...data.data?.joinUs} />;
+  return <JoinUs {...data.data?.joinUs} />;
 }
