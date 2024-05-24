@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "next start",
-    "dev": "npm run graphql-codegen:generate && next dev",
+    "dev": "npm run local-graphql-codegen:generate && env-cmd -f .env.local next dev",
+    "staging": "npm run staging-graphql-codegen:generate  && env-cmd -f .env.staging next dev",
     "prebuild": "npm run graphql-codegen:generate",
     "build": "next build",
     "export": "next build && next export",
@@ -21,7 +22,10 @@
     "lint-fix": "yarn lint --fix",
     "graphql-codegen:generate": "graphql-codegen -r dotenv/config --config codegen.ts",
     "graphql-codegen:watch": "graphql-codegen --watch -r dotenv/config --config codegen.ts",
-    "setup": "./bin/setup.sh"
+    "setup": "./bin/setup.sh",
+    "production-graphql-codegen:generate": "env-cmd -f .env.production graphql-codegen -r dotenv/config --config codegen.ts",
+    "staging-graphql-codegen:generate": "env-cmd -f .env.staging graphql-codegen -r dotenv/config --config codegen.ts",
+    "local-graphql-codegen:generate": "env-cmd -f .env.local graphql-codegen -r dotenv/config --config codegen.ts"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
@@ -33,6 +37,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "@contentful/live-preview": "^2.11.1",
     "@contentful/rich-text-react-renderer": "^15.12.1",
     "@contentful/rich-text-types": "^15.12.1",
