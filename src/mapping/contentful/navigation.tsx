@@ -1,12 +1,11 @@
-import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 import {setTimeout} from "timers";
-import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 
+import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 import { useState } from 'react';
 
 import { Link } from '@src/components/shared/link';
-import { getLinkDisplayText, getLinkHrefPrefix } from '@src/data/contentful/navigation/utils';
 import { NavigationFieldsFragment } from '@src/data/contentful/navigation/__generated/navigation.generated';
+import { getLinkDisplayText, getLinkHrefPrefix } from '@src/data/contentful/navigation/utils';
 
 interface SysId {
   sys: {

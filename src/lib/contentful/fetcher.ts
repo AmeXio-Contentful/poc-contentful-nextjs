@@ -25,7 +25,7 @@ export function customFetcher<TData, TVariables extends { preview?: boolean | nu
     const res = await fetch(fetcherConfigContentful.endpoint, {
       method: 'POST',
       ...options,
-      ...(variables?.preview ? fetcherConfigContentful.previewParams : fetchConfig.params),
+      ...(variables?.preview ? fetcherConfigContentful.previewParams : fetcherConfigContentful.params),
       body: JSON.stringify({ query, variables }),
     });
 

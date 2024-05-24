@@ -1,5 +1,5 @@
-@use 'src/styles/utilities/breakpoint-mixins' as m;
-@import "src/styles/default-theme";
+@use '../../../styles/utilities/breakpoint-mixins' as m;
+@import "../../../styles/default-theme";
 
 .doormat_container {
   border-top: 25px solid $secondary-color;

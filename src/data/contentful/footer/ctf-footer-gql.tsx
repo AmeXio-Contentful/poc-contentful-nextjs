@@ -2,7 +2,7 @@ import { useContentfulLiveUpdates } from '@contentful/live-preview/react';
 import React from 'react';
 
 import { useCtfFooterQuery } from './__generated/ctf-footer.generated';
-import { CtfFooter } from './ctf-footer';
+import { Footer } from '@src/mapping/contentful/footer';
 
 import { useContentfulContext } from '@src/contentful-context';
 
@@ -18,5 +18,5 @@ export const CtfFooterGql = () => {
 
   if (!footerMenuCollection || isLoading) return null;
 
-  return <CtfFooter {...footerMenuCollection} />;
+  return <Footer {...footerMenuCollection} />;
 };

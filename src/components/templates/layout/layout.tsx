@@ -1,13 +1,9 @@
 import { CssBaseline, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
-import React, { useState, useEffect, ReactElement } from 'react';
+import React, { useEffect, ReactElement } from 'react';
 
-import { Header } from '../header';
-import React, { useEffect, ReactElement, useState } from 'react';
-import { Header } from '@src/mapping/contentful/header';
-
-import { CtfFooterGql } from '@src/components/features/ctf-components/ctf-footer/ctf-footer-gql';
+import { CtfFooterGql } from '@src/data/contentful/footer/ctf-footer-gql';
 
 
 const useStyles = makeStyles((theme: Theme) => ({

@@ -1,17 +1,14 @@
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
 
-import { useCtfFooterQuery } from '@src/components/features/ctf-components/ctf-footer/__generated/ctf-footer.generated';
-import {
-  useCtfNavigationQuery
-} from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
-import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
-import CtfPageGgl from '@src/components/features/ctf-components/ctf-page/ctf-page-gql';
+import { useCtfFooterQuery } from '@src/data/contentful/footer/__generated/ctf-footer.generated';
+
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
 import { prefetchPromiseArr } from '@src/lib/prefetch-promise-array';
-import {
-  useCtfNavigationQuery
-} from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
+import { useCtfPageQuery } from '@src/data/contentful/page/__generated/ctf-page.generated';
+import { useCtfNavigationQuery } from '@src/data/contentful/navigation/__generated/navigation.generated';
+import CtfPageGgl from '@src/data/contentful/page/ctf-page-gql';
+
 
 const LangPage: NextPage = () => {
   return <CtfPageGgl slug="/" />;
