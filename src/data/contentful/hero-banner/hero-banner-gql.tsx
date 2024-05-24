@@ -5,13 +5,13 @@ import {
 } from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
 import {
   useHeroBannerComponentQuery
-} from '@src/components/features/decoupled-components/hero-banner-component/__generated/hero-banner-component.generated';
+} from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
 import {
-  HeroBannerComponent
-} from '@src/components/features/decoupled-components/hero-banner-component/hero-banner-component';
+  HeroBanner
+} from '@src/components/features/decoupled-components/hero-banner/hero-banner';
 
 
-export function HeroBannerComponentGql({
+export function HeroBannerGql({
   id,
   locale,
   preview,
@@ -22,5 +22,5 @@ export function HeroBannerComponentGql({
     preview: preview,
   })) as any;
 
-  return <HeroBannerComponent {...data.data?.heroBanner} />;
+  return <HeroBanner {...data.data?.heroBanner} />;
 }

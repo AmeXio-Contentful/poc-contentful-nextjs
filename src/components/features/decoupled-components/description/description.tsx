@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Props } from '@src/components/features/decoupled-components/title-component/title-component';
+import { DescriptionProps } from '@src/components/features/decoupled-components/description/description.typings';
 
-export const Description = (props: Props) => {
-  const { text, classes } = props;
+export const Description = (props: DescriptionProps) => {
+  const { description, descriptionClasses } = props;
 
   return (
-    <div className={classes}>
-        { text }
+    <div className={descriptionClasses}>
+        { description }
     </div>
   );
 };

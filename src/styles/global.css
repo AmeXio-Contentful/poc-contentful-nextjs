@@ -16,6 +16,11 @@
   src: url(../../public/fonts/Lexend.ttf) format('ttf');
 }
 
+body {
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px !important;
+}
+
 .page-section {
   &:nth-of-type(odd) {
     background: #d9e8f5;

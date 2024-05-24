@@ -1,0 +1,32 @@
+@use '../../../../styles/theme';
+@use '../../../../styles/utilities/breakpoint-mixins';
+@use '../../../../styles/utilities/container-mixins';
+
+.title {
+  color: theme.$brand-main;
+  font-family: theme.$brand-font-family;
+  @include container-mixins.readable-width();
+
+    .h1 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      line-height: normal;
+
+      @include breakpoint-mixins.breakpoint-from(m) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .h2 {
+      font-size: 2.25rem;
+    }
+
+    .h3 {
+      font-size: 1.5rem;
+    }
+
+    .h4 {
+      font-size: 1rem;
+    }
+}

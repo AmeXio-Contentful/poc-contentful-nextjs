@@ -5,6 +5,9 @@ dist
 out
 tsconfig.tsbuildinfo
 src/components/features/ctf-components/*/__generated
+src/data/*/*/__generated
+src/lib/__generated
+src/lib/shared-fragments/__generated
 
 ### Paw ###
 *.paw
@@ -185,10 +188,11 @@ bower_components
 .bower-tmp
 /public/data/mind.json
 
-.env
-
+.env.local
+.env.*
 ### Intellij ###
 .idea/
 
 ### Install artifacts ###
 package-lock.json
+/.env.staging

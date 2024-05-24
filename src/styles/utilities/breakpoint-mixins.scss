@@ -2,16 +2,16 @@
 @use '../config/breakpoints' as *;
 
 @mixin breakpoint-from($point, $value: 0) {
-  @if $point == tablet {
-    @media screen and (min-width: map.get($breakpoints, tablet)) {
+  @if $point == m {
+    @media screen and (min-width: map.get($breakpoints, m)) {
       @content;
     }
-  } @else if $point == desktop-small {
-    @media screen and (min-width: map.get($breakpoints, desktop-small)) {
+  } @else if $point == l {
+    @media screen and (min-width: map.get($breakpoints, l)) {
       @content;
     }
-  } @else if $point == desktop-large {
-    @media screen and (min-width: map.get($breakpoints, desktop-large)) {
+  } @else if $point == xl {
+    @media screen and (min-width: map.get($breakpoints, xl)) {
       @content;
     }
   } @else {
