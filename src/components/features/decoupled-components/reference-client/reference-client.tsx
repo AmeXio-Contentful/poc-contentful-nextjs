@@ -29,17 +29,16 @@ export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
     classes: 'text-2xl text-blue-900 font-medium',
   };
 
-  const descriptionProps: DescriptionProps = {
-    descriptionClasses: 'my-3 h-auto text-base w-2/5 m-auto text-center font-semibold',
+  const descriptionProps = {
     description: props.description as string,
-  };
+    descriptionClasses: 'my-3 h-auto text-base w-2/5 m-auto text-center font-semibold'
+  }
 
   return (
     <div className="pt-5 page-section">
       <Title {...titleProps} />
       <Description {...descriptionProps} />
-      <div
-        className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pb-14 pt-9 md:px-48  m-auto">
+      <div className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pb-14 pt-9 md:px-48  m-auto">
         <Swiper
           pagination={{ clickable: true }}
           modules={[Pagination]}

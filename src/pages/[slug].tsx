@@ -2,13 +2,15 @@ import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
 import { useRouter } from 'next/router';
 
-import { useCtfPageQuery } from '@src/data/contentful/page/__generated/ctf-page.generated';
-import CtfPageGgl from '@src/data/contentful/page/ctf-page-gql';
+import {
+  useCtfNavigationQuery
+} from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
+import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
+import CtfPageGgl from '@src/components/features/ctf-components/ctf-page/ctf-page-gql';
+import { ComponentReferenceFieldsFragment } from '@src/lib/__generated/graphql.types';
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
 import { prefetchMap } from '@src/lib/prefetch-mappings';
 import { prefetchPromiseArr } from '@src/lib/prefetch-promise-array';
-import { useCtfNavigationQuery } from '@src/data/contentful/navigation/__generated/navigation.generated';
-import { ComponentReferenceFieldsFragment } from '@src/lib/shared-fragments/__generated/ctf-componentMap.generated';
 
 const SlugPage: NextPage = () => {
   const router = useRouter();
@@ -32,15 +34,16 @@ export const getServerSideProps = async ({ locale, params, query }: CustomNextPa
     const queryClient = new QueryClient();
 
     await queryClient.prefetchQuery(
-      useCtfNavigationQuery.getKey({ locale, preview }),
-      useCtfNavigationQuery.fetcher({ locale, preview }),
-    );
-
-    await queryClient.prefetchQuery(
       useCtfPageQuery.getKey({ slug, locale, preview }),
       useCtfPageQuery.fetcher({ slug, locale, preview }),
     );
 
+    await queryClient.prefetchQuery(
+      useCtfNavigationQuery.getKey({ locale, preview }),
+      useCtfNavigationQuery.fetcher({ locale, preview }),
+    );
+
+    // Dynamic queries
     const pageData = await useCtfPageQuery.fetcher({ slug, locale, preview })();
     const page = pageData.pageCollection?.items[0];
 

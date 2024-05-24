@@ -11,3 +11,9 @@
     padding-right: calc(((100% - #{$max-width}) / 2) + #{$padding});
   }
 }
+
+@mixin readable-width($max-width: 790px) {
+  @include breakpoint-mixins.breakpoint-from(m) {
+    max-width: $max-width;
+  }
+}

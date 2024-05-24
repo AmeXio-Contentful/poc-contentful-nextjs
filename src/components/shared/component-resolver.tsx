@@ -26,6 +26,10 @@ interface Props {
 }
 
 export const ComponentResolver = (props: Props) => {
+  // Component resolver (= generic code) should fetch the proper mapping based on the data source (= determined by variable passed from page)
+  // the mapping (= link between specific data and generic component data) should fetch the data and format it
+  // the proper component should be loaded and the formatted data should be passed into the component
+
   const { componentProps, inline = false } = props;
   const { previewActive } = useContentfulContext();
 

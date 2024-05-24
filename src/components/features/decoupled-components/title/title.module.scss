@@ -1,9 +1,12 @@
 @use '../../../../styles/theme';
 @use '../../../../styles/utilities/breakpoint-mixins';
+@use '../../../../styles/utilities/container-mixins';
 
 .title {
   color: theme.$brand-main;
   font-family: theme.$brand-font-family;
+  @include container-mixins.readable-width();
+
     .h1 {
       color: #fff;
       font-size: 1.5rem;

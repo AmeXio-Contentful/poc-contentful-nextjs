@@ -1,12 +1,17 @@
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { NextPage, NextPageContext } from 'next';
 
-import { useCtfNavigationQuery } from '@src/data/contentful/navigation/__generated/navigation.generated';
-import { useCtfPageQuery } from '@src/data/contentful/page/__generated/ctf-page.generated';
-import CtfPageGgl from '@src/data/contentful/page/ctf-page-gql';
+import { useCtfFooterQuery } from '@src/components/features/ctf-components/ctf-footer/__generated/ctf-footer.generated';
+import {
+  useCtfNavigationQuery
+} from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
+import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-page/__generated/ctf-page.generated';
+import CtfPageGgl from '@src/components/features/ctf-components/ctf-page/ctf-page-gql';
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
 import { prefetchPromiseArr } from '@src/lib/prefetch-promise-array';
-
+import {
+  useCtfNavigationQuery
+} from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
 
 const LangPage: NextPage = () => {
   return <CtfPageGgl slug="/" />;
@@ -16,11 +21,6 @@ export const getServerSideProps = async ({ locale, query }: NextPageContext) => 
   try {
     const preview = Boolean(query.preview);
     const queryClient = new QueryClient();
-
-    await queryClient.prefetchQuery(
-      useCtfNavigationQuery.getKey({ locale, preview }),
-      useCtfNavigationQuery.fetcher({ locale, preview }),
-    );
 
     // Default queries
     await queryClient.prefetchQuery(
@@ -32,6 +32,12 @@ export const getServerSideProps = async ({ locale, query }: NextPageContext) => 
       useCtfNavigationQuery.getKey({ locale, preview }),
       useCtfNavigationQuery.fetcher({ locale, preview }),
     );
+
+    await queryClient.prefetchQuery(
+      useCtfFooterQuery.getKey({ locale, preview }),
+      useCtfFooterQuery.fetcher({ locale, preview }),
+    );
+
 
     // Dynamic queries
     const pageData = await useCtfPageQuery.fetcher({ slug: 'home', locale, preview })();

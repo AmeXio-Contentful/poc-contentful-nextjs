@@ -34,3 +34,7 @@ body {
 .primary-color {
   color: #084772;
 }
+
+.invert {
+  filter: invert(1);
+}
