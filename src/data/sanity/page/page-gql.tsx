@@ -24,8 +24,7 @@ export interface SanityPageInformation {
 
 const SanityPageGql = ({ slug: slugFromProps }: Props) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const { previewActive, locale } = useContentfulContext();
-  const slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
+  const { locale } = useContentfulContext();
 
   // LOAD SANITY
   const sanityId = '9a080216-21ab-4ac9-9200-1b9d9d6ffab1';
@@ -56,6 +55,7 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
 
     if (isLoading) return <></>;
 
+    console.log("page", page);
     if (!page) {
       const error = {
         code: 404,
