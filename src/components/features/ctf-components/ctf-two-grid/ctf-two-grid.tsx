@@ -20,6 +20,7 @@ export const CtfTwoGrid = (props: any) => {
         <div className="h-auto text-center secondary-color">
           <CtfFeaturedArticle subtitle={right.subtitle as string}
                               title={right.title as string}
+                              heading={right.heading as string}
                               buttonLink={right.buttonUrl as string}/>
         </div>
       </div>

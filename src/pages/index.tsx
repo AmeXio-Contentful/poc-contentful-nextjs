@@ -5,6 +5,9 @@ import { useCtfPageQuery } from '@src/components/features/ctf-components/ctf-pag
 import CtfPageGgl from '@src/components/features/ctf-components/ctf-page/ctf-page-gql';
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
 import { prefetchPromiseArr } from '@src/lib/prefetch-promise-array';
+import {
+  useCtfNavigationQuery
+} from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
 
 const LangPage: NextPage = () => {
   return <CtfPageGgl slug="/" />;
@@ -19,6 +22,11 @@ export const getServerSideProps = async ({ locale, query }: NextPageContext) => 
     await queryClient.prefetchQuery(
       useCtfPageQuery.getKey({ slug: 'home', locale, preview }),
       useCtfPageQuery.fetcher({ slug: 'home', locale, preview }),
+    );
+
+    await queryClient.prefetchQuery(
+      useCtfNavigationQuery.getKey({ locale, preview }),
+      useCtfNavigationQuery.fetcher({ locale, preview }),
     );
 
     // Dynamic queries

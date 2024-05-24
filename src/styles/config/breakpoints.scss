@@ -1,0 +1,6 @@
+// mobile first (no breakpoints for mobile, default is up to the tablet size)
+$breakpoints: (
+  tablet: 481px,
+  desktop-small: 1025px,
+  desktop-large: 1441px
+);

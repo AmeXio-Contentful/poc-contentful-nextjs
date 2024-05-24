@@ -4,8 +4,8 @@ import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import {
-  DescriptionComponent
-} from '@src/components/features/decoupled-components/description-component/description-component';
+  Description
+} from '@src/components/features/decoupled-components/description/description';
 import {
   ComponentRerenceClientFragment
 } from '@src/components/features/decoupled-components/reference-client-component/__generated/reference-client-component.generated';
@@ -36,7 +36,7 @@ export const ReferenceClientComponent = (props: ComponentRerenceClientFragment) 
   return (
     <div className="pt-5 page-section">
       <TitleComponent {...titleProps}/>
-      <DescriptionComponent {...descriptionProps} />
+      <Description {...descriptionProps} />
       <div className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pb-14 pt-9 md:px-48  m-auto">
         <Swiper
           pagination={{ clickable: true }}

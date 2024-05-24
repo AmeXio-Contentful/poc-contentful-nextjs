@@ -1,0 +1,25 @@
+@use '../../../../styles/theme' as theme;
+
+.hero_context {
+  .button {
+    --button-background: #{theme.$brand-accent};
+  }
+}
+
+.button {
+  --button-background: #{theme.$brand-accent};
+  --button-color: #fff;
+  --button-font-family: #{theme.$brand-font-family};
+  --button-font-size: 14px;
+  --button-padding: 14px 20px;
+
+  background-color: var(--button-background);
+  color: var(--button-color);
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  padding: var(--button-padding);
+
+  &:hover {
+    --button-background: #{theme.$brand-accent-hover};
+  }
+}
