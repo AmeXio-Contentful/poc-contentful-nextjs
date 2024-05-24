@@ -13,7 +13,6 @@ import { Layout } from '@src/components/templates/layout/layout';
 import { useContentfulContext, ContentfulContentProvider } from '@src/contentful-context';
 import { queryConfig } from '@src/lib/gql-client';
 import colorfulTheme from '@src/theme';
-import contentfulConfig from 'contentful.config';
 import nextI18nConfig from 'next-i18next.config';
 import '@src/styles/global.css';
 
@@ -27,6 +26,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 import '../styles/default-theme.scss';
+import contentfulConfig from 'contentful.config';
 
 
 const LivePreviewProvider = ({ children }) => {
@@ -72,28 +72,11 @@ const CustomApp = ({
   return (
     <>
       <Head>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
-        />
-        <title key="title">{contentfulConfig.meta.title}</title>
-        <meta key="og:title" property="og:title" content={contentfulConfig.meta.title} />
-        <meta key="description" name="description" content={contentfulConfig.meta.description} />
-
-        <meta
-          key="og:description"
-          property="og:description"
-          content={contentfulConfig.meta.description}
-        />
         <meta key="og:image" property="og:image" content={contentfulConfig.meta.image} />
-        <meta key="og:image:width" property="og:image:width" content="1200" />
-        <meta key="og:image:height" property="og:image:height" content="630" />
-        <meta key="og:type" property="og:type" content="website" />
       </Head>
-
       <ContentfulContentProvider router={router}>
         <LivePreviewProvider>
-          <QueryClientProvider client={queryClient}>
+        <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools initialIsOpen={false} />
             <StyledEngineProvider injectFirst>
               <ThemeProvider theme={colorfulTheme}>

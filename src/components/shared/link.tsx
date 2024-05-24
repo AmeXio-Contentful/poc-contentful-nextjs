@@ -53,7 +53,8 @@ export const Link = (props: Props) => {
     endIcon,
     urlParams = '',
     title,
-} = props;
+    legacyBehavior = true
+  } = props;
   const router = useRouter();
   let href = props.href || '';
   let { as } = props;

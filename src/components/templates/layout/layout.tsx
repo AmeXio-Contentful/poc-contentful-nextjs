@@ -1,11 +1,9 @@
 import { CssBaseline, Theme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { useRouter } from 'next/router';
-import React, { useState, useEffect, ReactElement } from 'react';
+import React, { useEffect, ReactElement } from 'react';
 
-import { Header } from '../header';
-
-import { CtfFooterGql } from '@src/components/features/ctf-components/ctf-footer/ctf-footer-gql';
+import { CtfFooterGql } from '@src/data/contentful/footer/ctf-footer-gql';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -24,7 +22,6 @@ interface LayoutPropsInterface {
 }
 
 export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
   const classes = useStyles();
   const router = useRouter();
 
@@ -44,8 +41,6 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
   return (
     <>
       <CssBaseline />
-
-      <Header isMenuOpen={isMenuOpen} onMenuClick={() => setMenuOpen(true)} />
 
       {/* content */}
       <div className={classes.content}>{children}</div>

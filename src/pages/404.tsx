@@ -1,11 +1,9 @@
 import { dehydrate, QueryClient } from '@tanstack/react-query';
 import { GetStaticProps } from 'next';
 
-import { useCtfFooterQuery } from '@src/components/features/ctf-components/ctf-footer/__generated/ctf-footer.generated';
-import {
-  useCtfNavigationQuery
-} from '@src/components/features/ctf-components/ctf-navigation/__generated/ctf-navigation.generated';
 import { PageError } from '@src/components/features/errors/page-error';
+import { useCtfFooterQuery } from '@src/data/contentful/footer/__generated/ctf-footer.generated';
+import { useCtfNavigationQuery } from '@src/data/contentful/navigation/__generated/navigation.generated';
 import { getServerSideTranslations } from '@src/lib/get-serverside-translations';
 
 const ErrorPage404 = () => {

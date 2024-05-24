@@ -1,0 +1,52 @@
+@use '../../../styles/utilities/breakpoint-mixins' as m;
+@import "../../../styles/default-theme";
+
+.doormat_container {
+  border-top: 25px solid $secondary-color;
+  background: linear-gradient(35deg, rgba(0,0,0,1) 2%, rgba(8,71,114,1) 89%);
+}
+.doormat {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Lexend, sans-serif;
+
+  &__column {
+    padding: 25px 15px;
+
+    > img {
+      width: 50px;
+      height: auto;
+      filter: invert(1);
+    }
+
+    > h3 {
+      font-size: 19.8px;
+      color: $secondary-color;
+      font-weight: 500;
+      margin-top: 15px;
+      margin-bottom: 16px;
+    }
+
+    > ul > li {
+      margin: 0 0 0 0 !important;
+      padding: 0 !important;
+      font-size: initial;
+
+      > a {
+        color: white;
+        font-size: 14.4px;
+      }
+
+      > a:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+
+

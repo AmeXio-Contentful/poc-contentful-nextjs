@@ -1,0 +1,28 @@
+ query LandingPageById($id: ID) {
+   allLandingPage(where: { _id: { eq: $id } }) {
+   pageInformation {
+       seoTitle
+       description
+       pageName
+       noFollow
+       noIndex
+       slug {
+         current
+       }
+     }
+    heroBanner {
+      title
+      subtitle
+      buttonText
+      buttonUrl
+      backgroundImage {
+        asset {
+          url
+        }
+      }
+    }
+    solutionSection {
+      title
+    }
+  }
+ }

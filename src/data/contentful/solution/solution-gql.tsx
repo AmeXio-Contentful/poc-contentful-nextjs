@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   DefaultQueryParameters
-} from '@src/components/features/ctf-components/ctf-teaser/ctf-teaser-gql';
+} from '@src/data/contentful/teaser/ctf-teaser-gql';
 import {
   useSolutionSectionComponentQuery
 } from '@src/data/contentful/solution/__generated/solution.generated';
