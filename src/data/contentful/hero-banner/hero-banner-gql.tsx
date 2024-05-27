@@ -22,5 +22,13 @@ export function HeroBannerGql({
     preview: preview,
   })) as any;
 
+  console.log("data", data);
+  // should return data, not the component itself
+  // --> where and how should error handling be done?
+  // --> generic in the mapping?
+  // only returning the data results in an error because a React component is expected
+  // how to return data only?
+  // return data;
+
   return <HeroBanner {...data.data?.heroBanner} />;
 }
