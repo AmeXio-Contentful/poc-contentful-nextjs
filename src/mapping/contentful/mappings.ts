@@ -64,6 +64,7 @@ export const componentGqlMap = {
       '@src/data/contentful/two-grid/ctf-two-grid-gql'
       ).then((module) => module.CtfTwoGridGql),
   ),
+  // gql file is loaded, which loads the component with the data
   HeroBanner: dynamic(() =>
     import(
       '@src/data/contentful/hero-banner/hero-banner-gql'

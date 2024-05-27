@@ -7,12 +7,13 @@ import {TitleProps} from '@src/components/features/decoupled-components/title/ti
 import {
   ComponentHeroBannerFragment
 } from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
+import {HeroBanner} from '@src/components/features/decoupled-components/hero-banner';
 
 
 // would it be a good idea to use a state and manage that state through the mapping, then?
 // wouldn't this be overkill, since it would mostly be static data? is there another way to easily decouple the data from the components?
 // how about ssg? will this work?
-export const HeroBanner = (props: ComponentHeroBannerFragment) => {
+/* export const HeroBanner = (props: ComponentHeroBannerFragment) => {
   const { backgroundImage , title, subtitle, buttonText, buttonUrl} = props;
   const titleProps: TitleProps = {
     title: title as string,
@@ -41,4 +42,6 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
       />
     </div>
   )
-};
+}; */
+
+console.log("is this mapping actually used?");

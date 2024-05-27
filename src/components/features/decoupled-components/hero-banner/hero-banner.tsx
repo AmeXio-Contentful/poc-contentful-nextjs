@@ -29,6 +29,8 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
     // buttonClasses: styles.hero_button // 'mt-6 bg-blue-500 px-5 py-3.5 text-base text-white'
   }
 
+  console.log("hero banner component being used");
+
   return (
     <div className={styles.hero_banner}
          style={{ backgroundImage: `url(${backgroundImage?.url})` }}
