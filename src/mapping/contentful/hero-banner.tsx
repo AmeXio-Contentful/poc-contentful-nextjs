@@ -9,6 +9,8 @@ import {
 } from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
 
 
+// would it be a good idea to use a state and manage that state through the mapping, then?
+// how about ssg? will this work?
 export const HeroBanner = (props: ComponentHeroBannerFragment) => {
   const { backgroundImage , title, subtitle, buttonText, buttonUrl} = props;
   const titleProps: TitleProps = {
@@ -39,4 +41,3 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
     </div>
   )
 };
-
