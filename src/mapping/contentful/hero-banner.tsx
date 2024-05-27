@@ -11,5 +11,5 @@ import {HeroBanner} from '@src/components/features/decoupled-components/hero-ban
 
 console.log("is this mapping actually used?");
 export const HeroBannerComponent = (props: ComponentHeroBannerFragment) => {
-  return (<HeroBanner {...props} />)
+  return <HeroBanner {...props} />
 };
