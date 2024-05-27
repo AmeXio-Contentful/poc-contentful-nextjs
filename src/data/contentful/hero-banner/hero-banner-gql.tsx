@@ -10,7 +10,6 @@ import {
   HeroBanner
 } from '@src/components/features/decoupled-components/hero-banner/hero-banner';
 
-
 export function HeroBannerGql({
   id,
   locale,
@@ -20,7 +19,8 @@ export function HeroBannerGql({
     id: id,
     locale: locale,
     preview: preview,
-  })) as any;
+  })) as any; // How and where is the structure of this data determined? Can this be defined somewhere and is there a link with the actual model?
+  // can this model be enforced through import/exports so the model in the actual cms is representative for the model used in the code
 
   console.log("data", data);
   // should return data, not the component itself
