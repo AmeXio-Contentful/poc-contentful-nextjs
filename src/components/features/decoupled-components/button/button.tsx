@@ -5,7 +5,7 @@ export const Button = (props: ButtonProps) => {
   const { buttonUrl, buttonText, buttonClasses } = props;
 
   return (
-      <button className={`${styles.button} ${buttonClasses}`}>
+      <button className={`${styles.button} ${buttonClasses || ''}`}>
         <a href={buttonUrl as string}> {buttonText} </a>
       </button>
   );

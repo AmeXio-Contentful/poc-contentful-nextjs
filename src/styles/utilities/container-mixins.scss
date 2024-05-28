@@ -12,7 +12,7 @@
   }
 }
 
-@mixin readable-width($max-width: 790px) {
+@mixin readable-width($max-width: 600px) {
   @include breakpoint-mixins.breakpoint-from(m) {
     max-width: $max-width;
   }

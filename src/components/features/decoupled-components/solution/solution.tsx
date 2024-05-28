@@ -4,25 +4,25 @@ import {
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { Title } from '@src/components/features/decoupled-components/title/title';
 import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
+import styles from "./solution.module.scss";
+import context from "./solution_context.module.scss"
 
 
 export const Solution = (props: ComponentSolutionSectionFragment) => {
   const titleProps: TitleProps = {
     title: props.title as string,
     heading: 'h2',
-    titleClasses: 'font-semibold text-4xl text-center mt-8 primary-color w-2/5 m-auto mb-24'
+    titleClasses: styles.title
   };
 
   return (
-    <div className="pt-5">
+    <div className={styles.solution}>
       <Title {...titleProps}/>
-      <div className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pb-14 pt-9 md:px-48 lg:grid-cols-2 m-auto">
+      <div className={styles.solution__collection}>
         {
           props.teasersCollection?.items.map((item) => (
-            <div key={item?.title}>
-              {
+            <div className={styles.solution__item} key={item?.title}>
 
-              }
               <Teaser
                 icon={item?.image}
                 titleProps={{
@@ -36,9 +36,9 @@ export const Solution = (props: ComponentSolutionSectionFragment) => {
                 }}
                 buttonProps={{
                   'buttonUrl': item?.buttonUrl as string,
-                  'buttonText': item?.buttonText as string,
-                  'buttonClasses': 'mt-6 bg-orange-500 px-5 py-3.5 text-sm text-white mb-16'
+                  'buttonText': item?.buttonText as string
                 }}
+                teaserClasses={context.solution_context}
               />
             </div>
           ))

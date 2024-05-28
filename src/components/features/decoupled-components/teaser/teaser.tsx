@@ -2,17 +2,19 @@ import { Button } from '@src/components/features/decoupled-components/button/but
 import { Description } from '@src/components/features/decoupled-components/description/description';
 import { TeaserProps } from '@src/components/features/decoupled-components/teaser/teaser.typings';
 import { Title } from '@src/components/features/decoupled-components/title/title';
+import styles from './teaser.module.scss';
 
 export const Teaser = (props: TeaserProps) => {
-  return <div className="teaser">
+  return <div className={`${styles.teaser || ''} ${props.teaserClasses || ''}`}>
     { props.icon &&
         <img
+          className={styles.teaser__icon}
           alt="icon"
           src={props.icon.url}
         />
     }
-    <div className="teaser__content">
-      <div className="teaser__info">
+    <div className={styles.teaser__content}>
+      <div className={styles.teaser__info}>
           <Title {...props.titleProps} />
           <Description {...props.descriptionProps} />
       </div>

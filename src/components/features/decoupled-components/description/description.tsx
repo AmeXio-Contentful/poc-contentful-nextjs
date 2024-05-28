@@ -6,7 +6,7 @@ export const Description = (props: DescriptionProps) => {
   const { description, descriptionClasses } = props;
 
   return (
-    <div className={descriptionClasses}>
+    <div className={descriptionClasses || ''}>
         { description }
     </div>
   );

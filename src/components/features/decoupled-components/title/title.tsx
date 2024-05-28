@@ -12,7 +12,7 @@ export const Title = (props: TitleProps) => {
     title,
   );
   return (
-    <div className={`${styles.title} ${titleClasses}`}>
+    <div className={`${styles.title} ${titleClasses || ''}`}>
         { headingElement }
     </div>
   );

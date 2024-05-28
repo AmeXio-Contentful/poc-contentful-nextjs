@@ -1,0 +1,7 @@
+.solution {
+  &_context {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    column-gap: 60px;
+  }
+}

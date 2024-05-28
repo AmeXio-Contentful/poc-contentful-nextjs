@@ -5,13 +5,13 @@
 .title {
   color: theme.$brand-main;
   font-family: theme.$brand-font-family;
-  @include container-mixins.readable-width();
+  line-height: normal;
 
     .h1 {
       color: #fff;
       font-size: 1.5rem;
       font-weight: bold;
-      line-height: normal;
+      @include container-mixins.readable-width();
 
       @include breakpoint-mixins.breakpoint-from(m) {
         font-size: 2.5rem;
@@ -20,6 +20,10 @@
 
     .h2 {
       font-size: 2.25rem;
+      font-weight: 500;
+      margin: 0 auto;
+      text-align: center;
+      @include container-mixins.readable-width();
     }
 
     .h3 {
