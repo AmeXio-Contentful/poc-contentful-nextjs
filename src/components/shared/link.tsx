@@ -54,7 +54,7 @@ export const Link = (props: Props) => {
     urlParams = '',
     title,
     legacyBehavior = true
-} = props;
+  } = props;
   const router = useRouter();
   let href = props.href || '';
   let { as } = props;

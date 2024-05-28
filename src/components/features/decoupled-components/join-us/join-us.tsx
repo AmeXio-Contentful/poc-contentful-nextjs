@@ -4,19 +4,20 @@ import { Autoplay } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Button } from '@src/components/features/decoupled-components/button/button';
-import {ButtonProps} from "@src/components/features/decoupled-components/button/button.typings";
-import { Description } from '@src/components/features/decoupled-components/description/description';
-import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
+import {
+  Button,
+} from '@src/components/features/decoupled-components/button/button';
+import { ButtonProps } from '@src/components/features/decoupled-components/button/button.typings';
+import {
+  Description
+} from '@src/components/features/decoupled-components/description/description';
+import { DescriptionProps } from '@src/components/features/decoupled-components/description/description.typings';
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { Title } from '@src/components/features/decoupled-components/title/title';
-import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
-import { sectionTypes } from '@src/components/shared/global';
+import { TitleProps } from '@src/components/features/decoupled-components/title/title.typings';
 import {
   ComponentJoinUsFragment
 } from '@src/data/contentful/join-us/__generated/join-us.generated';
-
-
 
 
 export const JoinUs = (props: ComponentJoinUsFragment) => {
@@ -47,13 +48,10 @@ export const JoinUs = (props: ComponentJoinUsFragment) => {
       <Title {...titleProps} />
       <Description {...descriptionProps} />
       <div className="grid grid-cols-3 gap-x-3 mt-9">
-        {teasersCollection && teasersCollection.items?.map((item: any) => (
+        {teasersCollection?.items?.map((item: any) => (
           <div key={item.title}>
             <Teaser
                     icon={item.image}
-                    // subtitle={item?.subtitle as string}
-                    // buttonUrl=""
-                    // buttonText=""
                     titleProps={{
                       'title': item?.title as string,
                       ...titleTeaserProp
@@ -87,7 +85,7 @@ export const JoinUs = (props: ComponentJoinUsFragment) => {
             },
           }}
         >
-          {clientsCollection && clientsCollection?.items.map((item: any) => (
+          {clientsCollection?.items.map((item: any) => (
             <SwiperSlide key={item?.title}>
               <img src={item.url} alt={item?.title} width='150px'/>
             </SwiperSlide>

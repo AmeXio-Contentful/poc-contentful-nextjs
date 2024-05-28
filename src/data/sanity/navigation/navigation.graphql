@@ -1,0 +1,36 @@
+ query headerById($id: ID) {
+   allHeader(where: { _id: { eq: $id } }) {
+    navigationItems {
+      text
+      url {
+        current
+      }
+      children {
+        text
+        url {
+          current
+        }
+        children {
+          text
+          url {
+            current
+          }
+          children {
+            text
+            url {
+              current
+            }
+          }
+        }
+      }
+    }
+    languageItems {
+      logo {
+        asset {
+          url
+        }
+      }
+      language
+    }
+  }
+ }

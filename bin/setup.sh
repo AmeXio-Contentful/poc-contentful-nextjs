@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# Check if .env file already exists
-if [ -f .env ]; then
+# Check if .env.local file already exists
+if [ -f .env.local ]; then
   echo ".env.example file does not exist. Aborting."
   exit 1
 fi
 
-# Check if .env.example file exists
-if [ ! -f .env.example ]; then
+# Check if .env.local.example file exists
+if [ ! -f .env.local.example ]; then
   echo ".env.example file does not exist. Aborting."
   exit 1
 fi
 
-# Copy .env.example to .env
-cp .env.example .env
+# Copy .env.local.example to .env.local
+cp .env.local.example .env.local
 
 # Read the values of the variables from command-line arguments
 for arg in "$@"; do
@@ -27,7 +27,7 @@ for arg in "$@"; do
 
   # Sanitize inputs
   if [[ "$key" != *[![:alnum:]_]* ]]; then
-    sed -e "s/^${key}=.*/${key}=${value}/" .env > temp && mv temp .env
+    sed -e "s/^${key}=.*/${key}=${value}/" .env.local > temp && mv temp .env.local
   else
     echo "Invalid key: $key. Keys must contain only letters, numbers, and underscores. Aborting."
     exit 1

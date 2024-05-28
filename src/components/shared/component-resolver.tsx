@@ -2,7 +2,8 @@ import { Box } from '@mui/material';
 import React, { useMemo } from 'react';
 
 import { useContentfulContext } from '@src/contentful-context';
-import { componentGqlMap, componentMap } from '@src/mappings';
+import { componentGqlMap, componentMap } from '@src/mapping/contentful/mappings';
+import {componentMapSanity } from '@src/mapping/sanity/mappings';
 
 let previousComponent: string | null = null;
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
     __typename: string;
     [k: string]: any;
     sectionType?: number;
+    isSanity?: boolean;
   };
 
   /**
@@ -34,6 +36,7 @@ export const ComponentResolver = (props: Props) => {
   const { locale } = useContentfulContext();
 
   // mapping for Gql
+  const componentMapToUse = props.componentProps.isSanity ? componentMapSanity : componentMap;
   const ComponentGql = componentGqlMap[componentProps.__typename];
 
   const shouldForceGql = useMemo(() => {
@@ -60,11 +63,9 @@ export const ComponentResolver = (props: Props) => {
     return true;
   }, [ComponentGql, componentProps, props.forceGql]);
 
-  // regular mapping
-  const Component = !shouldForceGql && componentMap[componentProps.__typename];
+  const Component = !shouldForceGql && componentMapToUse[componentProps.__typename];
 
   const previousComponentProp = previousComponent;
-
   previousComponent = componentProps.__typename;
 
   if (!Component && !ComponentGql) {
