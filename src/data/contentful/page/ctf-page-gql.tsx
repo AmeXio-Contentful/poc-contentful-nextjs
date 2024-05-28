@@ -27,11 +27,7 @@ export interface MetaTags {
 const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { previewActive, locale } = useContentfulContext();
-  let slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
-
-  if (Array.isArray(slug)) {
-    slug = slug[0];
-  }
+  const slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
 
   // LOAD CONTENTFUL
   const { isLoading, data } = useCtfPageQuery({
