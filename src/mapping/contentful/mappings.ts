@@ -1,8 +1,10 @@
 import dynamic from 'next/dynamic';
 
-// mapping basically determines which mapping to use, so the origin of the dataset is set over here
+// mapping basically determines which specific mapping to use per component, so the origin of the dataset is set over here
 // should we differentiate between the method of fetching the data? Should we use one by default?
 // can the origin of the data be different based on conditions in this mapping?
+// should 'contentful', 'sanity' have their own separate mapping that should be triggered by the component resolver,
+// based on the page's origin?
 
 export const componentMap = {
   Teaser: dynamic(() =>
