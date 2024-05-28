@@ -1,5 +1,9 @@
 import dynamic from 'next/dynamic';
 
+// mapping basically determines which mapping to use, so the origin of the dataset is set over here
+// should we differentiate between the method of fetching the data? Should we use one by default?
+// can the origin of the data be different based on conditions in this mapping?
+
 export const componentMap = {
   Teaser: dynamic(() =>
     import(
