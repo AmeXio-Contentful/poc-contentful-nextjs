@@ -1,18 +1,13 @@
-import styles from '../../components/features/decoupled-components/hero-banner/hero-banner.module.scss';
-
-import {ButtonProps} from '@src/components/features/decoupled-components/button/button.typings';
-import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
-import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
-import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
-import {
-  ComponentHeroBannerFragment
-} from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
-import {HeroBannerGql} from '@src/data/contentful/hero-banner/hero-banner-gql';
 import {HeroBanner} from '@src/components/features/decoupled-components/hero-banner/hero-banner';
+import {HeroBannerGql} from '@src/data/contentful/hero-banner/hero-banner-gql';
+import {DefaultQueryParameters} from '@src/data/contentful/teaser/ctf-teaser-gql';
 
-console.log("is this mapping actually used?");
-export const HeroBannerComponent = (props: any) => {
-  // aanpassen van de data
+export const HeroBannerComponent = (props: DefaultQueryParameters) => {
   const data = HeroBannerGql(props);
+  // adjust data over here to custom component typing
+  /* const mappedData = {
+
+  } */
+
   return <HeroBanner {...data.data?.heroBanner} />
 };
