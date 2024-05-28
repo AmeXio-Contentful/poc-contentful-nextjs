@@ -4,10 +4,7 @@ import {ButtonProps} from '@src/components/features/decoupled-components/button/
 import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
 import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
 import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
-// import { sectionTypes } from '@src/components/shared/global';
-import {
-  ComponentHeroBannerFragment
-} from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
+import {ComponentHeroBannerFragment} from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
 
 
 
@@ -28,8 +25,6 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
     buttonUrl: buttonUrl as string,
     // buttonClasses: styles.hero_button // 'mt-6 bg-blue-500 px-5 py-3.5 text-base text-white'
   }
-
-  console.log("hero banner component being used");
 
   return (
     <div className={styles.hero_banner}

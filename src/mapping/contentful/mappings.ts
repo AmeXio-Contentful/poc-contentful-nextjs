@@ -70,10 +70,6 @@ export const componentGqlMap = {
   ),
   // gql file is loaded, which loads the component with the data
   HeroBanner: dynamic(() =>
-    /* import(
-      '@src/data/contentful/hero-banner/hero-banner-gql'
-      ).then((module) => module.HeroBannerGql),
-     */
     import(
       '@src/mapping/contentful/hero-banner'
       ).then((module) => module.HeroBannerComponent),
