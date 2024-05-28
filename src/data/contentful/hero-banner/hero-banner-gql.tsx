@@ -28,7 +28,7 @@ export function HeroBannerGql({
   // --> generic in the mapping?
   // only returning the data results in an error because a React component is expected
   // how to return data only?
-  // return data;
+  return data;
 
-  return <HeroBanner {...data.data?.heroBanner} />;
+  // return <HeroBanner {...data.data?.heroBanner} />;
 }
