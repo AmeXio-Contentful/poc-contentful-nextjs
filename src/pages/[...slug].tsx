@@ -7,7 +7,6 @@ const SlugPage: NextPage = () => {
   const router = useRouter();
   let slug = (router?.query.slug) || '';
 
-  console.log(`slug: ${slug[0]}`);
   if (Array.isArray(slug)) {
     slug = slug[0];
   }
