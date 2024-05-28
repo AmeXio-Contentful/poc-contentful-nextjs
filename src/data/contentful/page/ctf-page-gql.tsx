@@ -27,8 +27,11 @@ export interface MetaTags {
 const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { previewActive, locale } = useContentfulContext();
-  const slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
+  let slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
 
+  if (Array.isArray(slug)) {
+    slug = slug[0];
+  }
 
   // LOAD CONTENTFUL
   const { isLoading, data } = useCtfPageQuery({
@@ -37,7 +40,7 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
     preview: previewActive,
   });
 
-  const page = useContentfulLiveUpdates(tryget(() => data?.pageCollection!.items[0]));
+  let page = useContentfulLiveUpdates(tryget(() => data?.pageCollection!.items[0]));
   const { seo } = page || {};
 
   const metaTags: MetaTags = {
@@ -51,12 +54,16 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
   if (isLoading) return <></>;
 
   if (!page) {
-    const error = {
-      code: 404,
-      message:
-        'We were not able to locate the content you were looking for, please check the url for possible typos',
-    };
-    return <PageError error={error} />;
+    if (!data?.pageCollection?.items[0]) {
+      const error = {
+        code: 404,
+        message:
+          'We were not able to locate the content you were looking for, please check the url for possible typos',
+      };
+      return <PageError error={error}/>;
+    }
+
+    page = data?.pageCollection?.items[0];
   }
 
   const robots = [
