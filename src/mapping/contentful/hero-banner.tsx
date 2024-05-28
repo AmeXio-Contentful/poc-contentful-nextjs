@@ -7,10 +7,12 @@ import {TitleProps} from '@src/components/features/decoupled-components/title/ti
 import {
   ComponentHeroBannerFragment
 } from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
+import {HeroBannerGql} from '@src/data/contentful/hero-banner/hero-banner-gql';
 import {HeroBanner} from '@src/components/features/decoupled-components/hero-banner/hero-banner';
 
 console.log("is this mapping actually used?");
 export const HeroBannerComponent = (props: ComponentHeroBannerFragment) => {
   // aanpassen van de data
-  return <HeroBanner {...props} />
+  const data = HeroBannerGql(props);
+  return <HeroBanner {...data.data?.heroBanner} />
 };
