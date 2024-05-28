@@ -11,7 +11,7 @@ import {HeroBannerGql} from '@src/data/contentful/hero-banner/hero-banner-gql';
 import {HeroBanner} from '@src/components/features/decoupled-components/hero-banner/hero-banner';
 
 console.log("is this mapping actually used?");
-export const HeroBannerComponent = (props: ComponentHeroBannerFragment) => {
+export const HeroBannerComponent = (props: any) => {
   // aanpassen van de data
   const data = HeroBannerGql(props);
   return <HeroBanner {...data.data?.heroBanner} />
