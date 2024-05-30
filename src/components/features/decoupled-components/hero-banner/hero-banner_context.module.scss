@@ -1,0 +1,10 @@
+// @use '../../../../styles/utilities/container-mixins';
+
+.hero_banner {
+  &_description {
+    // --text-color: #fff;
+    color: #fff;
+
+    // @include container-mixins.readable-width();
+  }
+}

@@ -1,4 +1,5 @@
 import styles from './hero-banner.module.scss';
+import context from './hero-banner_context.module.scss';
 
 import {ButtonProps} from '@src/components/features/decoupled-components/button/button.typings';
 import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
@@ -7,6 +8,7 @@ import {TitleProps} from '@src/components/features/decoupled-components/title/ti
 import {
   ComponentHeroBannerFragment
 } from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
+
 
 
 
@@ -19,13 +21,12 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
 
   const descriptionProps: DescriptionProps = {
     description: subtitle as string,
-    descriptionClasses: 'mt-6 mb-5 text-xl text-white max-w-xl'
+    descriptionClasses: context.hero_banner_description
   }
 
   const buttonProps: ButtonProps = {
     buttonText: buttonText as string,
     buttonUrl: buttonUrl as string,
-    // buttonClasses: styles.hero_button // 'mt-6 bg-blue-500 px-5 py-3.5 text-base text-white'
   }
 
   return (

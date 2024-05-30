@@ -1,0 +1,10 @@
+:global(:root) {
+  .description {
+    --text-color: #000;
+  }
+}
+
+.description {
+  color: var(--text-color);
+  font-size: 16px;
+}

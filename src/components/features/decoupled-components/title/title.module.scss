@@ -11,6 +11,7 @@
       color: #fff;
       font-size: 1.5rem;
       font-weight: bold;
+      margin-bottom: 20px;
       @include container-mixins.readable-width();
 
       @include breakpoint-mixins.breakpoint-from(m) {
@@ -21,16 +22,18 @@
     .h2 {
       font-size: 2.25rem;
       font-weight: 500;
-      margin: 0 auto;
+      margin: 0 auto 20px auto;
       text-align: center;
       @include container-mixins.readable-width();
     }
 
     .h3 {
       font-size: 1.5rem;
+      margin-bottom: 16px;
     }
 
     .h4 {
       font-size: 1rem;
+      margin-bottom: 7px;
     }
 }

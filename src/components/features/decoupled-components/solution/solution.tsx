@@ -28,11 +28,10 @@ export const Solution = (props: ComponentSolutionSectionFragment) => {
                 titleProps={{
                   'title': item?.title as string,
                   'heading': 'h3',
-                  'titleClasses': 'text-2xl text-blue-900 font-medium'
                 }}
                 descriptionProps={{
                   description: item?.subtitle as string,
-                  'descriptionClasses': 'my-3 h-auto text-base'
+                  // 'descriptionClasses': 'my-3 h-auto text-base'
                 }}
                 buttonProps={{
                   'buttonUrl': item?.buttonUrl as string,
