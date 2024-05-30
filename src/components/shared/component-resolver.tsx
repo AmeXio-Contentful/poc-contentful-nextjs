@@ -35,6 +35,7 @@ export const ComponentResolver = (props: Props) => {
 
   const { locale } = useContentfulContext();
 
+  // mapping for Gql
   const componentMapToUse = props.componentProps.isSanity ? componentMapSanity : componentMap;
   const ComponentGql = componentGqlMap[componentProps.__typename];
 
