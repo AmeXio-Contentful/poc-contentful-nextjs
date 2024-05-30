@@ -1,14 +1,15 @@
 import styles from './hero-banner.module.scss';
-import description from '../description/description.module.scss';
+import descriptionContext from '../description/description.module.scss';
 
 import {ButtonProps} from '@src/components/features/decoupled-components/button/button.typings';
 import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
+import {HeroBannerProps} from "@src/components/features/decoupled-components/hero-banner/hero-banner.typings";
+
 import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
 import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
-import {ComponentHeroBannerFragment} from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
 
-export const HeroBanner = (props: ComponentHeroBannerFragment) => {
-  const { backgroundImage , title, subtitle, buttonText, buttonUrl} = props;
+export const HeroBanner = (props: HeroBannerProps) => {
+  const { backgroundImage , title, subtitle, description, buttonText, buttonUrl} = props;
   const titleProps: TitleProps = {
     title: title as string,
     heading: 'h1'
@@ -16,7 +17,7 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
 
   const descriptionProps: DescriptionProps = {
     description: subtitle as string,
-    descriptionClasses: description.context_intro
+    descriptionClasses: descriptionContext.context_intro
   }
 
   const buttonProps: ButtonProps = {
