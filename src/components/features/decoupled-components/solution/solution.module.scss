@@ -15,7 +15,7 @@
     margin-top: 55px;
     text-align: left;
 
-    @include breakpoint-mixins.breakpoint-from(m) {
+    @include breakpoint-mixins.breakpoint-from(l) {
       align-items: stretch;
       column-gap: 30px;
       grid-template-columns: 1fr 1fr;
