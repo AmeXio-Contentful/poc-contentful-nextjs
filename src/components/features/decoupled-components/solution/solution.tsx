@@ -35,9 +35,10 @@ export const Solution = (props: ComponentSolutionSectionFragment) => {
                 }}
                 buttonProps={{
                   'buttonUrl': item?.buttonUrl as string,
-                  'buttonText': item?.buttonText as string
+                  'buttonText': item?.buttonText as string,
+                  'buttonClasses': 'solution'
                 }}
-                teaserClasses={context.solution_context}
+                teaserClasses='solution'
               />
             </div>
           ))

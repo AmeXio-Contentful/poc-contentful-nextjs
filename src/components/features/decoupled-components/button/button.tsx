@@ -6,7 +6,7 @@ export const Button = (props: ButtonProps) => {
 
   return (
     // see description example on how to use variations instead of passing a class, this might result in unpredictable behaviour in styling
-      <button className={`${styles.button}`}>
+      <button className={`${styles.button} ${buttonClasses === 'solution' && styles.button_solution}`}>
         <a href={buttonUrl as string}> {buttonText} </a>
       </button>
   );

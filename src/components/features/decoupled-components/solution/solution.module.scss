@@ -16,9 +16,15 @@
     text-align: left;
 
     @include breakpoint-mixins.breakpoint-from(m) {
+      align-items: stretch;
       column-gap: 30px;
       grid-template-columns: 1fr 1fr;
       margin-bottom: 200px;
     }
+  }
+
+  &__item {
+    display: grid;
+    align-items: stretch;
   }
 }
