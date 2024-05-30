@@ -1,11 +1,13 @@
-import {
-  ComponentSolutionSectionFragment
-} from '@src/data/contentful/solution/__generated/solution.generated';
+import styles from "./solution.module.scss";
+import button from "../button/button.module.scss";
+import teaser from "../teaser/teaser.module.scss";
+
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { Title } from '@src/components/features/decoupled-components/title/title';
 import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
-import styles from "./solution.module.scss";
-import context from "./solution_context.module.scss"
+import {
+  ComponentSolutionSectionFragment
+} from '@src/data/contentful/solution/__generated/solution.generated';
 
 
 export const Solution = (props: ComponentSolutionSectionFragment) => {
@@ -31,14 +33,13 @@ export const Solution = (props: ComponentSolutionSectionFragment) => {
                 }}
                 descriptionProps={{
                   description: item?.subtitle as string,
-                  // 'descriptionClasses': 'my-3 h-auto text-base'
                 }}
                 buttonProps={{
                   'buttonUrl': item?.buttonUrl as string,
                   'buttonText': item?.buttonText as string,
-                  'buttonClasses': 'solution'
+                  'buttonClasses': button.button_solution
                 }}
-                teaserClasses='solution'
+                teaserClasses={ teaser.teaser__solution }
               />
             </div>
           ))

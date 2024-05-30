@@ -1,4 +1,5 @@
 import styles from './hero-banner.module.scss';
+import description from '../description/description.module.scss';
 
 import {ButtonProps} from '@src/components/features/decoupled-components/button/button.typings';
 import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
@@ -20,7 +21,7 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
 
   const descriptionProps: DescriptionProps = {
     description: subtitle as string,
-    descriptionClasses: 'intro'
+    descriptionClasses: description.intro
   }
 
   const buttonProps: ButtonProps = {

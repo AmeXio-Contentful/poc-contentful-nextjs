@@ -10,7 +10,7 @@ export const Description = (props: DescriptionProps) => {
 
   return (
     // this way should work properly to add variations!!!
-    <div className={`${styles.description} ${descriptionClasses === 'intro' && styles.intro}`}>
+    <div className={`${styles.description} ${descriptionClasses || ''}`}>
         { description }
     </div>
   );

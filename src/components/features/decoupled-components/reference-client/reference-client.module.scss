@@ -1,0 +1,6 @@
+@use '../../../../styles/utilities/container-mixins' as container;
+
+
+.reference_client {
+  @include container.section-background;
+}

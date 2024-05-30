@@ -6,7 +6,7 @@ import { TeaserProps } from '@src/components/features/decoupled-components/tease
 import { Title } from '@src/components/features/decoupled-components/title/title';
 
 export const Teaser = (props: TeaserProps) => {
-  return <div className={`${styles.teaser || ''} ${props.teaserClasses === 'solution' && styles.teaser__solution}`}>
+  return <div className={`${styles.teaser} ${props.teaserClasses || ''}`}>
     { props.icon &&
         <img
           className={styles.teaser__icon}

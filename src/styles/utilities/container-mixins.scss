@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use './breakpoint-mixins';
 @use '../config/breakpoints';
+@use '../theme';
 
 @mixin full-width-boxed-content($max-width: map.get(breakpoints.$breakpoints, l), $padding: 12px) {
   padding-left: $padding;
@@ -16,4 +17,20 @@
   @include breakpoint-mixins.breakpoint-from(m) {
     max-width: $max-width;
   }
+}
+
+@mixin section {
+  padding-bottom: 105px;
+  padding-top: 105px;
+
+  @include full-width-boxed-content(map.get(breakpoints.$breakpoints, l), 45px);
+}
+
+@mixin section-background {
+  padding-bottom:55px;
+  padding-top: 55px;
+
+  background-color: theme.$background;
+
+  @include full-width-boxed-content(map.get(breakpoints.$breakpoints, l), 45px);
 }
