@@ -9,14 +9,14 @@ import {Teaser} from '@src/components/features/decoupled-components/teaser/tease
 import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
 
 export const HeroBanner = (props: HeroBannerProps) => {
-  const { backgroundImage , title, subtitle, description, buttonText, buttonUrl} = props;
+  const { backgroundImage , title, description, buttonText, buttonUrl} = props;
   const titleProps: TitleProps = {
     title: title as string,
     heading: 'h1'
   };
 
   const descriptionProps: DescriptionProps = {
-    description: subtitle as string,
+    description: description as string,
     descriptionClasses: descriptionContext.context_intro
   }
 

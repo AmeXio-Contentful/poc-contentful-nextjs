@@ -78,8 +78,8 @@ export const componentGqlMap = {
   ),
   SolutionSection: dynamic(() =>
     import(
-      '@src/data/contentful/solution/solution-gql'
-      ).then((module) => module.SolutionGql),
+      '@src/mapping/contentful/solution'
+      ).then((module) => module.SolutionComponent),
   ),
   ReferenceClients: dynamic(() =>
     import(

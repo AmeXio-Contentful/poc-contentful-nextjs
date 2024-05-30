@@ -1,24 +1,14 @@
-import React from 'react';
-
-import {
-  DefaultQueryParameters
-} from '@src/data/contentful/teaser/ctf-teaser-gql';
-import {
-  useSolutionSectionComponentQuery
-} from '@src/data/contentful/solution/__generated/solution.generated';
-import { Solution } from '@src/components/features/decoupled-components/solution/solution';
-
+import {DefaultQueryParameters} from '@src/data/contentful/component.typings';
+import {useSolutionSectionComponentQuery} from '@src/data/contentful/solution/__generated/solution.generated';
 
 export function SolutionGql({
   id,
   locale,
   preview,
 }: DefaultQueryParameters) {
-  const data = ( useSolutionSectionComponentQuery({
+  return ( useSolutionSectionComponentQuery({
     id: id,
     locale: locale,
     preview: preview,
-  })) as any;
-
-  return <Solution {...data.data?.solutionSection} />;
+  }));
 }

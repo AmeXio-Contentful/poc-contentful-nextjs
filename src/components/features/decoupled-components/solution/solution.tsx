@@ -2,17 +2,16 @@ import styles from "./solution.module.scss";
 import button from "../button/button.module.scss";
 import teaser from "../teaser/teaser.module.scss";
 
+import {SolutionProps} from "@src/components/features/decoupled-components/solution/solution.typings";
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { Title } from '@src/components/features/decoupled-components/title/title';
 import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
-import {
-  ComponentSolutionSectionFragment
-} from '@src/data/contentful/solution/__generated/solution.generated';
 
+export const Solution = (props: SolutionProps) => {
+  const {title, solutions} = props;
 
-export const Solution = (props: ComponentSolutionSectionFragment) => {
   const titleProps: TitleProps = {
-    title: props.title as string,
+    title: title as string,
     heading: 'h2',
     titleClasses: styles.title
   };
@@ -22,24 +21,26 @@ export const Solution = (props: ComponentSolutionSectionFragment) => {
       <Title {...titleProps}/>
       <div className={styles.solution__collection}>
         {
-          props.teasersCollection?.items.map((item) => (
+          solutions?.map((item) => (
             <div className={styles.solution__item} key={item?.title}>
-
               <Teaser
                 icon={item?.image}
                 titleProps={{
-                  'title': item?.title as string,
+                  'title': item?.title,
                   'heading': 'h3',
                 }}
                 descriptionProps={{
-                  description: item?.subtitle as string,
+                  description: item?.description,
                 }}
-                buttonProps={{
-                  'buttonUrl': item?.buttonUrl as string,
-                  'buttonText': item?.buttonText as string,
-                  'buttonClasses': button.context_solution
-                }}
-                teaserClasses={ teaser.context_solution }
+                buttonProps={
+                  item?.button
+                    ? {
+                      ...item.button,
+                      buttonClasses: button.context_solution,
+                    }
+                    : undefined
+                }
+                teaserClasses={teaser.context_solution}
               />
             </div>
           ))
