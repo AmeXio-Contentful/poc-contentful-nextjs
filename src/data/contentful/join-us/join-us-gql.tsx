@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   DefaultQueryParameters
-} from '@src/data/contentful/teaser/ctf-teaser-gql';
+} from '@src/data/contentful/component.typings';
 import {
   useJoinUsComponentQuery
 } from '@src/data/contentful/join-us/__generated/join-us.generated';

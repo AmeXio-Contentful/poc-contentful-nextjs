@@ -1,6 +1,6 @@
 import {
   DefaultQueryParameters
-} from '@src/data/contentful/teaser/ctf-teaser-gql';
+} from '@src/data/contentful/component.typings';
 import {
   useCtfComponentTwoGridQuery
 } from '@src/data/contentful/two-grid/__generated/ctf-two-grid.generated';
