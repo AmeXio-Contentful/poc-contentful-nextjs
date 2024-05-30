@@ -1,10 +1,15 @@
 .teaser {
   --content-display: inline-block;
   --icon-width: 75px;
+  --icon-margin: 0;
+  --icon-transform: none;
 
   &__icon {
     width: var(--icon-width);
     height: auto;
+    margin: var(--icon-margin);
+    transform: var(--icon-transform);
+    transition: all ease 0.2s;
   }
 
   &__content {
@@ -26,5 +31,14 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  &_join_us {
+    --icon-width: 100px;
+    --icon-margin: 0 auto 15px;
+
+    &:hover {
+      --icon-transform: scale(0.85);;
+    }
   }
 }

@@ -1,0 +1,7 @@
+@use '../../../../styles/utilities/container-mixins' as container;
+
+.join_us {
+  text-align: center;
+
+  @include container.section;
+}

@@ -7,12 +7,23 @@ import { Title } from '@src/components/features/decoupled-components/title/title
 
 export const Teaser = (props: TeaserProps) => {
   return <div className={`${styles.teaser || ''} ${props.teaserClasses || ''}`}>
-    { props.icon &&
-        <img
-          className={styles.teaser__icon}
-          alt="icon"
-          src={props.icon.url}
-        />
+    { props.iconUrl ?
+      <a href={props.iconUrl}>
+        { props.icon &&
+            <img
+              className={styles.teaser__icon}
+              alt="icon"
+              src={props.icon.url}
+            />
+        }
+      </a>
+      :
+        props.icon &&
+          <img
+            className={styles.teaser__icon}
+            alt="icon"
+            src={props.icon.url}
+          />
     }
     <div className={styles.teaser__content}>
       <div className={styles.teaser__info}>
