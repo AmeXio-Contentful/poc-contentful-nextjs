@@ -1,5 +1,11 @@
 import dynamic from 'next/dynamic';
 
+// mapping basically determines which specific mapping to use per component, so the origin of the dataset is set over here
+// should we differentiate between the method of fetching the data? Should we use one by default?
+// can the origin of the data be different based on conditions in this mapping?
+// should 'contentful', 'sanity' have their own separate mapping that should be triggered by the component resolver,
+// based on the page's origin?
+
 export const componentMap = {
   Teaser: dynamic(() =>
     import(
@@ -24,7 +30,7 @@ export const componentMap = {
   HeroBanner: dynamic(() =>
     import(
       '@src/mapping/contentful/hero-banner'
-      ).then((module) => module.HeroBanner),
+      ).then((module) => module.HeroBannerComponent),
   ),
   SolutionSection: dynamic(() =>
     import(
@@ -64,10 +70,11 @@ export const componentGqlMap = {
       '@src/data/contentful/two-grid/ctf-two-grid-gql'
       ).then((module) => module.CtfTwoGridGql),
   ),
+  // gql file is loaded, which loads the component with the data
   HeroBanner: dynamic(() =>
     import(
-      '@src/data/contentful/hero-banner/hero-banner-gql'
-      ).then((module) => module.HeroBannerGql),
+      '@src/mapping/contentful/hero-banner'
+      ).then((module) => module.HeroBannerComponent),
   ),
   SolutionSection: dynamic(() =>
     import(
