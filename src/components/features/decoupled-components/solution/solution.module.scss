@@ -11,16 +11,14 @@
   &__collection {
     display: grid;
     gap: 55px;
+    margin-bottom: 165px;
     margin-top: 55px;
     text-align: left;
 
     @include breakpoint-mixins.breakpoint-from(m) {
-      grid-template-columns: 1fr 1fr;
       column-gap: 30px;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 200px;
     }
-  }
-
-  &__item {
-
   }
 }
