@@ -6,7 +6,7 @@ import { TeaserProps } from '@src/components/features/decoupled-components/tease
 import { Title } from '@src/components/features/decoupled-components/title/title';
 
 export const Teaser = (props: TeaserProps) => {
-  return <div className={`${styles.teaser} ${props.teaserClasses || ''}`}>
+  return <div className={`${styles.teaser || ''} ${props.teaserClasses || ''}`}>
     { props.icon &&
         <img
           className={styles.teaser__icon}
@@ -17,6 +17,9 @@ export const Teaser = (props: TeaserProps) => {
     <div className={styles.teaser__content}>
       <div className={styles.teaser__info}>
           <Title {...props.titleProps} />
+          { props.subTitleProps &&
+            <Title {...props.subTitleProps} />
+          }
           <Description {...props.descriptionProps} />
       </div>
       { props.buttonProps &&

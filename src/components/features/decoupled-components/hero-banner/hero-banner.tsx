@@ -21,7 +21,7 @@ export const HeroBanner = (props: ComponentHeroBannerFragment) => {
 
   const descriptionProps: DescriptionProps = {
     description: subtitle as string,
-    descriptionClasses: description.intro
+    descriptionClasses: description.context_intro
   }
 
   const buttonProps: ButtonProps = {

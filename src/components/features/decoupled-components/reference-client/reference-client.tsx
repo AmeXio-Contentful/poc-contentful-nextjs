@@ -22,26 +22,29 @@ export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
   const titleProps: TitleProps = {
     title: props.title as string,
     heading: 'h2',
-    // titleClasses: 'font-semibold text-4xl text-center mt-8 primary-color w-2/5 m-auto',
   };
 
 
   const titleTeaserProp = {
-    heading: 'h3',
-    // classes: 'text-2xl text-blue-900 font-medium',
+    heading: 'h3'
   };
+
+  const subTitleTeaserProp = {
+    heading: 'h4'
+  }
 
   const descriptionProps = {
     description: props.description as string,
-    descriptionClasses: description.accent
-    // descriptionClasses: 'my-3 h-auto text-base w-2/5 m-auto text-center font-semibold'
+    descriptionClasses: description.context_accent
   }
 
   return (
-    <div className={styles.reference_client}>
+    <div className={styles.reference_client || ''}>
       <Title {...titleProps} />
       <Description {...descriptionProps} />
-      <div className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pt-9 md:px-48  m-auto">
+      <div
+        className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pt-9 md:px-48  m-auto"
+      >
         <Swiper
           pagination={{ clickable: true }}
           modules={[Pagination]}
@@ -55,11 +58,13 @@ export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
                   'title': item?.title as string,
                   ...titleTeaserProp,
                 }}
-                buttonProps={{
-                  'buttonUrl': item?.buttonUrl as string,
-                  'buttonText': item?.buttonText as string,
+                subTitleProps={{
+                  'title': 'Subtitle should be over here', // make sure field is available + data is linked
+                  ...subTitleTeaserProp
                 }}
-                descriptionProps={descriptionProps}
+                descriptionProps={{
+                  'description': 'Some dummy text to see it the styling is working as expected.'
+                }} // {item?.descriptionProps} // make sure field is available + data is linked
               />
             </SwiperSlide>
           ))}
