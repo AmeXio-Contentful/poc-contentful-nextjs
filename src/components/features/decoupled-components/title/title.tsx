@@ -12,7 +12,8 @@ export const Title = (props: TitleProps) => {
     title,
   );
   return (
-    <div className={`${styles.title} ${titleClasses}`}>
+    // see description example on how to use variations instead of passing a class, this might result in unpredictable behaviour in styling
+    <div className={`${styles.title} ${titleClasses || ''}`}>
         { headingElement }
     </div>
   );

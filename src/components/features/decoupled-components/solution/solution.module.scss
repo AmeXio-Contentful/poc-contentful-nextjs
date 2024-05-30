@@ -1,0 +1,28 @@
+@use 'sass:map';
+@use '../../../../styles/config/breakpoints' as breakpoints;
+@use '../../../../styles/utilities/breakpoint-mixins';
+@use '../../../../styles/utilities/container-mixins' as container;
+
+.solution {
+  text-align: center;
+
+  @include container.section;
+
+  &__collection {
+    display: grid;
+    gap: 55px;
+    margin-top: 55px;
+    text-align: left;
+
+    @include breakpoint-mixins.breakpoint-from(l) {
+      align-items: stretch;
+      column-gap: 30px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__item {
+    display: grid;
+    align-items: stretch;
+  }
+}

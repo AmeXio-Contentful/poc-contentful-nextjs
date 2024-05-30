@@ -1,11 +1,5 @@
 @use '../../../../styles/theme' as theme;
 
-/* .hero_context {
-  .button {
-    --button-background: #{theme.$brand-accent};
-  }
-} */
-
 .button {
   --button-background: #{theme.$brand-accent};
   --button-color: #fff;
@@ -17,9 +11,18 @@
   color: var(--button-color);
   font-family: var(--button-font-family);
   font-size: var(--button-font-size);
+  margin-top: 25px;
   padding: var(--button-padding);
 
   &:hover {
     --button-background: #{theme.$brand-accent-hover};
+  }
+}
+
+.context {
+  &_solution {
+    align-self: flex-end;
+    justify-self: left;
+    grid-column: 2;
   }
 }
