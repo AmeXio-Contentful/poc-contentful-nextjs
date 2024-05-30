@@ -1,8 +1,9 @@
 .teaser {
   --content-display: inline-block;
+  --icon-width: 75px;
 
   &__icon {
-    width: 75px;
+    width: var(--icon-width);
     height: auto;
   }
 
@@ -18,5 +19,12 @@
     display: grid;
     grid-template-columns: 75px 1fr;
     column-gap: 60px;
+  }
+
+  &_reference {
+    --icon-width: 250px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }

@@ -3,4 +3,13 @@
 
 .reference_client {
   @include container.section-background;
+
+  &__item {
+    margin-top: 20px;
+  }
+
+}
+
+.swiper_pagination {
+  padding-bottom: 50px;
 }

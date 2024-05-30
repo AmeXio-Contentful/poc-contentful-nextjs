@@ -1,5 +1,6 @@
 import styles from './reference-client.module.scss';
 import description from "../description/description.module.scss";
+import teaser from "../teaser/teaser.module.scss";
 
 // eslint-disable-next-line import/no-unresolved
 import { Pagination } from 'swiper/modules';
@@ -43,16 +44,21 @@ export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
       <Title {...titleProps} />
       <Description {...descriptionProps} />
       <div
-        className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pt-9 md:px-48  m-auto"
+        // className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pt-9 md:px-48  m-auto"
       >
         <Swiper
           pagination={{ clickable: true }}
           modules={[Pagination]}
-          className="mt-6 h-auto w-full"
+          // className="mt-6 h-auto w-full"
+          className={styles.swiper_pagination}
         >
           {props?.clientsCollection?.items?.map((item: any) => (
-            <SwiperSlide className="w-full px-4 pb-10" key={item.id}>
+            <SwiperSlide
+              // className="w-full px-4 pb-10"
+              className={styles.reference_client__item}
+              key={item.id}>
               <Teaser
+                teaserClasses={teaser.context_reference}
                 icon={item?.image}
                 titleProps={{
                   'title': item?.title as string,
