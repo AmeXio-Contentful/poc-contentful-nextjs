@@ -50,7 +50,7 @@ export const JoinUs = (props: ComponentJoinUsFragment) => {
     <div className={styles.join_us}>
       <Title {...titleProps} />
       <Description {...descriptionProps} />
-      <div className="grid grid-cols-3 gap-x-3 mt-9">
+      <div className={styles.join_us__collection}>
         {teasersCollection?.items?.map((item: any) => {
           console.log("buttonUrl", item.buttonUrl);
           return (
@@ -69,7 +69,7 @@ export const JoinUs = (props: ComponentJoinUsFragment) => {
         )})}
       </div>
       <Button {...buttonProps} />
-      <div className="m-auto mt-24 mb-24">
+      <div className={styles.join_us__swiper}>
         <Swiper
           loop={true as boolean}
           modules={[Autoplay]}
