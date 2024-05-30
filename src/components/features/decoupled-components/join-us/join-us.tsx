@@ -1,4 +1,4 @@
-
+import context from '../title/title.module.scss';
 // eslint-disable-next-line import/no-unresolved
 import { Autoplay } from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
@@ -24,23 +24,21 @@ export const JoinUs = (props: ComponentJoinUsFragment) => {
   const { title, description, buttonUrl, buttonText, clientsCollection, teasersCollection} = props;
   const titleProps: TitleProps = {
     title: title as string,
-    heading: 'h3',
-    titleClasses: 'font-semibold text-black text-4xl max-w-xl m-auto'
+    heading: 'h2',
   };
 
   const descriptionProps: DescriptionProps = {
     description: description as string,
-    descriptionClasses: 'mt-6 mb-5 text-xl text-black max-w-xl m-auto'
   }
 
   const buttonProps: ButtonProps = {
     buttonText: buttonText as string,
     buttonUrl: buttonUrl as string,
-    buttonClasses: 'mt-6 bg-orange-500 px-5 py-3.5 text-base text-white'
   }
 
   const titleTeaserProp = {
-
+    heading: 'h4',
+    titleClasses: context.context_join
   }
 
   return (

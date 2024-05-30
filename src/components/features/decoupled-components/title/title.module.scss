@@ -3,7 +3,9 @@
 @use '../../../../styles/utilities/container-mixins';
 
 .title {
-  color: theme.$brand-main;
+  --text-color: #{theme.$brand-main};
+
+  color: var(--text-color);
   font-family: theme.$brand-font-family;
   line-height: normal;
 
@@ -33,9 +35,16 @@
     }
 
     .h4 {
-      color: #000;
+      --text-color: #000;
+
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 7px;
     }
+}
+
+.context {
+  &_join {
+    --text-color: #{theme.$brand-main}
+  }
 }
