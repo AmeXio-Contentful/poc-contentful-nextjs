@@ -1,10 +1,18 @@
-:global(:root) {
-  .description {
-    --text-color: #000;
-  }
+@use '../../../../styles/utilities/container-mixins';
+
+// this is the default
+.description {
+  --font-size: 16px;
+  --text-color: #000;
+  color: var(--text-color);
+  font-size: var(--font-size);
+  @include container-mixins.readable-width();
 }
 
-.description {
-  color: var(--text-color);
-  font-size: 16px;
+// this is a variation that can be set by adding an 'intro' class
+// through the descriptionClasses that is passed from the parent component
+// it overrides the variables used in the default
+.intro {
+  --font-size: 21px;
+  --text-color: #fff;
 }
