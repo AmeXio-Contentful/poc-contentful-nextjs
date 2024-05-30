@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { DescriptionProps } from '@src/components/features/decoupled-components/description/description.typings';
 import styles from "./description.module.scss";
+
+import { DescriptionProps } from '@src/components/features/decoupled-components/description/description.typings';
+
 
 export const Description = (props: DescriptionProps) => {
   const { description, descriptionClasses } = props;
