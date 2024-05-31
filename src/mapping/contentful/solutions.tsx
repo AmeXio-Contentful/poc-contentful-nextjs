@@ -1,12 +1,12 @@
-import {Solution} from '@src/components/features/decoupled-components/solution/solution';
-import {SolutionItem, SolutionProps} from "@src/components/features/decoupled-components/solution/solution.typings";
+import {Solutions} from '@src/components/features/decoupled-components/solutions/solutions';
+import {SolutionItem, SolutionsProps} from "@src/components/features/decoupled-components/solutions/solutions.typings";
 import {DefaultQueryParameters} from "@src/data/contentful/component.typings";
-import {ComponentSolutionSectionFragment} from "@src/data/contentful/solution/__generated/solution.generated";
-import {SolutionGql} from "@src/data/contentful/solution/solution-gql";
+import {ComponentSolutionSectionFragment} from "@src/data/contentful/solutions/__generated/solution.generated";
+import {SolutionsGql} from "@src/data/contentful/solutions/solutions-gql";
 
 
-export const SolutionComponent = (props: DefaultQueryParameters) => {
-  const data = SolutionGql(props);
+export const SolutionsComponent = (props: DefaultQueryParameters) => {
+  const data = SolutionsGql(props);
   const componentData: ComponentSolutionSectionFragment | null | undefined = data.data?.solutionSection;
   // adjust data over here to custom component typing
   const teasers: SolutionItem[] | undefined = componentData?.teasersCollection?.items?.map(item => ({
@@ -19,10 +19,10 @@ export const SolutionComponent = (props: DefaultQueryParameters) => {
       }
   } as SolutionItem));
 
-  const mappedData: SolutionProps = {
+  const mappedData: SolutionsProps = {
     'title': componentData?.title || '',
     'solutions': teasers
   }
 
-  return <Solution {...mappedData} />
+  return <Solutions {...mappedData} />
 };

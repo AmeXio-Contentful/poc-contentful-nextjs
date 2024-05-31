@@ -1,4 +1,4 @@
-import styles from './reference-client.module.scss';
+import styles from './reference-clients.module.scss';
 import description from "../description/description.module.scss";
 import teaser from "../teaser/teaser.module.scss";
 
@@ -18,13 +18,12 @@ import {
 } from '@src/data/contentful/reference-client/__generated/reference-client.generated';
 
 
-export const ReferenceClient = (props: ComponentRerenceClientFragment) => {
+export const ReferenceClients = (props: ComponentRerenceClientFragment) => {
 
   const titleProps: TitleProps = {
     title: props.title as string,
     heading: 'h2',
   };
-
 
   const titleTeaserProp = {
     heading: 'h3'

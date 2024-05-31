@@ -34,13 +34,13 @@ export const componentMap = {
   ),
   SolutionSection: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/solution/solution'
-      ).then((module) => module.Solution),
+      '@src/components/features/decoupled-components/solutions/solutions'
+      ).then((module) => module.Solutions),
   ),
   ReferenceClients: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/reference-client/reference-client'
-      ).then((module) => module.ReferenceClient),
+      '@src/components/features/decoupled-components/reference-clients/reference-clients'
+      ).then((module) => module.ReferenceClients),
   ),
   JoinUs: dynamic(() =>
     import(
@@ -78,8 +78,8 @@ export const componentGqlMap = {
   ),
   SolutionSection: dynamic(() =>
     import(
-      '@src/mapping/contentful/solution'
-      ).then((module) => module.SolutionComponent),
+      '@src/mapping/contentful/solutions'
+      ).then((module) => module.SolutionsComponent),
   ),
   ReferenceClients: dynamic(() =>
     import(

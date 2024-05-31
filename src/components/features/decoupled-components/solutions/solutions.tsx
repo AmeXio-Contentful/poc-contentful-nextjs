@@ -1,13 +1,13 @@
-import styles from "./solution.module.scss";
+import styles from "./solutions.module.scss";
 import button from "../button/button.module.scss";
 import teaser from "../teaser/teaser.module.scss";
 
-import {SolutionProps} from "@src/components/features/decoupled-components/solution/solution.typings";
+import {SolutionsProps} from "@src/components/features/decoupled-components/solutions/solutions.typings";
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { Title } from '@src/components/features/decoupled-components/title/title';
 import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
 
-export const Solution = (props: SolutionProps) => {
+export const Solutions = (props: SolutionsProps) => {
   const {title, solutions} = props;
 
   const titleProps: TitleProps = {

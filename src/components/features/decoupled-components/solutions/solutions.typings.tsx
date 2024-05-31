@@ -1,6 +1,6 @@
 import {ButtonProps} from "@src/components/features/decoupled-components/button/button.typings";
 
-export interface SolutionProps {
+export interface SolutionsProps {
   title: string,
   solutions?: SolutionItem[]
 }

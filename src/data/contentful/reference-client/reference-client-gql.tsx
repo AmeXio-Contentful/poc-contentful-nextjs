@@ -7,8 +7,8 @@ import {
   useReferencedClientsComponentQuery
 } from '@src/data/contentful/reference-client/__generated/reference-client.generated';
 import {
-  ReferenceClient
-} from '@src/components/features/decoupled-components/reference-client/reference-client';
+  ReferenceClients
+} from '@src/components/features/decoupled-components/reference-clients/reference-clients';
 
 
 export function ReferenceClientGql({
@@ -22,5 +22,5 @@ export function ReferenceClientGql({
     preview: preview,
   })) as any;
 
-  return <ReferenceClient {...data.data?.referenceClients} />;
+  return <ReferenceClients {...data.data?.referenceClients} />;
 }
