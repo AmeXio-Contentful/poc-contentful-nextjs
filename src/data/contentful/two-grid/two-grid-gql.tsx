@@ -1,5 +1,5 @@
 import {DefaultQueryParameters} from '@src/data/contentful/component.typings';
-import {useCtfComponentTwoGridQuery} from '@src/data/contentful/two-grid/__generated/ctf-two-grid.generated';
+import {useCtfComponentTwoGridQuery} from '@src/data/contentful/two-grid/__generated/two-grid.generated';
 
 export function TwoGridGql({
   id,
