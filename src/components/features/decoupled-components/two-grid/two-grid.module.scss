@@ -1,0 +1,15 @@
+@use 'sass:map';
+@use '../../../../styles/utilities/breakpoint-mixins';
+
+.two_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include breakpoint-mixins.breakpoint-from(l) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__items {
+
+    }
+}
