@@ -8,7 +8,7 @@ import {TwoGridGql} from "@src/data/contentful/two-grid/two-grid-gql";
 import ExpertAdvice from "@src/components/features/decoupled-components/expert-advice/expert-advice";
 import FeaturedArticle from "@src/components/features/decoupled-components/featured-article/featured-article";
 import {ExpertProps} from "@src/components/features/decoupled-components/expert-advice/expert-advice.typings";
-import {ComponentTwoGridFieldsFragment} from "@src/data/contentful/two-grid/__generated/ctf-two-grid.generated";
+import {ComponentTwoGridFieldsFragment} from "@src/data/contentful/two-grid/__generated/two-grid.generated";
 
 export const TwoGridComponent = (props: DefaultQueryParameters) => {
     const data = TwoGridGql(props);
