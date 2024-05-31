@@ -24,8 +24,8 @@ export const componentMap = {
   ),
   TwoGrid: dynamic(() =>
     import(
-      '@src/data/contentful/two-grid/ctf-two-grid'
-      ).then((module) => module.CtfTwoGrid),
+      '@src/mapping/contentful/two-grid'
+      ).then((module) => module.TwoGridComponent),
   ),
   HeroBanner: dynamic(() =>
     import(
