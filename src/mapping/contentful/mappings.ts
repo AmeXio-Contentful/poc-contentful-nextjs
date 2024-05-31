@@ -83,8 +83,8 @@ export const componentGqlMap = {
   ),
   ReferenceClients: dynamic(() =>
     import(
-      '@src/data/contentful/reference-client/reference-client-gql'
-      ).then((module) => module.ReferenceClientGql),
+      '@src/mapping/contentful/reference-clients'
+      ).then((module) => module.ReferenceClientsComponent),
   ),
   JoinUs: dynamic(() =>
     import(

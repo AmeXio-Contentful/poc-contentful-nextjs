@@ -1,24 +1,20 @@
+// eslint-disable-next-line import/no-unresolved
+import {Pagination} from 'swiper/modules';
+// eslint-disable-next-line import/no-unresolved
+import {Swiper, SwiperSlide} from 'swiper/react';
+
 import styles from './reference-clients.module.scss';
 import description from "../description/description.module.scss";
 import teaser from "../teaser/teaser.module.scss";
 
-// eslint-disable-next-line import/no-unresolved
-import { Pagination } from 'swiper/modules';
-// eslint-disable-next-line import/no-unresolved
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import {
-  Description,
-} from '@src/components/features/decoupled-components/description/description';
-import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
-import { Title } from '@src/components/features/decoupled-components/title/title';
-import { TitleProps } from '@src/components/features/decoupled-components/title/title.typings';
-import {
-  ComponentRerenceClientFragment,
-} from '@src/data/contentful/reference-client/__generated/reference-client.generated';
+import {Description} from '@src/components/features/decoupled-components/description/description';
+import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
+import {Title} from '@src/components/features/decoupled-components/title/title';
+import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
+import {ReferenceClientsProps} from "@src/components/features/decoupled-components/reference-clients/reference-clients.typings";
 
 
-export const ReferenceClients = (props: ComponentRerenceClientFragment) => {
+export const ReferenceClients = (props: ReferenceClientsProps) => {
 
   const titleProps: TitleProps = {
     title: props.title as string,
@@ -34,7 +30,7 @@ export const ReferenceClients = (props: ComponentRerenceClientFragment) => {
   }
 
   const descriptionProps = {
-    description: props.description as string,
+    description: props.description,
     descriptionClasses: description.context_accent
   }
 
@@ -42,34 +38,30 @@ export const ReferenceClients = (props: ComponentRerenceClientFragment) => {
     <div className={styles.reference_client || ''}>
       <Title {...titleProps} />
       <Description {...descriptionProps} />
-      <div
-        // className="grid h-auto w-4/5 grid-cols-1 justify-items-center gap-x-4 gap-y-10 px-6 pt-9 md:px-48  m-auto"
-      >
+      <div>
         <Swiper
-          pagination={{ clickable: true }}
+          pagination={{clickable: true}}
           modules={[Pagination]}
-          // className="mt-6 h-auto w-full"
           className={styles.swiper_pagination}
         >
-          {props?.clientsCollection?.items?.map((item: any) => (
+          {props?.clients?.map((item: any) => (
             <SwiperSlide
-              // className="w-full px-4 pb-10"
               className={styles.reference_client__item}
               key={item.id}>
               <Teaser
                 teaserClasses={teaser.context_reference}
                 icon={item?.image}
                 titleProps={{
-                  'title': item?.title as string,
+                  'title': item?.title,
                   ...titleTeaserProp,
                 }}
                 subTitleProps={{
-                  'title': 'Subtitle should be over here', // make sure field is available + data is linked
+                  'title': item?.subtitle,
                   ...subTitleTeaserProp
                 }}
                 descriptionProps={{
-                  'description': 'Some dummy text to see it the styling is working as expected.'
-                }} // {item?.descriptionProps} // make sure field is available + data is linked
+                  'description': item?.description
+                }}
               />
             </SwiperSlide>
           ))}
