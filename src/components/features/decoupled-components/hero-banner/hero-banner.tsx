@@ -11,18 +11,18 @@ import {TitleProps} from '@src/components/features/decoupled-components/title/ti
 export const HeroBanner = (props: HeroBannerProps) => {
   const { backgroundImage , title, description, buttonText, buttonUrl} = props;
   const titleProps: TitleProps = {
-    title: title as string,
+    title: title,
     heading: 'h1'
   };
 
   const descriptionProps: DescriptionProps = {
-    description: description as string,
+    description: description,
     descriptionClasses: descriptionContext.context_intro
   }
 
   const buttonProps: ButtonProps = {
-    buttonText: buttonText as string,
-    buttonUrl: buttonUrl as string,
+    buttonText: buttonText,
+    buttonUrl: buttonUrl,
   }
 
   return (

@@ -88,7 +88,7 @@ export const componentGqlMap = {
   ),
   JoinUs: dynamic(() =>
     import(
-      '@src/data/contentful/join-us/join-us-gql'
-      ).then((module) => module.JoinUsGql),
+      '@src/mapping/contentful/join-us'
+      ).then((module) => module.JoinUsComponent),
   ),
 };
