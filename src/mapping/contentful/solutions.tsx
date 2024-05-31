@@ -1,7 +1,7 @@
 import {Solutions} from '@src/components/features/decoupled-components/solutions/solutions';
 import {SolutionItem, SolutionsProps} from "@src/components/features/decoupled-components/solutions/solutions.typings";
 import {DefaultQueryParameters} from "@src/data/contentful/component.typings";
-import {ComponentSolutionSectionFragment} from "@src/data/contentful/solutions/__generated/solution.generated";
+import {ComponentSolutionSectionFragment} from "@src/data/contentful/solutions/__generated/solutions.generated";
 import {SolutionsGql} from "@src/data/contentful/solutions/solutions-gql";
 
 
