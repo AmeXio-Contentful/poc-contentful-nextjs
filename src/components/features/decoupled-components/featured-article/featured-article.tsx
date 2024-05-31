@@ -1,4 +1,4 @@
-
+import {FeaturedProps} from "@src/components/features/decoupled-components/featured-article/featured-article.typings";
 
 export default function FeaturedArticle({subtitle, title, buttonUrl, heading}: FeaturedProps) {
     return (

@@ -7,18 +7,16 @@ import {TwoGrid} from "@src/components/features/decoupled-components/two-grid/tw
 import {TwoGridGql} from "@src/data/contentful/two-grid/two-grid-gql";
 import ExpertAdvice from "@src/components/features/decoupled-components/expert-advice/expert-advice";
 import FeaturedArticle from "@src/components/features/decoupled-components/featured-article/featured-article";
+import {ExpertProps} from "@src/components/features/decoupled-components/expert-advice/expert-advice.typings";
+import {ComponentTwoGridFieldsFragment} from "@src/data/contentful/two-grid/__generated/ctf-two-grid.generated";
 
 export const TwoGridComponent = (props: DefaultQueryParameters) => {
     const data = TwoGridGql(props);
-     /* const componentData: ComponentHeroBannerFragment | null | undefined = data.data?.heroBanner;
-    // adjust data over here to custom component typing
-    const mappedData: HeroBannerProps = {
-        'backgroundImage': componentData?.backgroundImage || '',
-        'title': componentData?.title || '',
-        'description': componentData?.subtitle || '',
-        'buttonText': componentData?.buttonText || '',
-        'buttonUrl': componentData?.buttonUrl || ''
-    } */
+    const componentData: ComponentTwoGridFieldsFragment | null | undefined = data.data?.twoGrid;
+
+    // make sure the left and right component can be loaded dynamically
+    // maybe loop again through the component mapping using the typename?
+
     const mappedData = {
         primary: {
             component: ExpertAdvice
