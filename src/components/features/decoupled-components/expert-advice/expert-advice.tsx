@@ -17,12 +17,12 @@ export default function ExpertAdvice({title, subtitle, buttonUrl, buttonText, ad
             <p className='text-white pb-4 text-base'>{subtitle}</p>
             <div className='flex self-stretch flex-col gap-y-12 mt-4 mb-8'>
               {
-                advices && advices.map((item) => (
-                  <div key={item.buttonText}>
-                    <a href={item.buttonUrl}>
+                advices && advices.map((item: any) => (
+                  <div key={item.buttonText || item.advice}>
+                    <a href={item.buttonUrl || item.url}>
                       <button
                         className="py-3.5 pl-5 pr-12 bg-white text-gray-600 text-base text-start flex flex-row justify-between w-full">
-                        {item.buttonText}
+                        {item.buttonText || item.advice}
                         <div className="h-full flex items-center">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                                stroke="currentColor" className="w-6 h-6">

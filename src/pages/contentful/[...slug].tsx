@@ -9,9 +9,7 @@ const Page: NextPage = () => {
     const router = useRouter();
     const slug = (router?.query.slug) || '';
 
-    console.log("contentful dynamic page");
 
     return <div>{slug[0]}</div>;
 }
-console.log("contentful");
 export default Page;

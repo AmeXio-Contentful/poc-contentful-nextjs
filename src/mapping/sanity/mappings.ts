@@ -4,7 +4,7 @@ export const componentMapSanity = {
   HeroBanner: dynamic(() =>
     import(
       '@src/mapping/sanity/hero-banner'
-      ).then((module) => module.HeroBanner),
+      ).then((module) => module.HeroBannerSanityComponent),
   ),
   SolutionSection: dynamic(() =>
     import(
@@ -19,11 +19,11 @@ export const componentMapSanity = {
   ExpertAdvice: dynamic(() =>
     import(
       '@src/mapping/sanity/expert-advice'
-      ).then((module) => module.ExpertAdvice),
+      ).then((module) => module.ExpertAdviceSanity),
   ),
   FeaturedArticle: dynamic(() =>
     import(
       '@src/mapping/sanity/featured-article'
-      ).then((module) => module.FeaturedArticle),
+      ).then((module) => module.FeaturedArticleSanity),
   )
 };
