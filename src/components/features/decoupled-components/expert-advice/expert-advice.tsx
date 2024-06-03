@@ -2,7 +2,8 @@ import {Button} from '@src/components/features/decoupled-components/button/butto
 import {ExpertProps} from "@src/components/features/decoupled-components/expert-advice/expert-advice.typings";
 
 export default function ExpertAdvice({title, subtitle, buttonUrl, buttonText, advices}: ExpertProps) {
-   const buttonProps = {
+
+  const buttonProps = {
      buttonText,
      buttonUrl
    }

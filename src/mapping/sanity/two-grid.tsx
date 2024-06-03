@@ -1,36 +1,36 @@
 import React from 'react';
 
-import { ComponentResolver } from '@src/components/shared/component-resolver';
+import ExpertAdvice from '@src/components/features/decoupled-components/expert-advice/expert-advice';
+import FeaturedArticle from '@src/components/features/decoupled-components/featured-article/featured-article';
+import { TwoGrid } from '@src/components/features/decoupled-components/two-grid/two-grid';
+import { toPortableText } from '@src/mapping/sanity/featured-article';
 
+export const TwoGridSanity = (props: any) => {
+  const expertAdviceProps = {
+    title: props['expertAdvice']['title'],
+    subtitle: props['expertAdvice']['subtitle'],
+    buttonUrl: props['expertAdvice']['buttonUrl'],
+    buttonText: props['expertAdvice']['buttonText'],
+    advices: props['expertAdvice']['expertAdvices']
+  }
 
-export const TwoGrid = (props: any) => {
-  let left: any = {};
-  let right: any = {};
-  Object.keys(props).map((entry) => {
-    if (props[entry] != null && props[entry]['_type']) {
-      if (props[entry]['isLeft']) {
-        left = {
-          componentProps: props[entry],
-          isSanity: true,
-          __typename: (props[entry]['_type'])[0].toUpperCase() + props[entry]['_type'].slice(1),
-        };
-      } else {
-        right = {
-          componentProps: props[entry],
-          isSanity: true,
-          __typename: (props[entry]['_type'])[0].toUpperCase() + props[entry]['_type'].slice(1),
-        };
-      }
+  const featuredArticleProps = {
+    title: props['featuredArticle']['title'],
+    heading: props['featuredArticle']['heading'],
+    subtitle: toPortableText(props['featuredArticle']['subtitleRaw']),
+    buttonUrl: props['featuredArticle']['buttonUrl'],
+  }
+
+  const mappedData = {
+    primary: {
+      component: ExpertAdvice,
+      props: expertAdviceProps
+    },
+    secondary: {
+      component: FeaturedArticle,
+      props: featuredArticleProps
     }
-  });
-  return (
-    <div className="grid grid-cols-2 divide-x mb-24">
-      <div className="h-auto text-center">
-        <ComponentResolver componentProps={left!} forceGql={!left!.isSanity} className={left.__typename} />
-      </div>
-      <div className="h-auto text-center secondary-color bg-[#D9E8F5]">
-        <ComponentResolver componentProps={right!} forceGql={!right!.isSanity} className={right.__typename } />
-      </div>
-    </div>
-  );
+  }
+
+  return <TwoGrid {...mappedData}/>
 };

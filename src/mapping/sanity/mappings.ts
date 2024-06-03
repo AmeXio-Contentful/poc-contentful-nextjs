@@ -14,7 +14,7 @@ export const componentMapSanity = {
   TwoGrid: dynamic(() =>
     import(
       '@src/mapping/sanity/two-grid'
-      ).then((module) => module.TwoGrid),
+      ).then((module) => module.TwoGridSanity),
   ),
   ExpertAdvice: dynamic(() =>
     import(

@@ -8,7 +8,7 @@ interface FeaturedProps {
   heading: string;
 }
 
-function toPortableText(rawText: any[]) {
+export function toPortableText(rawText: any[]) {
   return <PortableText value={rawText} />
 }
 
