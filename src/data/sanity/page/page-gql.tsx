@@ -55,7 +55,6 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
 
     if (isLoading) return <></>;
 
-    console.log("page", page);
     if (!page) {
       const error = {
         code: 404,
