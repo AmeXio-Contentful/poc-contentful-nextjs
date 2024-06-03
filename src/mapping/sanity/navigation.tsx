@@ -8,7 +8,6 @@ import { HeaderByIdQuery } from '@src/data/sanity/navigation/__generated/navigat
 
 export const NavigationSanity = (props: HeaderByIdQuery) => {
 
-  console.log('props', props);
   const navigationContentItems = props.allHeader[0].navigationItems;
   const navigationLanguageItems = props.allHeader[0]?.languageItems;
 
@@ -80,8 +79,6 @@ export const NavigationSanity = (props: HeaderByIdQuery) => {
     });
   };
 
-  console.log('navigationLanguageItems', navigationLanguageItems);
-  console.log('first item', firstLanguageItem);
   return (
     <>
       {navigationContentItems?.length && (
