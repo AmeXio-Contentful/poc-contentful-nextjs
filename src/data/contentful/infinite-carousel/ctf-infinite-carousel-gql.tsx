@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { DefaultQueryParameters } from '@src/data/contentful/component.typings';
 import { useCtfComponentInfiniteCarouselQuery } from '@src/data/contentful/infinite-carousel/__generated/ctf-infinite-carousel.generated';
 import { InfiniteCarousel } from '@src/mapping/contentful/infinite-carousel';
-import { DefaultQueryParameters } from '@src/data/contentful/teaser/ctf-teaser-gql';
 
 export function CtfInfiniteCarouselGql({
   id,

@@ -4,7 +4,9 @@ import {TitleProps} from "@src/components/features/decoupled-components/title/ti
 
 export interface TeaserProps {
   icon?: any; // define a more specific type for assets
+  iconUrl?: string;
   titleProps: TitleProps;
+  subTitleProps?: TitleProps;
   descriptionProps: DescriptionProps;
   buttonProps?: ButtonProps;
   teaserClasses?: string;

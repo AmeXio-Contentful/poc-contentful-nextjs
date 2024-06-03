@@ -1,19 +1,36 @@
+import styles from './teaser.module.scss';
+
 import { Button } from '@src/components/features/decoupled-components/button/button';
 import { Description } from '@src/components/features/decoupled-components/description/description';
 import { TeaserProps } from '@src/components/features/decoupled-components/teaser/teaser.typings';
 import { Title } from '@src/components/features/decoupled-components/title/title';
 
 export const Teaser = (props: TeaserProps) => {
-  return <div className="teaser">
-    { props.icon &&
-        <img
-          alt="icon"
-          src={props.icon.url}
-        />
+  return <div className={`${styles.teaser || ''} ${props.teaserClasses || ''}`}>
+    { props.iconUrl ?
+      <a href={props.iconUrl}>
+        { props.icon &&
+            <img
+              className={styles.teaser__icon}
+              alt="icon"
+              src={props.icon.url}
+            />
+        }
+      </a>
+      :
+        props.icon &&
+          <img
+            className={styles.teaser__icon}
+            alt="icon"
+            src={props.icon.url}
+          />
     }
-    <div className="teaser__content">
-      <div className="teaser__info">
+    <div className={styles.teaser__content}>
+      <div className={styles.teaser__info}>
           <Title {...props.titleProps} />
+          { props.subTitleProps &&
+            <Title {...props.subTitleProps} />
+          }
           <Description {...props.descriptionProps} />
       </div>
       { props.buttonProps &&

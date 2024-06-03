@@ -1,0 +1,23 @@
+@use '../../../../styles/utilities/container-mixins' as container;
+@use '../../../../styles/utilities/breakpoint-mixins' as breakpoints;
+
+.join_us {
+  text-align: center;
+
+  @include container.section;
+
+  &__collection {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+
+    @include breakpoints.breakpoint-from(m) {
+      grid-column-gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__swiper {
+    margin: 105px 0 0 0;
+  }
+}

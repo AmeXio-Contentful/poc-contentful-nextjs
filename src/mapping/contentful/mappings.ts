@@ -1,5 +1,11 @@
 import dynamic from 'next/dynamic';
 
+// mapping basically determines which specific mapping to use per component, so the origin of the dataset is set over here
+// should we differentiate between the method of fetching the data? Should we use one by default?
+// can the origin of the data be different based on conditions in this mapping?
+// should 'contentful', 'sanity' have their own separate mapping that should be triggered by the component resolver,
+// based on the page's origin?
+
 export const componentMap = {
   Teaser: dynamic(() =>
     import(
@@ -18,23 +24,23 @@ export const componentMap = {
   ),
   TwoGrid: dynamic(() =>
     import(
-      '@src/data/contentful/two-grid/ctf-two-grid'
-      ).then((module) => module.CtfTwoGrid),
+      '@src/mapping/contentful/two-grid'
+      ).then((module) => module.TwoGridComponent),
   ),
   HeroBanner: dynamic(() =>
     import(
       '@src/mapping/contentful/hero-banner'
-      ).then((module) => module.HeroBanner),
+      ).then((module) => module.HeroBannerComponent),
   ),
   SolutionSection: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/solution/solution'
-      ).then((module) => module.Solution),
+      '@src/components/features/decoupled-components/solutions/solutions'
+      ).then((module) => module.Solutions),
   ),
   ReferenceClients: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/reference-client/reference-client'
-      ).then((module) => module.ReferenceClient),
+      '@src/components/features/decoupled-components/reference-clients/reference-clients'
+      ).then((module) => module.ReferenceClients),
   ),
   JoinUs: dynamic(() =>
     import(
@@ -61,27 +67,28 @@ export const componentGqlMap = {
   ),
   TwoGrid: dynamic(() =>
     import(
-      '@src/data/contentful/two-grid/ctf-two-grid-gql'
-      ).then((module) => module.CtfTwoGridGql),
+      '@src/mapping/contentful/two-grid'
+      ).then((module) => module.TwoGridComponent),
   ),
+  // gql file is loaded, which loads the component with the data
   HeroBanner: dynamic(() =>
     import(
-      '@src/data/contentful/hero-banner/hero-banner-gql'
-      ).then((module) => module.HeroBannerGql),
+      '@src/mapping/contentful/hero-banner'
+      ).then((module) => module.HeroBannerComponent),
   ),
   SolutionSection: dynamic(() =>
     import(
-      '@src/data/contentful/solution/solution-gql'
-      ).then((module) => module.SolutionGql),
+      '@src/mapping/contentful/solutions'
+      ).then((module) => module.SolutionsComponent),
   ),
   ReferenceClients: dynamic(() =>
     import(
-      '@src/data/contentful/reference-client/reference-client-gql'
-      ).then((module) => module.ReferenceClientGql),
+      '@src/mapping/contentful/reference-clients'
+      ).then((module) => module.ReferenceClientsComponent),
   ),
   JoinUs: dynamic(() =>
     import(
-      '@src/data/contentful/join-us/join-us-gql'
-      ).then((module) => module.JoinUsGql),
+      '@src/mapping/contentful/join-us'
+      ).then((module) => module.JoinUsComponent),
   ),
 };
