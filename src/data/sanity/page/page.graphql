@@ -45,6 +45,22 @@ query LandingPageById($id: ID) {
         ...TeaserProps
       }
     }
+    joinUs {
+      title
+      subtitle
+      buttonUrl
+      buttonText
+      joinUsClientItems {
+        ...TeaserProps
+      }
+      joinUsClients {
+        image {
+          asset {
+            url
+          }
+        }
+      }
+    }
     twoGrid {
       featuredArticle {
         ... on ExpertAdvice {

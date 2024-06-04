@@ -75,7 +75,7 @@ export const ComponentResolver = (props: Props) => {
       component={inline ? 'span' : 'div'}
       className={componentProps.__typename}
     >
-      {Component ? (
+      {Component && props.componentProps.isSanity ? (
         <Component
           {...componentProps}
           locale={locale}
