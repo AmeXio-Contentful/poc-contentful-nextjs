@@ -2,7 +2,8 @@ const url = process.env.NEXT_PUBLIC_BASE_URL;
 
 module.exports = {
   contentful: {
-    space_id: process.env.CONTENTFUL_SPACE_ID || ''
+    space_id: process.env.CONTENTFUL_SPACE_ID || '',
+    endpoint: process.env.CONTENTFUL_ENDPOINT || ''
   },
   meta: {
     url
