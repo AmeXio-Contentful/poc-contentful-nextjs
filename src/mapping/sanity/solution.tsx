@@ -1,20 +1,15 @@
-import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
-import { Title } from '@src/components/features/decoupled-components/title/title';
-import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
-import {
-  ComponentSolutionSectionFragment
-} from '@src/data/contentful/solutions/__generated/solutions.generated';
+import { Solutions } from '@src/components/features/decoupled-components/solutions/solutions';
 import {
   SolutionItem,
   SolutionsProps,
 } from '@src/components/features/decoupled-components/solutions/solutions.typings';
-import { Solutions } from '@src/components/features/decoupled-components/solutions/solutions';
 
-interface SolutionItemSanity {
+export interface TeaserItemSanity {
   title: string;
   subtitle: string;
   buttonUrl: string;
   buttonText: string;
+  quote: string;
   backgroundImage: {
     asset: {
       url: string
@@ -24,7 +19,7 @@ interface SolutionItemSanity {
 
 interface SolutionProps {
   title: string;
-  solutionItems: SolutionItemSanity[]
+  solutionItems: TeaserItemSanity[]
 }
 
 export const Solution = (props: SolutionProps) => {

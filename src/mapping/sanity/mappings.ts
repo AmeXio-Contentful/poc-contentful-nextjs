@@ -25,5 +25,10 @@ export const componentMapSanity = {
     import(
       '@src/mapping/sanity/featured-article'
       ).then((module) => module.FeaturedArticleSanity),
-  )
+  ),
+  ReferencedClients: dynamic(() =>
+    import(
+      '@src/mapping/sanity/reference-client'
+      ).then((module) => module.ReferenceClientsComponentSanity),
+  ),
 };

@@ -1,15 +1,26 @@
- query LandingPageById($id: ID) {
+fragment TeaserProps on Teaser {
+  title
+  subtitle
+  buttonUrl
+  buttonText
+  quote
+  backgroundImage {
+    asset {
+      url
+    }
+  }
+}
+
+query LandingPageById($id: ID) {
    allLandingPage(where: { _id: { eq: $id } }) {
-   pageInformation {
-       seoTitle
-       description
-       pageName
-       noFollow
-       noIndex
-       slug {
-         current
-       }
-     }
+    pageInformation {
+      seoTitle
+      description
+      pageName
+      slug {
+        current
+      }
+    }
     heroBanner {
       title
       subtitle
@@ -24,60 +35,58 @@
     solutionSection {
       title
       solutionItems {
-        title
-        subtitle
-        buttonUrl
-        buttonText
-        quote
-        backgroundImage {
-          asset {
+        ...TeaserProps
+      }
+    }
+    referencedClients {
+      title
+      subtitle
+      referencedClientsItems {
+        ...TeaserProps
+      }
+    }
+    twoGrid {
+      featuredArticle {
+        ... on ExpertAdvice {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          isLeft
+          expertAdvices {
+            advice
             url
           }
         }
+        ... on FeaturedArticle {
+          _type
+          heading
+          title
+          subtitleRaw
+          buttonUrl
+        }
+      }
+      expertAdvice {
+        ... on ExpertAdvice {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          expertAdvices {
+            advice
+            url
+          }
+        }
+        ... on FeaturedArticle {
+          _type
+          heading
+          title
+          subtitleRaw
+          buttonUrl
+        }
       }
     }
-   twoGrid {
-        featuredArticle {
-          ... on ExpertAdvice {
-            _type
-            title
-            subtitle
-            buttonUrl
-            buttonText
-            expertAdvices {
-              advice
-              url
-            }
-          }
-          ... on FeaturedArticle {
-            _type
-            heading
-            title
-            subtitleRaw
-            buttonUrl
-          }
-        }
-        expertAdvice {
-          ... on ExpertAdvice {
-            _type
-            title
-            subtitle
-            buttonUrl
-            buttonText
-            isLeft
-            expertAdvices {
-              advice
-              url
-            }
-          }
-          ... on FeaturedArticle {
-            _type
-            heading
-            title
-            subtitleRaw
-            buttonUrl
-          }
-        }
-      }
-   }
+  }
  }

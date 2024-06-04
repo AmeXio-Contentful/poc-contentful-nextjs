@@ -1,12 +1,11 @@
 import {ReferenceClients} from "@src/components/features/decoupled-components/reference-clients/reference-clients";
-import {DefaultQueryParameters} from "@src/data/contentful/component.typings";
-import {ComponentRerenceClientFragment} from "@src/data/contentful/reference-client/__generated/reference-client.generated";
-import {ReferenceClientGql} from "@src/data/contentful/reference-client/reference-client-gql";
 import {
   ReferenceClient,
   ReferenceClientsProps
 } from "@src/components/features/decoupled-components/reference-clients/reference-clients.typings";
-import {reference} from "@popperjs/core";
+import {DefaultQueryParameters} from "@src/data/contentful/component.typings";
+import {ComponentRerenceClientFragment} from "@src/data/contentful/reference-client/__generated/reference-client.generated";
+import {ReferenceClientGql} from "@src/data/contentful/reference-client/reference-client-gql";
 
 export const ReferenceClientsComponent = (props: DefaultQueryParameters) => {
   const data = ReferenceClientGql(props);
