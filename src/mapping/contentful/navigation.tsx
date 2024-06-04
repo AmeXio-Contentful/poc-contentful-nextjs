@@ -1,11 +1,12 @@
 import {setTimeout} from "timers";
 
-import { useContentfulInspectorMode } from '@contentful/live-preview/react';
+import { useContentfulInspectorMode, useContentfulLiveUpdates } from '@contentful/live-preview/react';
 import { useState } from 'react';
 
 import { Link } from '@src/components/shared/link';
 import { NavigationFieldsFragment } from '@src/data/contentful/navigation/__generated/navigation.generated';
 import { getLinkDisplayText, getLinkHrefPrefix } from '@src/data/contentful/navigation/utils';
+import { tryget } from '@src/utils';
 
 interface SysId {
   sys: {
@@ -152,7 +153,7 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
                     entryId: languageItem.sys.id,
                     fieldId: 'groupName',
                   })}>
-                  <img src={languageItem.localeImage.url} alt={languageItem.locale} width="16" height="11"/>
+                  <img src={languageItem?.localeImage?.url} alt={languageItem.locale} width="16" height="11"/>
                 </li>
             )}
           </ul>
