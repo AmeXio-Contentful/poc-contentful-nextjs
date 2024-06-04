@@ -23,6 +23,18 @@
     }
     solutionSection {
       title
+      solutionItems {
+        title
+        subtitle
+        buttonUrl
+        buttonText
+        quote
+        backgroundImage {
+          asset {
+            url
+          }
+        }
+      }
     }
    twoGrid {
         featuredArticle {
