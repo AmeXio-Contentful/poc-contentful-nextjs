@@ -9,12 +9,23 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
     const data = TwoGridGql(props);
     const componentData: ComponentTwoGridFieldsFragment | null | undefined = data.data?.twoGrid;
 
+    const expertAdvicesProps:any = componentData?.componentLeft;
+    expertAdvicesProps.advices = [];
+    expertAdvicesProps?.advicesCollection?.items.forEach((item) => {
+      expertAdvicesProps.advices.push({
+        buttonText: item.title,
+        buttonUrl: item.buttonUrl
+      })
+    });
+
     const mappedData = {
         primary: {
-            component: ExpertAdvice
+            component: ExpertAdvice,
+            props: expertAdvicesProps
         },
         secondary: {
-            component: FeaturedArticle
+            component: FeaturedArticle,
+            props: componentData?.componentRight
         }
     }
 

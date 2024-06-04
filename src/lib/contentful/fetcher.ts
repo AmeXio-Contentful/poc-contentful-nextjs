@@ -1,4 +1,4 @@
-export const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${String(process.env.CONTENTFUL_SPACE_ID,)}`;
+export const baseUrl = process.env.CONTENTFUL_ENDPOINT;
 
 export const fetcherConfigContentful = {
   endpoint: `${baseUrl}`,
