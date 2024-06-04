@@ -1,14 +1,14 @@
 import {DefaultQueryParameters} from '@src/data/contentful/component.typings';
-import {useHeroBannerComponentQuery} from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
+import {useCtfComponentTwoGridQuery} from '@src/data/contentful/two-grid/__generated/two-grid.generated';
 
-export function HeroBannerGql({
+export function TwoGridGql({
   id,
   locale,
   preview,
 }: DefaultQueryParameters) {
-  return ( useHeroBannerComponentQuery({
+  return useCtfComponentTwoGridQuery({
     id: id,
     locale: locale,
     preview: preview,
-  }));
+  });
 }

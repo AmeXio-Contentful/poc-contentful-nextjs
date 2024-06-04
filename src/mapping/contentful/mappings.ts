@@ -24,8 +24,8 @@ export const componentMap = {
   ),
   TwoGrid: dynamic(() =>
     import(
-      '@src/data/contentful/two-grid/ctf-two-grid'
-      ).then((module) => module.CtfTwoGrid),
+      '@src/mapping/contentful/two-grid'
+      ).then((module) => module.TwoGridComponent),
   ),
   HeroBanner: dynamic(() =>
     import(
@@ -34,13 +34,13 @@ export const componentMap = {
   ),
   SolutionSection: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/solution/solution'
-      ).then((module) => module.Solution),
+      '@src/components/features/decoupled-components/solutions/solutions'
+      ).then((module) => module.Solutions),
   ),
   ReferenceClients: dynamic(() =>
     import(
-      '@src/components/features/decoupled-components/reference-client/reference-client'
-      ).then((module) => module.ReferenceClient),
+      '@src/components/features/decoupled-components/reference-clients/reference-clients'
+      ).then((module) => module.ReferenceClients),
   ),
   JoinUs: dynamic(() =>
     import(
@@ -67,8 +67,8 @@ export const componentGqlMap = {
   ),
   TwoGrid: dynamic(() =>
     import(
-      '@src/data/contentful/two-grid/ctf-two-grid-gql'
-      ).then((module) => module.CtfTwoGridGql),
+      '@src/mapping/contentful/two-grid'
+      ).then((module) => module.TwoGridComponent),
   ),
   // gql file is loaded, which loads the component with the data
   HeroBanner: dynamic(() =>
@@ -78,17 +78,17 @@ export const componentGqlMap = {
   ),
   SolutionSection: dynamic(() =>
     import(
-      '@src/data/contentful/solution/solution-gql'
-      ).then((module) => module.SolutionGql),
+      '@src/mapping/contentful/solutions'
+      ).then((module) => module.SolutionsComponent),
   ),
   ReferenceClients: dynamic(() =>
     import(
-      '@src/data/contentful/reference-client/reference-client-gql'
-      ).then((module) => module.ReferenceClientGql),
+      '@src/mapping/contentful/reference-clients'
+      ).then((module) => module.ReferenceClientsComponent),
   ),
   JoinUs: dynamic(() =>
     import(
-      '@src/data/contentful/join-us/join-us-gql'
-      ).then((module) => module.JoinUsGql),
+      '@src/mapping/contentful/join-us'
+      ).then((module) => module.JoinUsComponent),
   ),
 };

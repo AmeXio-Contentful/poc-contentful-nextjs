@@ -1,12 +1,12 @@
 import {DefaultQueryParameters} from '@src/data/contentful/component.typings';
-import {useHeroBannerComponentQuery} from '@src/data/contentful/hero-banner/__generated/hero-banner.generated';
+import {useSolutionSectionComponentQuery} from '@src/data/contentful/solutions/__generated/solutions.generated';
 
-export function HeroBannerGql({
+export function SolutionsGql({
   id,
   locale,
   preview,
 }: DefaultQueryParameters) {
-  return ( useHeroBannerComponentQuery({
+  return ( useSolutionSectionComponentQuery({
     id: id,
     locale: locale,
     preview: preview,

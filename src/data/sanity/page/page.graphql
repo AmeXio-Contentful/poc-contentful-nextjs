@@ -24,5 +24,48 @@
     solutionSection {
       title
     }
-  }
+   twoGrid {
+        featuredArticle {
+          ... on ExpertAdvice {
+            _type
+            title
+            subtitle
+            buttonUrl
+            buttonText
+            expertAdvices {
+              advice
+              url
+            }
+          }
+          ... on FeaturedArticle {
+            _type
+            heading
+            title
+            subtitleRaw
+            buttonUrl
+          }
+        }
+        expertAdvice {
+          ... on ExpertAdvice {
+            _type
+            title
+            subtitle
+            buttonUrl
+            buttonText
+            isLeft
+            expertAdvices {
+              advice
+              url
+            }
+          }
+          ... on FeaturedArticle {
+            _type
+            heading
+            title
+            subtitleRaw
+            buttonUrl
+          }
+        }
+      }
+   }
  }
