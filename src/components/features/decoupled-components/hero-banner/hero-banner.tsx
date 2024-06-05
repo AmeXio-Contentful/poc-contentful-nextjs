@@ -27,7 +27,7 @@ export const HeroBanner = (props: HeroBannerProps) => {
 
   return (
     <div className={styles.hero_banner}
-         style={{ backgroundImage: `url(${backgroundImage?.url})` }}
+         style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <Teaser
         titleProps={titleProps}
