@@ -4,5 +4,5 @@ export interface HeroBannerProps {
   description: string,
   buttonText: string,
   buttonUrl: string,
-  id: string
+  id?: string
 }
