@@ -10,9 +10,10 @@
   "scripts": {
     "start": "next start",
     "dev": "npm run local-graphql-codegen:generate && env-cmd -f .env.local next dev",
-    "staging": "npm run staging-graphql-codegen:generate  && env-cmd -f .env.staging next dev",
+    "staging": "npm run staging-graphql-codegen:generate && env-cmd -f .env.staging next dev",
     "prebuild": "npm run graphql-codegen:generate",
-    "build": "next build",
+    "build": "npm run production-graphql-codegen:generate && next build",
+    "vercel-build": "next build",
     "export": "next build && next export",
     "type-check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1",
