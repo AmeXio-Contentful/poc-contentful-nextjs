@@ -1,17 +1,15 @@
-import { useRouter } from 'next/navigation'
+import { NextApiRequest, NextApiResponse } from 'next';
 
 import { getPreviewBySlug } from '@src/pages/api/utils';
-import { NextResponse } from 'next/server';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { ContentfulLivePreview } from '@contentful/live-preview';
 
 export default async function preview( req: NextApiRequest,
                                        res: NextApiResponse) {
 
   const { secret, slug } = req.query;
 
+  console.log("process.env.CONTENTFUL_SECRET", process.env.CONTENTFUL_SECRET);
   if (secret !== process.env.CONTENTFUL_SECRET || !slug) {
-    return res.status(401).json({ message: "Invalid token" });
+    return res.status(401).json({ message: "Secret token for live update is invalid" });
   }
 
   // Fetch the headless CMS to check if the provided `slug` exists
