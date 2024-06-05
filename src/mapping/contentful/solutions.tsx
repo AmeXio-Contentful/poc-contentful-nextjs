@@ -21,7 +21,8 @@ export const SolutionsComponent = (props: DefaultQueryParameters) => {
 
   const mappedData: SolutionsProps = {
     'title': componentData?.title || '',
-    'solutions': teasers
+    'solutions': teasers,
+    'id': componentData?.sys.id
   }
 
   return <Solutions {...mappedData} />

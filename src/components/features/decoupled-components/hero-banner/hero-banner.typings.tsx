@@ -3,5 +3,6 @@ export interface HeroBannerProps {
   title: string,
   description: string,
   buttonText: string,
-  buttonUrl: string
+  buttonUrl: string,
+  id: string
 }

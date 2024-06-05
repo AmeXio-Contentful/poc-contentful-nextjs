@@ -10,4 +10,5 @@ export interface TeaserProps {
   descriptionProps: DescriptionProps;
   buttonProps?: ButtonProps;
   teaserClasses?: string;
+  id?: string;
 }

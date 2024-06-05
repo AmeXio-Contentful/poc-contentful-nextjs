@@ -9,6 +9,7 @@ import { Header } from '@src/mapping/contentful/header';
 import Page from '@src/mapping/shared/page';
 import { tryget } from '@src/utils';
 import contentfulConfig from 'contentful.config';
+import { ContentfulLivePreview } from '@contentful/live-preview';
 
 
 export interface Props {
