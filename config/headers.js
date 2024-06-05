@@ -12,10 +12,6 @@ const securityHeaders = [
     value: 'SAMEORIGIN',
   },
   {
-    key: 'Content-Security-Policy',
-    value: `frame-ancestors 'self' https://app.contentful.com https://app.eu.contentful.com`,
-  },
-  {
     key: 'X-Content-Type-Options',
     value: 'nosniff',
   },
