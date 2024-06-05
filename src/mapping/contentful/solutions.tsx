@@ -16,7 +16,8 @@ export const SolutionsComponent = (props: DefaultQueryParameters) => {
     button: {
         buttonUrl: item?.buttonUrl,
         buttonText: item?.buttonText
-      }
+      },
+    id: item?.sys.id
   } as SolutionItem));
 
   const mappedData: SolutionsProps = {

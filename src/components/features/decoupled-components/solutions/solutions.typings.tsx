@@ -11,4 +11,5 @@ export interface SolutionItem extends ContentfulFieldName {
   title: string,
   description: string,
   button?: ButtonProps
+  id: string;
 }

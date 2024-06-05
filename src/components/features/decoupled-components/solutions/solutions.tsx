@@ -31,12 +31,12 @@ export const Solutions = (props: SolutionsProps) => {
                 titleProps={{
                   'title': item?.title,
                   'heading': 'h3',
-                  'id': props.id,
+                  'id': item.id,
                   'fieldName': 'title'
                 }}
                 descriptionProps={{
                   description: item?.description,
-                  'id': props.id,
+                  'id': item.id,
                   'fieldName': 'subtitle'
                 }}
                 buttonProps={
@@ -44,7 +44,7 @@ export const Solutions = (props: SolutionsProps) => {
                     ? {
                       ...item.button,
                       buttonClasses: button.context_solution,
-                      'id': props.id,
+                      'id': item.id,
                       'fieldName': 'buttonText'
                     }
                     : undefined
