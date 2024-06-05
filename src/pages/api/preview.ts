@@ -7,7 +7,6 @@ export default async function preview( req: NextApiRequest,
 
   const { secret, slug } = req.query;
 
-  console.log("process.env.CONTENTFUL_SECRET", process.env.CONTENTFUL_SECRET);
   if (secret !== process.env.CONTENTFUL_SECRET || !slug) {
     return res.status(401).json({ message: "Secret token for live update is invalid" });
   }
