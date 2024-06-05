@@ -10,6 +10,9 @@ fragment ComponentJoinUs on JoinUs {
   teasersCollection {
     items {
       ... on Teaser {
+        sys {
+          id
+        }
         title
         subtitle
         image {
@@ -22,6 +25,9 @@ fragment ComponentJoinUs on JoinUs {
   clientsCollection {
     items {
       ... on Asset {
+        sys {
+          id
+        }
         url
         title
       }

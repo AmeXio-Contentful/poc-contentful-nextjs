@@ -1,9 +1,10 @@
+import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 import React from 'react';
 
 import styles from './title.module.scss';
 
 import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
-import { useContentfulInspectorMode } from '@contentful/live-preview/react';
+
 
 export const Title = (props: TitleProps) => {
   const inspectorProps = useContentfulInspectorMode({ entryId: props.id });

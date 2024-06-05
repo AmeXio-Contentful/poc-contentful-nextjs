@@ -1,3 +1,4 @@
+import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 // eslint-disable-next-line import/no-unresolved
 import {Autoplay} from 'swiper/modules';
 // eslint-disable-next-line import/no-unresolved
@@ -17,26 +18,39 @@ import {Teaser} from '@src/components/features/decoupled-components/teaser/tease
 import {Title} from '@src/components/features/decoupled-components/title/title';
 import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
 
+
 export const JoinUs = (props: JoinUsProps) => {
+  const inspectorProps = useContentfulInspectorMode({ entryId: props.id });
   const {title, description, buttonText, buttonUrl, joinUsItems, joinUsClients} = props;
   const titleProps: TitleProps = {
     title: title,
     heading: 'h2',
+    fieldName: 'title',
+    id: props.id
   };
 
   const descriptionProps: DescriptionProps = {
     description: description,
-    descriptionClasses: descriptionContext.context_center
+    descriptionClasses: descriptionContext.context_center,
+    fieldName: 'description',
+  }
+
+  const teaserDescriptionProps: DescriptionProps = {
+    descriptionClasses: descriptionContext.context_center,
+    fieldName: 'subtitle',
   }
 
   const titleTeaserProp = {
     heading: 'h4',
-    titleClasses: titleContext.context_join
+    titleClasses: titleContext.context_join,
+    fieldName: 'title',
   }
 
   const buttonProps: ButtonProps = {
     buttonText: buttonText,
     buttonUrl: buttonUrl,
+    fieldName: 'buttonText',
+    id: props.id
   }
 
   return (
@@ -48,14 +62,20 @@ export const JoinUs = (props: JoinUsProps) => {
           return (
           <div key={item.title}>
             <Teaser
+                id={item.id}
                 teaserClasses={teaserContext.context_join_us}
                 icon={item.image}
                 iconUrl={item.iconUrl}
                 titleProps={{
                   'title': item?.title,
+                  'id': item?.id,
                   ...titleTeaserProp
                 }}
-                descriptionProps={descriptionProps}
+                descriptionProps={{
+                  'id': item?.id,
+                  'description': item?.description as string,
+                  ...teaserDescriptionProps
+                }}
             />
           </div>
         )})}
@@ -87,7 +107,7 @@ export const JoinUs = (props: JoinUsProps) => {
         >
           {joinUsClients.map((item) => (
             <SwiperSlide key={item?.title}>
-              <img src={item.url} alt={item?.title} width='150px'/>
+              <img src={item.url} alt={item?.title} width='150px' {...inspectorProps({ fieldId: 'image' })}/>
             </SwiperSlide>
           ))}
         </Swiper>

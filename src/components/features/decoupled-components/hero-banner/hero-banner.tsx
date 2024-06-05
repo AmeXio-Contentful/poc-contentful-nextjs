@@ -1,5 +1,3 @@
-import { useContentfulInspectorMode } from '@contentful/live-preview/react';
-
 import styles from './hero-banner.module.scss';
 import descriptionContext from '../description/description.module.scss';
 

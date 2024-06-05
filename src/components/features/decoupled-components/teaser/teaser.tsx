@@ -8,7 +8,6 @@ import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 
 
 export const Teaser = (props: TeaserProps) => {
-
   const inspectorProps = useContentfulInspectorMode({ entryId: props.id });
   return <div className={`${styles.teaser || ''} ${props.teaserClasses || ''}`}>
     { props.iconUrl ?
