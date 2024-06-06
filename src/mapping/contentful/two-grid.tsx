@@ -15,6 +15,7 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
     expertAdvicesProps.advices.push({
       buttonText: item.title,
       buttonUrl: item.buttonUrl,
+      id: item.sys.id
     });
   });
 
