@@ -6,8 +6,8 @@ import {
   DoormatItemChild, DoormatProps,
 } from '@src/components/features/decoupled-components/doormat/doormat';
 import { FooterComponent, FooterProps } from '@src/components/features/decoupled-components/footer/footer';
-import { getLinkDisplayText, getLinkHrefPrefix } from '@src/data/contentful/navigation/utils';
 import { FooterFieldsFragment } from '@src/data/contentful/footer/__generated/ctf-footer.generated';
+import { getLinkDisplayText, getLinkHrefPrefix } from '@src/data/contentful/navigation/utils';
 
 export const Footer = (props: FooterFieldsFragment) => {
   const footerContent = props.items[0];

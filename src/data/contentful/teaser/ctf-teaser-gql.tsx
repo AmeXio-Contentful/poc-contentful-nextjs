@@ -1,8 +1,8 @@
 import React from 'react';
 
+import {DefaultQueryParameters} from "@src/data/contentful/component.typings";
 import { useCtfComponentTeaserQuery } from '@src/data/contentful/teaser/__generated/ctf-teaser.generated';
 import { Teaser } from '@src/mapping/contentful/teaser';
-import {DefaultQueryParameters} from "@src/data/contentful/component.typings";
 
 export function CtfTeaserGql(props: DefaultQueryParameters) {
   const data = useCtfComponentTeaserQuery({

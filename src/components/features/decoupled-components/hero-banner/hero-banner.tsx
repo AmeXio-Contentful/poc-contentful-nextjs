@@ -4,7 +4,6 @@ import descriptionContext from '../description/description.module.scss';
 import {ButtonProps} from '@src/components/features/decoupled-components/button/button.typings';
 import {DescriptionProps} from "@src/components/features/decoupled-components/description/description.typings";
 import {HeroBannerProps} from "@src/components/features/decoupled-components/hero-banner/hero-banner.typings";
-
 import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
 import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
 

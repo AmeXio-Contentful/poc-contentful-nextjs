@@ -3,13 +3,13 @@ import { setTimeout } from 'timers';
 import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 import localeEmoji from 'locale-emoji';
 import Link from 'next/link'
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import { useContentfulContext } from '@src/contentful-context';
 import { NavigationFieldsFragment } from '@src/data/contentful/navigation/__generated/navigation.generated';
 import { getLinkDisplayText, getLinkHrefPrefix } from '@src/data/contentful/navigation/utils';
 import { useLocaleContext } from '@src/locale-context';
-import { useRouter } from 'next/router';
 
 
 interface SysId {

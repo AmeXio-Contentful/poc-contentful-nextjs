@@ -8,10 +8,10 @@ import description from "../description/description.module.scss";
 import teaser from "../teaser/teaser.module.scss";
 
 import {Description} from '@src/components/features/decoupled-components/description/description';
+import {ReferenceClientsProps} from "@src/components/features/decoupled-components/reference-clients/reference-clients.typings";
 import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
 import {Title} from '@src/components/features/decoupled-components/title/title';
 import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
-import {ReferenceClientsProps} from "@src/components/features/decoupled-components/reference-clients/reference-clients.typings";
 
 
 export const ReferenceClients = (props: ReferenceClientsProps) => {

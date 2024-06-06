@@ -193,6 +193,7 @@ bower_components
 .env.*
 ### Intellij ###
 .idea/
+.env
 
 ### Install artifacts ###
 package-lock.json
