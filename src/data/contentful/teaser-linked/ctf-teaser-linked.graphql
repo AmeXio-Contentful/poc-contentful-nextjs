@@ -1,0 +1,25 @@
+fragment ComponentTeaserLinkedFields on TeaserLinked {
+  __typename
+  sys {
+    id
+  }
+  buttonText
+  backgroundImage {
+    title
+    url
+  }
+  page {
+    pageName
+    shortDescription
+    slug
+    sys {
+      id
+    }
+  }
+}
+
+query CtfComponentTeaserLinked($id: String!, $locale: String, $preview: Boolean) {
+  teaserLinked(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentTeaserLinkedFields
+  }
+}

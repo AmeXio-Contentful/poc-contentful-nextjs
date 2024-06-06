@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import { CtfTeaserLinkedGql } from '@src/data/contentful/teaser-linked/ctf-teaser-linked-gql';
 
 // mapping basically determines which specific mapping to use per component, so the origin of the dataset is set over here
 // should we differentiate between the method of fetching the data? Should we use one by default?
@@ -55,6 +56,11 @@ export const componentGqlMap = {
       '@src/data/contentful/teaser/ctf-teaser-gql'
       ).then((module) => module.CtfTeaserGql),
    ),
+  TeaserLinked: dynamic(() =>
+    import(
+      '@src/data/contentful/teaser-linked/ctf-teaser-linked-gql'
+      ).then((module) => module.CtfTeaserLinkedGql),
+  ),
   Testimonial: dynamic(() =>
     import(
       '@src/components/features/ctf-components/testimonial/ctf-testimonial-gql'
