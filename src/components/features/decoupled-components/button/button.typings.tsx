@@ -5,5 +5,5 @@ export interface ButtonProps extends ContentfulFieldName {
   buttonText: string;
   buttonClasses?: string;
   id?: string;
-  fieldName: string;
+  fieldName?: string;
 }
