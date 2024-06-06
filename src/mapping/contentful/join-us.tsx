@@ -16,7 +16,7 @@ export const JoinUsComponent = (props: DefaultQueryParameters) => {
         title: item?.title || '',
         image: item?.image || '',
         id: item?.sys.id,
-        description: item?.subtitle
+        description: item?.subtitle as string
     }));
 
     const joinUsClients: JoinUsClient[] | undefined = componentData?.clientsCollection?.items.map(item => ({

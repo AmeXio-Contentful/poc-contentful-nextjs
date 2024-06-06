@@ -9,8 +9,8 @@ export interface JoinUsProps {
 }
 
 export interface JoinUsItem {
-    title: string,
-    image: any,
+    title?: string,
+    image?: any,
     iconUrl?: string,
     id?: string,
     description?: string;
