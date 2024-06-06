@@ -33,11 +33,6 @@ module.exports = withPlugins(plugins, {
    * The experimental option allows you to enable future/experimental options
    * like React 18 concurrent features.
    */
-  experimental: {
-    // urlImports: true,
-    // concurrentFeatures: true,
-    // serverComponents: true,
-  },
 
   /**
    * SWC minification opt-in
@@ -84,11 +79,14 @@ module.exports = withPlugins(plugins, {
       });
     }
 
+    config.experiments = {
+      topLevelAwait: true,
+    }
+
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-
     includePolyfills(config);
 
     return config;

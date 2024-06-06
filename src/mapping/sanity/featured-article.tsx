@@ -1,4 +1,5 @@
 import {PortableText} from '@portabletext/react'
+
 import FeaturedArticle from '@src/components/features/decoupled-components/featured-article/featured-article';
 
 interface FeaturedProps {

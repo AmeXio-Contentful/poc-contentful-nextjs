@@ -1,9 +1,9 @@
-import {
-  ComponentSolutionSectionFragment
-} from '@src/data/contentful/solutions/__generated/solutions.generated';
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import { Title } from '@src/components/features/decoupled-components/title/title';
 import {TitleProps} from "@src/components/features/decoupled-components/title/title.typings";
+import {
+  ComponentSolutionSectionFragment
+} from '@src/data/contentful/solutions/__generated/solutions.generated';
 
 
 /* export interface Teaser {

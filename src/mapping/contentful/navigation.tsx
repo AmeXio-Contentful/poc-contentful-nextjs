@@ -1,11 +1,16 @@
-import {setTimeout} from "timers";
+import { setTimeout } from 'timers';
 
 import { useContentfulInspectorMode } from '@contentful/live-preview/react';
+import localeEmoji from 'locale-emoji';
+import Link from 'next/link'
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-import { Link } from '@src/components/shared/link';
+import { useContentfulContext } from '@src/contentful-context';
 import { NavigationFieldsFragment } from '@src/data/contentful/navigation/__generated/navigation.generated';
 import { getLinkDisplayText, getLinkHrefPrefix } from '@src/data/contentful/navigation/utils';
+import { useLocaleContext } from '@src/locale-context';
+
 
 interface SysId {
   sys: {
@@ -42,8 +47,11 @@ interface MenuItem {
 export const CtfNavigation = (props: NavigationFieldsFragment) => {
   const inspectorMode = useContentfulInspectorMode();
 
+  const localeContext = useLocaleContext();
+  const contentFulContext = useContentfulContext();
   const navigationContent = props.items[0] as any;
 
+  const path = useRouter().asPath
 
   const showDropdown = (id: number)=> {
     if(lastOpenedDrawer && lastOpenedDrawer !== id){
@@ -143,17 +151,11 @@ export const CtfNavigation = (props: NavigationFieldsFragment) => {
                 </li>
             )}
 
-            {languageItems.map(
-              languageItem =>
-                <li
-                  key={languageItem.sys.id}
-                  className="capitalize inline-flex h-auto relative items-center pl-9"
-                  {...inspectorMode({
-                    entryId: languageItem.sys.id,
-                    fieldId: 'groupName',
-                  })}>
-                  <img src={languageItem.localeImage.url} alt={languageItem.locale} width="16" height="11"/>
-                </li>
+            {localeContext.locales.map(
+              locale =>
+                <Link href={path} locale={locale.toLowerCase()} className={`cursor-pointer text-[18px] leading-4 mx-2 px-1 text-center ${contentFulContext.locale.toUpperCase() === locale.toUpperCase() ? 'border-b-2 border-primary': ''} `} key={locale}>
+                  {localeEmoji(locale)}
+                </Link>
             )}
           </ul>
         </nav>

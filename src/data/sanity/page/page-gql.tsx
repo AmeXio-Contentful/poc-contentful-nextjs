@@ -1,5 +1,4 @@
 import Head from 'next/head';
-
 import React, { useState } from 'react';
 
 import { PageError } from '@src/components/features/errors/page-error';
