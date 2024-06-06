@@ -6,7 +6,7 @@ export interface ExpertProps {
     buttonUrl: string;
     buttonText: string;
     advices: ButtonProps[];
-    sys: {
+    sys?: {
       id
     }
 }

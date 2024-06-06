@@ -3,7 +3,7 @@ export interface FeaturedProps {
     title: string;
     buttonUrl: string;
     heading: string;
-    sys: {
+    sys?: {
       id
     }
 }

@@ -67,7 +67,7 @@ export const JoinUs = (props: JoinUsProps) => {
                 icon={item.image}
                 iconUrl={item.iconUrl}
                 titleProps={{
-                  'title': item?.title,
+                  'title': item?.title as string,
                   'id': item?.id,
                   ...titleTeaserProp
                 }}
