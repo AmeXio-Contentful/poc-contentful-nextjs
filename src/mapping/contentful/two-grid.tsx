@@ -9,8 +9,9 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
     const data = TwoGridGql(props);
     const componentData: ComponentTwoGridFieldsFragment | null | undefined = data.data?.twoGrid;
 
-    const expertAdvicesProps:any = componentData?.componentLeft;
-    expertAdvicesProps.advices = [];
+    console.log("componentData", componentData);
+    const expertAdvicesProps: any = componentData?.componentLeft;
+    expertAdvicesProps != null ? expertAdvicesProps.advices = [] : null;
     expertAdvicesProps?.advicesCollection?.items.forEach((item) => {
       expertAdvicesProps.advices.push({
         buttonText: item.title,

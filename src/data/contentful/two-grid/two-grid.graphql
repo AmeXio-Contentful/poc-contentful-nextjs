@@ -1,11 +1,43 @@
 fragment ComponentsFields on Entry {
+  ... on HeroBanner {
+    __typename
+    sys {
+      id
+    }
+    title
+    subtitle
+    buttonUrl
+    buttonText
+    backgroundImage {
+      url
+    }
+  }
+  ... on Teaser {
+    __typename
+    sys {
+      id
+    }
+    title
+    subtitle
+    buttonUrl
+    buttonText
+    image {
+      url
+    }
+  }
   ... on FeaturedArticle {
+    sys {
+      id
+    }
     heading
     title
     subtitle
     buttonUrl
   }
   ... on ExpertAdvice {
+    sys {
+      id
+    }
     title
     subtitle
     buttonUrl
@@ -15,6 +47,9 @@ fragment ComponentsFields on Entry {
         ... on Title {
           title
           buttonUrl
+          sys {
+            id
+          }
         }
       }
     }
