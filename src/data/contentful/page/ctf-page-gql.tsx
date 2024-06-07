@@ -1,3 +1,4 @@
+import { ContentfulLivePreview } from '@contentful/live-preview';
 import { useContentfulLiveUpdates } from '@contentful/live-preview/react';
 import Head from 'next/head';
 import React, { useState } from 'react';
@@ -9,8 +10,6 @@ import { Header } from '@src/mapping/contentful/header';
 import Page from '@src/mapping/shared/page';
 import { tryget } from '@src/utils';
 import contentfulConfig from 'contentful.config';
-import { ContentfulLivePreview } from '@contentful/live-preview';
-
 
 export interface Props {
   topic?: string;
@@ -28,7 +27,8 @@ export interface MetaTags {
 const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { previewActive, locale } = useContentfulContext();
-  const slug = !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
+  const slug =
+    !slugFromProps || slugFromProps === '/' ? 'home-page-v3-decouple-components' : slugFromProps;
 
   // LOAD CONTENTFUL
   const { isLoading, data } = useCtfPageQuery({
@@ -57,7 +57,7 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
         message:
           'We were not able to locate the content you were looking for, please check the url for possible typos',
       };
-      return <PageError error={error}/>;
+      return <PageError error={error} />;
     }
 
     page = data?.pageCollection?.items[0];

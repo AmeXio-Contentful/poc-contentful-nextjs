@@ -1,9 +1,9 @@
 @use 'src/styles/utilities/breakpoint-mixins' as m;
-@import "src/styles/default-theme";
+@import 'src/styles/default-theme';
 
 .doormat_container {
   border-top: 25px solid $secondary-color;
-  background: linear-gradient(35deg, rgba(0,0,0,1) 2%, rgba(8,71,114,1) 89%);
+  background: linear-gradient(35deg, rgba(0, 0, 0, 1) 2%, rgba(8, 71, 114, 1) 89%);
 }
 .doormat {
   display: flex;

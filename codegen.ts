@@ -2,7 +2,6 @@ import { CodegenConfig } from '@graphql-codegen/cli';
 import { fetchConfigSanity } from './src/lib/sanity/fetcher';
 import { fetcherConfigContentful } from './src/lib/contentful/fetcher';
 
-
 export const config: CodegenConfig = {
   overwrite: true,
   ignoreNoDocuments: true,
@@ -14,11 +13,11 @@ export const config: CodegenConfig = {
     },
     './src/lib/sanity/__generated/graphql.schema.json': {
       plugins: ['introspection'],
-      schema: fetchConfigSanity.endpoint
+      schema: fetchConfigSanity.endpoint,
     },
     './src/lib/sanity/__generated/graphql.schema.graphql': {
       plugins: ['schema-ast'],
-      schema: fetchConfigSanity.endpoint
+      schema: fetchConfigSanity.endpoint,
     },
     './src/data/sanity': {
       documents: ['./src/data/sanity/**/*.graphql'],
@@ -29,10 +28,7 @@ export const config: CodegenConfig = {
         baseTypesPath: '../../lib/sanity/__generated/graphql.types.ts',
         folder: '__generated',
       },
-      plugins: [
-        'typescript-operations',
-        'typescript-react-query',
-      ],
+      plugins: ['typescript-operations', 'typescript-react-query'],
       config: {
         exposeQueryKeys: true,
         exposeFetcher: true,
@@ -59,10 +55,7 @@ export const config: CodegenConfig = {
         baseTypesPath: 'lib/contentful/__generated/graphql.types.ts',
         folder: '__generated',
       },
-      plugins: [
-        'typescript-operations',
-        'typescript-react-query',
-      ],
+      plugins: ['typescript-operations', 'typescript-react-query'],
       config: {
         exposeQueryKeys: true,
         exposeFetcher: true,
@@ -114,10 +107,7 @@ export const config: CodegenConfig = {
         baseTypesPath: '../../lib/contentful/__generated/graphql.types.ts',
         folder: '__generated',
       },
-      plugins: [
-        'typescript-operations',
-        'typescript-react-query',
-      ],
+      plugins: ['typescript-operations', 'typescript-react-query'],
       config: {
         exposeQueryKeys: true,
         exposeFetcher: true,
@@ -130,7 +120,7 @@ export const config: CodegenConfig = {
         withHooks: true,
         fetcher: '@src/lib/contentful/fetcher#customFetcher',
       },
-    }
+    },
   },
 };
 

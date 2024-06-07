@@ -10,7 +10,7 @@ import { HEADER_HEIGHT, HEADER_HEIGHT_MD, CONTAINER_WIDTH } from '@src/theme';
 
 const useStyles = makeStyles((theme: Theme) => ({
   noBackground: {
-    backgroundColor: 'white !important'
+    backgroundColor: 'white !important',
   },
   appbar: {
     boxShadow: '0 2px 6px #00000021',
@@ -89,7 +89,8 @@ export const Header = (props: HeaderPropsInterface) => {
           maxWidth={false}
           style={{
             maxWidth: `${CONTAINER_WIDTH / 10}rem`,
-          }}>
+          }}
+        >
           <Link href="/">
             <Logo className={classes.corporateLogo} />
           </Link>
@@ -107,7 +108,8 @@ export const Header = (props: HeaderPropsInterface) => {
             onClick={() => onMenuClick?.()}
             aria-controls="mobile-menu"
             aria-expanded={isMenuOpen}
-            aria-haspopup="dialog">
+            aria-haspopup="dialog"
+          >
             <Menu />
           </IconButton>
         </Box>

@@ -1,5 +1,5 @@
 @use 'src/styles/utilities/breakpoint-mixins' as m;
-@import "src/styles/default-theme";
+@import 'src/styles/default-theme';
 
 .footer {
   padding-top: 15px;
@@ -21,7 +21,7 @@
 
   &__mainnav {
     > li:not(:last-child):after {
-      content: "|";
+      content: '|';
       margin-left: 6px;
       margin-right: 6px;
       color: $secondary-color;
@@ -69,7 +69,6 @@
         line-height: normal;
       }
     }
-
   }
 
   &__section {
@@ -78,4 +77,3 @@
     width: 100%;
   }
 }
-

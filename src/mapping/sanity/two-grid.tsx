@@ -11,26 +11,26 @@ export const TwoGridSanity = (props: any) => {
     subtitle: props['expertAdvice']['subtitle'],
     buttonUrl: props['expertAdvice']['buttonUrl'],
     buttonText: props['expertAdvice']['buttonText'],
-    advices: props['expertAdvice']['expertAdvices']
-  }
+    advices: props['expertAdvice']['expertAdvices'],
+  };
 
   const featuredArticleProps = {
     title: props['featuredArticle']['title'],
     heading: props['featuredArticle']['heading'],
     subtitle: toPortableText(props['featuredArticle']['subtitleRaw']),
     buttonUrl: props['featuredArticle']['buttonUrl'],
-  }
+  };
 
   const mappedData = {
     primary: {
       component: ExpertAdvice,
-      props: expertAdviceProps
+      props: expertAdviceProps,
     },
     secondary: {
       component: FeaturedArticle,
-      props: featuredArticleProps
-    }
-  }
+      props: featuredArticleProps,
+    },
+  };
 
-  return <TwoGrid {...mappedData}/>
+  return <TwoGrid {...mappedData} />;
 };

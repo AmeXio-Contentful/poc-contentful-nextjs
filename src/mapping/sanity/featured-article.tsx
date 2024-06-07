@@ -1,4 +1,5 @@
-import {PortableText} from '@portabletext/react'
+import { PortableText } from '@portabletext/react';
+
 import FeaturedArticle from '@src/components/features/decoupled-components/featured-article/featured-article';
 
 interface FeaturedProps {
@@ -9,7 +10,7 @@ interface FeaturedProps {
 }
 
 export function toPortableText(rawText: any[]) {
-  return <PortableText value={rawText} />
+  return <PortableText value={rawText} />;
 }
 
 export function FeaturedArticleSanity(props: any) {
@@ -17,8 +18,8 @@ export function FeaturedArticleSanity(props: any) {
     title: props.componentProps?.title,
     subtitle: toPortableText(props.componentProps?.subtitleRaw) as any,
     buttonUrl: props.componentProps?.buttonUrl,
-    heading: props.componentProps?.heading
-  }
+    heading: props.componentProps?.heading,
+  };
 
-  return <FeaturedArticle {...featuredArticleProps} />
+  return <FeaturedArticle {...featuredArticleProps} />;
 }

@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 
 import { useContentfulContext } from '@src/contentful-context';
 import { componentGqlMap, componentMap } from '@src/mapping/contentful/mappings';
-import {componentMapSanity } from '@src/mapping/sanity/mappings';
+import { componentMapSanity } from '@src/mapping/sanity/mappings';
 
 let previousComponent: string | null = null;
 export interface Props {
@@ -26,7 +26,6 @@ export interface Props {
 }
 
 export const ComponentResolver = (props: Props) => {
-
   const { componentProps, inline = false } = props;
   const { previewActive } = useContentfulContext();
 

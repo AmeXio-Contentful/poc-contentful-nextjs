@@ -5,7 +5,6 @@ import React, { useEffect, ReactElement } from 'react';
 
 import { CtfFooterGql } from '@src/data/contentful/footer/ctf-footer-gql';
 
-
 const useStyles = makeStyles((theme: Theme) => ({
   content: {
     ...theme.typography.body1,
@@ -26,7 +25,6 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
-
     router.events.on('routeChangeComplete', () => {
       if (document.activeElement === null) {
         return;
@@ -45,7 +43,7 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
       {/* content */}
       <div className={classes.content}>{children}</div>
 
-      <CtfFooterGql/>
+      <CtfFooterGql />
     </>
   );
 };

@@ -5,7 +5,7 @@ export const fetchConfigSanity = {
       'Content-Type': 'application/json',
     },
   },
-}
+};
 
 export function customFetcherSanity<TData, TVariables>(
   query: string,
@@ -16,7 +16,7 @@ export function customFetcherSanity<TData, TVariables>(
     const res = await fetch(fetchConfigSanity.endpoint, {
       method: 'POST',
       ...options,
-      ...(fetchConfigSanity.params),
+      ...fetchConfigSanity.params,
       body: JSON.stringify({ query, variables }),
     });
 

@@ -1,7 +1,7 @@
 ## Purpose of PR
 
-* Stuff that is going to change
-* even more interesting stuff that is going to change
+- Stuff that is going to change
+- even more interesting stuff that is going to change
 
 <!-- If this has a larger context, uncomment and put it here
 _Purpose_
@@ -10,7 +10,7 @@ Why do we introduce this change? What problem do we solve? What is the
 story/background for it?
 -->
 
-<!-- # If there is deployment related information, uncomment and put it here 
+<!-- # If there is deployment related information, uncomment and put it here
 ## Deployment & Risks
 
 * [ ] There is a migration necessary for this to work

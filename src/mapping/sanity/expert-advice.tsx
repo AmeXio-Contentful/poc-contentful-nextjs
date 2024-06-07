@@ -6,10 +6,8 @@ export function ExpertAdviceSanity(props: any) {
     subtitle: props.componentProps?.subtitle,
     buttonUrl: props.componentProps?.buttonUrl,
     buttonText: props.componentProps?.buttonText,
-    advices: props.componentProps?.expertAdvices
-  }
+    advices: props.componentProps?.expertAdvices,
+  };
 
-  return (
-    <ExpertAdvice {...expertAdviceProps} />
-  );
+  return <ExpertAdvice {...expertAdviceProps} />;
 }

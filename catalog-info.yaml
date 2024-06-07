@@ -8,7 +8,7 @@ metadata:
   description: Next.js marketing website starter template
   annotations:
     github.com/project-slug: fetcher/template-marketing-webapp-nextjs
-    contentful.com/service-tier: "4"
+    contentful.com/service-tier: '4'
 
   tags:
     - starter-templates

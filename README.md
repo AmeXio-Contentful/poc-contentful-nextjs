@@ -1,16 +1,17 @@
-# POC Contentful 
+# POC Contentful
 
 ## Setup
-Run the following commands to run the application 
+
+Run the following commands to run the application
 
 1.  Create and enter the correct credentials in a `.env` file, see `.env.example` for an example
-2.  Run `npm install` or `npm i`, the current node version is v18.20.2 and npm v10.5.0 
-3.  Run `npm run dev`, this commands does the following: 
-       1.  The command `npm run graphql-codegen:generate` generates the queries and the interfaces for the application, the environment `local` is getting pulled from Contentful 
+2.  Run `npm install` or `npm i`, the current node version is v18.20.2 and npm v10.5.0
+3.  Run `npm run dev`, this commands does the following:
+    1.  The command `npm run graphql-codegen:generate` generates the queries and the interfaces for the application, the environment `local` is getting pulled from Contentful
 
+## Import / Export
 
-## Import / Export 
-Contentful has a CLI where you can perform certain action on spaces and environment, following the documentation for installing the CLI. 
+Contentful has a CLI where you can perform certain action on spaces and environment, following the documentation for installing the CLI.
 
 Read the following [docs](https://www.contentful.com/developers/docs/tutorials/cli/installation/)
 

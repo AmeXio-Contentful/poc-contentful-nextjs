@@ -3,7 +3,7 @@ fragment NavigationFields on NavigationMenuCollection {
     menuItemsCollection {
       items {
         ... on LanguageMetadata {
-         sys {
+          sys {
             id
           }
           locale

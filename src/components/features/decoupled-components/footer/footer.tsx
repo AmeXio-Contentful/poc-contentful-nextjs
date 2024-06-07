@@ -4,24 +4,24 @@ import LinkedIn from '@mui/icons-material/LinkedIn';
 import Twitter from '@mui/icons-material/Twitter';
 import { useTranslation } from 'next-i18next';
 
-import styles from './footer.module.scss'
+import styles from './footer.module.scss';
 
 import { Link } from '@src/components/shared/link';
 
 export interface FooterProps {
   socials?: {
-    twitterLink?: string,
-    facebookLink?: string,
-    instagramLink?: string,
-    linkedInLink?: string
-  }
-  legalLinks?: legalLink[]
+    twitterLink?: string;
+    facebookLink?: string;
+    instagramLink?: string;
+    linkedInLink?: string;
+  };
+  legalLinks?: legalLink[];
 }
 
 type legalLink = {
-  title: string,
-  link: string
-}
+  title: string;
+  link: string;
+};
 export const FooterComponent = (footerProps: FooterProps) => {
   const { t } = useTranslation();
 
@@ -37,7 +37,7 @@ export const FooterComponent = (footerProps: FooterProps) => {
                     {item.title}
                   </Link>
                 </li>
-              )
+              );
             }
           })}
         </ul>
@@ -94,6 +94,5 @@ export const FooterComponent = (footerProps: FooterProps) => {
         )}
       </ul>
     </footer>
-  )
-
-}
+  );
+};
