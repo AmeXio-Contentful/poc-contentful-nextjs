@@ -7,6 +7,9 @@ fragment ComponentSolutionSection on SolutionSection {
   teasersCollection {
     items {
       ... on Teaser {
+        sys {
+          id
+        }
         title
         subtitle
         buttonText

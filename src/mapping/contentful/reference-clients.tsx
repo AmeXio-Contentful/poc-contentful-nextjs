@@ -12,7 +12,7 @@ export const ReferenceClientsComponent = (props: DefaultQueryParameters) => {
   const componentData: ComponentRerenceClientFragment | null | undefined = data.data?.referenceClients;
   // adjust data over here to custom component typing
   const clients: ReferenceClient[] | null | undefined = componentData?.clientsCollection?.items?.map(item => ({
-    'id': item?.title || '',
+    'id': item?.sys.id || '',
     'image': item?.image || '',
     'title': item?.title || '',
     'subtitle': item?.subtitle || '',
@@ -22,7 +22,8 @@ export const ReferenceClientsComponent = (props: DefaultQueryParameters) => {
   const mappedData: ReferenceClientsProps = {
     'title': componentData?.title || '',
     'description': componentData?.description || '',
-    'clients': clients || []
+    'clients': clients || [],
+    'id': componentData?.sys.id as string
   }
 
   return <ReferenceClients {...mappedData} />
