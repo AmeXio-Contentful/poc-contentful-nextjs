@@ -27,6 +27,7 @@ module.exports = withPlugins(plugins, {
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
     CONTENTFUL_PREVIEW_ACCESS_TOKEN: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
     CONTENTFUL_ENDPOINT: process.env.CONTENTFUL_ENDPOINT,
+    CONTENTFUL_HOMEPAGE_SLUG: process.env.CONTENTFUL_HOMEPAGE_SLUG,
   },
 
   /**
@@ -59,8 +60,8 @@ module.exports = withPlugins(plugins, {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
+        protocol: 'https',
+        hostname: '**',
       },
     ],
   },
@@ -81,7 +82,7 @@ module.exports = withPlugins(plugins, {
 
     config.experiments = {
       topLevelAwait: true,
-    }
+    };
 
     config.module.rules.push({
       test: /\.svg$/,
