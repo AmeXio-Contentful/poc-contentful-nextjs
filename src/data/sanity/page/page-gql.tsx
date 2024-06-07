@@ -1,5 +1,4 @@
 import Head from 'next/head';
-
 import React, { useState } from 'react';
 
 import { PageError } from '@src/components/features/errors/page-error';
@@ -10,15 +9,13 @@ import { Header } from '@src/mapping/sanity/header';
 import Page from '@src/mapping/shared/page';
 import contentfulConfig from 'contentful.config';
 
-
-
 export interface SanityPageInformation {
   seoTitle: string;
   noIndex?: boolean;
   noFollow?: boolean;
   description: string;
   slug?: {
-    current: string
+    current: string;
   };
 }
 
@@ -34,11 +31,13 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
     const components = Object.values(data?.allLandingPage[0] as any);
     const keys = Object.keys(data?.allLandingPage[0] as any);
     components.map((entry: any, index) => {
-      entry['__typename'] = (keys[index])[0].toUpperCase() + keys[index].slice(1);
+      entry['__typename'] = keys[index][0].toUpperCase() + keys[index].slice(1);
       entry['isSanity'] = true;
     });
 
-    const pageInformation = components.find((element: any) => element.__typename == 'PageInformation') as SanityPageInformation;
+    const pageInformation = components.find(
+      (element: any) => element.__typename == 'PageInformation',
+    ) as SanityPageInformation;
     const page = {
       pageContentCollection: {
         items: components,
@@ -106,7 +105,7 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
       </>
     );
   }
-  return <></>
+  return <></>;
 };
 
 export default SanityPageGql;

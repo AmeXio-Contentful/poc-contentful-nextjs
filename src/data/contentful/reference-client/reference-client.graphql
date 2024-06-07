@@ -7,9 +7,9 @@ fragment ComponentRerenceClient on ReferenceClients {
   description
   clientsCollection {
     items {
-      ...on Teaser {
+      ... on Teaser {
         sys {
-           id
+          id
         }
         title
         subtitle

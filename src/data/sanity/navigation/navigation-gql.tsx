@@ -5,7 +5,7 @@ export const SanityNavigationGql = () => {
   const sanityId = 'a2ddc724-29ca-4c61-b881-6167e6fd1b33';
   const { isLoading, data } = useHeaderByIdQuery({ id: sanityId });
 
-  if (isLoading) return <></>
+  if (isLoading) return <></>;
 
-  return <NavigationSanity {...data as any} />;
+  return <NavigationSanity {...(data as any)} />;
 };

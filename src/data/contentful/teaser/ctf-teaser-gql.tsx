@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { DefaultQueryParameters } from '@src/data/contentful/component.typings';
 import { useCtfComponentTeaserQuery } from '@src/data/contentful/teaser/__generated/ctf-teaser.generated';
 import { Teaser } from '@src/mapping/contentful/teaser';
-import {DefaultQueryParameters} from "@src/data/contentful/component.typings";
 
 export function CtfTeaserGql(props: DefaultQueryParameters) {
   const data = useCtfComponentTeaserQuery({
@@ -13,7 +13,7 @@ export function CtfTeaserGql(props: DefaultQueryParameters) {
 
   if (data.data?.teaser) {
     data.data.teaser.sectionType = props.sectionType;
-    return <Teaser {...data.data.teaser}/>;
+    return <Teaser {...data.data.teaser} />;
   }
-  return <></>
+  return <></>;
 }

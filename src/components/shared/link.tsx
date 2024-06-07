@@ -33,7 +33,7 @@ interface Props {
   endIcon?: any;
   urlParams?: string;
   title?: string;
-  legacyBehavior?: boolean
+  legacyBehavior?: boolean;
 }
 export type LinkProps = Props;
 
@@ -53,7 +53,7 @@ export const Link = (props: Props) => {
     endIcon,
     urlParams = '',
     title,
-    legacyBehavior = true
+    legacyBehavior = true,
   } = props;
   const router = useRouter();
   let href = props.href || '';
@@ -113,7 +113,8 @@ export const Link = (props: Props) => {
         size={size}
         startIcon={startIcon}
         endIcon={endIcon}
-        title={title}>
+        title={title}
+      >
         {children}
       </MuiButton>
     ) : (
@@ -125,7 +126,8 @@ export const Link = (props: Props) => {
         target={props.target}
         rel="noopener noreferrer"
         onClick={() => onClick && onClick()}
-        title={title}>
+        title={title}
+      >
         {children}
       </MuiLink>
     );
@@ -153,7 +155,8 @@ export const Link = (props: Props) => {
           size={size}
           startIcon={startIcon}
           endIcon={endIcon}
-          title={title}>
+          title={title}
+        >
           {children}
         </MuiButton>
       </NextLink>
@@ -168,7 +171,8 @@ export const Link = (props: Props) => {
         underline={underlineStyle}
         color={color}
         onClick={() => onClick && onClick()}
-        title={title}>
+        title={title}
+      >
         {children}
       </MuiLink>
     </NextLink>

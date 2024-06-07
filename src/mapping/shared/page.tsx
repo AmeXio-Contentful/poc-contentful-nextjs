@@ -7,20 +7,20 @@ import { PageContainer } from '@src/components/templates/page-container';
 import LayoutContext, { defaultLayout } from '@src/layout-context';
 
 const Page = (props: any) => {
-
   const content = props.pageContentCollection;
   return (
     <PageContainer>
-      {content.items?.map((entry,index) => (
+      {content.items?.map((entry, index) => (
         <LayoutContext.Provider value={defaultLayout} key={index}>
-          <ComponentResolver componentProps={entry!} forceGql={!entry!.isSanity} className={entry.__typename}/>
+          <ComponentResolver
+            componentProps={entry!}
+            forceGql={!entry!.isSanity}
+            className={entry.__typename}
+          />
         </LayoutContext.Provider>
       ))}
 
-      <Box
-        position="relative"
-        className="form-component"
-      >
+      <Box position="relative" className="form-component">
         <CtfFormComponent />
       </Box>
     </PageContainer>

@@ -5,7 +5,7 @@ import CtfPageGgl from '@src/data/contentful/page/ctf-page-gql';
 
 const SlugPage: NextPage = () => {
   const router = useRouter();
-  let slug = (router?.query.slug) || '';
+  let slug = router?.query.slug || '';
   if (Array.isArray(slug)) {
     slug = slug[0];
   }

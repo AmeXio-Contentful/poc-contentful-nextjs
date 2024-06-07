@@ -6,4 +6,4 @@ const SanityPage: NextPage = () => {
   return <SanityPageGql slug="/" />;
 };
 
-export default SanityPage
+export default SanityPage;

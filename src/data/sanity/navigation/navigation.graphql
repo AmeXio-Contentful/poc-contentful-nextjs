@@ -1,5 +1,5 @@
- query headerById($id: ID) {
-   allHeader(where: { _id: { eq: $id } }) {
+query headerById($id: ID) {
+  allHeader(where: { _id: { eq: $id } }) {
     navigationItems {
       text
       url {
@@ -33,4 +33,4 @@
       language
     }
   }
- }
+}

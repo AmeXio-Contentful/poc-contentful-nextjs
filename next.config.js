@@ -66,8 +66,8 @@ module.exports = withPlugins(plugins, {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
+        protocol: 'https',
+        hostname: '**',
       },
     ],
   },

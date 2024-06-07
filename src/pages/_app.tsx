@@ -46,10 +46,10 @@ const LivePreviewProvider = ({ children }) => {
 type CustomPageProps = SSRConfig & { dehydratedState: DehydratedState; err: Error };
 
 const CustomApp = ({
-                     Component,
-                     router,
-                     pageProps: originalPageProps,
-                   }: AppProps<CustomPageProps>) => {
+  Component,
+  router,
+  pageProps: originalPageProps,
+}: AppProps<CustomPageProps>) => {
   const [queryClient] = useState(() => new QueryClient(queryConfig));
   const { dehydratedState, err, ...pageProps } = originalPageProps;
   const { previewActive } = useContentfulContext();

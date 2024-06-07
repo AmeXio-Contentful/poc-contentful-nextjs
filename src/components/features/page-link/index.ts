@@ -1,1 +1,1 @@
-export * from './page-link'
+export * from './page-link';

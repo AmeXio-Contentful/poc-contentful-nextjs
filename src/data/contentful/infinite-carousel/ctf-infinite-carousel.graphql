@@ -21,11 +21,7 @@ fragment ComponentImageCarouselFields on ImageCarousel {
   }
 }
 
-query CtfComponentInfiniteCarousel(
-  $id: String!
-  $locale: String
-  $preview: Boolean
-) {
+query CtfComponentInfiniteCarousel($id: String!, $locale: String, $preview: Boolean) {
   imageCarousel(id: $id, locale: $locale, preview: $preview) {
     ...ComponentImageCarouselFields
   }
