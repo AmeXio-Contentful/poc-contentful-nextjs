@@ -4,37 +4,9 @@ import {
   JoinUsItem,
   JoinUsProps,
 } from '@src/components/features/decoupled-components/join-us/join-us.typings';
+import { JoinUsPropsSanity } from '@src/data/sanity/typings/join-us.typings';
 
-interface JoinUsClientItemsProps {
-  title: string;
-  subtitle: string;
-  buttonUrl: string;
-  buttonText: string;
-  quote: string;
-  backgroundImage: joinUsClientProps
-}
 
-interface joinUsClientProps {
-  asset: {
-    url: string;
-  }
-}
-
-interface JoinUsPropsSanity {
-  buttonText: string;
-  buttonUrl: string;
-  subtitle: string;
-  title: string;
-  joinUsClientItems: JoinUsClientItemsProps[]
-  joinUsClients: {
-    title: string;
-    image: {
-      asset: {
-        url: string;
-      }
-    }
-  }[]
-}
 
 export const JoinUsComponentSanity = (props: JoinUsPropsSanity) => {
   const joinUsItems: JoinUsItem[] | undefined = props.joinUsClientItems.map(item => ({
