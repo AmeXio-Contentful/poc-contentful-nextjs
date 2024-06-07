@@ -1,6 +1,6 @@
 import {FeaturedProps} from "@src/components/features/decoupled-components/featured-article/featured-article.typings";
 
-export default function FeaturedArticle({subtitle, title, buttonUrl, heading}: FeaturedProps) {
+export function FeaturedArticle({subtitle, title, buttonUrl, heading}: FeaturedProps) {
     return (
         <div
             className='relative bg-[#D9E8F5] text-[#084772] py-14 px-9 flex flex-col gap-y-6 items-start h-full text-left'

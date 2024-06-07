@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ExpertAdvice from '@src/components/features/decoupled-components/expert-advice/expert-advice';
-import FeaturedArticle from '@src/components/features/decoupled-components/featured-article/featured-article';
 import { TwoGrid } from '@src/components/features/decoupled-components/two-grid/two-grid';
-import { toPortableText } from '@src/mapping/sanity/featured-article';
+import { ExpertAdvice } from '@src/components/features/decoupled-components/expert-advice/expert-advice';
+import { toPortableText } from '@src/mapping/contentful/featured-article';
+import { FeaturedArticle } from '@src/components/features/decoupled-components/featured-article/featured-article';
 
 export const TwoGridSanity = (props: any) => {
   const expertAdviceProps = {

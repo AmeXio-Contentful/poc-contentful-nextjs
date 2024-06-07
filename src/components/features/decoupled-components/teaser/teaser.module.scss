@@ -1,3 +1,8 @@
+@use 'sass:map';
+@use '../../../../styles/config/breakpoints' as breakpoints;
+@use '../../../../styles/utilities/breakpoint-mixins';
+@use '../../../../styles/utilities/container-mixins' as container;
+
 .teaser {
   --content-display: inline-block;
   --icon-width: 75px;
@@ -38,7 +43,17 @@
     --icon-margin: 0 auto 15px;
 
     &:hover {
-      --icon-transform: scale(0.85);;
+      --icon-transform: scale(0.85);
     }
   }
+
+  &_default {
+    --icon-margin: 0px auto 0px auto;
+  }
+}
+
+.default_teaser {
+  display: block;
+  padding: 12px;
+  text-align: center;
 }
