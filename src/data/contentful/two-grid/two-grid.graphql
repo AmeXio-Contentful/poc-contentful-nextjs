@@ -1,4 +1,13 @@
 fragment ComponentsFields on Entry {
+  ... on Image {
+    __typename
+    sys {
+      id
+    }
+    image {
+      url
+    }
+  }
   ... on HeroBanner {
     __typename
     sys {

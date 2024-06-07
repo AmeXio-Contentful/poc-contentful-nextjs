@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import { ContentfulImage } from '@src/mapping/contentful/image';
 
 export const componentMap = {
   Teaser: dynamic(() =>
@@ -50,6 +51,11 @@ export const componentMap = {
     import(
       '@src/mapping/contentful/featured-article'
       ).then((module) => module.FeaturedArticleContentful),
+  ),
+  Image: dynamic(() =>
+    import(
+      '@src/mapping/contentful/image'
+      ).then((module) => module.ContentfulImage),
   ),
 };
 

@@ -1,0 +1,15 @@
+fragment ComponentImage on Image {
+  __typename
+  sys {
+    id
+  }
+  image {
+    url
+  }
+}
+
+query imageComponent($id: String!, $locale: String, $preview: Boolean) {
+  image(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentImage
+  }
+}
