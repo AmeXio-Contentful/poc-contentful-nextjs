@@ -8,6 +8,9 @@ fragment ComponentRerenceClient on ReferenceClients {
   clientsCollection {
     items {
       ...on Teaser {
+        sys {
+           id
+        }
         title
         subtitle
         buttonUrl

@@ -1,11 +1,17 @@
 fragment ComponentsFields on Entry {
   ... on FeaturedArticle {
+    sys {
+      id
+    }
     heading
     title
     subtitle
     buttonUrl
   }
   ... on ExpertAdvice {
+    sys {
+      id
+    }
     title
     subtitle
     buttonUrl
@@ -15,6 +21,9 @@ fragment ComponentsFields on Entry {
         ... on Title {
           title
           buttonUrl
+          sys {
+            id
+          }
         }
       }
     }

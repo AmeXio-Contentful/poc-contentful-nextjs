@@ -17,6 +17,7 @@ const { withPlugins } = nextComposePlugins.extend(() => ({}));
  */
 module.exports = withPlugins(plugins, {
   i18n,
+  topLevelAwait: true,
   /**
    * add the environment variables you would like exposed to the client here
    * documentation: https://nextjs.org/docs/api-reference/next.config.js/environment-variables
@@ -27,6 +28,7 @@ module.exports = withPlugins(plugins, {
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
     CONTENTFUL_PREVIEW_ACCESS_TOKEN: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
     CONTENTFUL_ENDPOINT: process.env.CONTENTFUL_ENDPOINT,
+    CONTENTFUL_SECRET: process.env.CONTENTFUL_SECRET,
   },
 
   /**
@@ -88,7 +90,6 @@ module.exports = withPlugins(plugins, {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-
     includePolyfills(config);
 
     return config;

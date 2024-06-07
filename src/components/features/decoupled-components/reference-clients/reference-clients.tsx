@@ -8,10 +8,10 @@ import description from "../description/description.module.scss";
 import teaser from "../teaser/teaser.module.scss";
 
 import {Description} from '@src/components/features/decoupled-components/description/description';
+import {ReferenceClientsProps} from "@src/components/features/decoupled-components/reference-clients/reference-clients.typings";
 import {Teaser} from '@src/components/features/decoupled-components/teaser/teaser';
 import {Title} from '@src/components/features/decoupled-components/title/title';
 import {TitleProps} from '@src/components/features/decoupled-components/title/title.typings';
-import {ReferenceClientsProps} from "@src/components/features/decoupled-components/reference-clients/reference-clients.typings";
 
 
 export const ReferenceClients = (props: ReferenceClientsProps) => {
@@ -19,6 +19,8 @@ export const ReferenceClients = (props: ReferenceClientsProps) => {
   const titleProps: TitleProps = {
     title: props.title as string,
     heading: 'h2',
+    id: props.id,
+    fieldName: 'title'
   };
 
   const titleTeaserProp = {
@@ -31,7 +33,9 @@ export const ReferenceClients = (props: ReferenceClientsProps) => {
 
   const descriptionProps = {
     description: props.description,
-    descriptionClasses: description.context_accent
+    descriptionClasses: description.context_accent,
+    id: props.id,
+    fieldName: 'description'
   }
 
   return (
@@ -49,18 +53,25 @@ export const ReferenceClients = (props: ReferenceClientsProps) => {
               className={styles.reference_client__item}
               key={item.id}>
               <Teaser
+                id={props.id}
                 teaserClasses={teaser.context_reference}
                 icon={item?.image}
                 titleProps={{
                   'title': item?.title,
                   ...titleTeaserProp,
+                  'id': item.id,
+                  'fieldName': 'title'
                 }}
                 subTitleProps={{
                   'title': item?.subtitle,
-                  ...subTitleTeaserProp
+                  ...subTitleTeaserProp,
+                  'id': item.id,
+                  'fieldName': 'subtitle'
                 }}
                 descriptionProps={{
-                  'description': item?.description
+                  'description': item?.description,
+                  'id': item.id,
+                  'fieldName': 'description'
                 }}
               />
             </SwiperSlide>

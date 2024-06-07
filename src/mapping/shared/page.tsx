@@ -11,8 +11,8 @@ const Page = (props: any) => {
   const content = props.pageContentCollection;
   return (
     <PageContainer>
-      {content.items?.map(entry => (
-        <LayoutContext.Provider value={defaultLayout} key={entry!.title}>
+      {content.items?.map((entry,index) => (
+        <LayoutContext.Provider value={defaultLayout} key={index}>
           <ComponentResolver componentProps={entry!} forceGql={!entry!.isSanity} className={entry.__typename}/>
         </LayoutContext.Provider>
       ))}
