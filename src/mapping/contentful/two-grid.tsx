@@ -8,7 +8,6 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
   const componentData: any | null | undefined = data.data?.twoGrid;
 
   if (componentData && componentData?.componentLeft.sys) {
-    console.log("componentData", componentData);
     const primaryComponent = componentMap[componentData?.componentLeft?.__typename as string];
     const secondaryComponent = componentMap[componentData?.componentRight?.__typename as string];
 

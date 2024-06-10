@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import { ContentfulImage } from '@src/mapping/contentful/image';
 
 export const componentMap = {
   Teaser: dynamic(() =>

@@ -31,6 +31,7 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
   const { isLoading, data } = useLandingPageByIdQuery({ id: sanityId });
 
   if (data) {
+
     const components = Object.values(data?.allLandingPage[0] as any);
     const keys = Object.keys(data?.allLandingPage[0] as any);
     components.map((entry: any, index) => {

@@ -23,7 +23,6 @@ export function FeaturedArticleContentful(props: any) {
   const data = FeaturedArticleGql(props);
   const componentData: ComponentFeaturedArticleFieldsFragment | null | undefined = data.data?.featuredArticle;
 
-  console.log("componentData", componentData);
   const featuredArticleProps: FeaturedProps = {
     title: componentData?.title as string,
     subtitle: componentData?.subtitle as string,

@@ -9,6 +9,7 @@ import LayoutContext, { defaultLayout } from '@src/layout-context';
 const Page = (props: any) => {
 
   const content = props.pageContentCollection;
+  console.log("content", content);
   return (
     <PageContainer>
       {content.items?.map((entry,index) => (
