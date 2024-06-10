@@ -59,11 +59,6 @@ export const componentMap = {
 };
 
 export const componentGqlMap = {
-  Teaser: dynamic(() =>
-    import(
-      '@src/data/contentful/teaser/teaser-gql'
-      ).then((module) => module.TeaserGql),
-   ),
   Testimonial: dynamic(() =>
     import(
       '@src/components/features/ctf-components/testimonial/ctf-testimonial-gql'
