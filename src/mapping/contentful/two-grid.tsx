@@ -30,11 +30,11 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
       },
     };
 
-    // return (
-    //   <div className="text-center">
-    //     <TwoGrid {...mappedData} />
-    //   </div>
-    // );
+    return (
+      <div className="text-center">
+        <TwoGrid {...mappedData} />
+      </div>
+    );
   }
   return <></>;
 };
