@@ -27,7 +27,6 @@
    twoGrid {
         featuredArticle {
           ... on ExpertAdvice {
-            _type
             title
             subtitle
             buttonUrl
@@ -38,7 +37,6 @@
             }
           }
           ... on FeaturedArticle {
-            _type
             heading
             title
             subtitleRaw
