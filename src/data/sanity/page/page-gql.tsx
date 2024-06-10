@@ -30,7 +30,6 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
   const sanityId = '9a080216-21ab-4ac9-9200-1b9d9d6ffab1';
   const { isLoading, data } = useLandingPageByIdQuery({ id: sanityId });
 
-  console.log("data", data);
   if (data) {
     const components = Object.values(data?.allLandingPage[0] as any);
     const keys = Object.keys(data?.allLandingPage[0] as any);
