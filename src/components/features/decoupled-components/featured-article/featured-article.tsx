@@ -1,12 +1,14 @@
 import {FeaturedProps} from "@src/components/features/decoupled-components/featured-article/featured-article.typings";
+import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 
-export function FeaturedArticle({subtitle, title, buttonUrl, heading}: FeaturedProps) {
-    return (
+export function FeaturedArticle({subtitle, title, buttonUrl, heading, sys}: FeaturedProps) {
+  const inspectorProps = useContentfulInspectorMode({ entryId: sys != null ? sys.id : '' });
+  return (
         <div
             className='relative bg-[#D9E8F5] text-[#084772] py-14 px-9 flex flex-col gap-y-6 items-start h-full text-left'
         >
           <div className='w-3/5'>
-            <h4 className='flex flex-row font-bold items-center gap-x-4'>
+            <h4 className='flex flex-row font-bold items-center gap-x-4' {...inspectorProps({ fieldId: 'title' })}>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                    className="text-white w-8 h-8">
                 <path fillRule="evenodd"
@@ -16,9 +18,11 @@ export function FeaturedArticle({subtitle, title, buttonUrl, heading}: FeaturedP
               {heading}
             </h4>
             <h2 className='font-bold underline mb-6 mt-9'>
-              <a href={buttonUrl}> {title}</a>
+              <a href={buttonUrl}>
+                <span {...inspectorProps({ fieldId: 'buttonText' })}>{title}</span>
+              </a>
             </h2>
-            <p className='text-black text-base'>
+            <p className='text-black text-base' {...inspectorProps({ fieldId: 'subtitle' })}>
               {subtitle}
             </p>
           </div>

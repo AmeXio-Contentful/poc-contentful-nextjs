@@ -1,12 +1,15 @@
 import {Button} from '@src/components/features/decoupled-components/button/button';
 import {ExpertProps} from "@src/components/features/decoupled-components/expert-advice/expert-advice.typings";
+import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 
-export function ExpertAdvice({title, subtitle, buttonUrl, buttonText, advices}: ExpertProps) {
-
+export function ExpertAdvice({title, subtitle, buttonUrl, buttonText, advices, sys}: ExpertProps) {
+  const inspectorProps = useContentfulInspectorMode({ entryId: sys != null ? sys.id : '' });
   const buttonProps = {
      buttonText,
-     buttonUrl
-  }
+     buttonUrl,
+     id: sys != null ? sys.id : '',
+     fieldName: 'buttonText'
+   }
 
   return (
         <div
@@ -14,12 +17,12 @@ export function ExpertAdvice({title, subtitle, buttonUrl, buttonText, advices}: 
             style={{ backgroundImage: `url('https://www.amexio.fr/wp-content/uploads/2023/09/header-amexio.jpg?id=8062')` }}
         >
           <div className="w-4/5 ml-auto text-left">
-            <h2 className='text-white font-bold pt-4 pb-4'>{title}</h2>
-            <p className='text-white pb-4 text-base'>{subtitle}</p>
+            <h2 className='text-white font-bold pt-4 pb-4' {...inspectorProps({ fieldId: 'title' })}>{title}</h2>
+            <p className='text-white pb-4 text-base' {...inspectorProps({ fieldId: 'subtitle' })}>{subtitle}</p>
             <div className='flex self-stretch flex-col gap-y-12 mt-4 mb-8'>
               {
                 advices && advices.map((item: any) => (
-                  <div key={item.buttonText || item.advice}>
+                  <div key={item.buttonText || item.advice} {...inspectorProps({ fieldId: 'title' })}>
                     <a href={item.buttonUrl || item.url}>
                       <button
                         className="py-3.5 pl-5 pr-12 bg-white text-gray-600 text-base text-start flex flex-row justify-between w-full">

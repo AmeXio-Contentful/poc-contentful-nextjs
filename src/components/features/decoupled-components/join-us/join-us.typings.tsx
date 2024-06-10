@@ -5,15 +5,19 @@ export interface JoinUsProps {
     buttonUrl: string,
     joinUsItems: JoinUsItem[],
     joinUsClients: JoinUsClient[]
+    id?: string
 }
 
 export interface JoinUsItem {
-    title: string,
-    image: any,
-    iconUrl?: string
+    title?: string,
+    image?: any,
+    iconUrl?: string,
+    id?: string,
+    description?: string;
 }
 
 export interface JoinUsClient {
     title: string,
-    url: string
+    url: string,
+    id?: string
 }

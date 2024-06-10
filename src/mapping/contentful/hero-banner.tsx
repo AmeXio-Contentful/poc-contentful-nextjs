@@ -13,7 +13,8 @@ export const HeroBannerComponent = (props: DefaultQueryParameters) => {
     'title': componentData?.title || '',
     'description': componentData?.subtitle || '',
     'buttonText': componentData?.buttonText || '',
-    'buttonUrl': componentData?.buttonUrl || ''
+    'buttonUrl': componentData?.buttonUrl || '',
+    'id': componentData?.sys.id as string
   }
 
   return <HeroBanner {...mappedData} />
