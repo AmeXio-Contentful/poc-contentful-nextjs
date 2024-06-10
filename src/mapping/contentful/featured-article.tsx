@@ -15,9 +15,9 @@ interface FeaturedProps {
   heading: string;
 }
 
-export function toPortableText(rawText: any[]) {
-  return <PortableText value={rawText} />
-}
+// export function toPortableText(rawText: any[]) {
+//   return <PortableText value={rawText} />
+// }
 
 export function FeaturedArticleContentful(props: any) {
   const data = FeaturedArticleGql(props);

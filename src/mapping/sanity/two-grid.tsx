@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { TwoGrid } from '@src/components/features/decoupled-components/two-grid/two-grid';
 import { ExpertAdvice } from '@src/components/features/decoupled-components/expert-advice/expert-advice';
-import { toPortableText } from '@src/mapping/contentful/featured-article';
+// import { toPortableText } from '@src/mapping/contentful/featured-article';
 import { FeaturedArticle } from '@src/components/features/decoupled-components/featured-article/featured-article';
+import { TwoGrid } from '@src/components/features/decoupled-components/two-grid/two-grid';
 
 export const TwoGridSanity = (props: any) => {
   const expertAdviceProps = {
@@ -17,7 +17,7 @@ export const TwoGridSanity = (props: any) => {
   const featuredArticleProps = {
     title: props['featuredArticle']['title'],
     heading: props['featuredArticle']['heading'],
-    subtitle: toPortableText(props['featuredArticle']['subtitleRaw']),
+    subtitle:  'hello world', //toPortableText(props['featuredArticle']['subtitleRaw']),
     buttonUrl: props['featuredArticle']['buttonUrl'],
   }
 
