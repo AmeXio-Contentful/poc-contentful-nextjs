@@ -6,5 +6,5 @@ export function TeaserGql(props: TeaserPropsContentful) {
     id: props.id,
     locale: props.locale,
     preview: props.preview,
-  }) as any;
+  });
 }

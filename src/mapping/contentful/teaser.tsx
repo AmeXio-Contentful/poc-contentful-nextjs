@@ -16,7 +16,10 @@ export interface TeaserPropsContentful extends DefaultQueryParameters {
 }
 
 export const TeaserComponent = (props: TeaserPropsContentful) => {
+  console.log("teaser props", props);
   const data = TeaserGql(props);
+
+  console.log("data teaser", data);
   const componentData: ComponentTeaserFieldsFragment | null | undefined = data.data?.teaser;
 
   const teaserProps: TeaserProps = {
@@ -37,6 +40,7 @@ export const TeaserComponent = (props: TeaserPropsContentful) => {
     }
   }
 
+  console.log("teaserProps", teaserProps);
   return (
     <div className={teaser.default_teaser}>
       <Teaser {...teaserProps} />

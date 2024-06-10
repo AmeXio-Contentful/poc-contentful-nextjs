@@ -9,12 +9,12 @@ export function ExpertAdviceContentful(props: any) {
   const componentData: ComponentExperAdviceFieldsFragment | null | undefined = data.data?.expertAdvice;
 
   const advices: any[] = []
-  // componentData?.advicesCollection?.items.forEach((item: any) => {
-  //   advices.push({
-  //     buttonText: item.title,
-  //     buttonUrl: item.buttonUrl
-  //   })
-  // });
+  componentData?.advicesCollection?.items.forEach((item: any) => {
+    advices.push({
+      buttonText: item.title,
+      buttonUrl: item.buttonUrl
+    })
+  });
 
   const expertAdviceProps = {
     title: componentData?.title as string,
