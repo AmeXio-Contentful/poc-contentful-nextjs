@@ -30,6 +30,7 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
   const { previewActive, locale } = useContentfulContext();
   const slug = !slugFromProps || slugFromProps === '/' ? 'home' : slugFromProps;
 
+  console.log("slug", slug);
   // LOAD CONTENTFUL
   const { isLoading, data } = useCtfPageQuery({
     slug,
@@ -37,6 +38,7 @@ const CtfPageGgl = ({ slug: slugFromProps }: Props) => {
     preview: previewActive,
   });
 
+  console.log("data contentful", data);
   let page = useContentfulLiveUpdates(tryget(() => data?.pageCollection!.items[0]));
   const { seo } = page || {};
 
