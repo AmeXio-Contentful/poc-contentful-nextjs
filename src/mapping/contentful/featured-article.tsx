@@ -30,5 +30,5 @@ export function FeaturedArticleContentful(props: any) {
     heading: componentData?.heading as string
   }
 
-  return <FeaturedArticle {...featuredArticleProps} />
+  return <p>hello</p> //<FeaturedArticle {...featuredArticleProps} />
 }

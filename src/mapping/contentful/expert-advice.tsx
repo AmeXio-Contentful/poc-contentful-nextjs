@@ -23,5 +23,5 @@ export function ExpertAdviceContentful(props: any) {
     advices: advices
   }
 
-  return <ExpertAdvice {...expertAdviceProps} />;
+  return <p>foo bar</p> // <ExpertAdvice {...expertAdviceProps} />;
 }
