@@ -8,6 +8,7 @@
     "npm": "Please use Yarn"
   },
   "scripts": {
+    "vercel-build": "next build",
     "start": "next start",
     "dev": "npm run local-graphql-codegen:generate && env-cmd -f .env.local next dev",
     "staging": "npm run staging-graphql-codegen:generate  && env-cmd -f .env.staging next dev",
