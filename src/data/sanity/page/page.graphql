@@ -1,15 +1,26 @@
- query LandingPageById($id: ID) {
+fragment TeaserProps on Teaser {
+  title
+  subtitle
+  buttonUrl
+  buttonText
+  quote
+  backgroundImage {
+    asset {
+      url
+    }
+  }
+}
+
+query LandingPageById($id: ID) {
    allLandingPage(where: { _id: { eq: $id } }) {
-   pageInformation {
-       seoTitle
-       description
-       pageName
-       noFollow
-       noIndex
-       slug {
-         current
-       }
-     }
+    pageInformation {
+      seoTitle
+      description
+      pageName
+      slug {
+        current
+      }
+    }
     heroBanner {
       title
       subtitle
@@ -23,49 +34,75 @@
     }
     solutionSection {
       title
+      solutionItems {
+        ...TeaserProps
+      }
     }
-   twoGrid {
-        featuredArticle {
-          ... on ExpertAdvice {
-            _type
-            title
-            subtitle
-            buttonUrl
-            buttonText
-            expertAdvices {
-              advice
-              url
-            }
-          }
-          ... on FeaturedArticle {
-            _type
-            heading
-            title
-            subtitleRaw
-            buttonUrl
-          }
-        }
-        expertAdvice {
-          ... on ExpertAdvice {
-            _type
-            title
-            subtitle
-            buttonUrl
-            buttonText
-            isLeft
-            expertAdvices {
-              advice
-              url
-            }
-          }
-          ... on FeaturedArticle {
-            _type
-            heading
-            title
-            subtitleRaw
-            buttonUrl
+    referencedClients {
+      title
+      subtitle
+      referencedClientsItems {
+        ...TeaserProps
+      }
+    }
+    joinUs {
+      title
+      subtitle
+      buttonUrl
+      buttonText
+      joinUsClientItems {
+        ...TeaserProps
+      }
+      joinUsClients {
+        image {
+          asset {
+            url
           }
         }
       }
-   }
+    }
+    twoGrid {
+      featuredArticle {
+        ... on ExpertAdvice {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          isLeft
+          expertAdvices {
+            advice
+            url
+          }
+        }
+        ... on FeaturedArticle {
+          _type
+          heading
+          title
+          subtitleRaw
+          buttonUrl
+        }
+      }
+      expertAdvice {
+        ... on ExpertAdvice {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          expertAdvices {
+            advice
+            url
+          }
+        }
+        ... on FeaturedArticle {
+          _type
+          heading
+          title
+          subtitleRaw
+          buttonUrl
+        }
+      }
+    }
+  }
  }
