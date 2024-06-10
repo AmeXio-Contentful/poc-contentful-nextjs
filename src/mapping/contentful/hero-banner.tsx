@@ -8,6 +8,7 @@ export const HeroBannerComponent = (props: DefaultQueryParameters) => {
   const data = HeroBannerGql(props);
   const componentData: ComponentHeroBannerFragment | null | undefined = data.data?.heroBanner;
 
+  console.log("componentData", componentData);
   const mappedData: HeroBannerProps = {
     'backgroundImage': componentData?.backgroundImage?.url || '',
     'title': componentData?.title || '',

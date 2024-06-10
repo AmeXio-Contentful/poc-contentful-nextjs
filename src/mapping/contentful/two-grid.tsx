@@ -7,7 +7,6 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
   const data = TwoGridGql(props);
   const componentData: any | null | undefined = data.data?.twoGrid;
 
-  console.log("componentData", componentData);
   if (componentData && componentData?.componentLeft.sys) {
     const primaryComponent = componentMap[componentData?.componentLeft?.__typename as string];
     const secondaryComponent = componentMap[componentData?.componentRight?.__typename as string];
@@ -31,7 +30,6 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
       },
     };
 
-    console.log("mapped", mappedData);
     return (
       <div className="text-center">
         <TwoGrid {...mappedData} />
