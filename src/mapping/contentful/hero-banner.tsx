@@ -5,10 +5,11 @@ import {ComponentHeroBannerFragment} from '@src/data/contentful/hero-banner/__ge
 import {HeroBannerGql} from '@src/data/contentful/hero-banner/hero-banner-gql';
 
 export const HeroBannerComponent = (props: DefaultQueryParameters) => {
+  console.log("props in herobanner", props);
   const data = HeroBannerGql(props);
   const componentData: ComponentHeroBannerFragment | null | undefined = data.data?.heroBanner;
 
-  console.log("componentData", componentData);
+  console.log("componentData herobanner", componentData);
   const mappedData: HeroBannerProps = {
     'backgroundImage': componentData?.backgroundImage?.url || '',
     'title': componentData?.title || '',
