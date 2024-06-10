@@ -15,5 +15,15 @@ export const componentMapSanity = {
     import(
       '@src/mapping/sanity/two-grid'
       ).then((module) => module.TwoGridSanity),
+  ),
+  ReferencedClients: dynamic(() =>
+    import(
+      '@src/mapping/sanity/reference-client'
+      ).then((module) => module.ReferenceClientsComponentSanity),
+  ),
+  JoinUs: dynamic(() =>
+    import(
+      '@src/mapping/sanity/join-us'
+      ).then((module) => module.JoinUsComponentSanity),
   )
 };

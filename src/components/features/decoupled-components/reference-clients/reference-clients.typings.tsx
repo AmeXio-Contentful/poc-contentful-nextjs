@@ -2,7 +2,7 @@ export interface ReferenceClientsProps {
   title: string,
   description: string,
   clients: ReferenceClient[]
-  id: string;
+  id?: string;
 }
 
 export interface ReferenceClient {
