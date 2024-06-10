@@ -1,10 +1,10 @@
 
-import { DefaultQueryParameters } from '@src/data/contentful/component.typings';
-import { TeaserGql } from '@src/data/contentful/teaser/teaser-gql';
-import { TeaserProps } from '@src/components/features/decoupled-components/teaser/teaser.typings';
 import { Teaser } from '@src/components/features/decoupled-components/teaser/teaser';
 import teaser from '@src/components/features/decoupled-components/teaser/teaser.module.scss';
+import { TeaserProps } from '@src/components/features/decoupled-components/teaser/teaser.typings';
+import { DefaultQueryParameters } from '@src/data/contentful/component.typings';
 import { ComponentTeaserFieldsFragment } from '@src/data/contentful/teaser/__generated/teaser.generated';
+import { TeaserGql } from '@src/data/contentful/teaser/teaser-gql';
 
 export interface TeaserPropsContentful extends DefaultQueryParameters {
   teaserClasses?: string;
