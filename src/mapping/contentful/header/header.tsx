@@ -1,10 +1,15 @@
+'use client'
 import Menu from '@mui/icons-material/Menu';
 import { AppBar, Container, IconButton, Theme, Toolbar, Box } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import Link from "next/link";
 import { useTranslation } from 'next-i18next';
+import { useEffect, useState } from 'react';
 
-import { Link } from '@src/components/shared/link';
+import { useContentfulContext } from '@src/contentful-context';
 import { CtfNavigationGql } from '@src/data/contentful/navigation/navigation-gql';
+import { useCtfPageQuery } from '@src/data/contentful/page/__generated/ctf-page.generated';
+import { useCtfPageBySysIdQuery } from '@src/data/contentful/page-by-sys-id/__generated/page-sysid-query.generated';
 import Logo from '@src/icons/amexio-logo.svg';
 import { HEADER_HEIGHT, HEADER_HEIGHT_MD, CONTAINER_WIDTH } from '@src/theme';
 
@@ -76,9 +81,45 @@ interface HeaderPropsInterface {
 
 export const Header = (props: HeaderPropsInterface) => {
   const { t } = useTranslation();
-
+  const { i18n } = useTranslation();
   const { onMenuClick, isMenuOpen } = props;
   const classes = useStyles();
+  const contentFulContext = useContentfulContext();
+
+  const [homePageSlug, setHomePageSlug] = useState<string>();
+  const { data: homePageSlugQuery } = useCtfPageQuery({
+      slug: process.env.CONTENTFUL_HOMEPAGE_SLUG!,
+      locale: "en",
+      preview: false,
+    }
+    );
+
+
+  const { data: homePageLocaleQuery } = useCtfPageBySysIdQuery({
+      sysid: homePageSlugQuery?.pageCollection?.items[0]?.sys.id || '',
+      locale: contentFulContext.locale.toLowerCase(),
+      preview: contentFulContext.previewActive,
+    },
+    {
+      enabled: (!!homePageSlugQuery?.pageCollection && homePageSlugQuery.pageCollection.items.length > 0),
+    });
+
+  useEffect(() => {
+    if(homePageLocaleQuery){
+      if (
+        homePageLocaleQuery.pageCollection &&
+        homePageLocaleQuery.pageCollection?.items.length > 0
+      ) {
+        setHomePageSlug(homePageLocaleQuery.pageCollection!.items[0]!.slug!);
+      }
+      else {
+        setHomePageSlug(contentFulContext.locale.toLowerCase())
+      }
+    }
+
+  }, [homePageLocaleQuery]);
+
+
 
   return (
     <AppBar position="sticky" color="secondary" className={classes.appbar}>
@@ -90,7 +131,9 @@ export const Header = (props: HeaderPropsInterface) => {
           style={{
             maxWidth: `${CONTAINER_WIDTH / 10}rem`,
           }}>
-          <Link href="/">
+          <Link
+            href={`/${homePageSlug || ''}`}
+            locale={contentFulContext.locale}>
             <Logo className={classes.corporateLogo} />
           </Link>
           <Box display={{ xs: 'none', md: 'block' }} className={classes.noBackground}>
