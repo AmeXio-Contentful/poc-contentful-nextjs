@@ -69,7 +69,6 @@ export const ComponentResolver = (props: Props) => {
     return null;
   }
 
-  console.log("component", Component);
   return (
     <Box
       position="relative"
