@@ -1,4 +1,4 @@
-import { useCtfComponentTeaserQuery } from '@src/data/contentful/teaser/__generated/ctf-teaser.generated';
+import { useCtfComponentTeaserQuery } from '@src/data/contentful/teaser/__generated/teaser.generated';
 import { TeaserPropsContentful } from '@src/mapping/contentful/teaser';
 
 export function TeaserGql(props: TeaserPropsContentful) {
