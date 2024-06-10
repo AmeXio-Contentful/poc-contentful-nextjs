@@ -29,7 +29,9 @@ export function customFetcher<TData, TVariables extends { preview?: boolean | nu
       body: JSON.stringify({ query, variables }),
     });
 
+    console.log("res", res);
     const json = await res.json();
+    console.log("json", json);
 
     if (json.errors) {
       const { message } = json.errors[0];
