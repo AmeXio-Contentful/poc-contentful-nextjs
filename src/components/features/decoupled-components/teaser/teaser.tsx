@@ -4,8 +4,11 @@ import { Button } from '@src/components/features/decoupled-components/button/but
 import { Description } from '@src/components/features/decoupled-components/description/description';
 import { TeaserProps } from '@src/components/features/decoupled-components/teaser/teaser.typings';
 import { Title } from '@src/components/features/decoupled-components/title/title';
+import { useContentfulInspectorMode } from '@contentful/live-preview/react';
+
 
 export const Teaser = (props: TeaserProps) => {
+  const inspectorProps = useContentfulInspectorMode({ entryId: props.id });
   return <div className={`${styles.teaser || ''} ${props.teaserClasses || ''}`}>
     { props.iconUrl ?
       <a href={props.iconUrl}>
@@ -14,6 +17,7 @@ export const Teaser = (props: TeaserProps) => {
               className={styles.teaser__icon}
               alt="icon"
               src={props.icon.url}
+              {...inspectorProps({ fieldId: 'image' })}
             />
         }
       </a>
@@ -23,6 +27,7 @@ export const Teaser = (props: TeaserProps) => {
             className={styles.teaser__icon}
             alt="icon"
             src={props.icon.url}
+            {...inspectorProps({ fieldId: 'image' })}
           />
     }
     <div className={styles.teaser__content}>

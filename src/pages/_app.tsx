@@ -6,7 +6,6 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { appWithTranslation, SSRConfig } from 'next-i18next';
 import { useEffect, useState } from 'react';
-import '@contentful/live-preview/style.css';
 
 import { Settings } from '@src/components/features/settings';
 import { Layout } from '@src/components/templates/layout/layout';
@@ -28,6 +27,7 @@ import 'swiper/css/scrollbar';
 import '../styles/default-theme.scss';
 import contentfulConfig from 'contentful.config';
 
+import { ContentfulLivePreview } from '@contentful/live-preview';
 
 const LivePreviewProvider = ({ children }) => {
   const { previewActive, locale } = useContentfulContext();
@@ -46,10 +46,10 @@ const LivePreviewProvider = ({ children }) => {
 type CustomPageProps = SSRConfig & { dehydratedState: DehydratedState; err: Error };
 
 const CustomApp = ({
-  Component,
-  router,
-  pageProps: originalPageProps,
-}: AppProps<CustomPageProps>) => {
+                     Component,
+                     router,
+                     pageProps: originalPageProps,
+                   }: AppProps<CustomPageProps>) => {
   const [queryClient] = useState(() => new QueryClient(queryConfig));
   const { dehydratedState, err, ...pageProps } = originalPageProps;
   const { previewActive } = useContentfulContext();
@@ -69,6 +69,13 @@ const CustomApp = ({
     };
   }, [router.events]);
 
+  ContentfulLivePreview.init({
+    locale: 'en',
+    enableInspectorMode: true,
+    enableLiveUpdates: true,
+    debugMode: false,
+  });
+
   return (
     <>
       <Head>
@@ -76,7 +83,7 @@ const CustomApp = ({
       </Head>
       <ContentfulContentProvider router={router}>
         <LivePreviewProvider>
-        <QueryClientProvider client={queryClient}>
+          <QueryClientProvider client={queryClient}>
             <ReactQueryDevtools initialIsOpen={false} />
             <StyledEngineProvider injectFirst>
               <ThemeProvider theme={colorfulTheme}>

@@ -14,12 +14,15 @@ export const JoinUsComponent = (props: DefaultQueryParameters) => {
     // adjust data over here to custom component typing
     const joinUsItems: JoinUsItem[] | undefined = componentData?.teasersCollection?.items.map(item => ({
         title: item?.title || '',
-        image: item?.image || ''
+        image: item?.image || '',
+        id: item?.sys.id,
+        description: item?.subtitle as string
     }));
 
     const joinUsClients: JoinUsClient[] | undefined = componentData?.clientsCollection?.items.map(item => ({
         title: item?.title || '',
-        url: item?.url || ''
+        url: item?.url || '',
+        id: item?.sys.id
     }));
 
     const mappedData: JoinUsProps = {
@@ -28,7 +31,8 @@ export const JoinUsComponent = (props: DefaultQueryParameters) => {
         buttonText: componentData?.buttonText || '',
         buttonUrl: componentData?.buttonUrl || '',
         joinUsItems: joinUsItems || [],
-        joinUsClients: joinUsClients || []
+        joinUsClients: joinUsClients || [],
+        id: componentData?.sys.id
     }
 
     return <JoinUs {...mappedData} />

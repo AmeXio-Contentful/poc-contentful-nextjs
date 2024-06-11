@@ -3,13 +3,9 @@ import {
   ReferenceClient,
   ReferenceClientsProps,
 } from '@src/components/features/decoupled-components/reference-clients/reference-clients.typings';
-import { TeaserItemSanity } from '@src/mapping/sanity/solution';
+import { ReferenceClientProps } from '@src/data/sanity/typings/reference-client.typings';
 
-interface ReferenceClientProps {
-  title: string;
-  subtitle: string;
-  referencedClientsItems: TeaserItemSanity[]
-}
+
 export const ReferenceClientsComponentSanity = (props: ReferenceClientProps) => {
   // adjust data over here to custom component typing
   const clients: ReferenceClient[] | null | undefined = props?.referencedClientsItems?.map(item => ({
