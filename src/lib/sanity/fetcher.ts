@@ -1,5 +1,5 @@
 export const fetchConfigSanity = {
-  endpoint: 'https://yzaqedxx.api.sanity.io/v2023-08-01/graphql/production/experiment',
+  endpoint: 'https://yzaqedxx.api.sanity.io/v2023-08-01/graphql/production/default',
   params: {
     headers: {
       'Content-Type': 'application/json',

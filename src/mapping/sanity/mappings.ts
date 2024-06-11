@@ -25,5 +25,25 @@ export const componentMapSanity = {
     import(
       '@src/mapping/sanity/join-us'
       ).then((module) => module.JoinUsComponentSanity),
+  ),
+  FeaturedArticle: dynamic(() =>
+    import(
+      '@src/mapping/sanity/featured-article'
+      ).then((module) => module.FeaturedArticleSanity),
+  ),
+  ExpertAdvice: dynamic(() =>
+    import(
+      '@src/mapping/sanity/expert-advice'
+      ).then((module) => module.ExpertAdviceSanity),
+  ),
+  ClientImage: dynamic(() =>
+    import(
+      '@src/mapping/sanity/image'
+      ).then((module) => module.SanityImage),
+  ),
+  Teaser: dynamic(() =>
+    import(
+      '@src/mapping/sanity/teaser'
+      ).then((module) => module.TeaserComponent),
   )
 };

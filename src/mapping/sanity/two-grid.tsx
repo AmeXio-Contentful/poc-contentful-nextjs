@@ -1,36 +1,30 @@
 import React from 'react';
 
-import { ExpertAdvice } from '@src/components/features/decoupled-components/expert-advice/expert-advice';
-import { toPortableText } from '@src/mapping/contentful/featured-article';
-import { FeaturedArticle } from '@src/components/features/decoupled-components/featured-article/featured-article';
 import { TwoGrid } from '@src/components/features/decoupled-components/two-grid/two-grid';
+import { componentMapSanity } from '@src/mapping/sanity/mappings';
 
+function capitalizeFirstLetter(input: string) {
+  return input.charAt(0).toUpperCase() + input.slice(1)
+}
 export const TwoGridSanity = (props: any) => {
-  const expertAdviceProps = {
-    title: props['expertAdvice']['title'],
-    subtitle: props['expertAdvice']['subtitle'],
-    buttonUrl: props['expertAdvice']['buttonUrl'],
-    buttonText: props['expertAdvice']['buttonText'],
-    advices: props['expertAdvice']['expertAdvices']
-  }
 
-  const featuredArticleProps = {
-    title: props['featuredArticle']['title'],
-    heading: props['featuredArticle']['heading'],
-    subtitle: toPortableText(props['featuredArticle']['subtitleRaw']),
-    buttonUrl: props['featuredArticle']['buttonUrl'],
-  }
+  const primaryComponent = componentMapSanity[capitalizeFirstLetter(props?.expertAdvice?._type)];
+  const secondaryComponent = componentMapSanity[capitalizeFirstLetter(props?.featuredArticle?._type)];
 
   const mappedData = {
     primary: {
-      component: ExpertAdvice,
-      props: expertAdviceProps
+      component: primaryComponent,
+      props: props?.expertAdvice
     },
     secondary: {
-      component: FeaturedArticle,
-      props: featuredArticleProps
-    }
-  }
+      component: secondaryComponent,
+      props: props?.featuredArticle
+    },
+  };
 
-  return <TwoGrid {...mappedData}/>
+  return (
+    <div className="text-center">
+      <TwoGrid {...mappedData} />
+    </div>
+  );
 };

@@ -63,6 +63,30 @@ query LandingPageById($id: ID) {
     }
     twoGrid {
       featuredArticle {
+        ... on HeroBanner {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
+        ... on Teaser {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
         ... on ExpertAdvice {
           _type
           title
@@ -82,8 +106,48 @@ query LandingPageById($id: ID) {
           subtitleRaw
           buttonUrl
         }
+        ... on ClientImage {
+        	_type
+          image {
+            asset {
+              url
+            }
+          }
+        }
       }
       expertAdvice {
+        ... on HeroBanner {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
+        ... on Teaser {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
+        ... on ClientImage {
+        	_type
+          image {
+            asset {
+              url
+            }
+          }
+        }
         ... on ExpertAdvice {
           _type
           title
