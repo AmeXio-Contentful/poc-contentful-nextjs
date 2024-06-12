@@ -7,13 +7,11 @@ export function TwoGridGql({
   locale,
   preview,
 }: DefaultQueryParameters) {
-  console.log("id", preview);
   const data = useCtfComponentTwoGridQuery({
     id: id,
     locale: locale,
     preview: preview,
   });
 
-   console.log("data", data?.data);
    return useContentfulLiveUpdates(data);
 }
