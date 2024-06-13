@@ -7,7 +7,7 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
   const data = TwoGridGql(props);
   const componentData: any | null | undefined = data.data?.twoGrid;
 
-  if (componentData && componentData?.componentLeft.sys) {
+  if (componentData && componentData?.componentLeft?.sys) {
     const primaryComponent = componentMap[componentData?.componentLeft?.__typename as string];
     const secondaryComponent = componentMap[componentData?.componentRight?.__typename as string];
 
@@ -15,7 +15,7 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
       primary: {
         component: primaryComponent,
         props: {
-          id: componentData?.componentLeft.sys.id,
+          id: componentData?.componentLeft?.sys.id,
           locale: props.locale,
           preview: false,
         },
@@ -23,7 +23,7 @@ export const TwoGridComponent = (props: DefaultQueryParameters) => {
       secondary: {
         component: secondaryComponent,
         props: {
-          id: componentData?.componentRight.sys.id,
+          id: componentData?.componentRight?.sys.id,
           locale: props.locale,
           preview: false,
         },

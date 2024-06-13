@@ -7,6 +7,7 @@ import {
 import {
   ComponentFeaturedArticleFieldsFragment
 } from '@src/data/contentful/featured-article/__generated/featured-article.generated';
+import { DefaultQueryParameters } from '@src/data/contentful/component.typings';
 
 interface FeaturedProps {
   subtitle: string;
@@ -19,7 +20,7 @@ export function toPortableText(rawText: any[]) {
   return <PortableText value={rawText} />
 }
 
-export function FeaturedArticleContentful(props: any) {
+export function FeaturedArticleContentful(props: DefaultQueryParameters) {
   const data = FeaturedArticleGql(props);
   const componentData: ComponentFeaturedArticleFieldsFragment | null | undefined = data.data?.featuredArticle;
 

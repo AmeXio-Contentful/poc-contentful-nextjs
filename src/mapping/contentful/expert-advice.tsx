@@ -4,11 +4,16 @@ import {
 } from '@src/data/contentful/expert-advice/__generated/expert-advice.generated';
 import { ExpertAdviceGql } from '@src/data/contentful/expert-advice/expert-advice-gql';
 
+export interface Advices {
+  buttonText: string;
+  buttonUrl: string;
+}
+
 export function ExpertAdviceContentful(props: any) {
   const data = ExpertAdviceGql(props);
   const componentData: ComponentExperAdviceFieldsFragment | null | undefined = data.data?.expertAdvice;
 
-  const advices: any[] = []
+  const advices: Advices[] = []
   componentData?.advicesCollection?.items.forEach((item: any) => {
     advices.push({
       buttonText: item.title,

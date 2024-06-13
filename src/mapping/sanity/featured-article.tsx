@@ -2,7 +2,7 @@ import { FeaturedArticle } from '@src/components/features/decoupled-components/f
 import { toPortableText } from '@src/mapping/contentful/featured-article';
 
 interface FeaturedProps {
-  subtitle: any;
+  subtitle: JSX.Element;
   title: string;
   buttonUrl: string;
   heading: string;

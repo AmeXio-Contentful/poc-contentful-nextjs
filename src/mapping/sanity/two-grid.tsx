@@ -6,8 +6,9 @@ import { componentMapSanity } from '@src/mapping/sanity/mappings';
 function capitalizeFirstLetter(input: string) {
   return input.charAt(0).toUpperCase() + input.slice(1)
 }
-export const TwoGridSanity = (props: any) => {
 
+
+export const TwoGridSanity = (props: any) => {
   const primaryComponent = componentMapSanity[capitalizeFirstLetter(props?.expertAdvice?._type)];
   const secondaryComponent = componentMapSanity[capitalizeFirstLetter(props?.featuredArticle?._type)];
 

@@ -1,7 +1,7 @@
 @use 'sass:map';
-@use '../../../../styles/config/breakpoints' as breakpoints;
-@use '../../../../styles/utilities/breakpoint-mixins';
-@use '../../../../styles/utilities/container-mixins' as container;
+@use '@src/styles/config/breakpoints' as breakpoints;
+@use '@src/styles/utilities/breakpoint-mixins';
+@use '@src/styles/utilities/container-mixins' as container;
 
 .teaser {
   --content-display: inline-block;

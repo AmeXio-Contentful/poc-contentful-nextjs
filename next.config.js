@@ -29,6 +29,7 @@ module.exports = withPlugins(plugins, {
     CONTENTFUL_PREVIEW_ACCESS_TOKEN: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
     CONTENTFUL_ENDPOINT: process.env.CONTENTFUL_ENDPOINT,
     CONTENTFUL_SECRET: process.env.CONTENTFUL_SECRET,
+    SANITY_ENDPOINT: process.env.SANITY_ENDPOINT
   },
 
   /**

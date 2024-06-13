@@ -1,5 +1,5 @@
 export const fetchConfigSanity = {
-  endpoint: 'https://yzaqedxx.api.sanity.io/v2023-08-01/graphql/production/default',
+  endpoint: process.env.SANITY_ENDPOINT,
   params: {
     headers: {
       'Content-Type': 'application/json',
@@ -13,7 +13,7 @@ export function customFetcherSanity<TData, TVariables>(
   options?: RequestInit['headers'],
 ) {
   return async (): Promise<TData> => {
-    const res = await fetch(fetchConfigSanity.endpoint, {
+    const res = await fetch(fetchConfigSanity.endpoint as string, {
       method: 'POST',
       ...options,
       ...(fetchConfigSanity.params),

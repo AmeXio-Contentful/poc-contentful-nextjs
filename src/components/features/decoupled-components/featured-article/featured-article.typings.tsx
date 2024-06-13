@@ -1,5 +1,5 @@
 export interface FeaturedProps {
-    subtitle: string;
+    subtitle: JSX.Element;
     title: string;
     buttonUrl: string;
     heading: string;

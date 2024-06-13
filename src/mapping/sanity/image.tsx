@@ -5,9 +5,17 @@ export interface ImageProps {
   title?: string;
 }
 
-export const SanityImage = (props: any) => {
+interface ImageData {
+  __type: string;
+  image: {
+    asset: {
+      url: string
+    }
+  }
+}
+export const SanityImage = (props: ImageData) => {
 
-  const mappedData = {
+  const mappedData: ImageProps = {
     url: props?.image?.asset.url as string,
     title: ''
   }
