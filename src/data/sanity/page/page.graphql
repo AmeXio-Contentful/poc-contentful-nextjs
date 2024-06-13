@@ -1,16 +1,3 @@
-fragment TeaserProps on Teaser {
-  title
-  subtitle
-  buttonUrl
-  buttonText
-  quote
-  backgroundImage {
-    asset {
-      url
-    }
-  }
-}
-
 query LandingPageById($id: ID) {
    allLandingPage(where: { _id: { eq: $id } }) {
     pageInformation {

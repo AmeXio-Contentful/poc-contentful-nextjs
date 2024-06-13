@@ -26,7 +26,7 @@ export interface Props {
 }
 
 export const ComponentResolver = (props: Props) => {
-
+  console.log("props", props);
   const { componentProps, inline = false } = props;
   const { previewActive } = useContentfulContext();
 

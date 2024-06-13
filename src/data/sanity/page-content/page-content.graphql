@@ -1,0 +1,108 @@
+fragment TeaserProps on Teaser {
+  _type
+  title
+  subtitle
+  buttonUrl
+  buttonText
+  quote
+  backgroundImage {
+    asset {
+      url
+    }
+  }
+}
+
+query LandingPageV2ById($id: ID) {
+  allLandingPageV2(where: { _id: { eq: $id } }) {
+    pageInformation {
+      seoTitle
+      description
+      pageName
+      slug {
+        current
+      }
+    }
+
+    pageSectionComponents {
+      pageContent {
+        ... on ExpertAdvice {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          expertAdvices {
+            advice
+            url
+          }
+        }
+        ... on FeaturedArticle {
+          _type
+          heading
+          title
+          subtitleRaw
+          buttonUrl
+        }
+
+        ... on Teaser {
+          ...TeaserProps
+        }
+        ... on ClientImage {
+          _type
+          image {
+            asset {
+              url
+            }
+          }
+        }
+        ... on HeroBanner {
+          _type
+          title
+          subtitle
+          buttonText
+          buttonUrl
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
+
+        ... on SolutionSection {
+          _type
+          title
+          solutionItems {
+            ...TeaserProps
+          }
+        }
+        ... on ReferencedClients {
+          _type
+          title
+          subtitle
+          referencedClientsItems {
+            ...TeaserProps
+          }
+        }
+
+        ... on JoinUs {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          joinUsClientItems {
+            ...TeaserProps
+          }
+          joinUsClients {
+            _type
+            image {
+              asset {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

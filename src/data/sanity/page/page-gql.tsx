@@ -9,6 +9,7 @@ import { useLandingPageByIdQuery } from '@src/data/sanity/page/__generated/page.
 import { Header } from '@src/mapping/sanity/header';
 import Page from '@src/mapping/shared/page';
 import contentfulConfig from 'contentful.config';
+import { useLandingPageV2ByIdQuery } from '@src/data/sanity/page-content/__generated/page-content.generated';
 
 
 
@@ -27,18 +28,20 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
   const { locale } = useContentfulContext();
 
   // LOAD SANITY
-  const sanityId = '9a080216-21ab-4ac9-9200-1b9d9d6ffab1';
-  const { isLoading, data } = useLandingPageByIdQuery({ id: sanityId });
+  const sanityId = 'ac8b5883-5c20-47c9-a7cb-d64437c6a49e';  //'9a080216-21ab-4ac9-9200-1b9d9d6ffab1';
+  const { isLoading, data } = useLandingPageV2ByIdQuery({ id: sanityId });
 
   if (data) {
-    const components = Object.values(data?.allLandingPage[0] as any);
-    const keys = Object.keys(data?.allLandingPage[0] as any);
+    const components = Object.values(data?.allLandingPageV2[0].pageSectionComponents?.pageContent as any);
+    const keys = Object.keys(data?.allLandingPageV2[0].pageSectionComponents?.pageContent as any);
+
+    console.log("keys")
     components.map((entry: any, index) => {
-      entry['__typename'] = (keys[index])[0].toUpperCase() + keys[index].slice(1);
+      entry['__typename'] = entry['_type'][0].toUpperCase() + entry['_type'].slice(1);
       entry['isSanity'] = true;
     });
 
-    const pageInformation = components.find((element: any) => element.__typename == 'PageInformation') as SanityPageInformation;
+    const pageInformation = data.allLandingPageV2[0].pageInformation as SanityPageInformation;
     const page = {
       pageContentCollection: {
         items: components,
@@ -46,11 +49,11 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
     };
 
     const metaTags: MetaTags = {
-      title: pageInformation.seoTitle,
-      description: pageInformation.description,
-      no_follow: pageInformation.noIndex as boolean,
-      no_index: pageInformation.noFollow as boolean,
-      slug: pageInformation.slug?.current as string,
+      title: pageInformation?.seoTitle as string,
+      description: pageInformation?.description as string,
+      no_follow: pageInformation?.noIndex as boolean,
+      no_index: pageInformation?.noFollow as boolean,
+      slug: pageInformation?.slug?.current as string,
     };
 
     if (isLoading) return <></>;
@@ -63,6 +66,8 @@ const SanityPageGql = ({ slug: slugFromProps }: Props) => {
       };
       return <PageError error={error} />;
     }
+
+    console.log("page", page);
 
     const robots = [
       metaTags.no_index ? 'noindex' : undefined,
