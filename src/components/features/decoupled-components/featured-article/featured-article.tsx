@@ -1,4 +1,5 @@
 import {FeaturedProps} from "@src/components/features/decoupled-components/featured-article/featured-article.typings";
+
 import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 
 export function FeaturedArticle({subtitle, title, buttonUrl, heading, sys}: FeaturedProps) {
