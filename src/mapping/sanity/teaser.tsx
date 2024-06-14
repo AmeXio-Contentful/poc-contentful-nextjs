@@ -15,25 +15,22 @@ export interface TeaserPropsContentful extends DefaultQueryParameters {
   buttonProps?: string;
 }
 
-export const TeaserComponent = (props: TeaserPropsContentful) => {
-  const data = TeaserGql(props);
-  const componentData: ComponentTeaserFieldsFragment | null | undefined = data.data?.teaser;
-
+export const TeaserComponent = (props: any) => {
   const teaserProps: TeaserProps = {
     teaserClasses: teaser.context_default,
-    icon: componentData?.image,
+    icon: props?.backgroundImage?.asset,
     titleProps: {
       heading: 'h3',
-      title: componentData?.title as string,
+      title: props?.title as string,
       titleClasses: 'mt-4'
     },
     descriptionProps: {
-      description: componentData?.subtitle as string,
+      description: props?.subtitle as string,
       descriptionClasses: ''
     },
     buttonProps: {
-      buttonUrl: componentData?.buttonUrl as string,
-      buttonText: componentData?.buttonText as string,
+      buttonUrl: props?.buttonUrl as string,
+      buttonText: props?.buttonText as string,
     }
   }
 

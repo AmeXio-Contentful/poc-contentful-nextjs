@@ -61,5 +61,112 @@ query LandingPageById($id: ID) {
         }
       }
     }
+    twoGrid {
+      featuredArticle {
+        ... on HeroBanner {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
+        ... on Teaser {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
+        ... on ExpertAdvice {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          isLeft
+          expertAdvices {
+            advice
+            url
+          }
+        }
+        ... on FeaturedArticle {
+          _type
+          heading
+          title
+          subtitleRaw
+          buttonUrl
+        }
+        ... on ClientImage {
+        	_type
+          image {
+            asset {
+              url
+            }
+          }
+        }
+      }
+      expertAdvice {
+        ... on HeroBanner {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
+        ... on Teaser {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
+        ... on ClientImage {
+        	_type
+          image {
+            asset {
+              url
+            }
+          }
+        }
+        ... on ExpertAdvice {
+          _type
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          expertAdvices {
+            advice
+            url
+          }
+        }
+        ... on FeaturedArticle {
+          _type
+          heading
+          title
+          subtitleRaw
+          buttonUrl
+        }
+      }
+    }
   }
  }

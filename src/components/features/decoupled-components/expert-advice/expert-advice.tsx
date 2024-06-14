@@ -2,7 +2,7 @@ import {Button} from '@src/components/features/decoupled-components/button/butto
 import {ExpertProps} from "@src/components/features/decoupled-components/expert-advice/expert-advice.typings";
 import { useContentfulInspectorMode } from '@contentful/live-preview/react';
 
-export default function ExpertAdvice({title, subtitle, buttonUrl, buttonText, advices, sys}: ExpertProps) {
+export function ExpertAdvice({title, subtitle, buttonUrl, buttonText, advices, sys}: ExpertProps) {
   const inspectorProps = useContentfulInspectorMode({ entryId: sys != null ? sys.id : '' });
   const buttonProps = {
      buttonText,

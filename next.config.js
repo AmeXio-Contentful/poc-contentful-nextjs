@@ -29,6 +29,7 @@ module.exports = withPlugins(plugins, {
     CONTENTFUL_PREVIEW_ACCESS_TOKEN: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
     CONTENTFUL_ENDPOINT: process.env.CONTENTFUL_ENDPOINT,
     CONTENTFUL_SECRET: process.env.CONTENTFUL_SECRET,
+    SANITY_ENDPOINT: process.env.SANITY_ENDPOINT
   },
 
   /**
@@ -46,7 +47,6 @@ module.exports = withPlugins(plugins, {
    * Please note that while not in experimental, the swcMinification may cause issues in your build.
    * example: https://github.com/vercel/next.js/issues/30429 (Yup email validation causes an exception)
    */
-  // swcMinify: true,
 
   poweredByHeader: false,
   reactStrictMode: false,

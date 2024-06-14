@@ -1,0 +1,22 @@
+fragment ComponentExperAdviceFields on ExpertAdvice {
+  __typename
+  sys {
+    id
+  }
+  title
+  subtitle
+  buttonText
+  buttonUrl
+  advicesCollection {
+    items {
+      title
+      buttonUrl
+    }
+  }
+}
+
+query CtfComponentExpertAdvice($id: String!, $locale: String, $preview: Boolean) {
+  expertAdvice(id: $id, locale: $locale, preview: $preview) {
+    ...ComponentExperAdviceFields
+  }
+}

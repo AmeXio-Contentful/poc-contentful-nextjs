@@ -16,16 +16,6 @@ export const componentMapSanity = {
       '@src/mapping/sanity/two-grid'
       ).then((module) => module.TwoGridSanity),
   ),
-  ExpertAdvice: dynamic(() =>
-    import(
-      '@src/mapping/sanity/expert-advice'
-      ).then((module) => module.ExpertAdviceSanity),
-  ),
-  FeaturedArticle: dynamic(() =>
-    import(
-      '@src/mapping/sanity/featured-article'
-      ).then((module) => module.FeaturedArticleSanity),
-  ),
   ReferencedClients: dynamic(() =>
     import(
       '@src/mapping/sanity/reference-client'
@@ -35,5 +25,25 @@ export const componentMapSanity = {
     import(
       '@src/mapping/sanity/join-us'
       ).then((module) => module.JoinUsComponentSanity),
+  ),
+  FeaturedArticle: dynamic(() =>
+    import(
+      '@src/mapping/sanity/featured-article'
+      ).then((module) => module.FeaturedArticleSanity),
+  ),
+  ExpertAdvice: dynamic(() =>
+    import(
+      '@src/mapping/sanity/expert-advice'
+      ).then((module) => module.ExpertAdviceSanity),
+  ),
+  ClientImage: dynamic(() =>
+    import(
+      '@src/mapping/sanity/image'
+      ).then((module) => module.SanityImage),
+  ),
+  Teaser: dynamic(() =>
+    import(
+      '@src/mapping/sanity/teaser'
+      ).then((module) => module.TeaserComponent),
   )
 };

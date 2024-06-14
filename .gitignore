@@ -4,7 +4,6 @@ dist
 .next
 out
 tsconfig.tsbuildinfo
-src/components/features/ctf-components/*/__generated
 src/data/*/*/__generated
 src/lib/__generated
 src/data/contentful/shared-fragments/__generated

@@ -14,6 +14,7 @@ interface HeroBannerSanityProps extends HeroBannerProps {
 }
 
 export const HeroBannerSanityComponent = (componentData: HeroBannerSanityProps) => {
+
   const mappedData: HeroBannerProps = {
     'backgroundImage': componentData?.backgroundImage.asset.url as string || '',
     'title': componentData?.title || '',
