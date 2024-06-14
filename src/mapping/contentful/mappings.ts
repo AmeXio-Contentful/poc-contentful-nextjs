@@ -1,6 +1,11 @@
 import dynamic from 'next/dynamic';
 
 export const componentMap = {
+  TeaserLinked: dynamic(() =>
+    import(
+      '@src/mapping/contentful/teaser-linked'
+      ).then((module) => module.TeaserLinked),
+  ),
   Teaser: dynamic(() =>
     import(
       '@src/mapping/contentful/teaser'
@@ -59,6 +64,11 @@ export const componentMap = {
 };
 
 export const componentGqlMap = {
+  TeaserLinked: dynamic(() =>
+    import(
+      '@src/mapping/contentful/teaser-linked'
+      ).then((module) => module.TeaserLinked),
+  ),
   Testimonial: dynamic(() =>
     import(
       '@src/components/features/ctf-components/testimonial/ctf-testimonial-gql'
